@@ -4,10 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.o"
-  "/home/cbrpnk/et/et/audio/engine/engine.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/engine.cc.o"
-  "/home/cbrpnk/et/et/audio/engine/processor.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/processor.cc.o"
+  "/home/cbrpnk/et/et/audio/backends/jack_backend.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o"
+  "/home/cbrpnk/et/et/audio/engine.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o"
   "/home/cbrpnk/et/et/audio/processors/oscillator.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o"
+  "/home/cbrpnk/et/et/audio/processors/processor.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o"
+  "/home/cbrpnk/et/et/dsp/oscillator.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
+  "/home/cbrpnk/et/et/math/functions.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.o"
+  "/home/cbrpnk/et/et/math/mat2.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.o"
+  "/home/cbrpnk/et/et/math/mat3.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat3.cc.o"
+  "/home/cbrpnk/et/et/math/mat4.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat4.cc.o"
+  "/home/cbrpnk/et/et/math/vec2.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec2.cc.o"
+  "/home/cbrpnk/et/et/math/vec3.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec3.cc.o"
+  "/home/cbrpnk/et/et/math/vec4.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec4.cc.o"
   "/home/cbrpnk/et/examples/audio/main.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

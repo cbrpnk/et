@@ -4,10 +4,9 @@
 #include "mat3.hpp"
 #include "mat4.hpp"
 #include "vec3.hpp"
-#include "math.hpp"
 
 
-namespace Engine {
+namespace Et {
 namespace Math {
 
 
@@ -202,4 +201,4 @@ void Mat3::Zero()
 }
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et

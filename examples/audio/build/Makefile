@@ -123,86 +123,59 @@ audio_example/fast:
 	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/build
 .PHONY : audio_example/fast
 
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.o: home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.o
+home/cbrpnk/et/et/audio/backends/jack_backend.o: home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.o
-
-# target to build an object file
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.o:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.o
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.o
-
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.i: home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.i
-
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.i:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.i
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.i
-
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.s: home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.s
-
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.s:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.s
-.PHONY : home/cbrpnk/et/et/audio/engine/backends/jack_backend.cc.s
-
-home/cbrpnk/et/et/audio/engine/engine.o: home/cbrpnk/et/et/audio/engine/engine.cc.o
-
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.o
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/engine/engine.cc.o:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/engine.cc.o
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.cc.o
+home/cbrpnk/et/et/audio/backends/jack_backend.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
 
-home/cbrpnk/et/et/audio/engine/engine.i: home/cbrpnk/et/et/audio/engine/engine.cc.i
+home/cbrpnk/et/et/audio/backends/jack_backend.i: home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.i
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/engine/engine.cc.i:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/engine.cc.i
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.cc.i
+home/cbrpnk/et/et/audio/backends/jack_backend.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
 
-home/cbrpnk/et/et/audio/engine/engine.s: home/cbrpnk/et/et/audio/engine/engine.cc.s
+home/cbrpnk/et/et/audio/backends/jack_backend.s: home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.s
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/engine/engine.cc.s:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/engine.cc.s
-.PHONY : home/cbrpnk/et/et/audio/engine/engine.cc.s
+home/cbrpnk/et/et/audio/backends/jack_backend.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
+.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
 
-home/cbrpnk/et/et/audio/engine/processor.o: home/cbrpnk/et/et/audio/engine/processor.cc.o
+home/cbrpnk/et/et/audio/engine.o: home/cbrpnk/et/et/audio/engine.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.o
+.PHONY : home/cbrpnk/et/et/audio/engine.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/engine/processor.cc.o:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/processor.cc.o
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.cc.o
+home/cbrpnk/et/et/audio/engine.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o
+.PHONY : home/cbrpnk/et/et/audio/engine.cc.o
 
-home/cbrpnk/et/et/audio/engine/processor.i: home/cbrpnk/et/et/audio/engine/processor.cc.i
+home/cbrpnk/et/et/audio/engine.i: home/cbrpnk/et/et/audio/engine.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.i
+.PHONY : home/cbrpnk/et/et/audio/engine.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/engine/processor.cc.i:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/processor.cc.i
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.cc.i
+home/cbrpnk/et/et/audio/engine.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.i
+.PHONY : home/cbrpnk/et/et/audio/engine.cc.i
 
-home/cbrpnk/et/et/audio/engine/processor.s: home/cbrpnk/et/et/audio/engine/processor.cc.s
+home/cbrpnk/et/et/audio/engine.s: home/cbrpnk/et/et/audio/engine.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.s
+.PHONY : home/cbrpnk/et/et/audio/engine.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/engine/processor.cc.s:
-	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine/processor.cc.s
-.PHONY : home/cbrpnk/et/et/audio/engine/processor.cc.s
+home/cbrpnk/et/et/audio/engine.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.s
+.PHONY : home/cbrpnk/et/et/audio/engine.cc.s
 
 home/cbrpnk/et/et/audio/processors/oscillator.o: home/cbrpnk/et/et/audio/processors/oscillator.cc.o
 
@@ -230,6 +203,249 @@ home/cbrpnk/et/et/audio/processors/oscillator.s: home/cbrpnk/et/et/audio/process
 home/cbrpnk/et/et/audio/processors/oscillator.cc.s:
 	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.s
 .PHONY : home/cbrpnk/et/et/audio/processors/oscillator.cc.s
+
+home/cbrpnk/et/et/audio/processors/processor.o: home/cbrpnk/et/et/audio/processors/processor.cc.o
+
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.o
+
+# target to build an object file
+home/cbrpnk/et/et/audio/processors/processor.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.cc.o
+
+home/cbrpnk/et/et/audio/processors/processor.i: home/cbrpnk/et/et/audio/processors/processor.cc.i
+
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/audio/processors/processor.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.i
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.cc.i
+
+home/cbrpnk/et/et/audio/processors/processor.s: home/cbrpnk/et/et/audio/processors/processor.cc.s
+
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/audio/processors/processor.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.s
+.PHONY : home/cbrpnk/et/et/audio/processors/processor.cc.s
+
+home/cbrpnk/et/et/dsp/oscillator.o: home/cbrpnk/et/et/dsp/oscillator.cc.o
+
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.o
+
+# target to build an object file
+home/cbrpnk/et/et/dsp/oscillator.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.o
+
+home/cbrpnk/et/et/dsp/oscillator.i: home/cbrpnk/et/et/dsp/oscillator.cc.i
+
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/dsp/oscillator.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.i
+
+home/cbrpnk/et/et/dsp/oscillator.s: home/cbrpnk/et/et/dsp/oscillator.cc.s
+
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/dsp/oscillator.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
+.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.s
+
+home/cbrpnk/et/et/math/functions.o: home/cbrpnk/et/et/math/functions.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/functions.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/functions.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.o
+.PHONY : home/cbrpnk/et/et/math/functions.cc.o
+
+home/cbrpnk/et/et/math/functions.i: home/cbrpnk/et/et/math/functions.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/functions.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/functions.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.i
+.PHONY : home/cbrpnk/et/et/math/functions.cc.i
+
+home/cbrpnk/et/et/math/functions.s: home/cbrpnk/et/et/math/functions.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/functions.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/functions.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.s
+.PHONY : home/cbrpnk/et/et/math/functions.cc.s
+
+home/cbrpnk/et/et/math/mat2.o: home/cbrpnk/et/et/math/mat2.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/mat2.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/mat2.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.o
+.PHONY : home/cbrpnk/et/et/math/mat2.cc.o
+
+home/cbrpnk/et/et/math/mat2.i: home/cbrpnk/et/et/math/mat2.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/mat2.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/mat2.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.i
+.PHONY : home/cbrpnk/et/et/math/mat2.cc.i
+
+home/cbrpnk/et/et/math/mat2.s: home/cbrpnk/et/et/math/mat2.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/mat2.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/mat2.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.s
+.PHONY : home/cbrpnk/et/et/math/mat2.cc.s
+
+home/cbrpnk/et/et/math/mat3.o: home/cbrpnk/et/et/math/mat3.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/mat3.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/mat3.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat3.cc.o
+.PHONY : home/cbrpnk/et/et/math/mat3.cc.o
+
+home/cbrpnk/et/et/math/mat3.i: home/cbrpnk/et/et/math/mat3.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/mat3.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/mat3.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat3.cc.i
+.PHONY : home/cbrpnk/et/et/math/mat3.cc.i
+
+home/cbrpnk/et/et/math/mat3.s: home/cbrpnk/et/et/math/mat3.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/mat3.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/mat3.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat3.cc.s
+.PHONY : home/cbrpnk/et/et/math/mat3.cc.s
+
+home/cbrpnk/et/et/math/mat4.o: home/cbrpnk/et/et/math/mat4.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/mat4.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/mat4.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat4.cc.o
+.PHONY : home/cbrpnk/et/et/math/mat4.cc.o
+
+home/cbrpnk/et/et/math/mat4.i: home/cbrpnk/et/et/math/mat4.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/mat4.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/mat4.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat4.cc.i
+.PHONY : home/cbrpnk/et/et/math/mat4.cc.i
+
+home/cbrpnk/et/et/math/mat4.s: home/cbrpnk/et/et/math/mat4.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/mat4.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/mat4.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat4.cc.s
+.PHONY : home/cbrpnk/et/et/math/mat4.cc.s
+
+home/cbrpnk/et/et/math/vec2.o: home/cbrpnk/et/et/math/vec2.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/vec2.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/vec2.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec2.cc.o
+.PHONY : home/cbrpnk/et/et/math/vec2.cc.o
+
+home/cbrpnk/et/et/math/vec2.i: home/cbrpnk/et/et/math/vec2.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/vec2.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/vec2.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec2.cc.i
+.PHONY : home/cbrpnk/et/et/math/vec2.cc.i
+
+home/cbrpnk/et/et/math/vec2.s: home/cbrpnk/et/et/math/vec2.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/vec2.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/vec2.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec2.cc.s
+.PHONY : home/cbrpnk/et/et/math/vec2.cc.s
+
+home/cbrpnk/et/et/math/vec3.o: home/cbrpnk/et/et/math/vec3.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/vec3.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/vec3.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec3.cc.o
+.PHONY : home/cbrpnk/et/et/math/vec3.cc.o
+
+home/cbrpnk/et/et/math/vec3.i: home/cbrpnk/et/et/math/vec3.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/vec3.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/vec3.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec3.cc.i
+.PHONY : home/cbrpnk/et/et/math/vec3.cc.i
+
+home/cbrpnk/et/et/math/vec3.s: home/cbrpnk/et/et/math/vec3.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/vec3.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/vec3.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec3.cc.s
+.PHONY : home/cbrpnk/et/et/math/vec3.cc.s
+
+home/cbrpnk/et/et/math/vec4.o: home/cbrpnk/et/et/math/vec4.cc.o
+
+.PHONY : home/cbrpnk/et/et/math/vec4.o
+
+# target to build an object file
+home/cbrpnk/et/et/math/vec4.cc.o:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec4.cc.o
+.PHONY : home/cbrpnk/et/et/math/vec4.cc.o
+
+home/cbrpnk/et/et/math/vec4.i: home/cbrpnk/et/et/math/vec4.cc.i
+
+.PHONY : home/cbrpnk/et/et/math/vec4.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/math/vec4.cc.i:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec4.cc.i
+.PHONY : home/cbrpnk/et/et/math/vec4.cc.i
+
+home/cbrpnk/et/et/math/vec4.s: home/cbrpnk/et/et/math/vec4.cc.s
+
+.PHONY : home/cbrpnk/et/et/math/vec4.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/math/vec4.cc.s:
+	$(MAKE) -f CMakeFiles/audio_example.dir/build.make CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/vec4.cc.s
+.PHONY : home/cbrpnk/et/et/math/vec4.cc.s
 
 main.o: main.cc.o
 
@@ -267,18 +483,42 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... audio_example"
 	@echo "... edit_cache"
-	@echo "... home/cbrpnk/et/et/audio/engine/backends/jack_backend.o"
-	@echo "... home/cbrpnk/et/et/audio/engine/backends/jack_backend.i"
-	@echo "... home/cbrpnk/et/et/audio/engine/backends/jack_backend.s"
-	@echo "... home/cbrpnk/et/et/audio/engine/engine.o"
-	@echo "... home/cbrpnk/et/et/audio/engine/engine.i"
-	@echo "... home/cbrpnk/et/et/audio/engine/engine.s"
-	@echo "... home/cbrpnk/et/et/audio/engine/processor.o"
-	@echo "... home/cbrpnk/et/et/audio/engine/processor.i"
-	@echo "... home/cbrpnk/et/et/audio/engine/processor.s"
+	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.o"
+	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.i"
+	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.s"
+	@echo "... home/cbrpnk/et/et/audio/engine.o"
+	@echo "... home/cbrpnk/et/et/audio/engine.i"
+	@echo "... home/cbrpnk/et/et/audio/engine.s"
 	@echo "... home/cbrpnk/et/et/audio/processors/oscillator.o"
 	@echo "... home/cbrpnk/et/et/audio/processors/oscillator.i"
 	@echo "... home/cbrpnk/et/et/audio/processors/oscillator.s"
+	@echo "... home/cbrpnk/et/et/audio/processors/processor.o"
+	@echo "... home/cbrpnk/et/et/audio/processors/processor.i"
+	@echo "... home/cbrpnk/et/et/audio/processors/processor.s"
+	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
+	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
+	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"
+	@echo "... home/cbrpnk/et/et/math/functions.o"
+	@echo "... home/cbrpnk/et/et/math/functions.i"
+	@echo "... home/cbrpnk/et/et/math/functions.s"
+	@echo "... home/cbrpnk/et/et/math/mat2.o"
+	@echo "... home/cbrpnk/et/et/math/mat2.i"
+	@echo "... home/cbrpnk/et/et/math/mat2.s"
+	@echo "... home/cbrpnk/et/et/math/mat3.o"
+	@echo "... home/cbrpnk/et/et/math/mat3.i"
+	@echo "... home/cbrpnk/et/et/math/mat3.s"
+	@echo "... home/cbrpnk/et/et/math/mat4.o"
+	@echo "... home/cbrpnk/et/et/math/mat4.i"
+	@echo "... home/cbrpnk/et/et/math/mat4.s"
+	@echo "... home/cbrpnk/et/et/math/vec2.o"
+	@echo "... home/cbrpnk/et/et/math/vec2.i"
+	@echo "... home/cbrpnk/et/et/math/vec2.s"
+	@echo "... home/cbrpnk/et/et/math/vec3.o"
+	@echo "... home/cbrpnk/et/et/math/vec3.i"
+	@echo "... home/cbrpnk/et/et/math/vec3.s"
+	@echo "... home/cbrpnk/et/et/math/vec4.o"
+	@echo "... home/cbrpnk/et/et/math/vec4.i"
+	@echo "... home/cbrpnk/et/et/math/vec4.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

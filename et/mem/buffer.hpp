@@ -16,7 +16,7 @@ public:
         , buffer_{nullptr}
     {}
     
-    Buffer(int size)
+    Buffer(unsigned int size)
         : size_{size}
         , buffer_{new T[size]}
     {}
@@ -64,11 +64,13 @@ public:
         other.buffer_ = nullptr;
     }
     
+    bool operator==(Buffer& other) { return this == &other; }
+    
     int getSize()          const { return size_; }
     T*  getRawBuffer()     const { return buffer_; }
 
-private:
-    int size_;
+protected:
+    unsigned int size_;
     T* buffer_;
 };
 

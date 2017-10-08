@@ -1,8 +1,8 @@
-#ifndef ENGINE_VEC4_HPP
-#define ENGINE_VEC4_HPP
+#ifndef ET_MATH_VEC4_HPP
+#define ET_MATH_VEC4_HPP
 
 
-namespace Engine {
+namespace Et {
 namespace Math {
 
 class Mat4;
@@ -47,6 +47,6 @@ public:
 };
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et
 
-#endif
+#endif // ET_MATH_VCEC4_HPP

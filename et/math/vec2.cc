@@ -8,7 +8,7 @@
 #include "mat2.hpp"
 #include "mat3.hpp"
 
-namespace Engine {
+namespace Et {
 namespace Math {
 
 Vec2::Vec2()
@@ -174,4 +174,4 @@ void Vec2::Zero()
 }
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et

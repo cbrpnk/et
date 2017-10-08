@@ -4,20 +4,3 @@ Decibel / Volume convertion
     youtube (Lessons learn from a decade of aduio programming) @ 9:40
 
 Alocate objected from a memory pool?
-
-Ripl has a transport object risponsible for:
-    play/pause/stop/rec
-    clock
-    Midi sync
-
-Ripl has a mixer object:
-    it has all the patches and must update them
-    sum them up
-    apply master level/pan
-    write output to sound card buffers
-
-A patch object:
-    contains a vector of modules
-    the first modules if the output module wich can't be deleted
-        this output module contain the buffer that will eventually be
-        summed by the mixer. It has a volume, a pan, a left and a right input

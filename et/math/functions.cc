@@ -7,7 +7,7 @@
 #include "functions.hpp"
 
 
-namespace Engine {
+namespace Et {
 namespace Math {
 
     static bool prngSeeded = false;
@@ -54,4 +54,4 @@ namespace Math {
     }
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et

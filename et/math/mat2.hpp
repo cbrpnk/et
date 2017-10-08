@@ -1,9 +1,9 @@
-#ifndef ENGINE_MAT2_HPP
-#define ENGINE_MAT2_HPP
+#ifndef ET_MATH_MAT2_HPP
+#define ET_MATH_MAT2_HPP
 
 #include "vec2.hpp"
 
-namespace Engine {
+namespace Et {
 namespace Math {
 
 class Mat4;
@@ -50,6 +50,6 @@ private:
 };
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et
 
-#endif
+#endif // ET_MATH_MAT2_HPP

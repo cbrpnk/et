@@ -4,6 +4,7 @@
 
 namespace Et {
 namespace Math {
+    
     float  DegToRad(const float deg);
     float  RadToDeg(const float rad);
     double RandomDouble(const double min, const double max);
@@ -12,6 +13,6 @@ namespace Math {
     void   SeedPrng();
 
 } // namespace math
-} // namespace Engine
+} // namespace Et
 
-#endif
+#endif // ET_MATH_FUNCTIONS_HPP

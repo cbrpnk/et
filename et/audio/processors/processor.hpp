@@ -5,20 +5,20 @@
 #include <cstdint>
 #include <vector>
 
-#include "../common/audio_buffer.hpp"
+#include "../buffer.hpp"
 
 namespace Et {
 namespace Audio {
 
 class Processor {
 ///////////////////////////////////////////////////////////////////////////////
-protected:
+public:
     
     
     struct AudioPort {
         AudioPort(Processor& owner)
             : owner_{owner}
-            , buffer_(2, owner.bufferSize_)
+            , buffer_(owner.bufferSize_)
         {}
         virtual ~AudioPort() {}
         
@@ -29,7 +29,7 @@ protected:
             float scalar;
         };
         std::vector<Connection> connections_;
-        AudioBuffer<float> buffer_;
+        StereoBuffer buffer_;
         
     protected:
         void connect(AudioPort& target, float scalar);
@@ -38,7 +38,7 @@ protected:
     
 
 ///////////////////////////////////////////////////////////////////////////////
-protected:
+public:
     
     
     struct AudioOutput;
@@ -58,7 +58,7 @@ protected:
     };
     
 ///////////////////////////////////////////////////////////////////////////////
-protected:
+public:
     
     
     struct AudioOutput : public AudioPort
@@ -73,15 +73,15 @@ protected:
     
     
 ////////////////////////////////////////////////////////////////////////////////
-protected:
+public:
     
     
     struct Parameter : public AudioInput
     {
-        Parameter(Processor& owner, float min, float max)
+        Parameter(Processor& owner, float& value, float min, float max)
             : AudioInput(owner)
+            , value_{value}
             , range(min, max)
-            , value_{0.0f}
         {}
         
         void modulate(AudioOutput& modulator, float scalar) {
@@ -108,7 +108,7 @@ protected:
         const Range range;
         
     private:
-        float value_;
+        float& value_;
     };
     
 
@@ -116,11 +116,13 @@ protected:
 
 public:
     Processor() = delete;
-    Processor(unsigned int bufferSize,
+    Processor(unsigned int sampleRate,
+              unsigned int bufferSize,
               std::vector<AudioInput>& audioInputs,
               std::vector<AudioOutput>& audioOutputs,
               std::vector<Parameter>& parameters)
         : on_{true}
+        , sampleRate_{sampleRate}
         , bufferSize_{bufferSize}
         , lastSampleId_{0}
         , audioInputs_{audioInputs}
@@ -139,6 +141,9 @@ public:
     void bypass();
     
     bool isOn() const { return on_; }
+    AudioOutput& getAudioOutput(int output) {
+        return audioOutputs_[output];
+    }
     
 protected:
     
@@ -146,6 +151,7 @@ protected:
     
 protected:
     bool on_;
+    unsigned int sampleRate_;
     unsigned int bufferSize_;
     
     // Id of the last sample processed

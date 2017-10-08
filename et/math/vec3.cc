@@ -6,7 +6,7 @@
 #include "vec3.hpp"
 #include "vec4.hpp"
 
-namespace Engine{
+namespace Et {
 namespace Math {
 
 Vec3::Vec3()
@@ -197,4 +197,4 @@ void Vec3::Zero()
 }
 
 } // namespace Math
-} // namespace Engine
+} // namespace Et

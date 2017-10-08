@@ -7,7 +7,8 @@
 #include <memory>
 
 #include "backends/jack_backend.hpp"
-#include "processor.hpp"
+#include "processors/processor.hpp"
+#include "buffer.hpp"
 
 
 namespace Et {
@@ -28,8 +29,8 @@ public:
     
     // Returns the id of the new processor, ths id is just its index in 
     // the processors_ vector
-    int add(ProcessorType type);
-    void output(ProcessorId id);
+    ProcessorId add(ProcessorType type);
+    void output(ProcessorId pid, int output);
     
     void play();
     void pause();
@@ -47,11 +48,15 @@ private:
     unsigned int bufferSize_;
     unsigned int sampleRate_;
     
+    // We acculumate every outputProcesors_ into this an copy this
+    // into the backend's buffer.
+    StereoBuffer buffer_;
+    
     // List of every processors
     std::vector<std::unique_ptr<Processor>> processors_;
     
-    // list of the processors on which we should sum output to the soundcard
-    std::vector<Processor*> outputProcessors_;
+    // list of outputs we should sum and send to the soundcard
+    std::vector<Processor::AudioOutput*> outputs_;
     
     struct Transport {
         bool playing;
