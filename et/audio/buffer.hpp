@@ -26,6 +26,15 @@ public:
     {}
     virtual ~Buffer() {}
     
+    Buffer(Buffer&& other)
+        : Mem::Buffer<SampleType>(std::move(other))
+        , nChannels_{other.nChannels_}
+        , length_{other.length_}
+    {
+        other.nChannels_ = 0;
+        other.length_    = 0;
+    }
+    
     Buffer& operator+=(Buffer& other)
     {
         if(size_ == other.size_) {
@@ -37,6 +46,13 @@ public:
     }
     
     void silence() { for(int i=0; i<size_; ++i) buffer_[i] = 0.0f; }
+    void normalize() {
+        for(int i=0; i<size_; ++i ) {
+            if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
+            else if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
+        }
+    }
+    
     unsigned int getChannelCount() const { return nChannels_; }
     unsigned int getLength()       const { return length_; }
     
@@ -57,13 +73,19 @@ public:
     StereoBuffer(unsigned int length)
         : Buffer(2, length)
         // The two channels will be layed side by side in memory
-        , left{*(buffer_)}
-        , right{*(buffer_ + length)}
+        , left{buffer_}
+        , right{buffer_ + length}
+    {}
+    
+    StereoBuffer(StereoBuffer&& other)
+        : Buffer(std::move(other))
+        , left{other.left}
+        , right{other.right}
     {}
 
 public:
-    SampleType& left;
-    SampleType& right;
+    SampleType* left;
+    SampleType* right;
 };
 
 } // namespace Audio

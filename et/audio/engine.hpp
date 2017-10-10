@@ -39,6 +39,8 @@ public:
 private:
     // Needs to set sampleRate and call callback()
     friend JackBackend;
+    // This gets called back by the backend each time the sound card
+    // needs a new buffer
     void callback(float* leftOut, float* rightOut);
 
 private:

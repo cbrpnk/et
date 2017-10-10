@@ -22,6 +22,12 @@ public:
         {}
         virtual ~AudioPort() {}
         
+        AudioPort(AudioPort&& other)
+            : owner_{other.owner_}
+            , connections_(std::move(other.connections_))
+            , buffer_(std::move(other.buffer_))
+        {}
+        
         // Who owns us
         Processor& owner_;
         struct Connection {
@@ -48,6 +54,8 @@ public:
         AudioInput(Processor& owner) : AudioPort(owner) {}
         virtual ~AudioInput() {}
         
+        AudioInput(AudioInput&& other) : AudioPort(std::move(other)) {}
+        
         // Sum connection buffers into our own buffer
         virtual void update();
         
@@ -64,6 +72,7 @@ public:
     struct AudioOutput : public AudioPort
     {
         AudioOutput(Processor& owner) : AudioPort(owner) {}
+        AudioOutput(AudioOutput&& other) : AudioPort(std::move(other)) {}
         
         void connect(AudioInput& target, float scalar) { 
             AudioPort::connect(target, scalar);
@@ -84,6 +93,12 @@ public:
             , range(min, max)
         {}
         
+        Parameter(Parameter&& other)
+            : AudioInput(std::move(other))
+            , range{other.range.min, other.range.max}
+            , value_{other.value_}
+        {}
+        
         void modulate(AudioOutput& modulator, float scalar) {
             connect(modulator, scalar);
         }
@@ -98,6 +113,7 @@ public:
             else value_ = value;
         }
         
+    public:
         struct Range
         {
             Range() : min{-1.0f}, max{1.0f} {}
@@ -128,6 +144,16 @@ public:
         , audioInputs_{audioInputs}
         , audioOutputs_{audioOutputs}
         , parameters_{parameters}
+    {}
+    
+    Processor(Processor&& other)
+        : on_{other.on_}
+        , sampleRate_{other.sampleRate_}
+        , bufferSize_{other.bufferSize_}
+        , lastSampleId_{other.lastSampleId_}
+        , audioInputs_{other.audioInputs_}
+        , audioOutputs_{other.audioOutputs_}
+        , parameters_{other.parameters_}
     {}
     
     void process(uint64_t upToSampleId);

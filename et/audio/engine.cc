@@ -1,6 +1,8 @@
 #include "engine.hpp"
 #include "processors/oscillator.hpp"
 
+#include <iostream>
+
 namespace Et {
 namespace Audio {
 
@@ -23,8 +25,9 @@ Engine::ProcessorId Engine::add(Engine::ProcessorType type)
 {
     switch(type) {
     case ProcessorType::Oscillator:
-        processors_.push_back(std::make_unique<Oscillator>(sampleRate_,
-                                                           bufferSize_));
+        processors_.push_back(
+            std::move(std::make_unique<Oscillator>(sampleRate_, bufferSize_))
+        );
         return processors_.size()-1;
         break;
     }
@@ -39,6 +42,8 @@ void Engine::output(ProcessorId pid, int output)
 
 void Engine::callback(float* leftOut, float* rightOut)
 {
+    buffer_.silence();
+    
     // If playing is true we know there is at least one outputProcessor
     if(transport_.playing) {
         transport_.playHead += bufferSize_;
@@ -47,21 +52,13 @@ void Engine::callback(float* leftOut, float* rightOut)
             output->owner_.process(transport_.playHead);
             buffer_ += output->buffer_;
         }
-        
-        //for(int i=0; i<1024; ++i) {
-            //
-            // TODO Call main processor here
-            //
-            //leftOut[i] = (jack_default_audio_sample_t) std::rand() / RAND_MAX;
-            //rightOut[i] = (jack_default_audio_sample_t) std::rand() / RAND_MAX;
-        //}
-    } else {
-        buffer_.silence();
     }
     
-    std::memcpy(leftOut, &buffer_.left,
+    buffer_.normalize();
+    
+    std::memcpy(leftOut, buffer_.left,
                 buffer_.getLength() * sizeof(SampleType));
-    std::memcpy(rightOut, &buffer_.right,
+    std::memcpy(rightOut, buffer_.right,
                 buffer_.getLength() * sizeof(SampleType));
 }
 

@@ -8,6 +8,12 @@ namespace Dsp {
 class Oscillator {
 public:
     Oscillator(unsigned int sampleRate, float frequency, float level);
+    Oscillator(Oscillator&& other)
+        : sampleRate_{other.sampleRate_}
+        , frequency_{other.frequency_}
+        , level_{other.level_}
+        , phase_{other.phase_}
+    {}
     
     virtual void output(float* output, int nSamples);
     

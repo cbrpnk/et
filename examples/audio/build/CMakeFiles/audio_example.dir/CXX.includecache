@@ -31,6 +31,8 @@ engine.hpp
 /home/cbrpnk/et/et/audio/engine.hpp
 processors/oscillator.hpp
 /home/cbrpnk/et/et/audio/processors/oscillator.hpp
+iostream
+-
 
 /home/cbrpnk/et/et/audio/engine.hpp
 vector
@@ -49,14 +51,16 @@ buffer.hpp
 /home/cbrpnk/et/et/audio/processors/oscillator.cc
 oscillator.hpp
 /home/cbrpnk/et/et/audio/processors/oscillator.hpp
+ctime
+-
+cstdlib
+-
 iostream
 -
 
 /home/cbrpnk/et/et/audio/processors/oscillator.hpp
 processor.hpp
 /home/cbrpnk/et/et/audio/processors/processor.hpp
-../../dsp/oscillator.hpp
-/home/cbrpnk/et/et/dsp/oscillator.hpp
 
 /home/cbrpnk/et/et/audio/processors/processor.cc
 processor.hpp
@@ -71,12 +75,6 @@ vector
 /home/cbrpnk/et/et/audio/buffer.hpp
 
 /home/cbrpnk/et/et/dsp/oscillator.cc
-ctime
--
-cstdlib
--
-iostream
--
 oscillator.hpp
 /home/cbrpnk/et/et/dsp/oscillator.hpp
 
