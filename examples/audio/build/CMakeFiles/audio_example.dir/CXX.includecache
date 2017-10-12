@@ -26,6 +26,10 @@ cstring
 ../mem/buffer.hpp
 /home/cbrpnk/et/et/mem/buffer.hpp
 
+/home/cbrpnk/et/et/audio/db.hpp
+cmath
+-
+
 /home/cbrpnk/et/et/audio/engine.cc
 engine.hpp
 /home/cbrpnk/et/et/audio/engine.hpp
@@ -49,18 +53,18 @@ buffer.hpp
 /home/cbrpnk/et/et/audio/buffer.hpp
 
 /home/cbrpnk/et/et/audio/processors/oscillator.cc
+cmath
+-
 oscillator.hpp
 /home/cbrpnk/et/et/audio/processors/oscillator.hpp
-ctime
--
-cstdlib
--
 iostream
 -
 
 /home/cbrpnk/et/et/audio/processors/oscillator.hpp
 processor.hpp
 /home/cbrpnk/et/et/audio/processors/processor.hpp
+../db.hpp
+/home/cbrpnk/et/et/audio/db.hpp
 
 /home/cbrpnk/et/et/audio/processors/processor.cc
 processor.hpp

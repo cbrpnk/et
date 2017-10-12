@@ -54,8 +54,6 @@ void Engine::callback(float* leftOut, float* rightOut)
         }
     }
     
-    buffer_.normalize();
-    
     std::memcpy(leftOut, buffer_.left,
                 buffer_.getLength() * sizeof(SampleType));
     std::memcpy(rightOut, buffer_.right,

@@ -11,6 +11,7 @@ CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o
  /home/cbrpnk/et/et/audio/backends/jack_backend.hpp
  /home/cbrpnk/et/et/audio/buffer.hpp
+ /home/cbrpnk/et/et/audio/db.hpp
  /home/cbrpnk/et/et/audio/engine.cc
  /home/cbrpnk/et/et/audio/engine.hpp
  /home/cbrpnk/et/et/audio/processors/oscillator.hpp
@@ -18,6 +19,7 @@ CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o
  /home/cbrpnk/et/et/mem/buffer.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o
  /home/cbrpnk/et/et/audio/buffer.hpp
+ /home/cbrpnk/et/et/audio/db.hpp
  /home/cbrpnk/et/et/audio/processors/oscillator.cc
  /home/cbrpnk/et/et/audio/processors/oscillator.hpp
  /home/cbrpnk/et/et/audio/processors/processor.hpp

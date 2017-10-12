@@ -3,6 +3,7 @@
 #define ET_AUDIO_OSCILLATOR_HPP
 
 #include "processor.hpp"
+#include "../db.hpp"
 
 namespace Et {
 namespace Audio {
@@ -24,7 +25,7 @@ public:
     };
     
     static constexpr float kDefaultFrequency{440.0f};   // A4 in Hz
-    static constexpr float kDefaultLevel    {0.5f};     // TODO in Db
+    static constexpr dB    kDefaultLevel    {0.0f};
     
 public:
     Oscillator(unsigned int sampleRate,

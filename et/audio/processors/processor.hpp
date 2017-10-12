@@ -18,14 +18,12 @@ public:
     struct AudioPort {
         AudioPort(Processor& owner)
             : owner_{owner}
-            , buffer_(owner.bufferSize_)
         {}
         virtual ~AudioPort() {}
         
         AudioPort(AudioPort&& other)
             : owner_{other.owner_}
             , connections_(std::move(other.connections_))
-            , buffer_(std::move(other.buffer_))
         {}
         
         // Who owns us
@@ -35,7 +33,6 @@ public:
             float scalar;
         };
         std::vector<Connection> connections_;
-        StereoBuffer buffer_;
         
     protected:
         void connect(AudioPort& target, float scalar);
@@ -51,18 +48,27 @@ public:
     
     struct AudioInput : public AudioPort
     {
-        AudioInput(Processor& owner) : AudioPort(owner) {}
+        AudioInput(Processor& owner)
+            : AudioPort(owner)
+            , buffer_(owner.bufferSize_)
+        {}
         virtual ~AudioInput() {}
         
-        AudioInput(AudioInput&& other) : AudioPort(std::move(other)) {}
+        AudioInput(AudioInput&& other)
+            : AudioPort(std::move(other))
+            , buffer_(std::move(other.buffer_))
+        {}
         
         // Sum connection buffers into our own buffer
-        virtual void update();
+        void update(uint64_t sampleId);
         
         void connect(AudioOutput& target, float scalar) {
             AudioPort::connect(target, scalar);
         }
         void disonnect(AudioOutput& target) { AudioPort::disconnect(target); }
+    
+    public:
+        StereoBuffer buffer_;
     };
     
 ///////////////////////////////////////////////////////////////////////////////
@@ -71,13 +77,22 @@ public:
     
     struct AudioOutput : public AudioPort
     {
-        AudioOutput(Processor& owner) : AudioPort(owner) {}
-        AudioOutput(AudioOutput&& other) : AudioPort(std::move(other)) {}
+        AudioOutput(Processor& owner)
+            : AudioPort(owner)
+            , buffer_(owner.bufferSize_)
+        {}
+        AudioOutput(AudioOutput&& other)
+            : AudioPort(std::move(other))
+            , buffer_(std::move(other.buffer_))
+        {}
         
         void connect(AudioInput& target, float scalar) { 
             AudioPort::connect(target, scalar);
         }
         void disonnect(AudioInput& target) { AudioPort::disconnect(target); }
+    
+    public:
+        StereoBuffer buffer_;
     };
     
     
@@ -85,45 +100,52 @@ public:
 public:
     
     
-    struct Parameter : public AudioInput
+    struct Parameter : public AudioPort
     {
         Parameter(Processor& owner, float& value, float min, float max)
-            : AudioInput(owner)
+            : AudioPort(owner)
+            , buffer_(owner.bufferSize_)
+            , scaledBuffer_(owner.bufferSize_, min, max)
             , value_{value}
-            , range(min, max)
+            , range{min, max}
         {}
         
         Parameter(Parameter&& other)
-            : AudioInput(std::move(other))
+            : AudioPort(std::move(other))
+            , buffer_(std::move(other.buffer_))
+            , scaledBuffer_(std::move(other.buffer_))
             , range{other.range.min, other.range.max}
             , value_{other.value_}
         {}
         
-        void modulate(AudioOutput& modulator, float scalar) {
-            connect(modulator, scalar);
-        }
-        
         // Same as AudioInput's but sacles the input so it fits the range.
         // If there are no connections, populate the buffer with value_.
-        void update() override;
+        void update(uint64_t sampleId);
         
-        void set(float value) {
-            if(value < range.min) value_ = range.min;
-            else if(value > range.max) value_ = range.max;
-            else value_ = value;
+        void set(float value);
+        
+        void connect(AudioInput& target, float scalar) { 
+            AudioPort::connect(target, scalar);
         }
+        void disonnect(AudioInput& target) { AudioPort::disconnect(target); }
         
     public:
+        // This is the buffer in which we accumulate the input signals
+        MonoBuffer buffer_;
+        // This is the buffer that has the range specified by the user.
+        // It contains the summed input signal but scaled to fit the range.
+        MonoBuffer scaledBuffer_;
+        
         struct Range
         {
-            Range() : min{-1.0f}, max{1.0f} {}
-            Range(float min, float max) : min{min}, max{max} {}
             float min;
             float max;
         };
         const Range range;
         
     private:
+        // This value is always between -1.0f and 1.0f such that it can be
+        // placed in an AudioBuffer.
         float& value_;
     };
     
@@ -138,6 +160,7 @@ public:
               std::vector<AudioOutput>& audioOutputs,
               std::vector<Parameter>& parameters)
         : on_{true}
+        , bypass_{false}
         , sampleRate_{sampleRate}
         , bufferSize_{bufferSize}
         , lastSampleId_{0}
@@ -148,6 +171,7 @@ public:
     
     Processor(Processor&& other)
         : on_{other.on_}
+        , bypass_{other.bypass_}
         , sampleRate_{other.sampleRate_}
         , bufferSize_{other.bufferSize_}
         , lastSampleId_{other.lastSampleId_}
@@ -162,9 +186,8 @@ public:
     void sendOutput();
     void modulateParameter();
     void toggleOnOff();
-    
     // Sum inputs into output without going through doDsp()
-    void bypass();
+    void ToggleBypass();
     
     bool isOn() const { return on_; }
     AudioOutput& getAudioOutput(int output) {
@@ -177,6 +200,7 @@ protected:
     
 protected:
     bool on_;
+    bool bypass_;
     unsigned int sampleRate_;
     unsigned int bufferSize_;
     

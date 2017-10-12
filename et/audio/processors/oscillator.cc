@@ -1,10 +1,6 @@
+#include <cmath>
 #include "oscillator.hpp"
-
-// TODO Remove me
-#include <ctime>
-#include <cstdlib>
 #include <iostream>
-// TODO End remove
 
 namespace Et {
 namespace Audio {
@@ -34,20 +30,18 @@ Oscillator::Oscillator(unsigned int sampleRate,
     );
     
     // kLevel
-    // TODO Should be in Db
-    parameters_.push_back(std::move(Parameter(*this, level_, 0.0f, 1.0f)));
-
-    // TODO Remove me
-    std::srand(std::time(0));
+    parameters_.push_back(std::move(Parameter(*this, level_, -96.0f, 0.0f)));
 }
 
 void Oscillator::doDsp()
 {
+    float volume = dbToVolume(level_);
+    
     for(int i=0; i<bufferSize_; ++i) {
-        audioOutputs_[kOut].buffer_.left[i] =
-            (SampleType) std::rand() / RAND_MAX;
-        audioOutputs_[kOut].buffer_.right[i] =
-            (SampleType) std::rand() / RAND_MAX;
+        audioOutputs_[kOut].buffer_.left[i] =  volume * sin(phase_);
+        audioOutputs_[kOut].buffer_.right[i] = volume * sin(phase_);
+        
+        phase_ += ((2.0f*M_PI) * frequency_) / sampleRate_;
     }
 }
 
