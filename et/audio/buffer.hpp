@@ -19,6 +19,11 @@ typedef float SampleType;
 class Buffer : public Mem::Buffer<SampleType>
 {
 public:
+    enum Type {
+        Mono = 1,
+        Stereo = 2
+    };
+    
     enum Channel {
         Left  = 0,
         Right = 1
@@ -62,6 +67,11 @@ public:
         }
     }
     
+    SampleType* getChannel(Channel ch)
+    {
+        return buffer_ + ch * length_;
+    }
+    
     void setSample(Channel ch, int sample, SampleType value)
     {
         // TODO Assert
@@ -90,63 +100,6 @@ protected:
     unsigned int length_;
 };
 
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-// TODO Maybe delete Seteo and Mono buffer and simply use Buffer
-
-class StereoBuffer : public Buffer
-{
-public:
-    StereoBuffer() = delete;
-    StereoBuffer(unsigned int length)
-        : Buffer(2, length)
-        // The two channels will be layed side by side in memory
-        , left{buffer_}
-        , right{buffer_ + length}
-    {}
-    
-    // TODO operator+= MonoBuffer
-    
-    StereoBuffer(StereoBuffer&& other)
-        : Buffer(std::move(other))
-        , left{other.left}
-        , right{other.right}
-    {}
-
-public:
-    SampleType* left;
-    SampleType* right;
-};
-
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-class MonoBuffer : public Buffer
-{
-public:
-    MonoBuffer() = delete;
-    MonoBuffer(unsigned int length)
-        : Buffer(1, length)
-        // The two channels point to the same location in memory
-        , left{buffer_}
-        , right{buffer_}
-    {}
-    
-    // TODO operator+= StereoBuffer
-    
-    MonoBuffer(MonoBuffer&& other)
-        : Buffer(std::move(other))
-        , left{other.left}
-        , right{other.right}
-    {}
-
-public:
-    SampleType* left;
-    SampleType* right;
-};
 
 } // namespace Audio
 } // namespace Et

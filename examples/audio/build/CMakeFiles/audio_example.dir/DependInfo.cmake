@@ -6,8 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cbrpnk/et/et/audio/backends/jack_backend.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o"
   "/home/cbrpnk/et/et/audio/engine.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o"
-  "/home/cbrpnk/et/et/audio/processors/oscillator.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o"
-  "/home/cbrpnk/et/et/audio/processors/processor.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o"
+  "/home/cbrpnk/et/et/audio/modules/module.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
+  "/home/cbrpnk/et/et/audio/modules/oscillator.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
   "/home/cbrpnk/et/et/dsp/oscillator.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
   "/home/cbrpnk/et/et/math/functions.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.o"
   "/home/cbrpnk/et/et/math/mat2.cc" "/home/cbrpnk/et/examples/audio/build/CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.o"

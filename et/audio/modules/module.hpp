@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ET_AUDIO_PROCESSOR
-#define ET_AUDIO_PROCESSOR
+#ifndef ET_AUDIO_MODULE
+#define ET_AUDIO_MODULE
 
 #include <cstdint>
 #include <vector>
@@ -12,25 +12,22 @@ namespace Et {
 namespace Audio {
 
 
-class Processor {
+class Module {
 ///////////////////////////////////////////////////////////////////////////////
 public:
     
     class Port {
-    public:
-        Port(Processor& owner)
+    protected:
+        Port(Module& owner)
             : owner{owner}
-            , buffer(owner.bufferSize_)
+            , buffer(Buffer::Type::Stereo, owner.bufferSize_)
         {}
         
         Port(Port&& other)
             : owner{other.owner}
-            , buffer(std::move(buffer))
+            , buffer(std::move(other.buffer))
             , connections(std::move(other.connections))
-        {
-            std::cout << "Move" << buffer.getLength() << '\n';
-            std::cout << "other" << other.buffer.getLength() << '\n';
-        }
+        {}
         
         void connect(Port& target, float scalar) {}  // TODO
         void disconnect(Port& target)            {}  // TODO
@@ -40,8 +37,8 @@ public:
     
     public:
         // Who owns us
-        Processor& owner;
-        StereoBuffer buffer;
+        Module& owner;
+        Buffer buffer;
         struct Connection {
             Port& port;
             float scalar;
@@ -58,7 +55,7 @@ public:
     class Input : public Port
     {
     public:
-        Input(Processor& owner) : Port(owner) {}
+        Input(Module& owner) : Port(owner) {}
         Input(Input&& other) : Port(std::move(other)) {}
         
         // Sum connection buffers into our own buffer
@@ -66,8 +63,8 @@ public:
         {
             buffer.silence();
             for(auto& connection : connections) {
-                Processor::Output& output{
-                    static_cast<Processor::Output&>(connection.port)
+                Module::Output& output{
+                    static_cast<Module::Output&>(connection.port)
                 };
                 output.owner.process(sampleId);
                 buffer += output.buffer;
@@ -83,16 +80,13 @@ public:
     class Output : public Port
     {
     public:
-        Output(Processor& owner) : Port(owner) {
-            std::cout << 'a' << buffer.getLength() << '\n';
-        }
+        Output(Module& owner) : Port(owner) {}
         Output(Output&& other) : Port(std::move(other)) {}
         
         void connect(Input& target, float scalar) {  Port::connect(target, scalar); }
         void disonnect(Input& target) { Port::disconnect(target); }
         void setSample(Buffer::Channel ch, int sample, SampleType value)
         {
-            std::cout << 'c' << buffer.getLength() << '\n';
             buffer.setSample(ch, sample, value);
         }
     };
@@ -110,7 +104,7 @@ public:
             float max;
         };
     public:
-        Parameter(Processor& owner, Range range, float value)
+        Parameter(Module& owner, Range range, float value)
             : owner{owner}
             , range{range}
             , value{value}
@@ -126,7 +120,7 @@ public:
         void  set(float val) { if(val >= range.min && val <= range.max) value = val; }
         
     public:
-        Processor& owner;
+        Module& owner;
         Range range;
         float value;
     };
@@ -134,8 +128,8 @@ public:
 ////////////////////////////////////////////////////////////////////////////////
 
 public:
-    Processor() = delete;
-    Processor(unsigned int sampleRate,
+    Module() = delete;
+    Module(unsigned int sampleRate,
               unsigned int bufferSize,
               unsigned int nInputs,
               unsigned int nOutputs,
@@ -146,20 +140,23 @@ public:
         , bufferSize_{bufferSize}
         , lastSampleId_{0}
     {
-        // TODO Reserve space before pushing back
-        
+        inputs_.reserve(nInputs);
         for(int i=0; i<nInputs; ++i) {
             inputs_.push_back(std::move(Input(*this)));
         }
+        
+        outputs_.reserve(nOutputs);
         for(int i=0; i<nOutputs; ++i) {
             outputs_.push_back(std::move(Output(*this)));
         }
+        
+        params_.reserve(nParameters);
         for(int i=0; i<nParameters; ++i) {
             params_.push_back(std::move(Parameter(*this, { 0.0f, 1.0f }, 0.0f)));
         }
     }
     
-    Processor(Processor&& other)
+    Module(Module&& other)
         : on_{other.on_}
         , bypass_{other.bypass_}
         , sampleRate_{other.sampleRate_}
@@ -207,4 +204,4 @@ protected:
 } // namepsace Audio
 } // namespace Et
 
-#endif // ET_AUDIO_PROCESSOR
+#endif // ET_AUDIO_MODULE

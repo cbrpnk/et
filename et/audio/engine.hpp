@@ -7,7 +7,7 @@
 #include <memory>
 
 #include "backends/jack_backend.hpp"
-#include "processors/processor.hpp"
+#include "modules/module.hpp"
 #include "buffer.hpp"
 
 
@@ -16,9 +16,9 @@ namespace Audio {
 
 class Engine {
 public:
-    typedef unsigned int ProcessorId;
+    typedef unsigned int ModuleId;
     
-    enum class ProcessorType {
+    enum class ModuleType {
         Oscillator
     };
     
@@ -27,10 +27,10 @@ public:
     
     void init();
     
-    // Returns the id of the new processor, ths id is just its index in 
-    // the processors_ vector
-    ProcessorId add(ProcessorType type);
-    void output(ProcessorId pid, int output);
+    // Returns the id of the new module, ths id is just its index in 
+    // the modules_ vector
+    ModuleId add(ModuleType type);
+    void output(ModuleId pid, int output);
     
     void play();
     void pause();
@@ -52,13 +52,13 @@ private:
     
     // We acculumate every outputProcesors_ into this an copy this
     // into the backend's buffer.
-    StereoBuffer buffer_;
+    Buffer buffer_;
     
-    // List of every processors
-    std::vector<std::unique_ptr<Processor>> processors_;
+    // List of every modules
+    std::vector<std::unique_ptr<Module>> modules_;
     
     // list of outputs we should sum and send to the soundcard
-    std::vector<Processor::Output*> outputs_;
+    std::vector<Module::Output*> outputs_;
     
     struct Transport {
         bool playing;

@@ -7,7 +7,7 @@ namespace Audio {
 
 Oscillator::Oscillator(unsigned int sampleRate, unsigned int bufferSize,
                        float frequency, dB level)
-    : Processor(sampleRate, bufferSize, kInputCount, kOutputCount, kParameterCount)
+    : Module(sampleRate, bufferSize, kInputCount, kOutputCount, kParameterCount)
     , phase_{0.0f}
 {
     // kFrequency

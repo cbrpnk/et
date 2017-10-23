@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o"
   "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o"
-  "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o"
-  "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o"
+  "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
+  "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
   "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
   "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/functions.cc.o"
   "CMakeFiles/audio_example.dir/home/cbrpnk/et/et/math/mat2.cc.o"

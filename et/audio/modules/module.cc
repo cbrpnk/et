@@ -1,13 +1,13 @@
-#include "processor.hpp"
+#include "module.hpp"
 
 namespace Et {
 namespace Audio {
 
-void Processor::process(uint64_t upToSampleId)
+void Module::process(uint64_t upToSampleId)
 {
     if(on_ && upToSampleId != lastSampleId_) {
         // We update this as soon as possible because we might be call
-        // again before the method is over. Eg: we update an input processor
+        // again before the method is over. Eg: we update an input module
         // that depends on us and therefore will try to call process on us.
         // To prevent infinite loops we update this now so we won't get into
         // this if statement if called later.
@@ -20,13 +20,13 @@ void Processor::process(uint64_t upToSampleId)
     }
 }
 
-void Processor::recvInput()
+void Module::recvInput()
 {}
 
-void Processor::sendOutput()
+void Module::sendOutput()
 {}
 
-void Processor::toggleOnOff()
+void Module::toggleOnOff()
 {
     if(on_) {
         on_ = false;
@@ -38,7 +38,7 @@ void Processor::toggleOnOff()
     }
 }
 
-void Processor::ToggleBypass()
+void Module::ToggleBypass()
 {
     if(bypass_) {
         bypass_ = false;

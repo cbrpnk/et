@@ -4,6 +4,6 @@
 
 #include "audio/buffer.hpp"
 #include "audio/engine.hpp"
-#include "audio/processors/oscillator.hpp"
+#include "audio/modules/oscillator.hpp"
 
 #endif // ET_AUDIO_HPP

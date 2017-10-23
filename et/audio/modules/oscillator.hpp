@@ -2,13 +2,13 @@
 #ifndef ET_AUDIO_OSCILLATOR_HPP
 #define ET_AUDIO_OSCILLATOR_HPP
 
-#include "processor.hpp"
+#include "module.hpp"
 #include "../db.hpp"
 
 namespace Et {
 namespace Audio {
 
-class Oscillator : public Processor {
+class Oscillator : public Module {
 public:
     
     enum Input {
@@ -34,7 +34,7 @@ public:
                float frequency = 440.0f, dB level = 0.0f);
     
     Oscillator(Oscillator&& other)
-        : Processor(std::move(other))
+        : Module(std::move(other))
         , phase_{other.phase_}
     {}
     

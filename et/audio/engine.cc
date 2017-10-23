@@ -1,5 +1,5 @@
 #include "engine.hpp"
-#include "processors/oscillator.hpp"
+#include "modules/oscillator.hpp"
 
 #include <iostream>
 
@@ -9,7 +9,7 @@ namespace Audio {
 Engine::Engine(unsigned int bufferSize)
     : initialized_{false}
     , bufferSize_{bufferSize}
-    , buffer_(bufferSize)
+    , buffer_(Buffer::Type::Stereo, bufferSize)
     , sampleRate_{0}
     , transport_{false, 0}
 {}
@@ -21,22 +21,22 @@ void Engine::init()
     initialized_ = true;
 }
 
-Engine::ProcessorId Engine::add(Engine::ProcessorType type)
+Engine::ModuleId Engine::add(Engine::ModuleType type)
 {
     switch(type) {
-    case ProcessorType::Oscillator:
-        processors_.push_back(
+    case ModuleType::Oscillator:
+        modules_.push_back(
             std::move(std::make_unique<Oscillator>(sampleRate_, bufferSize_))
         );
-        return processors_.size()-1;
+        return modules_.size()-1;
         break;
     }
     return 0;
 }
 
-void Engine::output(ProcessorId pid, int output)
+void Engine::output(ModuleId pid, int output)
 {
-    outputs_.push_back(&(processors_[pid]->getOutput(output)));
+    outputs_.push_back(&(modules_[pid]->getOutput(output)));
 }
 
 
@@ -44,7 +44,7 @@ void Engine::callback(float* leftOut, float* rightOut)
 {
     buffer_.silence();
     
-    // If playing is true we know there is at least one outputProcessor
+    // If playing is true we know there is at least one outputModule
     if(transport_.playing) {
         transport_.playHead += bufferSize_;
         
@@ -54,9 +54,9 @@ void Engine::callback(float* leftOut, float* rightOut)
         }
     }
     
-    std::memcpy(leftOut, buffer_.left,
+    std::memcpy(leftOut, buffer_.getChannel(Buffer::Channel::Left),
                 buffer_.getLength() * sizeof(SampleType));
-    std::memcpy(rightOut, buffer_.right,
+    std::memcpy(rightOut, buffer_.getChannel(Buffer::Channel::Right),
                 buffer_.getLength() * sizeof(SampleType));
 }
 

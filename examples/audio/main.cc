@@ -9,8 +9,8 @@ int main(int argc, char** argv)
     Engine engine(256);
     engine.init();
     
-    Engine::ProcessorId osc = engine.add(Engine::ProcessorType::Oscillator);
-    engine.output(osc, Oscillator::OutputName::kOut);
+    Engine::ModuleId osc = engine.add(Engine::ModuleType::Oscillator);
+    engine.output(osc, Oscillator::Output::kOut);
     
     engine.play();
     

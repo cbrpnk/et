@@ -5,7 +5,7 @@ CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o:
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/backends/jack_backend.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/engine.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/processors/processor.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/backends/jack_backend.hpp
@@ -13,21 +13,21 @@ CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/e
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/db.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/engine.cc
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/engine.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/processors/oscillator.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/processors/processor.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.hpp
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/audio/db.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/audio/processors/oscillator.cc
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/audio/processors/oscillator.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/audio/processors/processor.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/oscillator.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/modules/module.cc
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o: /home/cbrpnk/et/et/audio/processors/processor.cc
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o: /home/cbrpnk/et/et/audio/processors/processor.hpp
-CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/processors/processor.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/db.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.cc
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.hpp
+CMakeFiles/audio_example.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.cc
 CMakeFiles/audio_example.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.hpp

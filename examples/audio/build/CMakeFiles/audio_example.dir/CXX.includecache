@@ -35,8 +35,8 @@ cmath
 /home/cbrpnk/et/et/audio/engine.cc
 engine.hpp
 /home/cbrpnk/et/et/audio/engine.hpp
-processors/oscillator.hpp
-/home/cbrpnk/et/et/audio/processors/oscillator.hpp
+modules/oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
 iostream
 -
 
@@ -49,30 +49,16 @@ memory
 -
 backends/jack_backend.hpp
 /home/cbrpnk/et/et/audio/backends/jack_backend.hpp
-processors/processor.hpp
-/home/cbrpnk/et/et/audio/processors/processor.hpp
+modules/module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 buffer.hpp
 /home/cbrpnk/et/et/audio/buffer.hpp
 
-/home/cbrpnk/et/et/audio/processors/oscillator.cc
-cmath
--
-oscillator.hpp
-/home/cbrpnk/et/et/audio/processors/oscillator.hpp
-iostream
--
+/home/cbrpnk/et/et/audio/modules/module.cc
+module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 
-/home/cbrpnk/et/et/audio/processors/oscillator.hpp
-processor.hpp
-/home/cbrpnk/et/et/audio/processors/processor.hpp
-../db.hpp
-/home/cbrpnk/et/et/audio/db.hpp
-
-/home/cbrpnk/et/et/audio/processors/processor.cc
-processor.hpp
-/home/cbrpnk/et/et/audio/processors/processor.hpp
-
-/home/cbrpnk/et/et/audio/processors/processor.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 cstdint
 -
 vector
@@ -81,6 +67,20 @@ iostream
 -
 ../buffer.hpp
 /home/cbrpnk/et/et/audio/buffer.hpp
+
+/home/cbrpnk/et/et/audio/modules/oscillator.cc
+cmath
+-
+oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
+iostream
+-
+
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
+module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
+../db.hpp
+/home/cbrpnk/et/et/audio/db.hpp
 
 /home/cbrpnk/et/et/dsp/oscillator.cc
 oscillator.hpp
