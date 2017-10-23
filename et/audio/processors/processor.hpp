@@ -4,151 +4,132 @@
 
 #include <cstdint>
 #include <vector>
+#include <iostream>
 
 #include "../buffer.hpp"
 
 namespace Et {
 namespace Audio {
 
+
 class Processor {
 ///////////////////////////////////////////////////////////////////////////////
 public:
     
+    class Port {
+    public:
+        Port(Processor& owner)
+            : owner{owner}
+            , buffer(owner.bufferSize_)
+        {}
+        
+        Port(Port&& other)
+            : owner{other.owner}
+            , buffer(std::move(buffer))
+            , connections(std::move(other.connections))
+        {
+            std::cout << "Move" << buffer.getLength() << '\n';
+            std::cout << "other" << other.buffer.getLength() << '\n';
+        }
+        
+        void connect(Port& target, float scalar) {}  // TODO
+        void disconnect(Port& target)            {}  // TODO
     
-    struct AudioPort {
-        AudioPort(Processor& owner)
-            : owner_{owner}
-        {}
-        virtual ~AudioPort() {}
-        
-        AudioPort(AudioPort&& other)
-            : owner_{other.owner_}
-            , connections_(std::move(other.connections_))
-        {}
-        
+    public:
+        virtual ~Port() {}
+    
+    public:
         // Who owns us
-        Processor& owner_;
+        Processor& owner;
+        StereoBuffer buffer;
         struct Connection {
-            AudioPort& port;
+            Port& port;
             float scalar;
         };
-        std::vector<Connection> connections_;
-        
-    protected:
-        void connect(AudioPort& target, float scalar);
-        void disconnect(AudioPort& target);
+        std::vector<Connection> connections;
     };
     
 
 ///////////////////////////////////////////////////////////////////////////////
 public:
     
+    class Output;
     
-    struct AudioOutput;
-    
-    struct AudioInput : public AudioPort
+    class Input : public Port
     {
-        AudioInput(Processor& owner)
-            : AudioPort(owner)
-            , buffer_(owner.bufferSize_)
-        {}
-        virtual ~AudioInput() {}
-        
-        AudioInput(AudioInput&& other)
-            : AudioPort(std::move(other))
-            , buffer_(std::move(other.buffer_))
-        {}
+    public:
+        Input(Processor& owner) : Port(owner) {}
+        Input(Input&& other) : Port(std::move(other)) {}
         
         // Sum connection buffers into our own buffer
-        void update(uint64_t sampleId);
-        
-        void connect(AudioOutput& target, float scalar) {
-            AudioPort::connect(target, scalar);
+        void update(uint64_t sampleId)
+        {
+            buffer.silence();
+            for(auto& connection : connections) {
+                Processor::Output& output{
+                    static_cast<Processor::Output&>(connection.port)
+                };
+                output.owner.process(sampleId);
+                buffer += output.buffer;
+            }
         }
-        void disonnect(AudioOutput& target) { AudioPort::disconnect(target); }
-    
-    public:
-        StereoBuffer buffer_;
+        void connect(Output& target, float scalar) { Port::connect(target, scalar); }
+        void disonnect(Output& target) { Port::disconnect(target); }
     };
     
 ///////////////////////////////////////////////////////////////////////////////
 public:
     
-    
-    struct AudioOutput : public AudioPort
+    class Output : public Port
     {
-        AudioOutput(Processor& owner)
-            : AudioPort(owner)
-            , buffer_(owner.bufferSize_)
-        {}
-        AudioOutput(AudioOutput&& other)
-            : AudioPort(std::move(other))
-            , buffer_(std::move(other.buffer_))
-        {}
-        
-        void connect(AudioInput& target, float scalar) { 
-            AudioPort::connect(target, scalar);
-        }
-        void disonnect(AudioInput& target) { AudioPort::disconnect(target); }
-    
     public:
-        StereoBuffer buffer_;
+        Output(Processor& owner) : Port(owner) {
+            std::cout << 'a' << buffer.getLength() << '\n';
+        }
+        Output(Output&& other) : Port(std::move(other)) {}
+        
+        void connect(Input& target, float scalar) {  Port::connect(target, scalar); }
+        void disonnect(Input& target) { Port::disconnect(target); }
+        void setSample(Buffer::Channel ch, int sample, SampleType value)
+        {
+            std::cout << 'c' << buffer.getLength() << '\n';
+            buffer.setSample(ch, sample, value);
+        }
     };
     
     
 ////////////////////////////////////////////////////////////////////////////////
 public:
     
-    
-    struct Parameter : public AudioPort
+    struct Parameter
     {
-        Parameter(Processor& owner, float& value, float min, float max)
-            : AudioPort(owner)
-            , buffer_(owner.bufferSize_)
-            , scaledBuffer_(owner.bufferSize_, min, max)
-            , value_{value}
-            , range{min, max}
-        {}
-        
-        Parameter(Parameter&& other)
-            : AudioPort(std::move(other))
-            , buffer_(std::move(other.buffer_))
-            , scaledBuffer_(std::move(other.buffer_))
-            , range{other.range.min, other.range.max}
-            , value_{other.value_}
-        {}
-        
-        // Same as AudioInput's but sacles the input so it fits the range.
-        // If there are no connections, populate the buffer with value_.
-        void update(uint64_t sampleId);
-        
-        void set(float value);
-        
-        void connect(AudioInput& target, float scalar) { 
-            AudioPort::connect(target, scalar);
-        }
-        void disonnect(AudioInput& target) { AudioPort::disconnect(target); }
-        
     public:
-        // This is the buffer in which we accumulate the input signals
-        MonoBuffer buffer_;
-        // This is the buffer that has the range specified by the user.
-        // It contains the summed input signal but scaled to fit the range.
-        MonoBuffer scaledBuffer_;
-        
         struct Range
         {
             float min;
             float max;
         };
-        const Range range;
+    public:
+        Parameter(Processor& owner, Range range, float value)
+            : owner{owner}
+            , range{range}
+            , value{value}
+        {}
         
-    private:
-        // This value is always between -1.0f and 1.0f such that it can be
-        // placed in an AudioBuffer.
-        float& value_;
+        Parameter(Parameter&& other)
+            : owner{other.owner}
+            , range{other.range}
+            , value{other.value}
+        {}
+        
+        float get() { return value; }
+        void  set(float val) { if(val >= range.min && val <= range.max) value = val; }
+        
+    public:
+        Processor& owner;
+        Range range;
+        float value;
     };
-    
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -156,18 +137,27 @@ public:
     Processor() = delete;
     Processor(unsigned int sampleRate,
               unsigned int bufferSize,
-              std::vector<AudioInput>& audioInputs,
-              std::vector<AudioOutput>& audioOutputs,
-              std::vector<Parameter>& parameters)
+              unsigned int nInputs,
+              unsigned int nOutputs,
+              unsigned int nParameters)
         : on_{true}
         , bypass_{false}
         , sampleRate_{sampleRate}
         , bufferSize_{bufferSize}
         , lastSampleId_{0}
-        , audioInputs_{audioInputs}
-        , audioOutputs_{audioOutputs}
-        , parameters_{parameters}
-    {}
+    {
+        // TODO Reserve space before pushing back
+        
+        for(int i=0; i<nInputs; ++i) {
+            inputs_.push_back(std::move(Input(*this)));
+        }
+        for(int i=0; i<nOutputs; ++i) {
+            outputs_.push_back(std::move(Output(*this)));
+        }
+        for(int i=0; i<nParameters; ++i) {
+            params_.push_back(std::move(Parameter(*this, { 0.0f, 1.0f }, 0.0f)));
+        }
+    }
     
     Processor(Processor&& other)
         : on_{other.on_}
@@ -175,23 +165,22 @@ public:
         , sampleRate_{other.sampleRate_}
         , bufferSize_{other.bufferSize_}
         , lastSampleId_{other.lastSampleId_}
-        , audioInputs_{other.audioInputs_}
-        , audioOutputs_{other.audioOutputs_}
-        , parameters_{other.parameters_}
+        , inputs_{std::move(other.inputs_)}
+        , outputs_{std::move(other.outputs_)}
+        , params_{std::move(other.params_)}
     {}
     
     void process(uint64_t upToSampleId);
     
     void recvInput();
     void sendOutput();
-    void modulateParameter();
     void toggleOnOff();
     // Sum inputs into output without going through doDsp()
     void ToggleBypass();
     
     bool isOn() const { return on_; }
-    AudioOutput& getAudioOutput(int output) {
-        return audioOutputs_[output];
+    Output& getOutput(int output) {
+        return outputs_[output];
     }
     
 protected:
@@ -208,12 +197,11 @@ protected:
     // It's an indication of wether our output buffers are up to date.
     uint64_t lastSampleId_;
 
-private:
     // Those vectors must be defined by the derived class and the references
     // pass to our constructor
-    std::vector<AudioInput>&  audioInputs_;
-    std::vector<AudioOutput>& audioOutputs_;
-    std::vector<Parameter>&   parameters_;
+    std::vector<Input>     inputs_;
+    std::vector<Output>    outputs_;
+    std::vector<Parameter> params_;
 };
 
 } // namepsace Audio

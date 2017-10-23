@@ -36,7 +36,7 @@ Engine::ProcessorId Engine::add(Engine::ProcessorType type)
 
 void Engine::output(ProcessorId pid, int output)
 {
-    outputs_.push_back(&(processors_[pid]->getAudioOutput(output)));
+    outputs_.push_back(&(processors_[pid]->getOutput(output)));
 }
 
 
@@ -49,8 +49,8 @@ void Engine::callback(float* leftOut, float* rightOut)
         transport_.playHead += bufferSize_;
         
         for(auto& output : outputs_) {
-            output->owner_.process(transport_.playHead);
-            buffer_ += output->buffer_;
+            output->owner.process(transport_.playHead);
+            buffer_ += output->buffer;
         }
     }
     

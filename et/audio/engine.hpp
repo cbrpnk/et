@@ -58,7 +58,7 @@ private:
     std::vector<std::unique_ptr<Processor>> processors_;
     
     // list of outputs we should sum and send to the soundcard
-    std::vector<Processor::AudioOutput*> outputs_;
+    std::vector<Processor::Output*> outputs_;
     
     struct Transport {
         bool playing;

@@ -4,6 +4,7 @@
 
 #include <memory>
 #include <cstring>
+#include <iostream>
 
 #include "../mem/buffer.hpp"
 
@@ -18,19 +19,16 @@ typedef float SampleType;
 class Buffer : public Mem::Buffer<SampleType>
 {
 public:
-    static constexpr SampleType kDefaultRangeMin = -1.0f;
-    static constexpr SampleType kDefaultRangeMax =  1.0f;
-
+    enum Channel {
+        Left  = 0,
+        Right = 1
+    };
 public:
     Buffer() = delete;
-    Buffer(unsigned int nChannels, unsigned int length,
-           SampleType min = kDefaultRangeMin,
-           SampleType max = kDefaultRangeMax
-           )
-        : Mem::Buffer<SampleType>(nChannels * length)
+    Buffer(unsigned int nChannels, unsigned int length)
+        : Mem::Buffer<SampleType>(nChannels * length) // Channels are layed side-by-side
         , nChannels_{nChannels}
         , length_{length}
-        , range_{min, max}
     {}
     virtual ~Buffer() {}
     
@@ -38,7 +36,6 @@ public:
         : Mem::Buffer<SampleType>(std::move(other))
         , nChannels_{other.nChannels_}
         , length_{other.length_}
-        , range_{other.range_}
     {
         other.nChannels_ = 0;
         other.length_    = 0;
@@ -46,18 +43,38 @@ public:
     
     Buffer& operator+=(Buffer& other)
     {
+        // TODO Assert
         if(size_ == other.size_) {
             for(int i=0; i<size_; ++i) {
                 buffer_[i] += other.buffer_[i];
-                if(buffer_[i] > range_.max) buffer_[i] = range_.max;
-                else if(buffer_[i] < range_.min) buffer_[i] = range_.min;
+                if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
+                else if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
             }
         }
         return *this;
     }
     
+    SampleType getSample(Channel ch, int sample)
+    {
+        // TODO Assert
+        if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
+            return buffer_[ch * length_ + sample];
+        }
+    }
+    
+    void setSample(Channel ch, int sample, SampleType value)
+    {
+        // TODO Assert
+        if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
+            if(value >= -1.0f && value <= 1.0f) {
+                buffer_[ch * length_ + sample] = value;
+            }
+        }
+    }
+    
     void set(float v) {
-        if(v >= range_.min && v <= range_.max) {
+        // TODO assert
+        if(v >= -1.0f && v <= 1.0f) {
             for(int i=0; i<size_; ++i) buffer_[i] = v;
         }
     }
@@ -71,25 +88,20 @@ protected:
     // Size of a single channel, to know the size of the actual buffer, refer
     // to Mem::Buffer.size_;
     unsigned int length_;
-    struct Range {
-        SampleType min;
-        SampleType max;
-    };
-    const Range range_;
 };
 
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
+// TODO Maybe delete Seteo and Mono buffer and simply use Buffer
+
 class StereoBuffer : public Buffer
 {
 public:
     StereoBuffer() = delete;
-    StereoBuffer(unsigned int length,
-                 SampleType min = Buffer::kDefaultRangeMin,
-                 SampleType max = Buffer::kDefaultRangeMax
-                )
-        : Buffer(2, length, min, max)
+    StereoBuffer(unsigned int length)
+        : Buffer(2, length)
         // The two channels will be layed side by side in memory
         , left{buffer_}
         , right{buffer_ + length}
@@ -116,10 +128,7 @@ class MonoBuffer : public Buffer
 {
 public:
     MonoBuffer() = delete;
-    MonoBuffer(unsigned int length,
-               SampleType min = Buffer::kDefaultRangeMin,
-               SampleType max = Buffer::kDefaultRangeMax
-              )
+    MonoBuffer(unsigned int length)
         : Buffer(1, length)
         // The two channels point to the same location in memory
         , left{buffer_}

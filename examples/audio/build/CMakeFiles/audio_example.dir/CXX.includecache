@@ -23,6 +23,8 @@ memory
 -
 cstring
 -
+iostream
+-
 ../mem/buffer.hpp
 /home/cbrpnk/et/et/mem/buffer.hpp
 
@@ -74,6 +76,8 @@ processor.hpp
 cstdint
 -
 vector
+-
+iostream
 -
 ../buffer.hpp
 /home/cbrpnk/et/et/audio/buffer.hpp

@@ -3,67 +3,6 @@
 namespace Et {
 namespace Audio {
 
-////////////////////////////////////////////////////////////////////////////////
-
-
-void Processor::AudioPort::connect(AudioPort& target, float scalar)
-{}
-
-void Processor::AudioPort::disconnect(AudioPort& target)
-{}
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-void Processor::AudioInput::update(uint64_t sampleId)
-{
-    buffer_.silence();
-    for(auto& connection : connections_) {
-        Processor::AudioOutput& output{
-            static_cast<Processor::AudioOutput&>(connection.port)
-        };
-        connection.port.owner_.process(sampleId);
-        buffer_ += output.buffer_;
-    }
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-void Processor::Parameter::update(uint64_t sampleId)
-{
-    if(connections_.size()) {
-        // Sum inputs
-        for(auto& connection : connections_) {
-            Processor::AudioOutput& output{
-                static_cast<Processor::AudioOutput&>(connection.port)
-            };
-            connection.port.owner_.process(sampleId);
-            buffer_ += output.buffer_;
-        }
-        
-        // Populate scaledBuffer_
-        for(int i=0; i<owner_.bufferSize_; ++i) {
-            // TODO Scaling calculation
-            //scaledBuffer_[i] = 
-        }
-    } else {
-        buffer_.set(value_);
-    }
-}
-
-void Processor::Parameter::set(float value) {
-    if(value < range.min) value_ = range.min;
-    else if(value > range.max) value_ = range.max;
-    else value_ = value;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
 void Processor::process(uint64_t upToSampleId)
 {
     if(on_ && upToSampleId != lastSampleId_) {
@@ -87,15 +26,12 @@ void Processor::recvInput()
 void Processor::sendOutput()
 {}
 
-void Processor::modulateParameter()
-{}
-
 void Processor::toggleOnOff()
 {
     if(on_) {
         on_ = false;
-        for(auto& output : audioOutputs_) {
-            output.buffer_.silence();
+        for(auto& output : outputs_) {
+            output.buffer.silence();
         }
     } else {
         on_ = true;

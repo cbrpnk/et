@@ -5,43 +5,32 @@
 namespace Et {
 namespace Audio {
 
-Oscillator::Oscillator(unsigned int sampleRate,
-                       unsigned int bufferSize,
-                       float frequency,
-                       float level)
-    : Processor(sampleRate,
-                bufferSize,
-                audioInputs_, 
-                audioOutputs_,
-                parameters_)
-    , frequency_{frequency}
-    , level_{level}
+Oscillator::Oscillator(unsigned int sampleRate, unsigned int bufferSize,
+                       float frequency, dB level)
+    : Processor(sampleRate, bufferSize, kInputCount, kOutputCount, kParameterCount)
     , phase_{0.0f}
 {
-    // kIn
-    audioInputs_.push_back(std::move(AudioInput(*this)));
-    
-    // kOut
-    audioOutputs_.push_back(std::move(AudioOutput(*this)));
-    
     // kFrequency
-    parameters_.push_back(
-        std::move(Parameter(*this, frequency_, 0.0f, 44000.0f))
-    );
+    params_[kFrequency].range.min = 1.0f;
+    params_[kFrequency].range.max = 20000.0f;
+    params_[kFrequency].value = frequency;
     
     // kLevel
-    parameters_.push_back(std::move(Parameter(*this, level_, -96.0f, 0.0f)));
+    params_[kLevel].range.min = -80.0f;
+    params_[kLevel].range.max = 0.0f;
+    params_[kLevel].value = level;
 }
 
 void Oscillator::doDsp()
 {
-    float volume = dbToVolume(level_);
+    float volume = dbToVolume(params_[kLevel].get());
     
     for(int i=0; i<bufferSize_; ++i) {
-        audioOutputs_[kOut].buffer_.left[i] =  volume * sin(phase_);
-        audioOutputs_[kOut].buffer_.right[i] = volume * sin(phase_);
+        float val = volume * sin(phase_);
+        phase_ += ((2.0f*M_PI) * params_[kFrequency].get()) / sampleRate_;
         
-        phase_ += ((2.0f*M_PI) * frequency_) / sampleRate_;
+        outputs_[kOut].setSample(Buffer::Channel::Left, i, val);
+        outputs_[kOut].setSample(Buffer::Channel::Right, i, val);
     }
 }
 
