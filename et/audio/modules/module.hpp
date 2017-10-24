@@ -18,6 +18,11 @@ public:
     
     class Port {
     protected:
+        struct Connection {
+            Port& port;
+            float scalar;
+        };
+    protected:
         Port(Module& owner)
             : owner{owner}
             , buffer(Buffer::Type::Stereo, owner.bufferSize_)
@@ -29,20 +34,32 @@ public:
             , connections(std::move(other.connections))
         {}
         
-        void connect(Port& target, float scalar) {}  // TODO
-        void disconnect(Port& target)            {}  // TODO
+        void connect(Port& target, float scalar)
+        {
+            Connection c{target, scalar};
+            connections.push_back(c);
+        }
+       
+         void disconnect(Port& target)
+        {}
     
     public:
         virtual ~Port() {}
+        
+        void setSample(Buffer::Channel ch, unsigned int sample, SampleType value)
+        {
+            buffer.setSample(ch, sample, value);
+        }
+        
+        SampleType getSample(Buffer::Channel ch, unsigned int sample)
+        {
+            return buffer.getSample(ch, sample);
+        }
     
     public:
         // Who owns us
         Module& owner;
         Buffer buffer;
-        struct Connection {
-            Port& port;
-            float scalar;
-        };
         std::vector<Connection> connections;
     };
     
@@ -85,10 +102,6 @@ public:
         
         void connect(Input& target, float scalar) {  Port::connect(target, scalar); }
         void disonnect(Input& target) { Port::disconnect(target); }
-        void setSample(Buffer::Channel ch, int sample, SampleType value)
-        {
-            buffer.setSample(ch, sample, value);
-        }
     };
     
     

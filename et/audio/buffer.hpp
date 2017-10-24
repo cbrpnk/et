@@ -59,7 +59,7 @@ public:
         return *this;
     }
     
-    SampleType getSample(Channel ch, int sample)
+    SampleType getSample(Channel ch, unsigned int sample)
     {
         // TODO Assert
         if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
@@ -72,7 +72,7 @@ public:
         return buffer_ + ch * length_;
     }
     
-    void setSample(Channel ch, int sample, SampleType value)
+    void setSample(Channel ch, unsigned int sample, SampleType value)
     {
         // TODO Assert
         if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
