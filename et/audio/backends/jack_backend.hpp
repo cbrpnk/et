@@ -15,7 +15,7 @@ public:
     ~JackBackend();
     
     void init();
-    static int  audioCallback(const jack_nframes_t nFrames, void* args);
+    static int  callback(const jack_nframes_t nFrames, void* args);
     static void shutdownCallback(void* args);
 private:
     Engine& engine_;

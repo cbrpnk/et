@@ -28,7 +28,7 @@ void JackBackend::init()
 			std::cout << "JACK server failed.\n";
 		}
 	}
-		
+    
 	if(status & JackServerStarted) {
 		std::cout << "JACK server started\n";
 	}
@@ -39,7 +39,7 @@ void JackBackend::init()
     
     // We pass this as an argument so that the callbacks methods can recover
     // the object context
-    jack_set_process_callback(client_, audioCallback, this);
+    jack_set_process_callback(client_, callback, this);
 	jack_on_shutdown(client_, shutdownCallback, this);
 	
 	leftOut_ = jack_port_register(client_, "leftOut", JACK_DEFAULT_AUDIO_TYPE,
@@ -67,7 +67,7 @@ void JackBackend::init()
 	}
 }
 
-int JackBackend::audioCallback(const jack_nframes_t nFrames, void* args)
+int JackBackend::callback(const jack_nframes_t nFrames, void* args)
 {
     JackBackend* thisObj = static_cast<JackBackend*>(args);
 	

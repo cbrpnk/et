@@ -7,6 +7,7 @@
 #include <memory>
 
 #include "backends/jack_backend.hpp"
+#include "backends/portaudio_backend.hpp"
 #include "modules/module.hpp"
 #include "buffer.hpp"
 
@@ -25,7 +26,7 @@ public:
 public:
     Engine(unsigned int bufferSize);
     
-    void init();
+    bool init();
     
     // Returns the id of the new module, ths id is just its index in 
     // the modules_ vector
@@ -39,6 +40,7 @@ public:
 private:
     // Needs to set sampleRate and call callback()
     friend JackBackend;
+    friend PortaudioBackend;
     // This gets called back by the backend each time the sound card
     // needs a new buffer
     void callback(float* leftOut, float* rightOut);
@@ -68,7 +70,9 @@ private:
     
     // It's important the backend_ is initialized last as it depends on
     // some of the previously declared data
-    std::unique_ptr<JackBackend> backend_;
+    // TODO Remove me
+    //std::unique_ptr<JackBackend> backend_;
+    std::unique_ptr<PortaudioBackend> backend_;
 };
 
 } // namespace Audio
