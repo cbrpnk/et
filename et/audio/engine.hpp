@@ -31,6 +31,7 @@ public:
     // Returns the id of the new module, ths id is just its index in 
     // the modules_ vector
     ModuleId add(ModuleType type);
+    void connect(ModuleId outModule, Output output, ModuleId inModule, Input input);
     void output(ModuleId pid, int output);
     
     void play();

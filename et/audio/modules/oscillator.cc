@@ -27,6 +27,10 @@ void Oscillator::doDsp()
     
     for(int i=0; i<bufferSize_; ++i) {
         float val = volume * sin(phase_);
+        if(inputs_[kAmpMod].isConnected()) {
+            val *= inputs_[kAmpMod].getSample(Buffer::Channel::Left, i);
+        }
+        
         phase_ += ((2.0f*M_PI) * params_[kFrequency].get()) / sampleRate_;
         
         outputs_[kOut].setSample(Buffer::Channel::Left, i, val);

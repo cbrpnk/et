@@ -55,6 +55,11 @@ public:
         {
             return buffer.getSample(ch, sample);
         }
+        
+        bool isConnected() {
+            if(connections.size()) return true;
+            return false;
+        }
     
     public:
         // Who owns us
