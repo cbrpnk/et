@@ -71,6 +71,7 @@ bool PortaudioBackend::openDevice(Device device)
         sampleRate_ = static_cast<unsigned int>(streamInfo->sampleRate);
         
         Pa_StartStream(stream_);
+        device_ = device;
         return true;
     }
     

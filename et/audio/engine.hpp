@@ -17,22 +17,21 @@ namespace Audio {
 
 class Engine {
 public:
-    typedef unsigned int ModuleId;
+    static constexpr unsigned int kDefaultBufferSize = 256;
     
     enum class ModuleType {
         Oscillator
     };
     
 public:
-    Engine(unsigned int bufferSize);
+    Engine(unsigned int bufferSize = kDefaultBufferSize);
     
     bool init();
     
     // Returns the id of the new module, ths id is just its index in 
     // the modules_ vector
-    ModuleId add(ModuleType type);
-    void connect(ModuleId outModule, Output output, ModuleId inModule, Input input);
-    void output(ModuleId pid, int output);
+    Module* add(ModuleType type);
+    void output(Module::Output& output);
     
     void play();
     void pause();
@@ -71,8 +70,6 @@ private:
     
     // It's important the backend_ is initialized last as it depends on
     // some of the previously declared data
-    // TODO Remove me
-    //std::unique_ptr<JackBackend> backend_;
     std::unique_ptr<PortaudioBackend> backend_;
 };
 

@@ -18,11 +18,6 @@ public:
     
     class Port {
     protected:
-        struct Connection {
-            Port& port;
-            float scalar;
-        };
-    protected:
         Port(Module& owner)
             : owner{owner}
             , buffer(Buffer::Type::Stereo, owner.bufferSize_)
@@ -34,14 +29,16 @@ public:
             , connections(std::move(other.connections))
         {}
         
-        void connect(Port& target, float scalar)
+        void connect(Port& target)
         {
-            Connection c{target, scalar};
-            connections.push_back(c);
+            connections.push_back(&target);
+            target.connections.push_back(this);
         }
        
          void disconnect(Port& target)
-        {}
+        {
+            // TODO
+        }
     
     public:
         virtual ~Port() {}
@@ -65,7 +62,7 @@ public:
         // Who owns us
         Module& owner;
         Buffer buffer;
-        std::vector<Connection> connections;
+        std::vector<Port*> connections;
     };
     
 
@@ -84,15 +81,16 @@ public:
         void update(uint64_t sampleId)
         {
             buffer.silence();
+            int i=0;
             for(auto& connection : connections) {
                 Module::Output& output{
-                    static_cast<Module::Output&>(connection.port)
+                    static_cast<Module::Output&>(*connection)
                 };
                 output.owner.process(sampleId);
                 buffer += output.buffer;
             }
         }
-        void connect(Output& target, float scalar) { Port::connect(target, scalar); }
+        void connect(Output& target) { Port::connect(target); }
         void disonnect(Output& target) { Port::disconnect(target); }
     };
     
@@ -105,7 +103,7 @@ public:
         Output(Module& owner) : Port(owner) {}
         Output(Output&& other) : Port(std::move(other)) {}
         
-        void connect(Input& target, float scalar) {  Port::connect(target, scalar); }
+        void connect(Input& target) { Port::connect(target); }
         void disonnect(Input& target) { Port::disconnect(target); }
     };
     
@@ -187,19 +185,18 @@ public:
     
     void process(uint64_t upToSampleId);
     
-    void recvInput();
-    void sendOutput();
+    void outputTo(Input& input);
     void toggleOnOff();
     // Sum inputs into output without going through doDsp()
     void ToggleBypass();
     
-    bool isOn() const { return on_; }
-    Output& getOutput(int output) {
-        return outputs_[output];
-    }
+    bool       isOn() const          { return on_; }
+    Output&    getOutput(int output) { return outputs_[output]; }
+    Input&     getInput(int input)   { return inputs_[input]; }
+    Parameter& getParam(int param)   { return params_[param]; }
+    
     
 protected:
-    
     virtual void doDsp() = 0;
     
 protected:
@@ -211,7 +208,7 @@ protected:
     // Id of the last sample processed
     // It's an indication of wether our output buffers are up to date.
     uint64_t lastSampleId_;
-
+    
     // Those vectors must be defined by the derived class and the references
     // pass to our constructor
     std::vector<Input>     inputs_;

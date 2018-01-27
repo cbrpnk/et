@@ -30,28 +30,32 @@ bool Engine::init()
             }
         }
     }
-    std::cout << backend_->getDeviceName(6) << '\n';
+    std::cout << backend_->getDeviceName(backend_->getDevice()) << '\n';
     sampleRate_ = backend_->getSampleRate();
     initialized_ = true;
-    return true;
+    
+    // Initialize modules that requieres it
+    Oscillator::init();
+    
+    return initialized_;
 }
 
-Engine::ModuleId Engine::add(Engine::ModuleType type)
+Module* Engine::add(Engine::ModuleType type)
 {
     switch(type) {
     case ModuleType::Oscillator:
         modules_.push_back(
             std::move(std::make_unique<Oscillator>(sampleRate_, bufferSize_))
         );
-        return modules_.size()-1;
+        return modules_[modules_.size()-1].get();
         break;
     }
     return 0;
 }
 
-void Engine::output(ModuleId pid, int output)
+void Engine::output(Module::Output& output)
 {
-    outputs_.push_back(&(modules_[pid]->getOutput(output)));
+    outputs_.push_back(&output);
 }
 
 

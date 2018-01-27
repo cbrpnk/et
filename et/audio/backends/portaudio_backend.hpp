@@ -14,7 +14,6 @@ public:
     static constexpr unsigned int kDefaultSampleRate = 44100;
     static constexpr int kInvalidDevice = -1;
     
-    // TODO Remove audio from the name
     typedef int Device;
     typedef unsigned int Api;
     
@@ -61,11 +60,13 @@ public:
     
     unsigned int getSampleRate() { return sampleRate_; }
     unsigned int getDeviceCount() { return deviceCount_; }
-    Device  getDeviceByApi(Api api);
+    Device       getDeviceByApi(Api api);
+    Device       getDevice() { return device_; }
     std::string  getDeviceName(Device device);
     
 private:
     bool initialized_;
+    Device device_;
     Engine& engine_;
     PaStream* stream_;
     unsigned int deviceCount_;

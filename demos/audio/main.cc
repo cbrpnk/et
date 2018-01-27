@@ -6,17 +6,29 @@ using namespace Et::Audio;
 
 int main(int argc, char** argv)
 {
-    Engine engine(256);
+    Engine engine;
     if(!engine.init()) return -1;
    
-    Engine::ModuleId osc0 = engine.add(Engine::ModuleType::Oscillator);
-    engine.output(osc0, Oscillator::Output::kOut);
+    Oscillator* osc0 = static_cast<Oscillator*>(engine.add(Engine::ModuleType::Oscillator));
+    engine.output(osc0->getOutput(Oscillator::kOut));
+    osc0->getParam(Oscillator::kFrequency).set(440.0f);
+    osc0->getParam(Oscillator::kFmAmount).set(1.0f);
     
-    Engine::ModuleId osc1 = engine.add(Engine::ModuleType::Oscillator);
+    Oscillator* osc1 = static_cast<Oscillator*>(engine.add(Engine::ModuleType::Oscillator));
+    osc1->getParam(Oscillator::kFrequency).set(1.0f);
+    osc1->getOutput(Oscillator::kOut).connect(osc0->getInput(Oscillator::kFm));
     
-    // It might be a good idea to have a ring buffer per modules and let the user
-    // deal with Module* instread of ModuleId
-    // osc0->connect(osc1);
+    // TODO desired syntax
+    /* The module class will call add on the engine, when a module is created, it
+       gets the instance of the engine by using Engine static instance.*/
+    // Oscillator& osc1 = Oscillator::New();
+    /* Override */
+    // osc0[frequency] = 0.2;
+    // osc0[fm] << osc1[out];
+    // TODO Maybe Hide Engine in Audio such that the user 
+    // call Et::Audio::init()
+    // and Et::Audio::play()
+    // TODO: Investigate removing k prefix
     
     engine.play();
     

@@ -13,18 +13,15 @@ void Module::process(uint64_t upToSampleId)
         // this if statement if called later.
         lastSampleId_ = upToSampleId;
         
-        // TODO: Update Inputs
-        // TODO: Update parameter modulators
+        for(auto& input : inputs_) {
+            if(input.isConnected()) {
+                input.update(upToSampleId);
+            }
+        }
         
         doDsp();
     }
 }
-
-void Module::recvInput()
-{}
-
-void Module::sendOutput()
-{}
 
 void Module::toggleOnOff()
 {

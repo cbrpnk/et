@@ -8,7 +8,6 @@
 namespace Geppetto {
 namespace Component {
 
-
 class Shader : public ComponentBase
 {
 public:

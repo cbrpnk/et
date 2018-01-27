@@ -10,7 +10,6 @@ namespace Audio {
 
 class Oscillator : public Module {
 public:
-    
     enum Input {
         kFm,             // Actually implemented as phase modulation
         kAmpMod,         // Amplitude modulation
@@ -26,6 +25,7 @@ public:
     enum Parameter {
         kFrequency,
         kLevel,
+        kFmAmount,
         kParameterCount
     };
     
@@ -38,10 +38,20 @@ public:
         , phase_{other.phase_}
     {}
     
+    // Call the Engine's init method, precalculate the wave tables
+    static void init();
+    
     virtual void doDsp() override;
 
 private:
     float phase_;        // As a radian angle
+    
+    // The lower the table size, the higher the noise floor. It introduces high requency
+    // harmonics but at the same time is probably more cache friendly. We should 
+    // find a good compromise when trying to optimize the system.
+    // We might get away by doing linear interpolation between frames
+    static constexpr unsigned int kWaveTableSize = 44100;
+    static float sinWaveTable[kWaveTableSize];
 };
 
 } // namespace Audio

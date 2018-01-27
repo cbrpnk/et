@@ -59,6 +59,14 @@ public:
         return *this;
     }
     
+    Buffer& operator*=(float scalar)
+    {
+        for(int i=0; i<size_; ++i) {
+            buffer_[i] *= scalar;
+        }
+        return *this;
+    }
+    
     SampleType getSample(Channel ch, unsigned int sample)
     {
         // TODO Assert

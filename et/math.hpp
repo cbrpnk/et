@@ -9,5 +9,6 @@
 #include "math/mat3.hpp"
 #include "math/mat4.hpp"
 #include "math/functions.hpp"
+#include "math/constants.hpp"
 
 #endif // ET_MATH_HPP

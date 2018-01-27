@@ -2,6 +2,8 @@
 #ifndef ET_MATH_FUNCTIONS_HPP
 #define ET_MATH_FUNCTIONS_HPP
 
+#include <cmath>
+
 namespace Et {
 namespace Math {
     
