@@ -52,7 +52,7 @@ private:
     unsigned int bufferSize_;
     unsigned int sampleRate_;
     
-    // We acculumate every outputProcesors_ into this an copy this
+    // We acculumate every outputProcesors_ into this and copy this
     // into the backend's buffer.
     Buffer buffer_;
     
