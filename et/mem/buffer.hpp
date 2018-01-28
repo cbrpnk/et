@@ -11,25 +11,24 @@ namespace Mem {
 template<typename T>
 class Buffer {
 public:
-    Buffer()
-        : size_{0}
-        , buffer_{nullptr}
-    {}
+    Buffer() {}
     
     Buffer(unsigned int size)
-        : size_{size}
-        , buffer_{new T[size]}
-    {}
+    {
+        alloc(size);
+    }
     
     Buffer(const Buffer& other)
-        : size_{other.size_}
+        : allocated_{true}
+        , size_{other.size_}
         , buffer_{new T[other.size_]}
     {
         std::copy(other.buffer_, other.buffer_ + other.size_, buffer_);
     }
     
     Buffer(Buffer&& other) noexcept
-        : size_{other.size_}
+        : allocated_{other.allocated_}
+        , size_{other.size_}
         , buffer_{other.buffer_}
     {
         other.size_   = 0;
@@ -38,10 +37,18 @@ public:
     
     ~Buffer() { delete[] buffer_; }
     
+    void alloc(unsigned int size) {
+        if(!allocated_) {
+            size_ = size;
+            buffer_ = new T[size];
+            allocated_ = true;
+        }
+    }
+    
     Buffer& operator=(const Buffer& other)
     {
         if(this != &other) {
-            if(other.size_ != size_) {
+            if(other.allocated_ && allocated_ && other.size_ != size_) {
                 delete[] buffer_;
                 // Puts the object in a sain state in case
                 // the memory allocation throws
@@ -66,12 +73,14 @@ public:
     
     bool operator==(Buffer& other) { return this == &other; }
     
-    int getSize()          const { return size_; }
-    T*  getRawBuffer()     const { return buffer_; }
+    bool isAllocated()      const { return allocated_; }
+    int  getSize()          const { return size_; }
+    T*   getRawBuffer()     const { return buffer_; }
 
 protected:
-    unsigned int size_;
-    T* buffer_;
+    bool allocated_ = false;
+    unsigned int size_ = 0;
+    T* buffer_ = nullptr;
 };
 
 } // namespace Mem

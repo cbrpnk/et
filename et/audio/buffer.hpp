@@ -29,7 +29,7 @@ public:
         Right = 1
     };
 public:
-    Buffer() = delete;
+    Buffer();
     Buffer(unsigned int nChannels, unsigned int length)
         : Mem::Buffer<SampleType>(nChannels * length) // Channels are layed side-by-side
         , nChannels_{nChannels}
