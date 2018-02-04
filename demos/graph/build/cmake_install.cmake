@@ -1,4 +1,4 @@
-# Install script for directory: /home/cbrpnk/projects/et/demos/graph
+# Install script for directory: /home/cbrpnk/et/demos/graph
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cbrpnk/projects/et/demos/graph/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cbrpnk/et/demos/graph/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

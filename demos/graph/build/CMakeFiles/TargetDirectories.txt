@@ -1,3 +1,3 @@
-/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles/rebuild_cache.dir
-/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles/audio_demo.dir
-/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles/edit_cache.dir
+/home/cbrpnk/et/demos/graph/build/CMakeFiles/rebuild_cache.dir
+/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir
+/home/cbrpnk/et/demos/graph/build/CMakeFiles/edit_cache.dir

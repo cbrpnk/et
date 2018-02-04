@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cbrpnk/projects/et/demos/graph
+CMAKE_SOURCE_DIR = /home/cbrpnk/et/demos/graph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cbrpnk/projects/et/demos/graph/build
+CMAKE_BINARY_DIR = /home/cbrpnk/et/demos/graph/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/audio_demo.dir
+# Target rules for target CMakeFiles/graph_demo.dir
 
 # All Build rule for target.
-CMakeFiles/audio_demo.dir/all:
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/depend
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target audio_demo"
-.PHONY : CMakeFiles/audio_demo.dir/all
+CMakeFiles/graph_demo.dir/all:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/depend
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target graph_demo"
+.PHONY : CMakeFiles/graph_demo.dir/all
 
 # Include target in all.
-all: CMakeFiles/audio_demo.dir/all
+all: CMakeFiles/graph_demo.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/audio_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/audio_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles 0
-.PHONY : CMakeFiles/audio_demo.dir/rule
+CMakeFiles/graph_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/graph_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles 0
+.PHONY : CMakeFiles/graph_demo.dir/rule
 
 # Convenience name for target.
-audio_demo: CMakeFiles/audio_demo.dir/rule
+graph_demo: CMakeFiles/graph_demo.dir/rule
 
-.PHONY : audio_demo
-
-# clean rule for target.
-CMakeFiles/audio_demo.dir/clean:
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/clean
-.PHONY : CMakeFiles/audio_demo.dir/clean
+.PHONY : graph_demo
 
 # clean rule for target.
-clean: CMakeFiles/audio_demo.dir/clean
+CMakeFiles/graph_demo.dir/clean:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/clean
+.PHONY : CMakeFiles/graph_demo.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/graph_demo.dir/clean
 
 .PHONY : clean
 
