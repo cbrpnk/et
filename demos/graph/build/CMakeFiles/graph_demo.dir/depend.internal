@@ -52,9 +52,15 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
  /home/cbrpnk/et/et/dsp/oscillator.cc
  /home/cbrpnk/et/et/dsp/oscillator.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
+ /home/cbrpnk/et/et/graph/camera.hpp
+ /home/cbrpnk/et/et/graph/obj.hpp
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
  /home/cbrpnk/et/et/graph/renderers/renderer.hpp
+ /home/cbrpnk/et/et/graph/scene.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
+ /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/scene.cc
  /home/cbrpnk/et/et/graph/scene.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
  /home/cbrpnk/et/et/math/functions.cc

@@ -6,6 +6,7 @@ namespace Et {
 namespace Graph {
 
 class Scene;
+class Camera;
  
 class Renderer {
 public:
@@ -14,7 +15,7 @@ public:
         , height(height)
     {}
     
-    virtual void render(Scene& scene) = 0;
+    virtual void render(Scene& scene, Camera& camera) = 0;
     
     int getHeight() { return height; }
     int getWidth()  { return width; }

@@ -2,6 +2,7 @@
 #define ET_GRAPH_SCENE
 
 #include <vector>
+#include "obj.hpp"
 
 namespace Et {
 namespace Graph {
@@ -10,8 +11,10 @@ class Scene {
 public:
     Scene() {}
     
+    Obj& newObj();
+    
 private:
-    //std::vector<Entity>
+    std::vector<Obj> objs;
 };
 
 } // namespace Graph

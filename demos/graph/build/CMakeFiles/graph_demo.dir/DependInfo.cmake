@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cbrpnk/et/et/audio/modules/oscillator.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
   "/home/cbrpnk/et/et/dsp/oscillator.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
   "/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
+  "/home/cbrpnk/et/et/graph/scene.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
   "/home/cbrpnk/et/et/math/functions.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o"
   "/home/cbrpnk/et/et/math/mat2.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat2.cc.o"
   "/home/cbrpnk/et/et/math/mat3.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o"
