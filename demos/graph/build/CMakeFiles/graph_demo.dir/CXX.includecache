@@ -271,6 +271,12 @@ mat3.hpp
 /home/cbrpnk/et/et/math/mat3.hpp
 
 /home/cbrpnk/et/et/math/vec2.hpp
+cmath
+-
+cassert
+-
+iostream
+-
 
 /home/cbrpnk/et/et/math/vec3.cc
 cmath

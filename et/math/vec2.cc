@@ -11,6 +11,7 @@
 namespace Et {
 namespace Math {
 
+/*
 Vec2::Vec2()
 {}
 
@@ -19,6 +20,7 @@ Vec2::Vec2(const Vec2& v) :
     x(v.x),
     y(v.y)
 {}
+
 
 
 Vec2::Vec2(const Vec3& v) :
@@ -45,14 +47,6 @@ Vec2::Vec2(const float x, const float y) :
 {}
 
 
-Vec2 &Vec2::operator=(const Vec2& v)
-{
-    x = v.x;
-    y = v.y;
-    
-    return *this;
-}
-
 
 const float& Vec2::operator[](const int i) const
 {
@@ -69,6 +63,16 @@ float& Vec2::operator[](const int i)
     if(i == 0)
         return x;
     return y;
+}
+*/
+
+/*
+Vec2 &Vec2::operator=(const Vec2& v)
+{
+    x = v.x;
+    y = v.y;
+    
+    return *this;
 }
 
 Vec2& Vec2::operator+=(const Vec2& v)
@@ -163,6 +167,7 @@ void Vec2::Zero()
     x = 0.0f;
     y = 0.0f;
 }
+*/
 
 } // namespace Math
 } // namespace Et

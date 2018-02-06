@@ -11,6 +11,7 @@ namespace Et {
 namespace Math {
 
 
+/*
 Mat2::Mat2()
 {}
 
@@ -20,7 +21,9 @@ Mat2::Mat2(const Mat2& m)
     mat[0] = m[0];
     mat[1] = m[1];
 }
+*/
 
+/*
 Mat2::Mat2(const Mat3& m)
 {
     mat[0] = m[0];
@@ -33,8 +36,9 @@ Mat2::Mat2(const Mat4& m)
     mat[0] = Vec2(m[0]);
     mat[1] = Vec2(m[1]);
 }
+*/
 
-
+/*
 Mat2::Mat2(const float* a)
 {
     for(int i=0; i<2; ++i) {
@@ -49,16 +53,6 @@ Mat2::Mat2(const Vec2 x, const Vec2 y)
     mat[1] = y;
 }
 
-
-Mat2& Mat2::operator=(const Mat2& m)
-{
-    mat[0] = m[0];
-    mat[1] = m[1];
-    
-    return *this;
-}
-
-
 const Vec2& Mat2::operator[](const int i) const
 {
     assert(i>=0 && i<2);
@@ -70,6 +64,14 @@ Vec2& Mat2::operator[](const int i)
 {
     assert(i>=0 && i<2);
     return mat[i];
+}
+
+Mat2& Mat2::operator=(const Mat2& m)
+{
+    mat[0] = m[0];
+    mat[1] = m[1];
+    
+    return *this;
 }
 
 
@@ -110,6 +112,7 @@ Mat2 Mat2::operator+(const Mat2& m) const
     }
     
     return Mat2(tmp);
+    //return Mat2(mat[0]+m[0], mat[1]+m[1]);
 }
 
 
@@ -137,9 +140,12 @@ Vec2 Mat2::operator*(const Vec2& v) const
     tmp.Transpose();
     
     return Vec2(tmp[0]*v, tmp[1]*v);
+    //return Vec2((mat[0].x*v.x+mat[1].x*v.y), (mat[0].y*v.x+mat[1].y*v.y));
 }
+*/
 
 
+/*
 Mat2 Mat2::operator*(const float s) const
 {
     return Mat2(mat[0]*s, mat[1]*s);
@@ -192,15 +198,19 @@ void Mat2::Transpose()
     }
     
     *this = tmp;
+    //return(Mat2(Vec2(mat[0].x, mat[1].x), Vec2(mat[0].y, mat[1].y));
 }
+*/
 
 
+/*
 void Mat2::Zero()
 {
     for(int i=0; i<2; ++i) {
         mat[i].Zero();
     }
 }
+*/
 
 } // namespace Math
 } // namespace Et
