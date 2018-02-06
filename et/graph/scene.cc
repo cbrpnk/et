@@ -3,10 +3,16 @@
 namespace Et {
 namespace Graph {
 
-Obj& Scene::newObj()
+Obj& Scene::addObj()
 {
-    objs.push_back(std::move(Obj()));
-    return objs.back();
+    objs.push_back(std::make_unique<Obj>(Obj()));
+    return *(objs.back().get());
+}
+
+Obj& Scene::addObj(std::vector<Component::Type> componentTypes)
+{
+    objs.push_back(std::make_unique<Obj>(Obj(componentTypes)));
+    return *(objs.back().get());
 }
 
 } // namespace Graph

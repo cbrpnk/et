@@ -7,11 +7,9 @@ int main(int argc, char** argv)
 {
     PathTracer pt(800, 600);
     Scene scene;
-    Camera camera;
     
-    Obj& obj = scene.newObj();
-    obj.setName("asd");
-    std::cout << obj.getName();
+    Obj& camera = scene.addObj({Component::Type::Camera});
+    Obj& sphere = scene.addObj({Component::Type::Geometry});
     
     pt.render(scene, camera);
     return 0;

@@ -285,6 +285,33 @@ home/cbrpnk/et/et/dsp/oscillator.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
 .PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.s
 
+home/cbrpnk/et/et/graph/obj.o: home/cbrpnk/et/et/graph/obj.cc.o
+
+.PHONY : home/cbrpnk/et/et/graph/obj.o
+
+# target to build an object file
+home/cbrpnk/et/et/graph/obj.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
+.PHONY : home/cbrpnk/et/et/graph/obj.cc.o
+
+home/cbrpnk/et/et/graph/obj.i: home/cbrpnk/et/et/graph/obj.cc.i
+
+.PHONY : home/cbrpnk/et/et/graph/obj.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/graph/obj.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i
+.PHONY : home/cbrpnk/et/et/graph/obj.cc.i
+
+home/cbrpnk/et/et/graph/obj.s: home/cbrpnk/et/et/graph/obj.cc.s
+
+.PHONY : home/cbrpnk/et/et/graph/obj.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/graph/obj.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.s
+.PHONY : home/cbrpnk/et/et/graph/obj.cc.s
+
 home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o: home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
 
 .PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o
@@ -582,6 +609,9 @@ help:
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"
+	@echo "... home/cbrpnk/et/et/graph/obj.o"
+	@echo "... home/cbrpnk/et/et/graph/obj.i"
+	@echo "... home/cbrpnk/et/et/graph/obj.s"
 	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o"
 	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.i"
 	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.s"

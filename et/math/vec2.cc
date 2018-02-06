@@ -101,18 +101,15 @@ Vec2& Vec2::operator/=(const float s)
     return *this;
 }
 
-
 Vec2 Vec2::operator+(const Vec2& v) const
 {
     return Vec2(x + v.x, y + v.y);
 }
 
-
 Vec2 Vec2::operator-(const Vec2& v) const
 {
     return Vec2(x - v.x, y - v.y);
 }
-
 
 float Vec2::operator*(const Vec2& v) const
 {
@@ -129,18 +126,15 @@ Vec2 Vec2::operator*(const float s) const
     return Vec2(x*s, y*s);
 }
 
-
 Vec2 Vec2::operator/(const float s) const
 {
     return Vec2(x/s, y/x);
 }
 
-
 bool Vec2::operator==(const Vec2& v) const
 {
     return (x == v.x) && (y == v.y);
 }
-
 
 bool Vec2::operator!=(const Vec2& v) const
 {
@@ -152,12 +146,10 @@ void Vec2::Debug() const
     std::cout << "[" << x << ", " << y << "]\n";
 }
 
-
 float Vec2::Length() const
 {
     return sqrt(x*x + y*y);
 }
-
 
 void Vec2::Normalize()
 {
@@ -165,7 +157,6 @@ void Vec2::Normalize()
     x /= l;
     y /= l;
 }
-
 
 void Vec2::Zero()
 {
