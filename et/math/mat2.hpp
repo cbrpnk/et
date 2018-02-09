@@ -6,26 +6,27 @@
 namespace Et {
 namespace Math {
 
+template<typename T>
 class Mat2
 {
 public:
     Mat2() {}
     Mat2(const Mat2& m) : mat{m[0], m[1]} {}
-    Mat2(const Vec2 a, const Vec2 b) : mat{a, b} {}
+    Mat2(const Vec2<T> a, const Vec2<T> b) : mat{a, b} {}
     
-    const Vec2& operator[](const int i) const
+    const Vec2<T>& operator[](const int i) const
     {
         assert(i>=0 && i<2);
         return mat[i];
     }
     
-    Vec2& operator[](const int i)
+    Vec2<T>& operator[](const int i)
     {
         assert(i>=0 && i<2);
         return mat[i];
     }
     
-    Mat2& operator= (const Mat2& m)
+    Mat2& operator=(const Mat2& m)
     {
         mat[0] = m[0];
         mat[1] = m[1];
@@ -44,7 +45,7 @@ public:
         return *this;
     }
     
-    Mat2& operator*=(const float s)
+    Mat2& operator*=(const T s)
     {
         *this = *this * s;
         return *this;
@@ -56,74 +57,80 @@ public:
         return *this;
     }
     
-    Mat2  operator+ (const Mat2& m) const
+    Mat2 operator+(const Mat2& m) const
     {
         return Mat2(mat[0]+m[0], mat[1]+m[1]);
     }
     
-    Mat2  operator- (const Mat2& m) const
+    Mat2 operator-(const Mat2& m) const
     {
         return Mat2(mat[0]-m[0], mat[1]-m[1]);
     }
     
-    Mat2  operator* (const Mat2& m) const
+    Mat2 operator*(const Mat2& m) const
     {
         return Mat2(*this*m[0], *this*m[1]);
     }
     
-    Vec2  operator* (const Vec2& v) const
+    Vec2<T> operator*(const Vec2<T>& v) const
     {
-        return Vec2((mat[0].x*v.x+mat[1].x*v.y),
-                    (mat[0].y*v.x+mat[1].y*v.y));
+        return Vec2<T>((mat[0].x*v.x+mat[1].x*v.y),
+                       (mat[0].y*v.x+mat[1].y*v.y));
     }
     
-    Mat2  operator* (const float s) const
+    Mat2 operator*(const T s) const
     {
         return Mat2(mat[0]*s, mat[1]*s);
     }
     
-    bool  operator==(const Mat2& m) const
+    bool operator==(const Mat2& m) const
     {
         return mat[0] == m[0] && mat[1] == m[1];
     }
     
-    bool  operator!=(const Mat2& m) const
+    bool operator!=(const Mat2& m) const
     {
         return mat[0] != m[0] || mat[1] != m[1];
     }
     
-    void  Identity() {
-        Zero();
+    void setIdentity()
+    {
         mat[0].x = 1;
+        mat[0].y = 0;
+        mat[1].x = 0;
         mat[1].y = 1;
     }
     
-    //void  Inverse()                         { /*TODO*/ }
+    void getInverse()
+    {
+        // TODO
+    }
     
-    const float* ToArray() const
+    const T* toArray() const
     {
         return &(mat[0][0]);
     }
     
-    Mat2  Transpose() const
+    Mat2 getTranspose() const
     {
-        return Mat2(Vec2(mat[0].x, mat[1].x),
-               Vec2(mat[0].y, mat[1].y));
+        return Mat2(Vec2<T>(mat[0].x, mat[1].x),
+                    Vec2<T>(mat[0].y, mat[1].y));
     }
     
-    void  Zero()
+    void setZero()
     {
-        mat[0].Zero(); mat[1].Zero();
+        mat[0].setZero();
+        mat[1].setZero();
     }
     
-    void  Debug() const
+    void debug() const
     {
-        mat[0].Debug();
-        mat[1].Debug();
+        mat[0].debug();
+        mat[1].debug();
     }
 
-private:
-    Vec2 mat[2];
+public:
+    Vec2<T> mat[2];
 };
 
 } // namespace Math

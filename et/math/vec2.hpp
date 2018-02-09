@@ -8,19 +8,16 @@
 namespace Et {
 namespace Math {
 
+template<typename T>
 class Vec2
 {
 public:
-    float x;
-    float y;
-    
-public:
     Vec2() : x(0), y(0) {}
     Vec2(const Vec2& v) : x(v.x), y(v.y) {}
-    Vec2(const float* a) : x(a[0]), y(a[1]) {}
-    Vec2(const float x, const float y) : x(x), y(y) {}
+    Vec2(const T* a) : x(a[0]), y(a[1]) {}
+    Vec2(const T x, const T y) : x(x), y(y) {}
     
-    const float& operator[](const int i) const
+    const T& operator[](const int i) const
     {
         assert(i>=0 && i<2);
         if(i == 0)
@@ -28,7 +25,7 @@ public:
         return y;
     }
     
-    float& operator[](const int i)
+    T& operator[](const int i)
     {
         assert(i>=0 && i<2);
         if(i == 0)
@@ -36,7 +33,7 @@ public:
         return y;
     }
     
-    Vec2& operator=( const Vec2& v)
+    Vec2& operator=(const Vec2& v)
     {
         x = v.x; y = v.y;
         return *this;
@@ -54,75 +51,79 @@ public:
         return *this;
     }
    
-    Vec2& operator*=(const float s)
+    Vec2& operator*=(const T s)
     {
         *this = *this * s;
         return *this;
     }
     
-    Vec2& operator/=(const float s)
+    Vec2& operator/=(const T s)
     {
         *this *= 1/s;
         return *this;
     }
     
-    Vec2  operator+( const Vec2& v) const
+    Vec2 operator+(const Vec2& v) const
     {
         return Vec2(x + v.x, y + v.y);
     }
     
-    Vec2  operator-( const Vec2& v) const
+    Vec2 operator-(const Vec2& v) const
     {
         return Vec2(x - v.x, y - v.y);
     }
     
-    float operator*( const Vec2& v) const
+    T operator*(const Vec2& v) const
     {
         return x*v.x + y*v.y;
     }
     
-    Vec2  operator*( const float s) const
+    Vec2 operator*(const T s) const
     {
         return Vec2(x*s, y*s);
     }
     
-    Vec2  operator/( const float s) const
+    Vec2 operator/(const T s) const
     {
         return Vec2(x/s, y/x);
     }
     
-    bool  operator==(const Vec2& v) const
+    bool operator==(const Vec2& v) const
     {
         return (x == v.x) && (y == v.y);
     }
     
-    bool  operator!=(const Vec2& v) const
+    bool operator!=(const Vec2& v) const
     {
         return (x != v.x) || (y != v.y);
     }
     
-    float Length() const
+    T getLength() const
     {
         return sqrt(x*x + y*y);
     }
     
-    void  Normalize()
+    void normalize()
     {
-        float l = Length();
+        T l = getLength();
         x /= l; 
         y /= l;
     }
     
-    void  Zero()
+    void setZero()
     {
         x = 0;
         y = 0;
     }
     
-    void  Debug() const
+    void debug() const
     {
         std::cout << "[" << x << ", " << y << "]\n";
     }
+
+public:
+    T x;
+    T y;
 };
 
 } // namespace Math
