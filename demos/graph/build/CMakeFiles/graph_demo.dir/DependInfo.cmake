@@ -13,7 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cbrpnk/et/et/graph/obj.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
   "/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
   "/home/cbrpnk/et/et/graph/scene.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
-  "/home/cbrpnk/et/et/math/functions.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o"
+  "/home/cbrpnk/et/et/math/random.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
   "/home/cbrpnk/et/demos/graph/main.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

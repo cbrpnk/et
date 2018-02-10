@@ -10,5 +10,6 @@
 #include "math/mat4.hpp"
 #include "math/functions.hpp"
 #include "math/constants.hpp"
+#include "math/random.hpp"
 
 #endif // ET_MATH_HPP

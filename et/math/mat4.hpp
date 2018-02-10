@@ -6,13 +6,6 @@
 namespace Et {
 namespace Math {
 
-const float identity4x4[] = {
-    1.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, 1.0f, 0.0f, 0.0f,
-    0.0f, 0.0f, 1.0f, 0.0f,
-    0.0f, 0.0f, 0.0f, 1.0f,
-};
-
 template<typename T>
 class Mat4
 {
@@ -70,24 +63,12 @@ public:
     
     Mat4<T> operator+(const Mat4<T>& m) const
     {
-        Mat4<T> tmp = *this;
-        
-        for(int i=0; i<4; ++i) {
-            tmp[i] += m[i];
-        }
-        
-        return Mat4<T>(tmp);
+        return Mat4<T>(mat[0]+m[0], mat[1]+m[1], mat[2]+m[2], mat[3]+m[3]);
     }
     
     Mat4<T> operator-(const Mat4<T>& m) const
     {
-        Mat4<T> tmp = *this;
-        
-        for(int i=0; i<4; ++i) {
-            tmp[i] -= m[i];
-        }
-        
-        return Mat4<T>(tmp);
+        return Mat4<T>(mat[0]-m[0], mat[1]-m[1], mat[2]-m[2], mat[3]-m[3]);
     }
     
     Mat4<T> operator*(const Mat4<T>& m) const
@@ -97,10 +78,12 @@ public:
     
     Vec4<T> operator*(const Vec4<T>& v) const
     {
-        Mat4<T> tmp = *this;
-        tmp.Transpose();
-        
-        return Vec4<T>(tmp[0]*v, tmp[1]*v, tmp[2]*v, tmp[3]*v);
+        return Vec4<T>(
+            (mat[0].x*v.x + mat[1].x*v.y + mat[2].x*v.z + mat[3].x*v.w),
+            (mat[0].y*v.x + mat[1].y*v.y + mat[2].y*v.z + mat[3].y*v.w),
+            (mat[0].z*v.x + mat[1].z*v.y + mat[2].z*v.z + mat[3].z*v.w),
+            (mat[0].w*v.x + mat[1].w*v.y + mat[2].w*v.z + mat[3].w*v.w)
+        );
     }
     
     Mat4<T> operator*(const T s) const
@@ -128,7 +111,22 @@ public:
     
     void setIdentity()
     {
-        *this = Mat4<T>(identity4x4);
+        mat[0].x = 1;
+        mat[0].y = 0;
+        mat[0].z = 0;
+        mat[0].w = 0;
+        mat[1].x = 0;
+        mat[1].y = 1;
+        mat[1].z = 0;
+        mat[1].w = 0;
+        mat[2].x = 0;
+        mat[2].y = 0;
+        mat[2].z = 1;
+        mat[2].w = 0;
+        mat[3].x = 0;
+        mat[3].y = 0;
+        mat[3].z = 0;
+        mat[3].w = 1;
     }
     
     void rotate(const T x, const T y, const T z)
@@ -139,7 +137,7 @@ public:
         T radZ = DegToRad(z);
         
         // X rotation
-        tmp.Identity();
+        tmp.setIdentity();
         tmp[1].y = cos(radX);
         tmp[1].z = sin(radX);
         tmp[2].y = -sin(radX);
@@ -148,7 +146,7 @@ public:
         *this *= tmp;
         
         // Y rotation
-        tmp.Identity();
+        tmp.setIdentity();
         tmp[0].x = cos(radY);
         tmp[0].z = -sin(radY);
         tmp[2].x = sin(radY);
@@ -157,7 +155,7 @@ public:
         *this *= tmp;
         
         // Z rotation
-        tmp.Identity();
+        tmp.setIdentity();
         tmp[0].x = cos(radZ);
         tmp[0].y = sin(radZ);
         tmp[1].x = -sin(radZ);
@@ -173,24 +171,22 @@ public:
         mat[3].z = z;
     }
     
-    void getTranspose()
+    Mat4<T> getTranspose()
     {
-        Mat4<T> tmp;
-        
-        for(int i=0; i<4; ++i) {
-            for(int j=0; j<4; ++j) {
-                tmp[i][j] = mat[j][i];
-            }
-        }
-        
-        *this = tmp;
+        return Mat4<T>(
+            Vec4<T>(mat[0].x, mat[1].x, mat[2].x, mat[3].x),
+            Vec4<T>(mat[0].y, mat[1].y, mat[2].y, mat[3].y),
+            Vec4<T>(mat[0].z, mat[1].z, mat[2].z, mat[3].z),
+            Vec4<T>(mat[0].w, mat[1].w, mat[2].w, mat[3].w)
+        );
     }
     
     void setZero()
     {
-        for(int i=0; i<4; ++i) {
-            mat[i].Zero();
-        }
+        mat[0].Zero();
+        mat[1].Zero();
+        mat[2].Zero();
+        mat[3].Zero();
     }
     
 private:

@@ -366,32 +366,32 @@ home/cbrpnk/et/et/graph/scene.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.s
 .PHONY : home/cbrpnk/et/et/graph/scene.cc.s
 
-home/cbrpnk/et/et/math/functions.o: home/cbrpnk/et/et/math/functions.cc.o
+home/cbrpnk/et/et/math/random.o: home/cbrpnk/et/et/math/random.cc.o
 
-.PHONY : home/cbrpnk/et/et/math/functions.o
+.PHONY : home/cbrpnk/et/et/math/random.o
 
 # target to build an object file
-home/cbrpnk/et/et/math/functions.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
-.PHONY : home/cbrpnk/et/et/math/functions.cc.o
+home/cbrpnk/et/et/math/random.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
+.PHONY : home/cbrpnk/et/et/math/random.cc.o
 
-home/cbrpnk/et/et/math/functions.i: home/cbrpnk/et/et/math/functions.cc.i
+home/cbrpnk/et/et/math/random.i: home/cbrpnk/et/et/math/random.cc.i
 
-.PHONY : home/cbrpnk/et/et/math/functions.i
+.PHONY : home/cbrpnk/et/et/math/random.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/math/functions.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.i
-.PHONY : home/cbrpnk/et/et/math/functions.cc.i
+home/cbrpnk/et/et/math/random.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i
+.PHONY : home/cbrpnk/et/et/math/random.cc.i
 
-home/cbrpnk/et/et/math/functions.s: home/cbrpnk/et/et/math/functions.cc.s
+home/cbrpnk/et/et/math/random.s: home/cbrpnk/et/et/math/random.cc.s
 
-.PHONY : home/cbrpnk/et/et/math/functions.s
+.PHONY : home/cbrpnk/et/et/math/random.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/math/functions.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.s
-.PHONY : home/cbrpnk/et/et/math/functions.cc.s
+home/cbrpnk/et/et/math/random.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s
+.PHONY : home/cbrpnk/et/et/math/random.cc.s
 
 main.o: main.cc.o
 
@@ -456,9 +456,9 @@ help:
 	@echo "... home/cbrpnk/et/et/graph/scene.o"
 	@echo "... home/cbrpnk/et/et/graph/scene.i"
 	@echo "... home/cbrpnk/et/et/graph/scene.s"
-	@echo "... home/cbrpnk/et/et/math/functions.o"
-	@echo "... home/cbrpnk/et/et/math/functions.i"
-	@echo "... home/cbrpnk/et/et/math/functions.s"
+	@echo "... home/cbrpnk/et/et/math/random.o"
+	@echo "... home/cbrpnk/et/et/math/random.i"
+	@echo "... home/cbrpnk/et/et/math/random.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

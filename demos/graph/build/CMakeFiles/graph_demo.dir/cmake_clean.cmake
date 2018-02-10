@@ -8,7 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
-  "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o"
+  "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
   "CMakeFiles/graph_demo.dir/main.cc.o"
   "graph_demo.pdb"
   "graph_demo"

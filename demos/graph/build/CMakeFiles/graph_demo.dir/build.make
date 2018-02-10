@@ -273,28 +273,28 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides: CMakeFile
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o: /home/cbrpnk/et/et/math/functions.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o -c /home/cbrpnk/et/et/math/functions.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o -c /home/cbrpnk/et/et/math/random.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/functions.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/random.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/functions.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/random.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
 
 
 CMakeFiles/graph_demo.dir/main.cc.o: CMakeFiles/graph_demo.dir/flags.make
@@ -332,7 +332,7 @@ graph_demo_OBJECTS = \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o" \
 "CMakeFiles/graph_demo.dir/main.cc.o"
 
 # External object files for target graph_demo
@@ -347,7 +347,7 @@ graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/main.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/build.make
 graph_demo: CMakeFiles/graph_demo.dir/link.txt
@@ -368,7 +368,7 @@ CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/main.cc.o.requires
 
 .PHONY : CMakeFiles/graph_demo.dir/requires
