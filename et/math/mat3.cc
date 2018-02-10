@@ -2,7 +2,6 @@
 #include <cmath>
 
 #include "mat3.hpp"
-#include "mat4.hpp"
 #include "vec3.hpp"
 
 
@@ -22,12 +21,6 @@ Mat3::Mat3(const Mat3& m)
 }
 
 
-Mat3::Mat3(const Mat4& m)
-{
-    mat[0] = Vec3(m[0]);
-    mat[1] = Vec3(m[1]);
-    mat[2] = Vec3(m[2]);
-}
 
 
 Mat3::Mat3(const float* a)
@@ -157,9 +150,9 @@ bool Mat3::operator!=(const Mat3& m) const
 
 void Mat3::Debug() const
 {
-    mat[0].Debug();
-    mat[1].Debug();
-    mat[2].Debug();
+    mat[0].debug();
+    mat[1].debug();
+    mat[2].debug();
 }
 
 
@@ -167,10 +160,6 @@ void Mat3::Identity()
 {
     *this = Mat3(identity3x3);
 }
-
-
-void Mat3::Inverse()
-{}
 
 
 const float *Mat3::ToArray() const
@@ -196,7 +185,7 @@ void Mat3::Transpose()
 void Mat3::Zero()
 {
     for(int i=0; i<3; ++i) {
-        mat[i].Zero();
+        mat[i].setZero();
     }
 }
 

@@ -1,47 +1,148 @@
 #ifndef ET_MATH_VEC3_HPP
 #define ET_MATH_VEC3_HPP
 
+#include <iostream>
+
 namespace Et {
 namespace Math {
 
-class Mat3;
-class Vec4;
-
+template<typename T>
 class Vec3
 {
 public:
-    float x;
-    float y;
-    float z;
+    Vec3() : x(0), y(0), z(0) {}
+    Vec3(const Vec3<T>& v) : x(v.x), y(v.y), z(v.z) {}
+    Vec3(const T* a) : x(a[0]), y(a[1]), z(a[2]) {}
+    Vec3(const T x, const T y, const T z) : x(x), y(y), z(z) {}
     
-    Vec3();
-    Vec3(const Vec3& v);
-    Vec3(const Vec4& v);
-    Vec3(const float* a);
-    Vec3(const float x, const float y, const float z);
+    const T& operator[](const int i) const
+    {
+        assert(i>=0 && i<3);
+        
+        switch(i) {
+        case 0:
+            return x;
+        case 1:
+            return y;
+        }
+        return z;
+    }
     
-    const float& operator[](const int i)   const;
-    float&       operator[](const int i);
-    Vec3&       operator=(const Vec3& v);
-    Vec3&       operator+=(const Vec3& v);
-    Vec3&       operator-=(const Vec3& v);
-    Vec3&       operator*=(const float s);
-    Vec3&       operator*=(const Mat3& m);
-    Vec3&       operator/=(const float s);
-    Vec3        operator+(const Vec3& v)  const;
-    Vec3        operator-(const Vec3& v)  const;
-    float        operator*(const Vec3& v)  const;
-    Vec3        operator*(const Mat3& m)  const;
-    Vec3        operator*(const float s)  const;
-    Vec3        operator/(const float s)  const;
-    bool         operator==(const Vec3& v) const;
-    bool         operator!=(const Vec3& v) const;
+    T& operator[](const int i)
+    {
+        assert(i>=0 && i<3);
+        
+        switch(i) {
+        case 0:
+            return x;
+        case 1:
+            return y;
+        }
+        return z;
+    }
     
-    Vec3 Cross(const Vec3 &v) const;
-    void  Debug() const;
-    float Length() const;
-    void  Normalize();
-    void  Zero();
+    Vec3<T>& operator=(const Vec3<T>& v)
+    {
+        x = v.x;
+        y = v.y;
+        z = v.z;
+        
+        return *this;
+    }
+    
+    Vec3<T>& operator+=(const Vec3<T>& v)
+    {
+        *this = *this + v;
+        return *this;
+    }
+    
+    Vec3<T>& operator-=(const Vec3<T>& v)
+    {
+        *this = *this - v;
+        return *this;
+    }
+    
+    Vec3<T>& operator*=(const T s)
+    {
+        *this = *this * s;
+        return *this;
+    }
+    
+    Vec3<T>& operator/=(const T s)
+    {
+        *this *= 1.0f/s;
+        return *this;
+    }
+    
+    Vec3<T> operator+(const Vec3<T>& v) const
+    {
+        return Vec3<T>(x + v.x, y + v.y, z + v.z);
+    }
+    
+    Vec3<T> operator-(const Vec3<T>& v) const
+    {
+        return Vec3<T>(x - v.x, y - v.y, z - v.z);
+    }
+    
+    T operator*(const Vec3<T>& v) const
+    {
+        return x*v.x + y*v.y + z*v.z;
+    }
+    
+    Vec3<T> operator*(const T s) const
+    {
+        return Vec3<T>(x*s, y*s, z*s);
+    }
+    
+    Vec3<T> operator/(const T s) const
+    {
+        return Vec3<T>(x/s, y/x, z/s);
+    }
+    
+    bool operator==(const Vec3<T>& v) const
+    {
+        return (x == v.x) && (y == v.y) && (z == v.z);
+    }
+    
+    bool operator!=(const Vec3<T>& v) const
+    {
+        return (x != v.x) || (y != v.y) || (z != v.z);
+    }
+    
+    Vec3<T> cross(const Vec3<T> &v) const
+    {
+        return Vec3<T>(y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x);
+    }
+    
+    T getLength() const
+    {
+        return sqrt(x*x + y*y + z*z);
+    }
+
+    void  normalize()
+    {
+        T l = getLength();
+        x /= l;
+        y /= l;
+        z /= l;
+    }
+
+    void  setZero()
+    {
+        x = 0.0f;
+        y = 0.0f;
+        z = 0.0f;
+    }
+
+    void debug() const
+    {
+        std::cout << "[" << x << ", " << y << ", " << z << "]\n";
+    }
+    
+public:
+    T x;
+    T y;
+    T z;
 };
 
 } // namespace Math

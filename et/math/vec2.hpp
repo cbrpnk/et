@@ -1,7 +1,6 @@
 #ifndef ET_MATH_VEC2_HPP
 #define ET_MATH_VEC2_HPP
 
-#include <cmath>
 #include <cassert>
 #include <iostream>
 
@@ -13,7 +12,7 @@ class Vec2
 {
 public:
     Vec2() : x(0), y(0) {}
-    Vec2(const Vec2& v) : x(v.x), y(v.y) {}
+    Vec2(const Vec2<T>& v) : x(v.x), y(v.y) {}
     Vec2(const T* a) : x(a[0]), y(a[1]) {}
     Vec2(const T x, const T y) : x(x), y(y) {}
     
@@ -33,67 +32,67 @@ public:
         return y;
     }
     
-    Vec2& operator=(const Vec2& v)
+    Vec2<T>& operator=(const Vec2<T>& v)
     {
         x = v.x; y = v.y;
         return *this;
     }
     
-    Vec2& operator+=(const Vec2& v)
+    Vec2<T>& operator+=(const Vec2<T>& v)
     {
         *this = *this + v;
         return *this;
     }
     
-    Vec2& operator-=(const Vec2& v)
+    Vec2<T>& operator-=(const Vec2<T>& v)
     {
         *this = *this - v;
         return *this;
     }
    
-    Vec2& operator*=(const T s)
+    Vec2<T>& operator*=(const T s)
     {
         *this = *this * s;
         return *this;
     }
     
-    Vec2& operator/=(const T s)
+    Vec2<T>& operator/=(const T s)
     {
         *this *= 1/s;
         return *this;
     }
     
-    Vec2 operator+(const Vec2& v) const
+    Vec2<T> operator+(const Vec2<T>& v) const
     {
-        return Vec2(x + v.x, y + v.y);
+        return Vec2<T>(x + v.x, y + v.y);
     }
     
-    Vec2 operator-(const Vec2& v) const
+    Vec2<T> operator-(const Vec2<T>& v) const
     {
-        return Vec2(x - v.x, y - v.y);
+        return Vec2<T>(x - v.x, y - v.y);
     }
     
-    T operator*(const Vec2& v) const
+    T operator*(const Vec2<T>& v) const
     {
         return x*v.x + y*v.y;
     }
     
-    Vec2 operator*(const T s) const
+    Vec2<T> operator*(const T s) const
     {
-        return Vec2(x*s, y*s);
+        return Vec2<T>(x*s, y*s);
     }
     
-    Vec2 operator/(const T s) const
+    Vec2<T> operator/(const T s) const
     {
-        return Vec2(x/s, y/x);
+        return Vec2<T>(x/s, y/x);
     }
     
-    bool operator==(const Vec2& v) const
+    bool operator==(const Vec2<T>& v) const
     {
         return (x == v.x) && (y == v.y);
     }
     
-    bool operator!=(const Vec2& v) const
+    bool operator!=(const Vec2<T>& v) const
     {
         return (x != v.x) || (y != v.y);
     }

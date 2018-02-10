@@ -11,7 +11,7 @@ class Mat2
 {
 public:
     Mat2() {}
-    Mat2(const Mat2& m) : mat{m[0], m[1]} {}
+    Mat2(const Mat2<T>& m) : mat{m[0], m[1]} {}
     Mat2(const Vec2<T> a, const Vec2<T> b) : mat{a, b} {}
     
     const Vec2<T>& operator[](const int i) const
@@ -26,50 +26,50 @@ public:
         return mat[i];
     }
     
-    Mat2& operator=(const Mat2& m)
+    Mat2<T>& operator=(const Mat2<T>& m)
     {
         mat[0] = m[0];
         mat[1] = m[1];
         return *this;
     }
     
-    Mat2& operator+=(Mat2& m)
+    Mat2<T>& operator+=(Mat2<T>& m)
     {
         *this = *this + m;
         return *this;
     }
     
-    Mat2& operator-=(const Mat2& m)
+    Mat2<T>& operator-=(const Mat2<T>& m)
     {
         *this = *this - m;
         return *this;
     }
     
-    Mat2& operator*=(const T s)
+    Mat2<T>& operator*=(const T s)
     {
         *this = *this * s;
         return *this;
     }
     
-    Mat2& operator*=(const Mat2& m)
+    Mat2<T>& operator*=(const Mat2<T>& m)
     {
         *this = *this * m;
         return *this;
     }
     
-    Mat2 operator+(const Mat2& m) const
+    Mat2<T> operator+(const Mat2<T>& m) const
     {
-        return Mat2(mat[0]+m[0], mat[1]+m[1]);
+        return Mat2<T>(mat[0]+m[0], mat[1]+m[1]);
     }
     
-    Mat2 operator-(const Mat2& m) const
+    Mat2<T> operator-(const Mat2<T>& m) const
     {
-        return Mat2(mat[0]-m[0], mat[1]-m[1]);
+        return Mat2<T>(mat[0]-m[0], mat[1]-m[1]);
     }
     
-    Mat2 operator*(const Mat2& m) const
+    Mat2<T> operator*(const Mat2<T>& m) const
     {
-        return Mat2(*this*m[0], *this*m[1]);
+        return Mat2<T>(*this*m[0], *this*m[1]);
     }
     
     Vec2<T> operator*(const Vec2<T>& v) const
@@ -78,17 +78,17 @@ public:
                        (mat[0].y*v.x+mat[1].y*v.y));
     }
     
-    Mat2 operator*(const T s) const
+    Mat2<T> operator*(const T s) const
     {
-        return Mat2(mat[0]*s, mat[1]*s);
+        return Mat2<T>(mat[0]*s, mat[1]*s);
     }
     
-    bool operator==(const Mat2& m) const
+    bool operator==(const Mat2<T>& m) const
     {
         return mat[0] == m[0] && mat[1] == m[1];
     }
     
-    bool operator!=(const Mat2& m) const
+    bool operator!=(const Mat2<T>& m) const
     {
         return mat[0] != m[0] || mat[1] != m[1];
     }
@@ -101,19 +101,14 @@ public:
         mat[1].y = 1;
     }
     
-    void getInverse()
-    {
-        // TODO
-    }
-    
     const T* toArray() const
     {
         return &(mat[0][0]);
     }
     
-    Mat2 getTranspose() const
+    Mat2<T> getTranspose() const
     {
-        return Mat2(Vec2<T>(mat[0].x, mat[1].x),
+        return Mat2<T>(Vec2<T>(mat[0].x, mat[1].x),
                     Vec2<T>(mat[0].y, mat[1].y));
     }
     
