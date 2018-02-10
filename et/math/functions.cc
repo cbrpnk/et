@@ -4,6 +4,7 @@
 #include <limits>
 #include <cstdlib>
 
+#include "constants.hpp"
 #include "functions.hpp"
 
 
@@ -14,12 +15,12 @@ namespace Math {
 
     float DegToRad(const float deg)
     {
-        return deg * M_PI/180.0f;
+        return deg * kPi/180.0f;
     }
 
     float RadToDeg(const float rad)
     {
-        return rad * 180.0f/M_PI;
+        return rad * 180.0f/kPi;
     }
 
     double RandomDouble(const double min, const double max)

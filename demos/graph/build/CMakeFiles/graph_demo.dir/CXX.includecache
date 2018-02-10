@@ -193,6 +193,8 @@ limits
 -
 cstdlib
 -
+constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
 functions.hpp
 /home/cbrpnk/et/et/math/functions.hpp
 
