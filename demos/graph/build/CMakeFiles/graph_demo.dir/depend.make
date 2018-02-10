@@ -70,26 +70,5 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o: /home/cbrpnk/et/et/math/functions.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o: /home/cbrpnk/et/et/math/functions.hpp
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o: /home/cbrpnk/et/et/math/mat3.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o: /home/cbrpnk/et/et/math/mat3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/functions.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/mat3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/mat4.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: /home/cbrpnk/et/et/math/mat3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: /home/cbrpnk/et/et/math/vec3.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: /home/cbrpnk/et/et/math/vec4.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
-
 CMakeFiles/graph_demo.dir/main.cc.o: ../main.cc
 

@@ -297,105 +297,9 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides: CMakeF
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o: /home/cbrpnk/et/et/math/mat3.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o -c /home/cbrpnk/et/et/math/mat3.cc
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/mat3.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.i
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/mat3.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.s
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.requires:
-
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.requires
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.provides
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o
-
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o: /home/cbrpnk/et/et/math/mat4.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o -c /home/cbrpnk/et/et/math/mat4.cc
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/mat4.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.i
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/mat4.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.s
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.requires:
-
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.requires
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.provides
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o
-
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o: /home/cbrpnk/et/et/math/vec3.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o -c /home/cbrpnk/et/et/math/vec3.cc
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/vec3.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.i
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/vec3.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.s
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.requires:
-
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.requires
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.provides
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o
-
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o: /home/cbrpnk/et/et/math/vec4.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o -c /home/cbrpnk/et/et/math/vec4.cc
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/vec4.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.i
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/vec4.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.s
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.requires:
-
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.requires
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.provides
-
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o
-
-
 CMakeFiles/graph_demo.dir/main.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/main.cc.o: ../main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/main.cc.o -c /home/cbrpnk/et/demos/graph/main.cc
 
 CMakeFiles/graph_demo.dir/main.cc.i: cmake_force
@@ -429,10 +333,6 @@ graph_demo_OBJECTS = \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o" \
 "CMakeFiles/graph_demo.dir/main.cc.o"
 
 # External object files for target graph_demo
@@ -448,14 +348,10 @@ graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/main.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/build.make
 graph_demo: CMakeFiles/graph_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable graph_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable graph_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -473,10 +369,6 @@ CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/main.cc.o.requires
 
 .PHONY : CMakeFiles/graph_demo.dir/requires

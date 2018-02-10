@@ -74,8 +74,10 @@ public:
     
     Vec2<T> operator*(const Vec2<T>& v) const
     {
-        return Vec2<T>((mat[0].x*v.x+mat[1].x*v.y),
-                       (mat[0].y*v.x+mat[1].y*v.y));
+        return Vec2<T>(
+            (mat[0].x*v.x+mat[1].x*v.y),
+            (mat[0].y*v.x+mat[1].y*v.y)
+        );
     }
     
     Mat2<T> operator*(const T s) const
@@ -101,15 +103,12 @@ public:
         mat[1].y = 1;
     }
     
-    const T* toArray() const
-    {
-        return &(mat[0][0]);
-    }
-    
     Mat2<T> getTranspose() const
     {
-        return Mat2<T>(Vec2<T>(mat[0].x, mat[1].x),
-                    Vec2<T>(mat[0].y, mat[1].y));
+        return Mat2<T>(
+            Vec2<T>(mat[0].x, mat[1].x),
+            Vec2<T>(mat[0].y, mat[1].y)
+        );
     }
     
     void setZero()

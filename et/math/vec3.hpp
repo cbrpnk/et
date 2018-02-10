@@ -18,7 +18,6 @@ public:
     const T& operator[](const int i) const
     {
         assert(i>=0 && i<3);
-        
         switch(i) {
         case 0:
             return x;
@@ -31,7 +30,6 @@ public:
     T& operator[](const int i)
     {
         assert(i>=0 && i<3);
-        
         switch(i) {
         case 0:
             return x;
@@ -46,7 +44,6 @@ public:
         x = v.x;
         y = v.y;
         z = v.z;
-        
         return *this;
     }
     

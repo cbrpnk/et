@@ -1,49 +1,154 @@
 #ifndef ET_MATH_VEC4_HPP
 #define ET_MATH_VEC4_HPP
 
+#include <iostream>
 
 namespace Et {
 namespace Math {
 
-class Mat4;
-class Vec3;
-
+template<typename T>
 class Vec4
 {
 public:
-    float x;
-    float y;
-    float z;
-    float w;
+    Vec4<T>() : x(0), y(0), z(0), w(0) {}
+    Vec4<T>(const Vec4<T>& v) : x(v.x), y(v.y), z(v.z), w(v.w) {}
+    Vec4<T>(const T* a) : x(a[0]), y(a[1]), z(a[2]), w(a[3]) {}
+    Vec4<T>(const T x, const T y, const T z, const T w) : x(x), y(y), z(z), w(w) {}
     
-    Vec4();
-    Vec4(const Vec4& v);
-    Vec4(const Vec3& v);
-    Vec4(const float* a);
-    Vec4(const float x, const float y, const float z, const float w);
+    const T& operator[](const int i) const
+    {
+        assert(i>=0 && i<4);
+        switch(i) {
+        case 0:
+            return x;
+        case 1:
+            return y;
+        case 2:
+            return z;
+        }
+        return w;
+    }
     
-    const float& operator[](const int i)   const;
-    float&       operator[](const int i);
-    Vec4&       operator=(const Vec4& v);
-    Vec4&       operator+=(const Vec4& v);
-    Vec4&       operator-=(const Vec4& v);
-    Vec4&       operator*=(const float s);
-    Vec4&       operator*=(const Mat4& m);
-    Vec4&       operator/=(const float s);
-    Vec4        operator+(const Vec4& v)  const;
-    Vec4        operator-(const Vec4& v)  const;
-    float        operator*(const Vec4& v)  const;
-    Vec4        operator*(const Mat4& m)  const;
-    Vec4        operator*(const float s)  const;
-    Vec4        operator/(const float s)  const;
-    bool         operator==(const Vec4& v) const;
-    bool         operator!=(const Vec4& v) const;
+    T& operator[](const int i)
+    {
+        assert(i>=0 && i<4);
+        switch(i) {
+        case 0:
+            return x;
+        case 1:
+            return y;
+        case 2:
+            return z;
+        }
+        return w;
+    }
     
-    Vec4 Cross(const Vec4& v) const;
-    void  Debug() const;
-    float Length() const;
-    void  Normalize();
-    void  Zero();
+    Vec4<T>& operator=(const Vec4<T>& v)
+    {
+        x = v.x;
+        y = v.y;
+        z = v.z;
+        w = v.w;
+        return *this;
+    }
+    
+    Vec4<T>& operator+=(const Vec4<T>& v)
+    {
+        *this = *this + v;
+        return *this;
+    }
+    
+    Vec4<T>& operator-=(const Vec4<T>& v)
+    {
+        *this = *this - v;
+        return *this;
+    }
+    
+    Vec4<T>& operator*=(const T s)
+    {
+        *this = *this * s;
+        return *this;
+    }
+    
+    Vec4<T>& operator/=(const T s)
+    {
+        *this *= 1.0f/s;
+        return *this;
+    }
+    
+    Vec4<T> operator+(const Vec4<T>& v) const
+    {
+        return Vec4<T>(x + v.x, y + v.y, z + v.z, w + v.w);
+    }
+    
+    Vec4<T> operator-(const Vec4<T>& v) const
+    {
+        return Vec4<T>(x - v.x, y - v.y, z - v.z, w - v.w);
+    }
+    
+    T operator*(const Vec4<T>& v) const
+    {
+        return x*v.x + y*v.y + z*v.z + w*v.w;
+    }
+    
+    Vec4<T> operator*(const T s) const
+    {
+        return Vec4<T>(x*s, y*s, z*s, w*s);
+    }
+    
+    Vec4<T> operator/(const T s) const
+    {
+        return Vec4<T>(x/s, y/x, z/s, w/s);
+    }
+    
+    bool operator==(const Vec4<T>& v) const
+    {
+        return (x == v.x) && (y == v.y) && (z == v.z) && (w == v.w);
+    }
+    
+    bool operator!=(const Vec4<T>& v) const
+    {
+        return (x != v.x) || (y != v.y) || (z != v.z) || (w != v.w);
+    }
+    
+    Vec4<T> cross(const Vec4<T>& v) const
+    {
+        return Vec4<T>(y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x, 0.0f);
+    }
+    
+    T getLength() const
+    {
+        return sqrt(x*x + y*y + z*z + w*w);
+    }
+    
+    void normalize()
+    {
+        T l = getLength();
+        x /= l;
+        y /= l;
+        z /= l;
+        w /= l; 
+    }
+    
+    void setZero()
+    {
+        x = 0.0f;
+        y = 0.0f;
+        z = 0.0f;
+        w = 0.0f;
+    }
+    
+    void debug() const
+    {
+        std::cout << "[" << x << ", " << y << ", " << z << ", " << w << "]\n";
+    }
+
+public:
+    
+    T x;
+    T y;
+    T z;
+    T w;
 };
 
 } // namespace Math

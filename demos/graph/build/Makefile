@@ -393,114 +393,6 @@ home/cbrpnk/et/et/math/functions.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/functions.cc.s
 .PHONY : home/cbrpnk/et/et/math/functions.cc.s
 
-home/cbrpnk/et/et/math/mat3.o: home/cbrpnk/et/et/math/mat3.cc.o
-
-.PHONY : home/cbrpnk/et/et/math/mat3.o
-
-# target to build an object file
-home/cbrpnk/et/et/math/mat3.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.o
-.PHONY : home/cbrpnk/et/et/math/mat3.cc.o
-
-home/cbrpnk/et/et/math/mat3.i: home/cbrpnk/et/et/math/mat3.cc.i
-
-.PHONY : home/cbrpnk/et/et/math/mat3.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/math/mat3.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.i
-.PHONY : home/cbrpnk/et/et/math/mat3.cc.i
-
-home/cbrpnk/et/et/math/mat3.s: home/cbrpnk/et/et/math/mat3.cc.s
-
-.PHONY : home/cbrpnk/et/et/math/mat3.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/math/mat3.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat3.cc.s
-.PHONY : home/cbrpnk/et/et/math/mat3.cc.s
-
-home/cbrpnk/et/et/math/mat4.o: home/cbrpnk/et/et/math/mat4.cc.o
-
-.PHONY : home/cbrpnk/et/et/math/mat4.o
-
-# target to build an object file
-home/cbrpnk/et/et/math/mat4.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.o
-.PHONY : home/cbrpnk/et/et/math/mat4.cc.o
-
-home/cbrpnk/et/et/math/mat4.i: home/cbrpnk/et/et/math/mat4.cc.i
-
-.PHONY : home/cbrpnk/et/et/math/mat4.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/math/mat4.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.i
-.PHONY : home/cbrpnk/et/et/math/mat4.cc.i
-
-home/cbrpnk/et/et/math/mat4.s: home/cbrpnk/et/et/math/mat4.cc.s
-
-.PHONY : home/cbrpnk/et/et/math/mat4.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/math/mat4.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/mat4.cc.s
-.PHONY : home/cbrpnk/et/et/math/mat4.cc.s
-
-home/cbrpnk/et/et/math/vec3.o: home/cbrpnk/et/et/math/vec3.cc.o
-
-.PHONY : home/cbrpnk/et/et/math/vec3.o
-
-# target to build an object file
-home/cbrpnk/et/et/math/vec3.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.o
-.PHONY : home/cbrpnk/et/et/math/vec3.cc.o
-
-home/cbrpnk/et/et/math/vec3.i: home/cbrpnk/et/et/math/vec3.cc.i
-
-.PHONY : home/cbrpnk/et/et/math/vec3.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/math/vec3.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.i
-.PHONY : home/cbrpnk/et/et/math/vec3.cc.i
-
-home/cbrpnk/et/et/math/vec3.s: home/cbrpnk/et/et/math/vec3.cc.s
-
-.PHONY : home/cbrpnk/et/et/math/vec3.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/math/vec3.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec3.cc.s
-.PHONY : home/cbrpnk/et/et/math/vec3.cc.s
-
-home/cbrpnk/et/et/math/vec4.o: home/cbrpnk/et/et/math/vec4.cc.o
-
-.PHONY : home/cbrpnk/et/et/math/vec4.o
-
-# target to build an object file
-home/cbrpnk/et/et/math/vec4.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.o
-.PHONY : home/cbrpnk/et/et/math/vec4.cc.o
-
-home/cbrpnk/et/et/math/vec4.i: home/cbrpnk/et/et/math/vec4.cc.i
-
-.PHONY : home/cbrpnk/et/et/math/vec4.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/math/vec4.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.i
-.PHONY : home/cbrpnk/et/et/math/vec4.cc.i
-
-home/cbrpnk/et/et/math/vec4.s: home/cbrpnk/et/et/math/vec4.cc.s
-
-.PHONY : home/cbrpnk/et/et/math/vec4.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/math/vec4.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/vec4.cc.s
-.PHONY : home/cbrpnk/et/et/math/vec4.cc.s
-
 main.o: main.cc.o
 
 .PHONY : main.o
@@ -567,18 +459,6 @@ help:
 	@echo "... home/cbrpnk/et/et/math/functions.o"
 	@echo "... home/cbrpnk/et/et/math/functions.i"
 	@echo "... home/cbrpnk/et/et/math/functions.s"
-	@echo "... home/cbrpnk/et/et/math/mat3.o"
-	@echo "... home/cbrpnk/et/et/math/mat3.i"
-	@echo "... home/cbrpnk/et/et/math/mat3.s"
-	@echo "... home/cbrpnk/et/et/math/mat4.o"
-	@echo "... home/cbrpnk/et/et/math/mat4.i"
-	@echo "... home/cbrpnk/et/et/math/mat4.s"
-	@echo "... home/cbrpnk/et/et/math/vec3.o"
-	@echo "... home/cbrpnk/et/et/math/vec3.i"
-	@echo "... home/cbrpnk/et/et/math/vec3.s"
-	@echo "... home/cbrpnk/et/et/math/vec4.o"
-	@echo "... home/cbrpnk/et/et/math/vec4.i"
-	@echo "... home/cbrpnk/et/et/math/vec4.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

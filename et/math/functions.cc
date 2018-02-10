@@ -12,18 +12,15 @@ namespace Math {
 
     static bool prngSeeded = false;
 
-
     float DegToRad(const float deg)
     {
         return deg * M_PI/180.0f;
     }
 
-
     float RadToDeg(const float rad)
     {
         return rad * 180.0f/M_PI;
     }
-
 
     double RandomDouble(const double min, const double max)
     {
@@ -31,7 +28,6 @@ namespace Math {
         SeedPrng();
         return std::rand() / (double) RAND_MAX * (max-min) + min;
     }
-
 
     float RandomFloat(const float min, const float max)
     {
