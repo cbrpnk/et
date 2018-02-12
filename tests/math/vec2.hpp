@@ -3,7 +3,7 @@ void TEST_VEC2() {
     
     test.add("Constructor", []()->bool {
         Vec2<float> v;
-        return Test::eq(v.x, 0) && Test::eq(v.y, 0);
+        return Test::eq(v.x, 0, "x is not set") && Test::eq(v.y, 1, "y is not set");
     });
     
     test.add("Operator+", []()->bool {

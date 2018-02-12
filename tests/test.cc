@@ -8,13 +8,9 @@ void Test::add(std::string n, std::function<bool()> f)
 
 void Test::run()
 {
-    std::cout << "TESTING [" << name << "]\n";
+    std::cout << "[" << name << "]\n";
     for(auto& f : funcs) {
-        std::cout << f.first;
-        if(f.second()) {
-            pass();
-        } else {
-            fail();
-        }
+        std::cout << "  [" << f.first << "]\n";
+        f.second();
     }
 }
