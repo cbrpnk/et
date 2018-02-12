@@ -1,6 +1,2 @@
 Audio:
     Make Engine a static class
-Math:
-    Make vec and matric class templates<T>
-Graph:
-    Rendering facilities

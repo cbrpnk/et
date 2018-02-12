@@ -1,11 +1,14 @@
 #include <iostream>
 #include "../et/et.hpp"
 
-#include "test_assertion.hpp"
-#include "math/test.hpp"
+//#include "test_assertion.hpp"
+
+#include "test.hpp"
+#include "math/math.hpp"
 
 int main(int argc, char** argv)
 {
-    std::cout << "Done! All tests passed!\n";
+    TEST_MATH();
+    std::cout << "\nDone! All tests passed!\n";
     return 0;
 }

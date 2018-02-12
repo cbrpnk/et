@@ -1,2 +1,2 @@
 main:
-	g++ main.cc -o test
+	g++ test.cc main.cc -o run_tests
