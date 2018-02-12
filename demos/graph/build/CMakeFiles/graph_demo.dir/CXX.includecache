@@ -184,6 +184,10 @@ math/random.hpp
 cmath
 -
 
+/home/cbrpnk/et/et/math/functions.hpp
+constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
+
 /home/cbrpnk/et/et/math/mat2.hpp
 vec2.hpp
 /home/cbrpnk/et/et/math/vec2.hpp
@@ -234,5 +238,19 @@ iostream
 memory
 -
 cstring
+-
+
+/home/cbrpnk/et/et/test/test.cc
+test.hpp
+/home/cbrpnk/et/et/test/test.hpp
+
+/home/cbrpnk/et/et/test/test.hpp
+string
+-
+vector
+-
+functional
+-
+iostream
 -
 

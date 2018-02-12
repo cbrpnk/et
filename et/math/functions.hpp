@@ -7,12 +7,12 @@
 namespace Et {
 namespace Math {
 
-float degToRad(const float deg)
+inline float degToRad(const float deg)
 {
     return deg * kPi/180.0f;
 }
 
-float radToDeg(const float rad)
+inline float radToDeg(const float rad)
 {
     return rad * 180.0f/kPi;
 }

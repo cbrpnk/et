@@ -393,6 +393,33 @@ home/cbrpnk/et/et/math/random.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s
 .PHONY : home/cbrpnk/et/et/math/random.cc.s
 
+home/cbrpnk/et/et/test/test.o: home/cbrpnk/et/et/test/test.cc.o
+
+.PHONY : home/cbrpnk/et/et/test/test.o
+
+# target to build an object file
+home/cbrpnk/et/et/test/test.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
+.PHONY : home/cbrpnk/et/et/test/test.cc.o
+
+home/cbrpnk/et/et/test/test.i: home/cbrpnk/et/et/test/test.cc.i
+
+.PHONY : home/cbrpnk/et/et/test/test.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/test/test.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i
+.PHONY : home/cbrpnk/et/et/test/test.cc.i
+
+home/cbrpnk/et/et/test/test.s: home/cbrpnk/et/et/test/test.cc.s
+
+.PHONY : home/cbrpnk/et/et/test/test.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/test/test.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.s
+.PHONY : home/cbrpnk/et/et/test/test.cc.s
+
 main.o: main.cc.o
 
 .PHONY : main.o
@@ -459,6 +486,9 @@ help:
 	@echo "... home/cbrpnk/et/et/math/random.o"
 	@echo "... home/cbrpnk/et/et/math/random.i"
 	@echo "... home/cbrpnk/et/et/math/random.s"
+	@echo "... home/cbrpnk/et/et/test/test.o"
+	@echo "... home/cbrpnk/et/et/test/test.i"
+	@echo "... home/cbrpnk/et/et/test/test.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

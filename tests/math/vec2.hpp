@@ -1,17 +1,19 @@
-void TEST_VEC2() {
-    Test test("Vec2");
+unsigned int TEST_VEC2() {
+    Et::Test::Unit unit("Vec2");
     
-    test.add("Constructor", []()->bool {
-        Vec2<float> v;
-        return Test::eq(v.x, 0, "x is not set") && Test::eq(v.y, 1, "y is not set");
+    unit.add("Constructor", []() {
+        Et::Math::Vec2<float> v;
+        Et::Test::eq(v.x, 1, "x is not set");
+        Et::Test::eq(v.y, 1, "y is not set");
     });
     
-    test.add("Operator+", []()->bool {
-        Vec2<float> v1(1, 2);
-        Vec2<float> v2(5, 6);
-        Vec2<float> v3 = v1 + v2;
-        return Test::eq(v3.x, 6) && Test::eq(v3.y, 8);
+    unit.add("Operator+", []() {
+        Et::Math::Vec2<float> v1(1, 2);
+        Et::Math::Vec2<float> v2(5, 6);
+        Et::Math::Vec2<float> v3 = v1 + v2;
+        Et::Test::eq(v3.x, 2);
+        Et::Test::eq(v3.y, 8);
     });
     
-    test.run();
+    return unit.run();
 }

@@ -1,0 +1,3 @@
+/home/cbrpnk/et/tests/build/CMakeFiles/rebuild_cache.dir
+/home/cbrpnk/et/tests/build/CMakeFiles/run_tests.dir
+/home/cbrpnk/et/tests/build/CMakeFiles/edit_cache.dir

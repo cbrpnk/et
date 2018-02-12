@@ -7,5 +7,6 @@
 #include "graph.hpp"
 #include "math.hpp"
 #include "mem.hpp"
+#include "test.hpp"
 
 #endif // ET_HPP

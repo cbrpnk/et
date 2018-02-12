@@ -1,7 +1,7 @@
-using namespace Et::Math;
-
 #include "vec2.hpp"
 
-void TEST_MATH() {
-    TEST_VEC2();
+int TEST_MATH() {
+    int nErr = 0;
+    nErr += TEST_VEC2();
+    return nErr;
 }

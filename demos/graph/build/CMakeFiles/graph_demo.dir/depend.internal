@@ -40,6 +40,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
  /home/cbrpnk/et/et/audio/modules/oscillator.hpp
  /home/cbrpnk/et/et/math.hpp
  /home/cbrpnk/et/et/math/constants.hpp
+ /home/cbrpnk/et/et/math/functions.hpp
  /home/cbrpnk/et/et/math/mat2.hpp
  /home/cbrpnk/et/et/math/mat3.hpp
  /home/cbrpnk/et/et/math/mat4.hpp
@@ -71,5 +72,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
  /home/cbrpnk/et/et/math/constants.hpp
  /home/cbrpnk/et/et/math/random.cc
  /home/cbrpnk/et/et/math/random.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
+ /home/cbrpnk/et/et/test/test.cc
+ /home/cbrpnk/et/et/test/test.hpp
 CMakeFiles/graph_demo.dir/main.cc.o
  /home/cbrpnk/et/demos/graph/main.cc
