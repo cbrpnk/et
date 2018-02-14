@@ -24,36 +24,208 @@ private:
     std::vector<std::pair<std::string, std::function<void()>>> funcs;
 };
 
-inline bool pass() {
-    std::cout << "    [PASS]\n";
-    return true;
+inline bool outputMsg(bool pass, std::string msg) {
+    std::string pre;
+    if(pass) {
+        pre = "    \033[0m[PASS]";
+    } else {
+        pre = "    \033[1;7m[FAIL]";
+    }
+    std::cout << pre;
+    if(msg.size() > 0) std::cout << " " << msg;
+    std::cout << "\033[0m\n";
+    return pass;
+}
+
+inline bool pass(std::string msg) {
+    return outputMsg(true, msg);
 }
 
 inline bool fail(std::string msg) {
-    std::cout << "    \033[1;7m[FAIL]";
-    if(msg.size() > 0) std::cout << " " << msg;
-    std::cout << "\033[0m\n";
     Unit::nErrors++;
-    return false;
+    return outputMsg(false, msg);
+}
+
+
+/* Check
+ * Most of the code is shared between the different assertion functions, so I abstracted
+ * it into the check function which recieve a compaison function as an argument.
+ */
+enum class CmpFunc {
+    Eq, Ne, Lt, Le, Gt, Ge
+};
+
+template<typename T1, typename T2>
+static bool cmp(CmpFunc f, T1 a, T2 b)
+{
+    switch(f) {
+    case CmpFunc::Eq:
+        return (a == b);
+    case CmpFunc::Ne:
+        return (a != b);
+    case CmpFunc::Lt:
+        return (a < b);
+    case CmpFunc::Le:
+        return (a <= b);
+    case CmpFunc::Gt:
+        return (a > b);
+    }
+    
+    // Ge
+    return (a >= b);
 }
 
 template<typename T1, typename T2>
-static bool eq(T1 a, T2 b, std::string msg = "") { return (a == b) ? pass() : fail(msg); }
+static bool check(CmpFunc f, T1 a, T2 b, std::string msg = "")
+{
+    return cmp(f, a, b) ? pass(msg) : fail(msg);
+}
 
-template<typename T1, typename T2>
-static bool ne(T1 a, T2 b, std::string msg = "") { return (a != b) ? pass() : fail(msg); }
+template<typename T>
+static bool check(CmpFunc f, std::initializer_list<T> data, std::string msg = "")
+{
+    typename std::initializer_list<T>::iterator it = data.begin();
+    T c = *it;
+    ++it;
+    while(it != data.end()) {
+        if(!cmp(f, *it, c)) return fail(msg);
+        ++it;
+    }
+    return pass(msg);
+}
 
-template<typename T1, typename T2>
-static bool lt(T1 a, T2 b, std::string msg = "") { return (a < b) ? pass() : fail(msg); }
+template<typename T>
+static bool check(CmpFunc f, std::initializer_list<std::initializer_list<T>> data,
+                  std::string msg = "")
+{
+    bool err = false;
+    for(auto pair : data) {
+        typename std::initializer_list<T>::iterator it = pair.begin();
+        T c = *it;
+        ++it;
+        while(it != pair.end()) {
+            if(!cmp(f, *it, c)) err = true;
+            ++it;
+        }
+    }
+    return (!err) ? pass(msg) : fail(msg);
+}
 
-template<typename T1, typename T2>
-static bool le(T1 a, T2 b, std::string msg = "") { return (a <= b) ? pass() : fail(msg); }
 
+/*                    eq                      */
 template<typename T1, typename T2>
-static bool gt(T1 a, T2 b, std::string msg = "") { return (a > b) ? pass() : fail(msg); }
+static bool eq(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Eq, a, b, msg);
+}
 
+template<typename T>
+static bool eq(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Eq, data, msg);
+}
+
+template<typename T>
+static bool eq(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Eq, data, msg);
+}
+
+/*                    ne                      */
 template<typename T1, typename T2>
-static bool ge(T1 a, T2 b, std::string msg = "") { return (a >= b) ? pass() : fail(msg); }
+static bool ne(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Ne, a, b, msg);
+}
+
+template<typename T>
+static bool ne(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Ne, data, msg);
+}
+
+template<typename T>
+static bool ne(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Ne, data, msg);
+}
+
+/*                    lt                      */
+template<typename T1, typename T2>
+static bool lt(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Lt, a, b, msg);
+}
+
+template<typename T>
+static bool lt(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Lt, data, msg);
+}
+
+template<typename T>
+static bool lt(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Lt, data, msg);
+}
+
+/*                    le                      */
+template<typename T1, typename T2>
+static bool le(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Le, a, b, msg);
+}
+
+template<typename T>
+static bool le(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Le, data, msg);
+}
+
+template<typename T>
+static bool le(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Le, data, msg);
+}
+
+/*                    gt                      */
+template<typename T1, typename T2>
+static bool gt(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Gt, a, b, msg);
+}
+
+template<typename T>
+static bool gt(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Gt, data, msg);
+}
+
+template<typename T>
+static bool gt(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Gt, data, msg);
+}
+
+/*                    ge                      */
+template<typename T1, typename T2>
+static bool ge(T1 a, T2 b, std::string msg = "")
+{
+    check(CmpFunc::Ge, a, b, msg);
+}
+
+template<typename T>
+static bool ge(std::initializer_list<T> data, std::string msg = "")
+{
+    check(CmpFunc::Ge, data, msg);
+}
+
+template<typename T>
+static bool ge(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
+{
+    check(CmpFunc::Ge, data, msg);
+}
+
 } // namespace Test
 } // namespace Et
 
