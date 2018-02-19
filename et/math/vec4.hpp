@@ -11,8 +11,20 @@ class Vec4
 {
 public:
     Vec4<T>() : x(0), y(0), z(0), w(0) {}
+    
+    Vec4<T>(const std::initializer_list<T> init)
+    {
+        typename std::initializer_list<T>::iterator it = init.begin();
+        x = it[0];
+        y = it[1];
+        z = it[2];
+        w = it[3];
+    }
+    
     Vec4<T>(const Vec4<T>& v) : x(v.x), y(v.y), z(v.z), w(v.w) {}
+    
     Vec4<T>(const T* a) : x(a[0]), y(a[1]), z(a[2]), w(a[3]) {}
+    
     Vec4<T>(const T x, const T y, const T z, const T w) : x(x), y(y), z(z), w(w) {}
     
     const T& operator[](const int i) const
@@ -98,7 +110,7 @@ public:
     
     Vec4<T> operator/(const T s) const
     {
-        return Vec4<T>(x/s, y/x, z/s, w/s);
+        return Vec4<T>(x/s, y/s, z/s, w/s);
     }
     
     bool operator==(const Vec4<T>& v) const
@@ -109,11 +121,6 @@ public:
     bool operator!=(const Vec4<T>& v) const
     {
         return (x != v.x) || (y != v.y) || (z != v.z) || (w != v.w);
-    }
-    
-    Vec4<T> cross(const Vec4<T>& v) const
-    {
-        return Vec4<T>(y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x, 0.0f);
     }
     
     T getLength() const

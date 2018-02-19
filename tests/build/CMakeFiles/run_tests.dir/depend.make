@@ -108,6 +108,11 @@ CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/test.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/test/test.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../main.cc
+CMakeFiles/run_tests.dir/main.cc.o: ../math/mat2.hpp
+CMakeFiles/run_tests.dir/main.cc.o: ../math/mat3.hpp
+CMakeFiles/run_tests.dir/main.cc.o: ../math/mat4.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../math/math.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../math/vec2.hpp
+CMakeFiles/run_tests.dir/main.cc.o: ../math/vec3.hpp
+CMakeFiles/run_tests.dir/main.cc.o: ../math/vec4.hpp
 

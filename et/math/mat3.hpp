@@ -10,8 +10,19 @@ template<typename T>
 class Mat3
 {
 public:
+    
     Mat3<T>() {}
+    
+    Mat3(const std::initializer_list<T> init)
+    {
+        std::vector<T> v(init);
+        mat[0] = Vec3<T>(v[0], v[1], v[2]);
+        mat[1] = Vec3<T>(v[3], v[4], v[5]);
+        mat[2] = Vec3<T>(v[6], v[7], v[8]);
+    }
+    
     Mat3<T>(const Mat3<T>& m) : mat{m[0], m[1], m[2]} {}
+    
     Mat3<T>(const Vec3<T> a, const Vec3<T> b, const Vec3<T> c) : mat{a, b, c} {}
     
     const Vec3<T>& operator[](const int i) const
@@ -97,7 +108,7 @@ public:
         return mat[0] != m[0] || mat[1] != m[1] || mat[2] != m[2];
     }
     
-    void SetIdentity()
+    void setIdentity()
     {
         mat[0].x = 1;
         mat[0].y = 0;

@@ -3,6 +3,7 @@
 
 #include <cassert>
 #include <iostream>
+#include <vector>
 
 namespace Et {
 namespace Math {
@@ -12,8 +13,18 @@ class Vec2
 {
 public:
     Vec2() : x(0), y(0) {}
+    
+    Vec2(const std::initializer_list<T> init)
+    {
+        typename std::initializer_list<T>::iterator it = init.begin();
+        x = it[0];
+        y = it[1];
+    }
+    
     Vec2(const Vec2<T>& v) : x(v.x), y(v.y) {}
+    
     Vec2(const T* a) : x(a[0]), y(a[1]) {}
+    
     Vec2(const T x, const T y) : x(x), y(y) {}
     
     const T& operator[](const int i) const
@@ -84,7 +95,7 @@ public:
     
     Vec2<T> operator/(const T s) const
     {
-        return Vec2<T>(x/s, y/x);
+        return Vec2<T>(x/s, y/s);
     }
     
     bool operator==(const Vec2<T>& v) const

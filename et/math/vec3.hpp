@@ -11,8 +11,19 @@ class Vec3
 {
 public:
     Vec3() : x(0), y(0), z(0) {}
+    
+    Vec3(const std::initializer_list<T> init)
+    {
+        typename std::initializer_list<T>::iterator it = init.begin();
+        x = it[0];
+        y = it[1];
+        z = it[2];
+    }
+    
     Vec3(const Vec3<T>& v) : x(v.x), y(v.y), z(v.z) {}
+    
     Vec3(const T* a) : x(a[0]), y(a[1]), z(a[2]) {}
+    
     Vec3(const T x, const T y, const T z) : x(x), y(y), z(z) {}
     
     const T& operator[](const int i) const
@@ -93,7 +104,7 @@ public:
     
     Vec3<T> operator/(const T s) const
     {
-        return Vec3<T>(x/s, y/x, z/s);
+        return Vec3<T>(x/s, y/s, z/s);
     }
     
     bool operator==(const Vec3<T>& v) const

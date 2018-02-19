@@ -25,15 +25,23 @@ private:
 };
 
 inline bool outputMsg(bool pass, std::string msg) {
-    std::string pre;
+    std::string output;
     if(pass) {
-        pre = "    \033[0m[PASS]";
+        output = "    \033[0m[PASS]";
     } else {
-        pre = "    \033[1;7m[FAIL]";
+        output = "    \033[1;7m[FAIL]";
     }
-    std::cout << pre;
-    if(msg.size() > 0) std::cout << " " << msg;
-    std::cout << "\033[0m\n";
+    
+    if(msg.size() > 0) {
+        output += " " + msg;
+    }
+    output += "\033[0m\n";
+    
+    if(pass) {
+        std::cout << output;
+    } else {
+        std::cerr << output;
+    }
     return pass;
 }
 
@@ -88,7 +96,7 @@ static bool check(CmpFunc f, std::initializer_list<T> data, std::string msg = ""
     T c = *it;
     ++it;
     while(it != data.end()) {
-        if(!cmp(f, *it, c)) return fail(msg);
+        if(!cmp(f, c, *it)) return fail(msg);
         ++it;
     }
     return pass(msg);
@@ -104,7 +112,7 @@ static bool check(CmpFunc f, std::initializer_list<std::initializer_list<T>> dat
         T c = *it;
         ++it;
         while(it != pair.end()) {
-            if(!cmp(f, *it, c)) err = true;
+            if(!cmp(f, c, *it)) err = true;
             ++it;
         }
     }

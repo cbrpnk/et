@@ -263,6 +263,8 @@ cassert
 -
 iostream
 -
+vector
+-
 
 /home/cbrpnk/et/et/math/vec3.hpp
 iostream
@@ -308,9 +310,29 @@ iostream
 math/math.hpp
 /home/cbrpnk/et/tests/math/math.hpp
 
+/home/cbrpnk/et/tests/math/mat2.hpp
+
+/home/cbrpnk/et/tests/math/mat3.hpp
+
+/home/cbrpnk/et/tests/math/mat4.hpp
+
 /home/cbrpnk/et/tests/math/math.hpp
 vec2.hpp
 /home/cbrpnk/et/tests/math/vec2.hpp
+vec3.hpp
+/home/cbrpnk/et/tests/math/vec3.hpp
+vec4.hpp
+/home/cbrpnk/et/tests/math/vec4.hpp
+mat2.hpp
+/home/cbrpnk/et/tests/math/mat2.hpp
+mat3.hpp
+/home/cbrpnk/et/tests/math/mat3.hpp
+mat4.hpp
+/home/cbrpnk/et/tests/math/mat4.hpp
 
 /home/cbrpnk/et/tests/math/vec2.hpp
+
+/home/cbrpnk/et/tests/math/vec3.hpp
+
+/home/cbrpnk/et/tests/math/vec4.hpp
 

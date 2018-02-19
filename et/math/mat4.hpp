@@ -10,8 +10,20 @@ template<typename T>
 class Mat4
 {
 public:
+    
     Mat4<T>() {}
+    
+    Mat4(const std::initializer_list<T> init)
+    {
+        std::vector<T> v(init);
+        mat[0] = Vec4<T>(v[0],  v[1],  v[2],  v[3]);
+        mat[1] = Vec4<T>(v[4],  v[5],  v[6],  v[7]);
+        mat[2] = Vec4<T>(v[8],  v[9],  v[10], v[11]);
+        mat[3] = Vec4<T>(v[12], v[13], v[14], v[15]);
+    }
+    
     Mat4<T>(const Mat4<T>& m) : mat{m[0], m[1], m[2], m[3]} {}
+    
     Mat4<T>(const Vec4<T> a, const Vec4<T> b, const Vec4<T> c, const Vec4<T> d)
         : mat{a, b, c, d}
     {}
@@ -101,14 +113,6 @@ public:
         return mat[0] != m[0] || mat[1] != m[1] || mat[2] != m[2] || mat[3] != m[3];
     }
     
-    void debug() const
-    {
-        mat[0].debug();
-        mat[1].debug();
-        mat[2].debug();
-        mat[3].debug();
-    }
-    
     void setIdentity()
     {
         mat[0].x = 1;
@@ -183,11 +187,20 @@ public:
     
     void setZero()
     {
-        mat[0].Zero();
-        mat[1].Zero();
-        mat[2].Zero();
-        mat[3].Zero();
+        mat[0].setZero();
+        mat[1].setZero();
+        mat[2].setZero();
+        mat[3].setZero();
     }
+    
+    void debug() const
+    {
+        mat[0].debug();
+        mat[1].debug();
+        mat[2].debug();
+        mat[3].debug();
+    }
+    
     
 private:
     Vec4<T> mat[4];

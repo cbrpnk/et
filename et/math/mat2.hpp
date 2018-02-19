@@ -11,7 +11,16 @@ class Mat2
 {
 public:
     Mat2() {}
+    
+    Mat2(const std::initializer_list<T> init)
+    {
+        std::vector<T> v(init);
+        mat[0] = Vec2<T>(v[0], v[1]);
+        mat[1] = Vec2<T>(v[2], v[3]);
+    }
+
     Mat2(const Mat2<T>& m) : mat{m[0], m[1]} {}
+   
     Mat2(const Vec2<T> a, const Vec2<T> b) : mat{a, b} {}
     
     const Vec2<T>& operator[](const int i) const

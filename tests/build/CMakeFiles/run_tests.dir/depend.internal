@@ -109,5 +109,10 @@ CMakeFiles/run_tests.dir/main.cc.o
  /home/cbrpnk/et/et/test.hpp
  /home/cbrpnk/et/et/test/test.hpp
  /home/cbrpnk/et/tests/main.cc
+ /home/cbrpnk/et/tests/math/mat2.hpp
+ /home/cbrpnk/et/tests/math/mat3.hpp
+ /home/cbrpnk/et/tests/math/mat4.hpp
  /home/cbrpnk/et/tests/math/math.hpp
  /home/cbrpnk/et/tests/math/vec2.hpp
+ /home/cbrpnk/et/tests/math/vec3.hpp
+ /home/cbrpnk/et/tests/math/vec4.hpp
