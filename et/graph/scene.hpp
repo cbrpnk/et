@@ -1,5 +1,5 @@
-#ifndef ET_GRAPH_SCENE
-#define ET_GRAPH_SCENE
+#ifndef ET_GRAPH_SCENE_HPP
+#define ET_GRAPH_SCENE_HPP
 
 #include <vector>
 #include <memory>
@@ -14,7 +14,8 @@ public:
     Scene() {}
     
     Obj& addObj();
-    Obj& addObj(std::vector<Component::Type> componentTypes);
+    Obj& addObj(std::initializer_list<Component::Type> componentTypes);
+    void update();
     
 private:
     std::vector<std::unique_ptr<Obj>> objs;
@@ -23,4 +24,4 @@ private:
 } // namespace Graph
 } // namespace Et
 
-#endif
+#endif // ET_GRAPH_SCENE_HPP

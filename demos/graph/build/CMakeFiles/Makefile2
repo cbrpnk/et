@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cbrpnk/et/demos/graph
+CMAKE_SOURCE_DIR = /home/cbrpnk/projects/et/demos/graph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cbrpnk/et/demos/graph/build
+CMAKE_BINARY_DIR = /home/cbrpnk/projects/et/demos/graph/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/graph_demo.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/cbrpnk/et/demos/graph/build
 CMakeFiles/graph_demo.dir/all:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/depend
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target graph_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target graph_demo"
 .PHONY : CMakeFiles/graph_demo.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/graph_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/graph_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/graph_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles 0
 .PHONY : CMakeFiles/graph_demo.dir/rule
 
 # Convenience name for target.

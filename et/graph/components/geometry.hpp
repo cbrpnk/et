@@ -1,5 +1,5 @@
-#ifndef ET_GRAPH_COMPONENT_GEOMETRY
-#define ET_GRAPH_COMPONENT_GEOMETRY
+#ifndef ET_GRAPH_COMPONENT_GEOMETRY_HPP
+#define ET_GRAPH_COMPONENT_GEOMETRY_HPP
 
 #include "component.hpp"
 
@@ -14,4 +14,4 @@ public:
 } // namespace Graph
 } // namespace Et
 
-#endif
+#endif ET_GRAPH_COMPONENT_GEOMETRY_HPP

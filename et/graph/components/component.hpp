@@ -11,7 +11,8 @@ class Component {
 public:
     enum class Type {
         Camera,
-        Geometry
+        Geometry,
+        Transform
     };
 public:
     Component() 
@@ -28,4 +29,4 @@ private:
 } // namespace Graph
 } // namespace Et
 
-#endif
+#endif // ET_GRAPH_COMPONENT_HPP

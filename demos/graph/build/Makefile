@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cbrpnk/et/demos/graph
+CMAKE_SOURCE_DIR = /home/cbrpnk/projects/et/demos/graph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cbrpnk/et/demos/graph/build
+CMAKE_BINARY_DIR = /home/cbrpnk/projects/et/demos/graph/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles /home/cbrpnk/et/demos/graph/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/et/demos/graph/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,302 +123,302 @@ graph_demo/fast:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/build
 .PHONY : graph_demo/fast
 
-home/cbrpnk/et/et/audio/backends/jack_backend.o: home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.o: home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.o
-
-# target to build an object file
-home/cbrpnk/et/et/audio/backends/jack_backend.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
-
-home/cbrpnk/et/et/audio/backends/jack_backend.i: home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
-
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/audio/backends/jack_backend.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
-
-home/cbrpnk/et/et/audio/backends/jack_backend.s: home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
-
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/audio/backends/jack_backend.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
-.PHONY : home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
-
-home/cbrpnk/et/et/audio/backends/portaudio_backend.o: home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
-
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.o
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o
 
-home/cbrpnk/et/et/audio/backends/portaudio_backend.i: home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.i: home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.i
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i
 
-home/cbrpnk/et/et/audio/backends/portaudio_backend.s: home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.s: home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.s
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s
-.PHONY : home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s
+home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s
 
-home/cbrpnk/et/et/audio/engine.o: home/cbrpnk/et/et/audio/engine.cc.o
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.o: home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/engine.o
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/engine.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
-.PHONY : home/cbrpnk/et/et/audio/engine.cc.o
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o
 
-home/cbrpnk/et/et/audio/engine.i: home/cbrpnk/et/et/audio/engine.cc.i
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.i: home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/engine.i
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/engine.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.i
-.PHONY : home/cbrpnk/et/et/audio/engine.cc.i
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i
 
-home/cbrpnk/et/et/audio/engine.s: home/cbrpnk/et/et/audio/engine.cc.s
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.s: home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/engine.s
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/engine.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.s
-.PHONY : home/cbrpnk/et/et/audio/engine.cc.s
+home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s
+.PHONY : home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s
 
-home/cbrpnk/et/et/audio/modules/module.o: home/cbrpnk/et/et/audio/modules/module.cc.o
+home/cbrpnk/projects/et/et/audio/engine.o: home/cbrpnk/projects/et/et/audio/engine.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/modules/module.o
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/modules/module.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
-.PHONY : home/cbrpnk/et/et/audio/modules/module.cc.o
+home/cbrpnk/projects/et/et/audio/engine.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.cc.o
 
-home/cbrpnk/et/et/audio/modules/module.i: home/cbrpnk/et/et/audio/modules/module.cc.i
+home/cbrpnk/projects/et/et/audio/engine.i: home/cbrpnk/projects/et/et/audio/engine.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/modules/module.i
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/modules/module.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.i
-.PHONY : home/cbrpnk/et/et/audio/modules/module.cc.i
+home/cbrpnk/projects/et/et/audio/engine.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.i
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.cc.i
 
-home/cbrpnk/et/et/audio/modules/module.s: home/cbrpnk/et/et/audio/modules/module.cc.s
+home/cbrpnk/projects/et/et/audio/engine.s: home/cbrpnk/projects/et/et/audio/engine.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/modules/module.s
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/modules/module.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.s
-.PHONY : home/cbrpnk/et/et/audio/modules/module.cc.s
+home/cbrpnk/projects/et/et/audio/engine.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.s
+.PHONY : home/cbrpnk/projects/et/et/audio/engine.cc.s
 
-home/cbrpnk/et/et/audio/modules/oscillator.o: home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+home/cbrpnk/projects/et/et/audio/modules/module.o: home/cbrpnk/projects/et/et/audio/modules/module.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.o
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+home/cbrpnk/projects/et/et/audio/modules/module.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.cc.o
 
-home/cbrpnk/et/et/audio/modules/oscillator.i: home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+home/cbrpnk/projects/et/et/audio/modules/module.i: home/cbrpnk/projects/et/et/audio/modules/module.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.i
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+home/cbrpnk/projects/et/et/audio/modules/module.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.i
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.cc.i
 
-home/cbrpnk/et/et/audio/modules/oscillator.s: home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+home/cbrpnk/projects/et/et/audio/modules/module.s: home/cbrpnk/projects/et/et/audio/modules/module.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.s
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+home/cbrpnk/projects/et/et/audio/modules/module.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.s
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/module.cc.s
 
-home/cbrpnk/et/et/dsp/oscillator.o: home/cbrpnk/et/et/dsp/oscillator.cc.o
+home/cbrpnk/projects/et/et/audio/modules/oscillator.o: home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o
 
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.o
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.o
 
 # target to build an object file
-home/cbrpnk/et/et/dsp/oscillator.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.o
+home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o
 
-home/cbrpnk/et/et/dsp/oscillator.i: home/cbrpnk/et/et/dsp/oscillator.cc.i
+home/cbrpnk/projects/et/et/audio/modules/oscillator.i: home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i
 
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.i
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/dsp/oscillator.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.i
+home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i
 
-home/cbrpnk/et/et/dsp/oscillator.s: home/cbrpnk/et/et/dsp/oscillator.cc.s
+home/cbrpnk/projects/et/et/audio/modules/oscillator.s: home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s
 
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.s
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/dsp/oscillator.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
-.PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.s
+home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s
+.PHONY : home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s
 
-home/cbrpnk/et/et/graph/obj.o: home/cbrpnk/et/et/graph/obj.cc.o
+home/cbrpnk/projects/et/et/dsp/oscillator.o: home/cbrpnk/projects/et/et/dsp/oscillator.cc.o
 
-.PHONY : home/cbrpnk/et/et/graph/obj.o
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.o
 
 # target to build an object file
-home/cbrpnk/et/et/graph/obj.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
-.PHONY : home/cbrpnk/et/et/graph/obj.cc.o
+home/cbrpnk/projects/et/et/dsp/oscillator.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.cc.o
 
-home/cbrpnk/et/et/graph/obj.i: home/cbrpnk/et/et/graph/obj.cc.i
+home/cbrpnk/projects/et/et/dsp/oscillator.i: home/cbrpnk/projects/et/et/dsp/oscillator.cc.i
 
-.PHONY : home/cbrpnk/et/et/graph/obj.i
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/graph/obj.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i
-.PHONY : home/cbrpnk/et/et/graph/obj.cc.i
+home/cbrpnk/projects/et/et/dsp/oscillator.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.i
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.cc.i
 
-home/cbrpnk/et/et/graph/obj.s: home/cbrpnk/et/et/graph/obj.cc.s
+home/cbrpnk/projects/et/et/dsp/oscillator.s: home/cbrpnk/projects/et/et/dsp/oscillator.cc.s
 
-.PHONY : home/cbrpnk/et/et/graph/obj.s
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/graph/obj.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.s
-.PHONY : home/cbrpnk/et/et/graph/obj.cc.s
+home/cbrpnk/projects/et/et/dsp/oscillator.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.s
+.PHONY : home/cbrpnk/projects/et/et/dsp/oscillator.cc.s
 
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o: home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
+home/cbrpnk/projects/et/et/graph/obj.o: home/cbrpnk/projects/et/et/graph/obj.cc.o
 
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.o
 
 # target to build an object file
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
+home/cbrpnk/projects/et/et/graph/obj.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.cc.o
 
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.i: home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i
+home/cbrpnk/projects/et/et/graph/obj.i: home/cbrpnk/projects/et/et/graph/obj.cc.i
 
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.i
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i
+home/cbrpnk/projects/et/et/graph/obj.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.i
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.cc.i
 
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.s: home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s
+home/cbrpnk/projects/et/et/graph/obj.s: home/cbrpnk/projects/et/et/graph/obj.cc.s
 
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.s
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s
-.PHONY : home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s
+home/cbrpnk/projects/et/et/graph/obj.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.s
+.PHONY : home/cbrpnk/projects/et/et/graph/obj.cc.s
 
-home/cbrpnk/et/et/graph/scene.o: home/cbrpnk/et/et/graph/scene.cc.o
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.o: home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o
 
-.PHONY : home/cbrpnk/et/et/graph/scene.o
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.o
 
 # target to build an object file
-home/cbrpnk/et/et/graph/scene.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
-.PHONY : home/cbrpnk/et/et/graph/scene.cc.o
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o
 
-home/cbrpnk/et/et/graph/scene.i: home/cbrpnk/et/et/graph/scene.cc.i
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.i: home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i
 
-.PHONY : home/cbrpnk/et/et/graph/scene.i
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/graph/scene.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i
-.PHONY : home/cbrpnk/et/et/graph/scene.cc.i
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i
 
-home/cbrpnk/et/et/graph/scene.s: home/cbrpnk/et/et/graph/scene.cc.s
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.s: home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s
 
-.PHONY : home/cbrpnk/et/et/graph/scene.s
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/graph/scene.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.s
-.PHONY : home/cbrpnk/et/et/graph/scene.cc.s
+home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s
+.PHONY : home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s
 
-home/cbrpnk/et/et/math/random.o: home/cbrpnk/et/et/math/random.cc.o
+home/cbrpnk/projects/et/et/graph/scene.o: home/cbrpnk/projects/et/et/graph/scene.cc.o
 
-.PHONY : home/cbrpnk/et/et/math/random.o
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.o
 
 # target to build an object file
-home/cbrpnk/et/et/math/random.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
-.PHONY : home/cbrpnk/et/et/math/random.cc.o
+home/cbrpnk/projects/et/et/graph/scene.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.cc.o
 
-home/cbrpnk/et/et/math/random.i: home/cbrpnk/et/et/math/random.cc.i
+home/cbrpnk/projects/et/et/graph/scene.i: home/cbrpnk/projects/et/et/graph/scene.cc.i
 
-.PHONY : home/cbrpnk/et/et/math/random.i
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/math/random.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i
-.PHONY : home/cbrpnk/et/et/math/random.cc.i
+home/cbrpnk/projects/et/et/graph/scene.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.i
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.cc.i
 
-home/cbrpnk/et/et/math/random.s: home/cbrpnk/et/et/math/random.cc.s
+home/cbrpnk/projects/et/et/graph/scene.s: home/cbrpnk/projects/et/et/graph/scene.cc.s
 
-.PHONY : home/cbrpnk/et/et/math/random.s
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/math/random.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s
-.PHONY : home/cbrpnk/et/et/math/random.cc.s
+home/cbrpnk/projects/et/et/graph/scene.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.s
+.PHONY : home/cbrpnk/projects/et/et/graph/scene.cc.s
 
-home/cbrpnk/et/et/test/test.o: home/cbrpnk/et/et/test/test.cc.o
+home/cbrpnk/projects/et/et/math/random.o: home/cbrpnk/projects/et/et/math/random.cc.o
 
-.PHONY : home/cbrpnk/et/et/test/test.o
+.PHONY : home/cbrpnk/projects/et/et/math/random.o
 
 # target to build an object file
-home/cbrpnk/et/et/test/test.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
-.PHONY : home/cbrpnk/et/et/test/test.cc.o
+home/cbrpnk/projects/et/et/math/random.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o
+.PHONY : home/cbrpnk/projects/et/et/math/random.cc.o
 
-home/cbrpnk/et/et/test/test.i: home/cbrpnk/et/et/test/test.cc.i
+home/cbrpnk/projects/et/et/math/random.i: home/cbrpnk/projects/et/et/math/random.cc.i
 
-.PHONY : home/cbrpnk/et/et/test/test.i
+.PHONY : home/cbrpnk/projects/et/et/math/random.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/test/test.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i
-.PHONY : home/cbrpnk/et/et/test/test.cc.i
+home/cbrpnk/projects/et/et/math/random.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.i
+.PHONY : home/cbrpnk/projects/et/et/math/random.cc.i
 
-home/cbrpnk/et/et/test/test.s: home/cbrpnk/et/et/test/test.cc.s
+home/cbrpnk/projects/et/et/math/random.s: home/cbrpnk/projects/et/et/math/random.cc.s
 
-.PHONY : home/cbrpnk/et/et/test/test.s
+.PHONY : home/cbrpnk/projects/et/et/math/random.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/test/test.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.s
-.PHONY : home/cbrpnk/et/et/test/test.cc.s
+home/cbrpnk/projects/et/et/math/random.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.s
+.PHONY : home/cbrpnk/projects/et/et/math/random.cc.s
+
+home/cbrpnk/projects/et/et/test/test.o: home/cbrpnk/projects/et/et/test/test.cc.o
+
+.PHONY : home/cbrpnk/projects/et/et/test/test.o
+
+# target to build an object file
+home/cbrpnk/projects/et/et/test/test.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o
+.PHONY : home/cbrpnk/projects/et/et/test/test.cc.o
+
+home/cbrpnk/projects/et/et/test/test.i: home/cbrpnk/projects/et/et/test/test.cc.i
+
+.PHONY : home/cbrpnk/projects/et/et/test/test.i
+
+# target to preprocess a source file
+home/cbrpnk/projects/et/et/test/test.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.i
+.PHONY : home/cbrpnk/projects/et/et/test/test.cc.i
+
+home/cbrpnk/projects/et/et/test/test.s: home/cbrpnk/projects/et/et/test/test.cc.s
+
+.PHONY : home/cbrpnk/projects/et/et/test/test.s
+
+# target to generate assembly for a file
+home/cbrpnk/projects/et/et/test/test.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.s
+.PHONY : home/cbrpnk/projects/et/et/test/test.cc.s
 
 main.o: main.cc.o
 
@@ -456,39 +456,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... graph_demo"
 	@echo "... edit_cache"
-	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.o"
-	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.i"
-	@echo "... home/cbrpnk/et/et/audio/backends/jack_backend.s"
-	@echo "... home/cbrpnk/et/et/audio/backends/portaudio_backend.o"
-	@echo "... home/cbrpnk/et/et/audio/backends/portaudio_backend.i"
-	@echo "... home/cbrpnk/et/et/audio/backends/portaudio_backend.s"
-	@echo "... home/cbrpnk/et/et/audio/engine.o"
-	@echo "... home/cbrpnk/et/et/audio/engine.i"
-	@echo "... home/cbrpnk/et/et/audio/engine.s"
-	@echo "... home/cbrpnk/et/et/audio/modules/module.o"
-	@echo "... home/cbrpnk/et/et/audio/modules/module.i"
-	@echo "... home/cbrpnk/et/et/audio/modules/module.s"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.o"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.i"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.s"
-	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
-	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
-	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"
-	@echo "... home/cbrpnk/et/et/graph/obj.o"
-	@echo "... home/cbrpnk/et/et/graph/obj.i"
-	@echo "... home/cbrpnk/et/et/graph/obj.s"
-	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.o"
-	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.i"
-	@echo "... home/cbrpnk/et/et/graph/renderers/pt/path_tracer.s"
-	@echo "... home/cbrpnk/et/et/graph/scene.o"
-	@echo "... home/cbrpnk/et/et/graph/scene.i"
-	@echo "... home/cbrpnk/et/et/graph/scene.s"
-	@echo "... home/cbrpnk/et/et/math/random.o"
-	@echo "... home/cbrpnk/et/et/math/random.i"
-	@echo "... home/cbrpnk/et/et/math/random.s"
-	@echo "... home/cbrpnk/et/et/test/test.o"
-	@echo "... home/cbrpnk/et/et/test/test.i"
-	@echo "... home/cbrpnk/et/et/test/test.s"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/jack_backend.o"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/jack_backend.i"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/jack_backend.s"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.o"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.i"
+	@echo "... home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.s"
+	@echo "... home/cbrpnk/projects/et/et/audio/engine.o"
+	@echo "... home/cbrpnk/projects/et/et/audio/engine.i"
+	@echo "... home/cbrpnk/projects/et/et/audio/engine.s"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/module.o"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/module.i"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/module.s"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/oscillator.o"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/oscillator.i"
+	@echo "... home/cbrpnk/projects/et/et/audio/modules/oscillator.s"
+	@echo "... home/cbrpnk/projects/et/et/dsp/oscillator.o"
+	@echo "... home/cbrpnk/projects/et/et/dsp/oscillator.i"
+	@echo "... home/cbrpnk/projects/et/et/dsp/oscillator.s"
+	@echo "... home/cbrpnk/projects/et/et/graph/obj.o"
+	@echo "... home/cbrpnk/projects/et/et/graph/obj.i"
+	@echo "... home/cbrpnk/projects/et/et/graph/obj.s"
+	@echo "... home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.o"
+	@echo "... home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.i"
+	@echo "... home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.s"
+	@echo "... home/cbrpnk/projects/et/et/graph/scene.o"
+	@echo "... home/cbrpnk/projects/et/et/graph/scene.i"
+	@echo "... home/cbrpnk/projects/et/et/graph/scene.s"
+	@echo "... home/cbrpnk/projects/et/et/math/random.o"
+	@echo "... home/cbrpnk/projects/et/et/math/random.i"
+	@echo "... home/cbrpnk/projects/et/et/math/random.s"
+	@echo "... home/cbrpnk/projects/et/et/test/test.o"
+	@echo "... home/cbrpnk/projects/et/et/test/test.i"
+	@echo "... home/cbrpnk/projects/et/et/test/test.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

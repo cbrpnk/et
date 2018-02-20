@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cbrpnk/et/demos/graph
+CMAKE_SOURCE_DIR = /home/cbrpnk/projects/et/demos/graph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cbrpnk/et/demos/graph/build
+CMAKE_BINARY_DIR = /home/cbrpnk/projects/et/demos/graph/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/graph_demo.dir/depend.make
@@ -57,282 +57,282 @@ include CMakeFiles/graph_demo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/graph_demo.dir/flags.make
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/et/et/audio/backends/jack_backend.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o -c /home/cbrpnk/et/et/audio/backends/jack_backend.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o: /home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o -c /home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/backends/jack_backend.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/backends/jack_backend.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o: /home/cbrpnk/et/et/audio/backends/portaudio_backend.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o -c /home/cbrpnk/et/et/audio/backends/portaudio_backend.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o: /home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o -c /home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/backends/portaudio_backend.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/backends/portaudio_backend.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/engine.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o -c /home/cbrpnk/et/et/audio/engine.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o: /home/cbrpnk/projects/et/et/audio/engine.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o -c /home/cbrpnk/projects/et/et/audio/engine.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/engine.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/audio/engine.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/engine.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/audio/engine.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/modules/module.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o -c /home/cbrpnk/et/et/audio/modules/module.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o: /home/cbrpnk/projects/et/et/audio/modules/module.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o -c /home/cbrpnk/projects/et/et/audio/modules/module.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/modules/module.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/audio/modules/module.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/modules/module.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/audio/modules/module.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o -c /home/cbrpnk/et/et/audio/modules/oscillator.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/projects/et/et/audio/modules/oscillator.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o -c /home/cbrpnk/projects/et/et/audio/modules/oscillator.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/modules/oscillator.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/audio/modules/oscillator.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/modules/oscillator.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/audio/modules/oscillator.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o -c /home/cbrpnk/et/et/dsp/oscillator.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o: /home/cbrpnk/projects/et/et/dsp/oscillator.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o -c /home/cbrpnk/projects/et/et/dsp/oscillator.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/dsp/oscillator.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/dsp/oscillator.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/dsp/oscillator.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/dsp/oscillator.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o -c /home/cbrpnk/et/et/graph/obj.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o: /home/cbrpnk/projects/et/et/graph/obj.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o -c /home/cbrpnk/projects/et/et/graph/obj.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/graph/obj.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/graph/obj.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/graph/obj.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/graph/obj.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o -c /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o -c /home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/scene.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o -c /home/cbrpnk/et/et/graph/scene.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o: /home/cbrpnk/projects/et/et/graph/scene.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o -c /home/cbrpnk/projects/et/et/graph/scene.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/graph/scene.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/graph/scene.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/graph/scene.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/graph/scene.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o -c /home/cbrpnk/et/et/math/random.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o: /home/cbrpnk/projects/et/et/math/random.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o -c /home/cbrpnk/projects/et/et/math/random.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/math/random.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/math/random.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/math/random.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/math/random.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o
 
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: CMakeFiles/graph_demo.dir/flags.make
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: /home/cbrpnk/et/et/test/test.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o -c /home/cbrpnk/et/et/test/test.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o: /home/cbrpnk/projects/et/et/test/test.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o -c /home/cbrpnk/projects/et/et/test/test.cc
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/test/test.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/et/test/test.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.i
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/test/test.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.s
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/et/test/test.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.s
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.requires:
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.requires:
 
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.requires
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.requires
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.requires
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides.build
-.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.provides
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o
 
 
 CMakeFiles/graph_demo.dir/main.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/main.cc.o: ../main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/main.cc.o -c /home/cbrpnk/et/demos/graph/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/main.cc.o -c /home/cbrpnk/projects/et/demos/graph/main.cc
 
 CMakeFiles/graph_demo.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/main.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/demos/graph/main.cc > CMakeFiles/graph_demo.dir/main.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/projects/et/demos/graph/main.cc > CMakeFiles/graph_demo.dir/main.cc.i
 
 CMakeFiles/graph_demo.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/main.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/demos/graph/main.cc -o CMakeFiles/graph_demo.dir/main.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/projects/et/demos/graph/main.cc -o CMakeFiles/graph_demo.dir/main.cc.s
 
 CMakeFiles/graph_demo.dir/main.cc.o.requires:
 
@@ -347,37 +347,37 @@ CMakeFiles/graph_demo.dir/main.cc.o.provides.build: CMakeFiles/graph_demo.dir/ma
 
 # Object files for target graph_demo
 graph_demo_OBJECTS = \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o" \
-"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o" \
 "CMakeFiles/graph_demo.dir/main.cc.o"
 
 # External object files for target graph_demo
 graph_demo_EXTERNAL_OBJECTS =
 
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
-graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/main.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/build.make
 graph_demo: CMakeFiles/graph_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable graph_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/projects/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable graph_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -385,17 +385,17 @@ CMakeFiles/graph_demo.dir/build: graph_demo
 
 .PHONY : CMakeFiles/graph_demo.dir/build
 
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.requires
-CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/engine.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/module.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/dsp/oscillator.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/obj.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/graph/scene.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/math/random.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/projects/et/et/test/test.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/main.cc.o.requires
 
 .PHONY : CMakeFiles/graph_demo.dir/requires
@@ -405,6 +405,6 @@ CMakeFiles/graph_demo.dir/clean:
 .PHONY : CMakeFiles/graph_demo.dir/clean
 
 CMakeFiles/graph_demo.dir/depend:
-	cd /home/cbrpnk/et/demos/graph/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cbrpnk/et/demos/graph /home/cbrpnk/et/demos/graph /home/cbrpnk/et/demos/graph/build /home/cbrpnk/et/demos/graph/build /home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cbrpnk/projects/et/demos/graph/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cbrpnk/projects/et/demos/graph /home/cbrpnk/projects/et/demos/graph /home/cbrpnk/projects/et/demos/graph/build /home/cbrpnk/projects/et/demos/graph/build /home/cbrpnk/projects/et/demos/graph/build/CMakeFiles/graph_demo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/graph_demo.dir/depend
 

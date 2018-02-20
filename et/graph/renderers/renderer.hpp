@@ -28,4 +28,4 @@ private:
 } // namesapce Graph
 } // namespace Et
 
-#endif
+#endif // ET_GRAPH_RENDERER_HPP

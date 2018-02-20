@@ -6,6 +6,7 @@
 #include "graph/scene.hpp"
 #include "graph/components/component.hpp"
 #include "graph/components/camera.hpp"
+#include "graph/components/transform.hpp"
 #include "graph/renderers/renderer.hpp"
 #include "graph/renderers/pt/path_tracer.hpp"
 

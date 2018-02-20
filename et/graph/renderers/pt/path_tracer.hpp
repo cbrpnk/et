@@ -18,4 +18,4 @@ public:
 } // namesapce Graph
 } // namespace Et
 
-#endif
+#endif // ET_GRAPH_RENDERER_PATH_TRACER_HPP
