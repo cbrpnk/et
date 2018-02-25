@@ -10,7 +10,10 @@ template<typename T>
 class Mat2
 {
 public:
-    Mat2() {}
+    Mat2(bool identity = false)
+    {
+        if(identity) setIdentity();
+    }
     
     Mat2(const std::initializer_list<T> init)
     {

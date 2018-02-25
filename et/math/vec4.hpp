@@ -2,6 +2,7 @@
 #define ET_MATH_VEC4_HPP
 
 #include <iostream>
+#include <cassert>
 
 namespace Et {
 namespace Math {

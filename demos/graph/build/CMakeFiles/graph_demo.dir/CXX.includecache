@@ -6,37 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/cbrpnk/projects/et/demos/graph/main.cc
+/home/cbrpnk/et/demos/graph/main.cc
 iostream
 -
 et/graph.hpp
-/home/cbrpnk/projects/et/demos/graph/et/graph.hpp
+/home/cbrpnk/et/demos/graph/et/graph.hpp
 
-/home/cbrpnk/projects/et/et/audio/backends/jack_backend.cc
+/home/cbrpnk/et/et/audio/backends/jack_backend.cc
 iostream
 -
 jack_backend.hpp
-/home/cbrpnk/projects/et/et/audio/backends/jack_backend.hpp
+/home/cbrpnk/et/et/audio/backends/jack_backend.hpp
 ../engine.hpp
-/home/cbrpnk/projects/et/et/audio/engine.hpp
+/home/cbrpnk/et/et/audio/engine.hpp
 
-/home/cbrpnk/projects/et/et/audio/backends/jack_backend.hpp
+/home/cbrpnk/et/et/audio/backends/jack_backend.hpp
 jack/jack.h
 -
 
-/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.cc
+/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc
 iostream
 -
 portaudio_backend.hpp
-/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.hpp
+/home/cbrpnk/et/et/audio/backends/portaudio_backend.hpp
 ../engine.hpp
-/home/cbrpnk/projects/et/et/audio/engine.hpp
+/home/cbrpnk/et/et/audio/engine.hpp
 
-/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.hpp
+/home/cbrpnk/et/et/audio/backends/portaudio_backend.hpp
 portaudio.h
 -
 
-/home/cbrpnk/projects/et/et/audio/buffer.hpp
+/home/cbrpnk/et/et/audio/buffer.hpp
 memory
 -
 cstring
@@ -44,21 +44,21 @@ cstring
 iostream
 -
 ../mem/buffer.hpp
-/home/cbrpnk/projects/et/et/mem/buffer.hpp
+/home/cbrpnk/et/et/mem/buffer.hpp
 
-/home/cbrpnk/projects/et/et/audio/db.hpp
+/home/cbrpnk/et/et/audio/db.hpp
 cmath
 -
 
-/home/cbrpnk/projects/et/et/audio/engine.cc
+/home/cbrpnk/et/et/audio/engine.cc
 engine.hpp
-/home/cbrpnk/projects/et/et/audio/engine.hpp
+/home/cbrpnk/et/et/audio/engine.hpp
 modules/oscillator.hpp
-/home/cbrpnk/projects/et/et/audio/modules/oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
 iostream
 -
 
-/home/cbrpnk/projects/et/et/audio/engine.hpp
+/home/cbrpnk/et/et/audio/engine.hpp
 vector
 -
 cstdint
@@ -66,19 +66,19 @@ cstdint
 memory
 -
 backends/jack_backend.hpp
-/home/cbrpnk/projects/et/et/audio/backends/jack_backend.hpp
+/home/cbrpnk/et/et/audio/backends/jack_backend.hpp
 backends/portaudio_backend.hpp
-/home/cbrpnk/projects/et/et/audio/backends/portaudio_backend.hpp
+/home/cbrpnk/et/et/audio/backends/portaudio_backend.hpp
 modules/module.hpp
-/home/cbrpnk/projects/et/et/audio/modules/module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 buffer.hpp
-/home/cbrpnk/projects/et/et/audio/buffer.hpp
+/home/cbrpnk/et/et/audio/buffer.hpp
 
-/home/cbrpnk/projects/et/et/audio/modules/module.cc
+/home/cbrpnk/et/et/audio/modules/module.cc
 module.hpp
-/home/cbrpnk/projects/et/et/audio/modules/module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 
-/home/cbrpnk/projects/et/et/audio/modules/module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 cstdint
 -
 vector
@@ -86,123 +86,169 @@ vector
 iostream
 -
 ../buffer.hpp
-/home/cbrpnk/projects/et/et/audio/buffer.hpp
+/home/cbrpnk/et/et/audio/buffer.hpp
 
-/home/cbrpnk/projects/et/et/audio/modules/oscillator.cc
+/home/cbrpnk/et/et/audio/modules/oscillator.cc
 cmath
 -
 ../../math.hpp
-/home/cbrpnk/projects/et/et/math.hpp
+/home/cbrpnk/et/et/math.hpp
 oscillator.hpp
-/home/cbrpnk/projects/et/et/audio/modules/oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
 iostream
 -
 
-/home/cbrpnk/projects/et/et/audio/modules/oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/oscillator.hpp
 module.hpp
-/home/cbrpnk/projects/et/et/audio/modules/module.hpp
+/home/cbrpnk/et/et/audio/modules/module.hpp
 ../db.hpp
-/home/cbrpnk/projects/et/et/audio/db.hpp
+/home/cbrpnk/et/et/audio/db.hpp
 
-/home/cbrpnk/projects/et/et/dsp/oscillator.cc
+/home/cbrpnk/et/et/dsp/oscillator.cc
 oscillator.hpp
-/home/cbrpnk/projects/et/et/dsp/oscillator.hpp
+/home/cbrpnk/et/et/dsp/oscillator.hpp
 
-/home/cbrpnk/projects/et/et/dsp/oscillator.hpp
+/home/cbrpnk/et/et/dsp/oscillator.hpp
 
-/home/cbrpnk/projects/et/et/graph/components/component.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
+iostream
+-
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+
+/home/cbrpnk/et/et/graph/components/component.hpp
 string
 -
 vector
 -
 
-/home/cbrpnk/projects/et/et/graph/obj.cc
-obj.hpp
-/home/cbrpnk/projects/et/et/graph/obj.hpp
+/home/cbrpnk/et/et/graph/components/component_manager.cc
+component_manager.hpp
+/home/cbrpnk/et/et/graph/components/component_manager.hpp
+camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
+geometry.hpp
+/home/cbrpnk/et/et/graph/components/geometry.hpp
+transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
 
-/home/cbrpnk/projects/et/et/graph/obj.hpp
+/home/cbrpnk/et/et/graph/components/component_manager.hpp
 memory
 -
-string
--
 vector
 -
-components/component.hpp
-/home/cbrpnk/projects/et/et/graph/components/component.hpp
-../math/vec3.hpp
-/home/cbrpnk/projects/et/et/math/vec3.hpp
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
 
-/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.cc
+/home/cbrpnk/et/et/graph/components/geometry.hpp
+iostream
+-
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+
+/home/cbrpnk/et/et/graph/components/transform.cc
+transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
+
+/home/cbrpnk/et/et/graph/components/transform.hpp
+iostream
+-
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../../math/mat4.hpp
+/home/cbrpnk/et/et/math/mat4.hpp
+../../math/vec4.hpp
+/home/cbrpnk/et/et/math/vec4.hpp
+
+/home/cbrpnk/et/et/graph/obj.cc
+obj.hpp
+/home/cbrpnk/et/et/graph/obj.hpp
+components/camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
+components/geometry.hpp
+/home/cbrpnk/et/et/graph/components/geometry.hpp
+components/transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
+
+/home/cbrpnk/et/et/graph/obj.hpp
+memory
+-
+components/component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+
+/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 path_tracer.hpp
-/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 iostream
 -
 
-/home/cbrpnk/projects/et/et/graph/renderers/pt/path_tracer.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 ../../obj.hpp
-/home/cbrpnk/projects/et/et/graph/obj.hpp
+/home/cbrpnk/et/et/graph/obj.hpp
 ../../scene.hpp
-/home/cbrpnk/projects/et/et/graph/scene.hpp
+/home/cbrpnk/et/et/graph/scene.hpp
 ../renderer.hpp
-/home/cbrpnk/projects/et/et/graph/renderers/renderer.hpp
+/home/cbrpnk/et/et/graph/renderers/renderer.hpp
 
-/home/cbrpnk/projects/et/et/graph/renderers/renderer.hpp
+/home/cbrpnk/et/et/graph/renderers/renderer.hpp
 
-/home/cbrpnk/projects/et/et/graph/scene.cc
+/home/cbrpnk/et/et/graph/scene.cc
 scene.hpp
-/home/cbrpnk/projects/et/et/graph/scene.hpp
+/home/cbrpnk/et/et/graph/scene.hpp
 
-/home/cbrpnk/projects/et/et/graph/scene.hpp
+/home/cbrpnk/et/et/graph/scene.hpp
 vector
 -
 memory
 -
 obj.hpp
-/home/cbrpnk/projects/et/et/graph/obj.hpp
+/home/cbrpnk/et/et/graph/obj.hpp
 components/component.hpp
-/home/cbrpnk/projects/et/et/graph/components/component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
 
-/home/cbrpnk/projects/et/et/math.hpp
+/home/cbrpnk/et/et/math.hpp
 math/vec2.hpp
-/home/cbrpnk/projects/et/et/math/vec2.hpp
+/home/cbrpnk/et/et/math/vec2.hpp
 math/vec3.hpp
-/home/cbrpnk/projects/et/et/math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 math/vec4.hpp
-/home/cbrpnk/projects/et/et/math/vec4.hpp
+/home/cbrpnk/et/et/math/vec4.hpp
 math/mat2.hpp
-/home/cbrpnk/projects/et/et/math/mat2.hpp
+/home/cbrpnk/et/et/math/mat2.hpp
 math/mat3.hpp
-/home/cbrpnk/projects/et/et/math/mat3.hpp
+/home/cbrpnk/et/et/math/mat3.hpp
 math/mat4.hpp
-/home/cbrpnk/projects/et/et/math/mat4.hpp
+/home/cbrpnk/et/et/math/mat4.hpp
 math/functions.hpp
-/home/cbrpnk/projects/et/et/math/functions.hpp
+/home/cbrpnk/et/et/math/functions.hpp
 math/constants.hpp
-/home/cbrpnk/projects/et/et/math/constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
 math/random.hpp
-/home/cbrpnk/projects/et/et/math/random.hpp
+/home/cbrpnk/et/et/math/random.hpp
 
-/home/cbrpnk/projects/et/et/math/constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
 cmath
 -
 
-/home/cbrpnk/projects/et/et/math/functions.hpp
+/home/cbrpnk/et/et/math/functions.hpp
 constants.hpp
-/home/cbrpnk/projects/et/et/math/constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
 
-/home/cbrpnk/projects/et/et/math/mat2.hpp
+/home/cbrpnk/et/et/math/mat2.hpp
 vec2.hpp
-/home/cbrpnk/projects/et/et/math/vec2.hpp
+/home/cbrpnk/et/et/math/vec2.hpp
 
-/home/cbrpnk/projects/et/et/math/mat3.hpp
+/home/cbrpnk/et/et/math/mat3.hpp
 vec3.hpp
-/home/cbrpnk/projects/et/et/math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
-/home/cbrpnk/projects/et/et/math/mat4.hpp
+/home/cbrpnk/et/et/math/mat4.hpp
 vec4.hpp
-/home/cbrpnk/projects/et/et/math/vec4.hpp
+/home/cbrpnk/et/et/math/vec4.hpp
 
-/home/cbrpnk/projects/et/et/math/random.cc
+/home/cbrpnk/et/et/math/random.cc
 cmath
 -
 ctime
@@ -214,15 +260,15 @@ limits
 cstdlib
 -
 constants.hpp
-/home/cbrpnk/projects/et/et/math/constants.hpp
+/home/cbrpnk/et/et/math/constants.hpp
 random.hpp
-/home/cbrpnk/projects/et/et/math/random.hpp
+/home/cbrpnk/et/et/math/random.hpp
 
-/home/cbrpnk/projects/et/et/math/random.hpp
+/home/cbrpnk/et/et/math/random.hpp
 cmath
 -
 
-/home/cbrpnk/projects/et/et/math/vec2.hpp
+/home/cbrpnk/et/et/math/vec2.hpp
 cassert
 -
 iostream
@@ -230,27 +276,29 @@ iostream
 vector
 -
 
-/home/cbrpnk/projects/et/et/math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 iostream
 -
 cassert
 -
 
-/home/cbrpnk/projects/et/et/math/vec4.hpp
+/home/cbrpnk/et/et/math/vec4.hpp
 iostream
 -
+cassert
+-
 
-/home/cbrpnk/projects/et/et/mem/buffer.hpp
+/home/cbrpnk/et/et/mem/buffer.hpp
 memory
 -
 cstring
 -
 
-/home/cbrpnk/projects/et/et/test/test.cc
+/home/cbrpnk/et/et/test/test.cc
 test.hpp
-/home/cbrpnk/projects/et/et/test/test.hpp
+/home/cbrpnk/et/et/test/test.hpp
 
-/home/cbrpnk/projects/et/et/test/test.hpp
+/home/cbrpnk/et/et/test/test.hpp
 string
 -
 vector

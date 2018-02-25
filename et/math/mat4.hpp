@@ -11,7 +11,10 @@ class Mat4
 {
 public:
     
-    Mat4<T>() {}
+    Mat4<T>(bool identity = false)
+    {
+        if(identity) setIdentity();
+    }
     
     Mat4(const std::initializer_list<T> init)
     {

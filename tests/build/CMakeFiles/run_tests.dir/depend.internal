@@ -56,6 +56,7 @@ CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.cc
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
@@ -63,11 +64,13 @@ CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
  /home/cbrpnk/et/et/graph/renderers/renderer.hpp
  /home/cbrpnk/et/et/graph/scene.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/scene.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
  /home/cbrpnk/et/et/graph/scene.cc
  /home/cbrpnk/et/et/graph/scene.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/math/random.cc.o
  /home/cbrpnk/et/et/math/constants.hpp
  /home/cbrpnk/et/et/math/random.cc
@@ -90,6 +93,7 @@ CMakeFiles/run_tests.dir/main.cc.o
  /home/cbrpnk/et/et/graph.hpp
  /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/transform.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
  /home/cbrpnk/et/et/graph/renderers/renderer.hpp

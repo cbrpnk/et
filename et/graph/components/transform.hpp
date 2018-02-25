@@ -1,8 +1,11 @@
 #ifndef ET_GRAPH_COMPONENT_TRANSFORM_HPP
 #define ET_GRAPH_COMPONENT_TRANSFORM_HPP
 
+#include <iostream>
+
 #include "component.hpp"
 #include "../../math/mat4.hpp"
+#include "../../math/vec4.hpp"
 
 namespace Et {
 namespace Graph {
@@ -11,15 +14,17 @@ class Transform : public Component {
 public:
     Transform()
         : Component::Component()
-        , position(0, 0, 0)
-        , lookAt(0, 0, 1)
-        {}
+        , transform(true)
+    {
+        std::cout << "new Transform\n";
+    }
     
-    void moveTo();
+    void moveTo(Math::Vec4<float> target);
     void rotate();
+    void scale(float factor);
 
 private:
-    Math::Mat4<float> tranform;
+    Math::Mat4<float> transform;
 };
 
 } // namespace Graph

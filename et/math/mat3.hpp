@@ -11,7 +11,10 @@ class Mat3
 {
 public:
     
-    Mat3<T>() {}
+    Mat3<T>(bool identity = false)
+    {
+        if(identity) setIdentity();
+    }
     
     Mat3(const std::initializer_list<T> init)
     {

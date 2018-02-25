@@ -139,6 +139,8 @@ graph/components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
 graph/components/camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
+graph/components/transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
 graph/renderers/renderer.hpp
 /home/cbrpnk/et/et/graph/renderers/renderer.hpp
 graph/renderers/pt/path_tracer.hpp
@@ -154,6 +156,12 @@ string
 vector
 -
 
+/home/cbrpnk/et/et/graph/components/transform.hpp
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../../math/mat4.hpp
+/home/cbrpnk/et/et/math/mat4.hpp
+
 /home/cbrpnk/et/et/graph/obj.cc
 obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
@@ -167,6 +175,8 @@ vector
 -
 components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 path_tracer.hpp
@@ -268,6 +278,8 @@ vector
 
 /home/cbrpnk/et/et/math/vec3.hpp
 iostream
+-
+cassert
 -
 
 /home/cbrpnk/et/et/math/vec4.hpp

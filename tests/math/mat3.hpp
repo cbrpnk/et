@@ -5,11 +5,16 @@ unsigned int TEST_MAT3() {
     Unit unit("Mat3");
     
     unit.add("Constructors", []() {
-        // Default constructor
+        // Mat3<T>(bool identity = false)
         Mat3<float> m;
         eq({{m[0].x, 0.0f}, {m[0].y, 0.0f}, {m[0].z, 0.0f},
             {m[1].x, 0.0f}, {m[1].y, 0.0f}, {m[1].z, 0.0f},
             {m[2].x, 0.0f}, {m[2].y, 0.0f}, {m[2].z, 0.0f}},"Mat3()");
+        
+        Mat3<float> i(true);
+        eq({{i[0].x, 1.0f}, {i[0].y, 0.0f}, {i[0].z, 0.0f},
+            {i[1].x, 0.0f}, {i[1].y, 1.0f}, {i[1].z, 0.0f},
+            {i[2].x, 0.0f}, {i[2].y, 0.0f}, {i[2].z, 1.0f}},"Mat3(true)");
         
         // Mat3<T>(const std::initializer_list<T> init)
         Mat3<float> m1 {1.0f, 2.0f, 3.0f,

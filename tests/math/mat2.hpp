@@ -5,10 +5,14 @@ unsigned int TEST_MAT2() {
     Unit unit("Mat2");
     
     unit.add("Constructors", []() {
-        // Default constructor
+        // Mat2<T>(bool identity = false)
         Mat2<float> m;
         eq({{m.mat[0].x, 0.0f}, {m.mat[0].y, 0.0f},
             {m.mat[1].x, 0.0f}, {m.mat[1].y, 0.0f}},"Mat2()");
+        
+        Mat2<float> i(true);
+        eq({{i.mat[0].x, 1.0f}, {i.mat[0].y, 0.0f},
+            {i.mat[1].x, 0.0f}, {i.mat[1].y, 1.0f}},"Mat2(true)");
         
         // Mat2<T>(const std::initializer_list<T> init)
         Mat2<float> m1 {1.0f, 2.0f,

@@ -1,6 +1,6 @@
-#ifndef ET_GRAPH_COMPONENT_GEOMETRY_HPP
-#define ET_GRAPH_COMPONENT_GEOMETRY_HPP
+#pragma once
 
+#include <iostream>
 #include "component.hpp"
 
 namespace Et {
@@ -8,10 +8,8 @@ namespace Graph {
 
 class Geometry : public Component {
 public:
-    Geometry() : Component::Component() {}
+    Geometry() : Component::Component() { std::cout << "new geometry\n"; }
 };
 
 } // namespace Graph
 } // namespace Et
-
-#endif ET_GRAPH_COMPONENT_GEOMETRY_HPP
