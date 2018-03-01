@@ -1,7 +1,6 @@
 #include <iostream>
 #include "et/graph.hpp"
 
-
 int main(int argc, char** argv)
 {
     using namespace Et::Graph;
@@ -9,20 +8,19 @@ int main(int argc, char** argv)
     PathTracer pt(800, 600);
     Scene scene;
     
-    Obj& camera = scene.addObj({Component::Type::Transform, Component::Type::Camera});
-    Obj& sphere = scene.addObj({Component::Type::Transform, Component::Type::Geometry});
-    //sphere.getComponent(Component::Type::Geometry)
-    //      .setType(Component::Geometry::Type::Sphere);
+    Obj* camera = new Obj(scene);
+    camera->addComponent<Transform>();
+    camera->addComponent<Camera>();
     
-    /*
-    if(sphere.getComponents().get(Component::Type::Transform)) {
-        std::cout << "Sphere has a transform\n";
-    } else {
-        std::cout << "Sphere does not have a transform\n";
-    }
-    */
+    Obj* sphere = new Obj(scene);
+    sphere->addComponent<Transform>();
+    sphere->addComponent<Geometry>();
+    sphere->getComponent<Transform>()->moveTo(Et::Math::Vec4<float>(0, 0, 10, 0));
     
     scene.update();
     pt.render(scene, camera);
+    
+    delete sphere;
+    delete camera;
     return 0;
 }

@@ -8,7 +8,11 @@ namespace Graph {
 
 class Geometry : public Component {
 public:
-    Geometry() : Component::Component() { std::cout << "new geometry\n"; }
+    Geometry()
+        : Component::Component(Component::Type::Geometry)
+    {
+        std::cout << "new geometry\n";
+    }
 };
 
 } // namespace Graph

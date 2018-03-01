@@ -1,52 +1,59 @@
 #pragma once
 
 #include <memory>
-#include "components/component.hpp"
+#include "components/component_manager.hpp"
 #include "../math/vec3.hpp"
 
 namespace Et {
 namespace Graph {
 
+class Scene;
+
 class Obj {
+private:
+    // Keep track of the last issued id in order for every object to have a unique id
+    static unsigned int nextId;
+
 public:
     Obj(Obj& other) = delete;
+    Obj(Obj&& other) = delete;
     
-    Obj()
-        : active(true)
+    Obj(Scene& scene)
+        : scene(scene)
         , id(Obj::nextId++)
-        , components()
     {}
     
-    Obj(Obj&& other)
-        : active(other.active)
-        , id(other.id)
-        , components(std::move(other.components))
-    {}
-    
-    Obj(std::initializer_list<Component::Type> componentTypes)
-        : active(true)
-        , id(Obj::nextId++)
-    {
-        for(auto type : componentTypes) addComponent(type);
+    ~Obj() {
+        std::cout << "~Obj()\n";
     }
     
     void update();
     
-    unsigned int getId()              { return id; }
-    bool isActive()                   { return active; }
-    void setActive(bool newValue)     { active = newValue; }
+    unsigned int getId()           { return id; }
+    bool isActive()                { return active; }
+    void setActive(bool newValue)  { active = newValue; }
     
-    // Compoent Managment
-    void       addComponent(Component::Type type);
-    Component* getComponent(Component::Type type);
-    bool       hasCompoent(Component::Type type);
+    // Components
+    template <typename T>
+    void addComponent()
+    {
+        if(!getComponent<T>()) components.push_back(std::make_unique<T>());
+    }
+    
+    template <typename T>
+    T* getComponent() const
+    {
+        for(auto& componentPtr : components) {
+            Component* c =  componentPtr.get();
+            if(dynamic_cast<T*>(c)) return static_cast<T*>(c);
+        }
+        return nullptr;
+    }
     
 private:
-    static unsigned int nextId;
-
-private:
-    bool active;
+    Scene& scene;
     unsigned int id;
+    bool active = true;
     std::vector<std::unique_ptr<Component>> components;
 };
 

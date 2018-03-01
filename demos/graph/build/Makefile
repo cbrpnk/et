@@ -285,6 +285,33 @@ home/cbrpnk/et/et/dsp/oscillator.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
 .PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.s
 
+home/cbrpnk/et/et/graph/components/camera.o: home/cbrpnk/et/et/graph/components/camera.cc.o
+
+.PHONY : home/cbrpnk/et/et/graph/components/camera.o
+
+# target to build an object file
+home/cbrpnk/et/et/graph/components/camera.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
+.PHONY : home/cbrpnk/et/et/graph/components/camera.cc.o
+
+home/cbrpnk/et/et/graph/components/camera.i: home/cbrpnk/et/et/graph/components/camera.cc.i
+
+.PHONY : home/cbrpnk/et/et/graph/components/camera.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/graph/components/camera.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.i
+.PHONY : home/cbrpnk/et/et/graph/components/camera.cc.i
+
+home/cbrpnk/et/et/graph/components/camera.s: home/cbrpnk/et/et/graph/components/camera.cc.s
+
+.PHONY : home/cbrpnk/et/et/graph/components/camera.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/graph/components/camera.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s
+.PHONY : home/cbrpnk/et/et/graph/components/camera.cc.s
+
 home/cbrpnk/et/et/graph/components/component_manager.o: home/cbrpnk/et/et/graph/components/component_manager.cc.o
 
 .PHONY : home/cbrpnk/et/et/graph/components/component_manager.o
@@ -311,6 +338,33 @@ home/cbrpnk/et/et/graph/components/component_manager.s: home/cbrpnk/et/et/graph/
 home/cbrpnk/et/et/graph/components/component_manager.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.s
 .PHONY : home/cbrpnk/et/et/graph/components/component_manager.cc.s
+
+home/cbrpnk/et/et/graph/components/geometry.o: home/cbrpnk/et/et/graph/components/geometry.cc.o
+
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.o
+
+# target to build an object file
+home/cbrpnk/et/et/graph/components/geometry.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.o
+
+home/cbrpnk/et/et/graph/components/geometry.i: home/cbrpnk/et/et/graph/components/geometry.cc.i
+
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/graph/components/geometry.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.i
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.i
+
+home/cbrpnk/et/et/graph/components/geometry.s: home/cbrpnk/et/et/graph/components/geometry.cc.s
+
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/graph/components/geometry.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.s
+.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.s
 
 home/cbrpnk/et/et/graph/components/transform.o: home/cbrpnk/et/et/graph/components/transform.cc.o
 
@@ -528,9 +582,15 @@ help:
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"
+	@echo "... home/cbrpnk/et/et/graph/components/camera.o"
+	@echo "... home/cbrpnk/et/et/graph/components/camera.i"
+	@echo "... home/cbrpnk/et/et/graph/components/camera.s"
 	@echo "... home/cbrpnk/et/et/graph/components/component_manager.o"
 	@echo "... home/cbrpnk/et/et/graph/components/component_manager.i"
 	@echo "... home/cbrpnk/et/et/graph/components/component_manager.s"
+	@echo "... home/cbrpnk/et/et/graph/components/geometry.o"
+	@echo "... home/cbrpnk/et/et/graph/components/geometry.i"
+	@echo "... home/cbrpnk/et/et/graph/components/geometry.s"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.o"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.i"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.s"

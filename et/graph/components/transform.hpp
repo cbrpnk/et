@@ -13,7 +13,7 @@ namespace Graph {
 class Transform : public Component {
 public:
     Transform()
-        : Component::Component()
+        : Component::Component(Component::Type::Transform)
         , transform(true)
     {
         std::cout << "new Transform\n";

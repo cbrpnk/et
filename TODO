@@ -1,2 +1,8 @@
 Audio:
     Make Engine a static class
+Mem:
+    Crreate a Pool:
+        allocates a big memory chunk
+        fills it by creating a bunch of object of a user-defined type
+        Calls the objects desctructor on destruction
+        Frees memory on destruction

@@ -110,6 +110,10 @@ oscillator.hpp
 
 /home/cbrpnk/et/et/dsp/oscillator.hpp
 
+/home/cbrpnk/et/et/graph/components/camera.cc
+camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
+
 /home/cbrpnk/et/et/graph/components/camera.hpp
 iostream
 -
@@ -139,6 +143,12 @@ vector
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+iostream
+-
+
+/home/cbrpnk/et/et/graph/components/geometry.cc
+geometry.hpp
+/home/cbrpnk/et/et/graph/components/geometry.hpp
 
 /home/cbrpnk/et/et/graph/components/geometry.hpp
 iostream
@@ -163,18 +173,12 @@ component.hpp
 /home/cbrpnk/et/et/graph/obj.cc
 obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
-components/camera.hpp
-/home/cbrpnk/et/et/graph/components/camera.hpp
-components/geometry.hpp
-/home/cbrpnk/et/et/graph/components/geometry.hpp
-components/transform.hpp
-/home/cbrpnk/et/et/graph/components/transform.hpp
 
 /home/cbrpnk/et/et/graph/obj.hpp
 memory
 -
-components/component.hpp
-/home/cbrpnk/et/et/graph/components/component.hpp
+components/component_manager.hpp
+/home/cbrpnk/et/et/graph/components/component_manager.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
 

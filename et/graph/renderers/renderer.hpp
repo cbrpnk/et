@@ -14,8 +14,9 @@ public:
         : width(width)
         , height(height)
     {}
+    virtual ~Renderer() {}
     
-    virtual void render(Scene& scene, Obj& camera) = 0;
+    virtual void render(Scene& scene, Obj* camera) = 0;
     
     int getHeight() { return height; }
     int getWidth()  { return width; }

@@ -201,9 +201,33 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides: CMakeF
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
 
 
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o -c /home/cbrpnk/et/et/graph/components/camera.cc
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/graph/components/camera.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.i
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/graph/components/camera.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.requires:
+
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.requires
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.provides
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
+
+
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o -c /home/cbrpnk/et/et/graph/components/component_manager.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.i: cmake_force
@@ -225,9 +249,33 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.c
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o
 
 
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: CMakeFiles/graph_demo.dir/flags.make
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/geometry.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o -c /home/cbrpnk/et/et/graph/components/geometry.cc
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/graph/components/geometry.cc > CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.i
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/graph/components/geometry.cc -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.s
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.requires:
+
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.requires
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.provides: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.requires
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.provides.build
+.PHONY : CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.provides
+
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.provides.build: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o
+
+
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o -c /home/cbrpnk/et/et/graph/components/transform.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.i: cmake_force
@@ -251,7 +299,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o.prov
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o -c /home/cbrpnk/et/et/graph/obj.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i: cmake_force
@@ -275,7 +323,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides.build: CMake
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o -c /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/scene.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o -c /home/cbrpnk/et/et/graph/scene.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides.build: CMa
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o -c /home/cbrpnk/et/et/math/random.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build: CMa
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: /home/cbrpnk/et/et/test/test.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o -c /home/cbrpnk/et/et/test/test.cc
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.i: cmake_force
@@ -371,7 +419,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides.build: CMake
 
 CMakeFiles/graph_demo.dir/main.cc.o: CMakeFiles/graph_demo.dir/flags.make
 CMakeFiles/graph_demo.dir/main.cc.o: ../main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/graph_demo.dir/main.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graph_demo.dir/main.cc.o -c /home/cbrpnk/et/demos/graph/main.cc
 
 CMakeFiles/graph_demo.dir/main.cc.i: cmake_force
@@ -401,7 +449,9 @@ graph_demo_OBJECTS = \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o" \
+"CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o" \
 "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o" \
@@ -419,7 +469,9 @@ graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o
+graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
@@ -429,7 +481,7 @@ graph_demo: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/main.cc.o
 graph_demo: CMakeFiles/graph_demo.dir/build.make
 graph_demo: CMakeFiles/graph_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable graph_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable graph_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -443,7 +495,9 @@ CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o.requires
+CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.requires
 CMakeFiles/graph_demo.dir/requires: CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.requires

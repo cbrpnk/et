@@ -12,13 +12,13 @@ namespace Graph {
 class Scene {
 public:
     Scene() {}
+    ~Scene() {} // TODO delete objects
     
-    Obj& addObj();
-    Obj& addObj(std::initializer_list<Component::Type> componentTypes);
+    void add(Obj* obj);
     void update();
     
 private:
-    std::vector<std::unique_ptr<Obj>> objs;
+    std::vector<Obj*> objs;
 };
 
 } // namespace Graph

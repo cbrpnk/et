@@ -15,14 +15,19 @@ public:
         Transform
     };
 public:
-    Component() 
-        : active(true)
+    Component() = delete;
+    Component(Type type) 
+        : type(type)
+        , active(true)
     {}
+    virtual ~Component() {}
     
     bool isActive()               { return active; }
     void setActive(bool newValue) { active = newValue; }
+    Type getType()                { return type; }
     
 private:
+    Type type;
     bool active;
 };
 

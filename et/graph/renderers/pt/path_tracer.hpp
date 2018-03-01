@@ -12,7 +12,7 @@ namespace Graph {
 class PathTracer : public Renderer {
 public:
     PathTracer(int width, int height) : Renderer(width, height) {}
-    void render(Scene& scene, Obj& camera) override;
+    void render(Scene& scene, Obj* camera) override;
 };
     
 } // namesapce Graph

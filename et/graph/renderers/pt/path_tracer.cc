@@ -5,7 +5,7 @@
 namespace Et {
 namespace Graph {
 
-void PathTracer::render(Scene& scene, Obj& camera)
+void PathTracer::render(Scene& scene, Obj* camera)
 {
     std::cout << "render\n";
 }

@@ -9,7 +9,11 @@ namespace Graph {
 
 class Camera : public Component {
 public:
-    Camera() : Component::Component() { std::cout << "new Camera\n"; }
+    Camera()
+        : Component::Component(Component::Type::Camera)
+    {
+        std::cout << "new Camera\n";
+    }
 };
 
 } // namespace Graph
