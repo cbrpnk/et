@@ -12,9 +12,15 @@ namespace Graph {
 class Scene {
 public:
     Scene() {}
-    ~Scene() {} // TODO delete objects
+    ~Scene() {
+        for(auto& o : objs) {
+            delete o;
+        }
+    }
     
     void add(Obj* obj);
+    Obj& createObj();
+    void destroyObj(Obj& obj);
     void update();
     
 private:

@@ -1,4 +1,5 @@
 #include "obj.hpp"
+#include "scene.hpp"
 
 namespace Et {
 namespace Graph {
@@ -6,10 +7,19 @@ namespace Graph {
 // Static initialization
 unsigned int Obj::nextId = 0;
 
+Obj::Obj(Scene& scene)
+    : scene(scene)
+    , id(Obj::nextId++)
+{
+    scene.add(this);
+}
+
 void Obj::update()
 {
     if(active) {
-        std::cout << "Update component\n";
+        for(auto& c : components) {
+            c.get()->update();
+        }
     }
 }
 

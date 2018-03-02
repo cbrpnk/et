@@ -9,9 +9,14 @@ namespace Graph {
 class Geometry : public Component {
 public:
     Geometry()
-        : Component::Component(Component::Type::Geometry)
     {
         std::cout << "new geometry\n";
+    }
+    virtual ~Geometry() override {}
+    
+    virtual void update() override
+    {
+        std::cout << "update Geometry\n";
     }
 };
 

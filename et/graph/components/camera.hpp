@@ -10,9 +10,15 @@ namespace Graph {
 class Camera : public Component {
 public:
     Camera()
-        : Component::Component(Component::Type::Camera)
     {
         std::cout << "new Camera\n";
+    }
+    
+    virtual ~Camera() override {}
+    
+    virtual void update() override
+    {
+        std::cout << "update Camera\n";
     }
 };
 

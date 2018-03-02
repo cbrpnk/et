@@ -125,24 +125,6 @@ string
 -
 vector
 -
-
-/home/cbrpnk/et/et/graph/components/component_manager.cc
-component_manager.hpp
-/home/cbrpnk/et/et/graph/components/component_manager.hpp
-camera.hpp
-/home/cbrpnk/et/et/graph/components/camera.hpp
-geometry.hpp
-/home/cbrpnk/et/et/graph/components/geometry.hpp
-transform.hpp
-/home/cbrpnk/et/et/graph/components/transform.hpp
-
-/home/cbrpnk/et/et/graph/components/component_manager.hpp
-memory
--
-vector
--
-component.hpp
-/home/cbrpnk/et/et/graph/components/component.hpp
 iostream
 -
 
@@ -165,20 +147,24 @@ iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../../types.hpp
+/home/cbrpnk/et/et/types.hpp
 ../../math/mat4.hpp
 /home/cbrpnk/et/et/math/mat4.hpp
-../../math/vec4.hpp
-/home/cbrpnk/et/et/math/vec4.hpp
+../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/obj.cc
 obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
+scene.hpp
+/home/cbrpnk/et/et/graph/scene.hpp
 
 /home/cbrpnk/et/et/graph/obj.hpp
 memory
 -
-components/component_manager.hpp
-/home/cbrpnk/et/et/graph/components/component_manager.hpp
+components/component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
 
@@ -311,4 +297,6 @@ functional
 -
 iostream
 -
+
+/home/cbrpnk/et/et/types.hpp
 

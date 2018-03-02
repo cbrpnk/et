@@ -3,31 +3,22 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 namespace Et {
 namespace Graph {
 
 class Component {
 public:
-    enum class Type {
-        Camera,
-        Geometry,
-        Transform
-    };
-public:
-    Component() = delete;
-    Component(Type type) 
-        : type(type)
-        , active(true)
-    {}
+    Component() : active(true) {}
     virtual ~Component() {}
+    
+    virtual void update() {}
     
     bool isActive()               { return active; }
     void setActive(bool newValue) { active = newValue; }
-    Type getType()                { return type; }
     
 private:
-    Type type;
     bool active;
 };
 

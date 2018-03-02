@@ -1,26 +1,25 @@
 #include <iostream>
 #include "et/graph.hpp"
 
-int main(int argc, char** argv)
-{
+void test() {
     using namespace Et::Graph;
     
     PathTracer pt(800, 600);
     Scene scene;
     
-    Obj* camera = new Obj(scene);
-    camera->addComponent<Transform>();
-    camera->addComponent<Camera>();
+    Obj& camera = scene.createObj();
+    camera.addComponent<Transform, Camera>();
     
-    Obj* sphere = new Obj(scene);
-    sphere->addComponent<Transform>();
-    sphere->addComponent<Geometry>();
-    sphere->getComponent<Transform>()->moveTo(Et::Math::Vec4<float>(0, 0, 10, 0));
+    Obj& sphere = scene.createObj();
+    sphere.addComponent<Transform, Geometry>();
+    sphere.getComponent<Transform>()->moveTo(0, 0, -10);
     
     scene.update();
-    pt.render(scene, camera);
-    
-    delete sphere;
-    delete camera;
+    pt.render(scene, &camera);
+}
+
+int main(int argc, char** argv)
+{
+    test();
     return 0;
 }

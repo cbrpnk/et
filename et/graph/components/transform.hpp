@@ -4,8 +4,9 @@
 #include <iostream>
 
 #include "component.hpp"
+#include "../../types.hpp"
 #include "../../math/mat4.hpp"
-#include "../../math/vec4.hpp"
+#include "../../math/vec3.hpp"
 
 namespace Et {
 namespace Graph {
@@ -13,18 +14,25 @@ namespace Graph {
 class Transform : public Component {
 public:
     Transform()
-        : Component::Component(Component::Type::Transform)
-        , transform(true)
+        : transform(true)
     {
         std::cout << "new Transform\n";
     }
     
-    void moveTo(Math::Vec4<float> target);
+    virtual ~Transform() override {}
+    
+    virtual void update() override
+    {
+        std::cout << "update Transform\n";
+    }
+    
+    void moveTo(Math::Vec3<Float> target);
+    void moveTo(Float x, Float y, Float z);
     void rotate();
-    void scale(float factor);
+    void scale(Float factor);
 
 private:
-    Math::Mat4<float> transform;
+    Math::Mat4<Float> transform;
 };
 
 } // namespace Graph

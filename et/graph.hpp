@@ -5,7 +5,6 @@
 #include "graph/obj.hpp"
 #include "graph/scene.hpp"
 #include "graph/components/component.hpp"
-#include "graph/components/component_manager.hpp"
 #include "graph/components/camera.hpp"
 #include "graph/components/geometry.hpp"
 #include "graph/components/transform.hpp"

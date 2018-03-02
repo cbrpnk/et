@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include "components/component_manager.hpp"
+#include "components/component.hpp"
 #include "../math/vec3.hpp"
 
 namespace Et {
@@ -18,14 +18,9 @@ public:
     Obj(Obj& other) = delete;
     Obj(Obj&& other) = delete;
     
-    Obj(Scene& scene)
-        : scene(scene)
-        , id(Obj::nextId++)
-    {}
+    Obj(Scene& scene);
     
-    ~Obj() {
-        std::cout << "~Obj()\n";
-    }
+    virtual ~Obj() {}
     
     void update();
     
@@ -40,6 +35,13 @@ public:
         if(!getComponent<T>()) components.push_back(std::make_unique<T>());
     }
     
+    template <typename T, typename T2, typename... Ts>
+    void addComponent()
+    {
+        addComponent<T>();
+        addComponent<T2, Ts...>();
+    }
+    
     template <typename T>
     T* getComponent() const
     {
@@ -49,6 +51,8 @@ public:
         }
         return nullptr;
     }
+    
+    
     
 private:
     Scene& scene;

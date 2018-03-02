@@ -312,33 +312,6 @@ home/cbrpnk/et/et/graph/components/camera.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s
 .PHONY : home/cbrpnk/et/et/graph/components/camera.cc.s
 
-home/cbrpnk/et/et/graph/components/component_manager.o: home/cbrpnk/et/et/graph/components/component_manager.cc.o
-
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.o
-
-# target to build an object file
-home/cbrpnk/et/et/graph/components/component_manager.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.cc.o
-
-home/cbrpnk/et/et/graph/components/component_manager.i: home/cbrpnk/et/et/graph/components/component_manager.cc.i
-
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.i
-
-# target to preprocess a source file
-home/cbrpnk/et/et/graph/components/component_manager.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.i
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.cc.i
-
-home/cbrpnk/et/et/graph/components/component_manager.s: home/cbrpnk/et/et/graph/components/component_manager.cc.s
-
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.s
-
-# target to generate assembly for a file
-home/cbrpnk/et/et/graph/components/component_manager.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.s
-.PHONY : home/cbrpnk/et/et/graph/components/component_manager.cc.s
-
 home/cbrpnk/et/et/graph/components/geometry.o: home/cbrpnk/et/et/graph/components/geometry.cc.o
 
 .PHONY : home/cbrpnk/et/et/graph/components/geometry.o
@@ -585,9 +558,6 @@ help:
 	@echo "... home/cbrpnk/et/et/graph/components/camera.o"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.i"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.s"
-	@echo "... home/cbrpnk/et/et/graph/components/component_manager.o"
-	@echo "... home/cbrpnk/et/et/graph/components/component_manager.i"
-	@echo "... home/cbrpnk/et/et/graph/components/component_manager.s"
 	@echo "... home/cbrpnk/et/et/graph/components/geometry.o"
 	@echo "... home/cbrpnk/et/et/graph/components/geometry.i"
 	@echo "... home/cbrpnk/et/et/graph/components/geometry.s"

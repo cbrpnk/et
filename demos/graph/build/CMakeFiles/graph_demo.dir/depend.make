@@ -56,15 +56,6 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/geometry.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/component_manager.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
-
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/geometry.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/geometry.hpp
@@ -73,16 +64,17 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /ho
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/types.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
@@ -91,7 +83,6 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o:
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/component_manager.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/scene.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
