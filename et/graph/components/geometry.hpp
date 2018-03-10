@@ -6,19 +6,12 @@
 namespace Et {
 namespace Graph {
 
-class Geometry : public Component {
+class Sdf {
 public:
-    Geometry()
-    {
-        std::cout << "new geometry\n";
-    }
-    virtual ~Geometry() override {}
+    Sdf() : Component(*this) {}
+    virtual ~Sdf() {}
     
-    virtual void update() override
-    {
-        std::cout << "update Geometry\n";
-    }
+    virtual void intersect() {}
 };
 
-} // namespace Graph
-} // namespace Et
+};

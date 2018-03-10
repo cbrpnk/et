@@ -56,10 +56,17 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
  /home/cbrpnk/et/et/graph/components/camera.cc
  /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
- /home/cbrpnk/et/et/graph/components/geometry.cc
- /home/cbrpnk/et/et/graph/components/geometry.hpp
+ /home/cbrpnk/et/et/graph/components/sdf.cc
+ /home/cbrpnk/et/et/graph/components/sdf.hpp
+ /home/cbrpnk/et/et/graph/components/transform.hpp
+ /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
+ /home/cbrpnk/et/et/math/mat4.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
+ /home/cbrpnk/et/et/math/vec4.hpp
+ /home/cbrpnk/et/et/types.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/components/transform.cc

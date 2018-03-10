@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <cmath>
 
 namespace Et {
 namespace Math {

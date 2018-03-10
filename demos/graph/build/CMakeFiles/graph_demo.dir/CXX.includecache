@@ -9,8 +9,8 @@
 /home/cbrpnk/et/demos/graph/main.cc
 iostream
 -
-et/graph.hpp
-/home/cbrpnk/et/demos/graph/et/graph.hpp
+et/et.hpp
+/home/cbrpnk/et/demos/graph/et/et.hpp
 
 /home/cbrpnk/et/et/audio/backends/jack_backend.cc
 iostream
@@ -128,15 +128,23 @@ vector
 iostream
 -
 
-/home/cbrpnk/et/et/graph/components/geometry.cc
-geometry.hpp
-/home/cbrpnk/et/et/graph/components/geometry.hpp
+/home/cbrpnk/et/et/graph/components/sdf.cc
+sdf.hpp
+/home/cbrpnk/et/et/graph/components/sdf.hpp
+../obj.hpp
+/home/cbrpnk/et/et/graph/obj.hpp
+transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
 
-/home/cbrpnk/et/et/graph/components/geometry.hpp
+/home/cbrpnk/et/et/graph/components/sdf.hpp
 iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
+../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/components/transform.cc
 transform.hpp
@@ -165,6 +173,10 @@ memory
 -
 components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+
+/home/cbrpnk/et/et/graph/ray.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
 
@@ -265,17 +277,23 @@ iostream
 -
 vector
 -
+cmath
+-
 
 /home/cbrpnk/et/et/math/vec3.hpp
 iostream
 -
 cassert
 -
+cmath
+-
 
 /home/cbrpnk/et/et/math/vec4.hpp
 iostream
 -
 cassert
+-
+cmath
 -
 
 /home/cbrpnk/et/et/mem/buffer.hpp

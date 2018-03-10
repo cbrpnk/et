@@ -56,9 +56,16 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/geometry.cc
-CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o: /home/cbrpnk/et/et/graph/components/geometry.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/ray.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/types.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.cc

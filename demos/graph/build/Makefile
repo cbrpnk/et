@@ -312,32 +312,32 @@ home/cbrpnk/et/et/graph/components/camera.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s
 .PHONY : home/cbrpnk/et/et/graph/components/camera.cc.s
 
-home/cbrpnk/et/et/graph/components/geometry.o: home/cbrpnk/et/et/graph/components/geometry.cc.o
+home/cbrpnk/et/et/graph/components/sdf.o: home/cbrpnk/et/et/graph/components/sdf.cc.o
 
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.o
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.o
 
 # target to build an object file
-home/cbrpnk/et/et/graph/components/geometry.cc.o:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.o
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.o
+home/cbrpnk/et/et/graph/components/sdf.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.cc.o
 
-home/cbrpnk/et/et/graph/components/geometry.i: home/cbrpnk/et/et/graph/components/geometry.cc.i
+home/cbrpnk/et/et/graph/components/sdf.i: home/cbrpnk/et/et/graph/components/sdf.cc.i
 
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.i
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/graph/components/geometry.cc.i:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.i
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.i
+home/cbrpnk/et/et/graph/components/sdf.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.i
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.cc.i
 
-home/cbrpnk/et/et/graph/components/geometry.s: home/cbrpnk/et/et/graph/components/geometry.cc.s
+home/cbrpnk/et/et/graph/components/sdf.s: home/cbrpnk/et/et/graph/components/sdf.cc.s
 
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.s
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/graph/components/geometry.cc.s:
-	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/geometry.cc.s
-.PHONY : home/cbrpnk/et/et/graph/components/geometry.cc.s
+home/cbrpnk/et/et/graph/components/sdf.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.s
+.PHONY : home/cbrpnk/et/et/graph/components/sdf.cc.s
 
 home/cbrpnk/et/et/graph/components/transform.o: home/cbrpnk/et/et/graph/components/transform.cc.o
 
@@ -558,9 +558,9 @@ help:
 	@echo "... home/cbrpnk/et/et/graph/components/camera.o"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.i"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.s"
-	@echo "... home/cbrpnk/et/et/graph/components/geometry.o"
-	@echo "... home/cbrpnk/et/et/graph/components/geometry.i"
-	@echo "... home/cbrpnk/et/et/graph/components/geometry.s"
+	@echo "... home/cbrpnk/et/et/graph/components/sdf.o"
+	@echo "... home/cbrpnk/et/et/graph/components/sdf.i"
+	@echo "... home/cbrpnk/et/et/graph/components/sdf.s"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.o"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.i"
 	@echo "... home/cbrpnk/et/et/graph/components/transform.s"

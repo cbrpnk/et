@@ -4,6 +4,7 @@
 #include <cassert>
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 namespace Et {
 namespace Math {

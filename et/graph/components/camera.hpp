@@ -9,10 +9,10 @@ namespace Graph {
 
 class Camera : public Component {
 public:
-    Camera()
-    {
-        std::cout << "new Camera\n";
-    }
+    Camera(float fl)
+        : Component(*this)
+        , focalLength(fl)
+    {}
     
     virtual ~Camera() override {}
     
@@ -20,6 +20,9 @@ public:
     {
         std::cout << "update Camera\n";
     }
+
+private:
+    float focalLength;
 };
 
 } // namespace Graph

@@ -8,17 +8,23 @@
 namespace Et {
 namespace Graph {
 
+class Obj;
+
 class Component {
 public:
-    Component() : active(true) {}
+    Component(Obj& obj)
+        : obj(obj)
+        , active(true)
+    {}
     virtual ~Component() {}
     
     virtual void update() {}
     
-    bool isActive()               { return active; }
-    void setActive(bool newValue) { active = newValue; }
+    bool isActive()        { return active; }
+    void setActive(bool a) { active = a; }
     
-private:
+protected:
+    Obj& obj;
     bool active;
 };
 

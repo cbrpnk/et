@@ -24,35 +24,26 @@ public:
     
     void update();
     
-    unsigned int getId()           { return id; }
-    bool isActive()                { return active; }
-    void setActive(bool newValue)  { active = newValue; }
+    unsigned int getId()          { return id; }
+    bool isActive()               { return active; }
+    void setActive(bool newValue) { active = newValue; }
     
     // Components
-    template <typename T>
-    void addComponent()
+    template <typename T, typename... Ts>
+    void addComponent(Ts&&... args)
     {
-        if(!getComponent<T>()) components.push_back(std::make_unique<T>());
-    }
-    
-    template <typename T, typename T2, typename... Ts>
-    void addComponent()
-    {
-        addComponent<T>();
-        addComponent<T2, Ts...>();
+        if(!getComponent<T>()) components.push_back(std::make_unique<T>(args...));
     }
     
     template <typename T>
     T* getComponent() const
     {
         for(auto& componentPtr : components) {
-            Component* c =  componentPtr.get();
+            Component* c = componentPtr.get();
             if(dynamic_cast<T*>(c)) return static_cast<T*>(c);
         }
         return nullptr;
     }
-    
-    
     
 private:
     Scene& scene;

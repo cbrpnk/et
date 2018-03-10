@@ -14,9 +14,19 @@ namespace Graph {
 class Transform : public Component {
 public:
     Transform()
-        : transform(true)
+        : Component(*this)
+        , transform(true)
     {
         std::cout << "new Transform\n";
+    }
+    
+    Transform(Math::Vec3<Float> pos)
+        : Component(*this)
+        , transform(true)
+    {
+        transform[3].x = pos.x;
+        transform[3].y = pos.y;
+        transform[3].z = pos.z;
     }
     
     virtual ~Transform() override {}
@@ -30,6 +40,9 @@ public:
     void moveTo(Float x, Float y, Float z);
     void rotate();
     void scale(Float factor);
+    
+    Math::Vec3<Float> getPosition() { return Math::Vec3<Float>(transform[3].x,
+                                             transform[3].y, transform[3].z); }
 
 private:
     Math::Mat4<Float> transform;
