@@ -13,7 +13,7 @@ void test() {
     camera.addComponent<Camera>(2.0f);
     
     Obj& sphere = scene.createObj();
-    sphere.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, -3.0f));
+    sphere.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, -10.0f));
     sphere.addComponent<SdfSphere>(1.0f);
     sphere.getComponent<Transform>()->moveTo(0, 0, -10);
     

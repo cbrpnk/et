@@ -9,10 +9,11 @@ namespace Et {
 namespace Graph {
 
 class Transform;
+class Obj;
 
 class SdfSphere : public Component {
 public:
-    SdfSphere(float r);
+    SdfSphere(Obj& obj, float r);
     ~SdfSphere() {}
     
     virtual void update() override {}

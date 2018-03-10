@@ -18,7 +18,7 @@ void Obj::update()
 {
     if(active) {
         for(auto& c : components) {
-            c.get()->update();
+            c->update();
         }
     }
 }

@@ -11,17 +11,19 @@
 namespace Et {
 namespace Graph {
 
+class Obj;
+
 class Transform : public Component {
 public:
-    Transform()
-        : Component(*this)
+    Transform(Obj& obj)
+        : Component(obj)
         , transform(true)
     {
         std::cout << "new Transform\n";
     }
     
-    Transform(Math::Vec3<Float> pos)
-        : Component(*this)
+    Transform(Obj& obj, Math::Vec3<Float> pos)
+        : Component(obj)
         , transform(true)
     {
         transform[3].x = pos.x;

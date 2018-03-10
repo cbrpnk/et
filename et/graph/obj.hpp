@@ -20,7 +20,11 @@ public:
     
     Obj(Scene& scene);
     
-    virtual ~Obj() {}
+    virtual ~Obj() {
+        for(auto& c : components) {
+            delete c;
+        }
+    }
     
     void update();
     
@@ -32,24 +36,23 @@ public:
     template <typename T, typename... Ts>
     void addComponent(Ts&&... args)
     {
-        if(!getComponent<T>()) components.push_back(std::make_unique<T>(args...));
+        if(!getComponent<T>()) components.push_back(new T(*this, args...));
     }
     
     template <typename T>
     T* getComponent() const
     {
-        for(auto& componentPtr : components) {
-            Component* c = componentPtr.get();
+        for(auto& c : components) {
             if(dynamic_cast<T*>(c)) return static_cast<T*>(c);
         }
         return nullptr;
     }
     
-private:
+public: // TODO DEBUG ONLY: Put me back to private
     Scene& scene;
     unsigned int id;
     bool active = true;
-    std::vector<std::unique_ptr<Component>> components;
+    std::vector<Component*> components;
 };
 
 } // namespace graph

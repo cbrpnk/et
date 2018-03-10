@@ -6,9 +6,11 @@
 namespace Et {
 namespace Graph {
 
+class Obj;
+
 class Mesh : public Component{
 public:
-    Mesh() : Component(*this) {}
+    Mesh(Obj& obj) : Component(obj) {}
     ~Mesh() {}
     
     virtual void update() override {}

@@ -5,14 +5,18 @@
 namespace Et {
 namespace Graph {
 
-SdfSphere::SdfSphere(float r)
-    : Component(*this)
+SdfSphere::SdfSphere(Obj& obj, float r)
+    : Component(obj)
     , radius(r)
-{}
+{
+    if(!obj.getComponent<Transform>()) {
+        obj.addComponent<Transform>();
+    }
+}
 
 float SdfSphere::distance(Math::Vec3<float> point) const
 {
-   return (obj.getComponent<Transform>()->getPosition() - point).getLength() - radius;
+    return (obj.getComponent<Transform>()->getPosition() - point).getLength() - radius;
 }
 
 Math::Vec3<float> SdfSphere::intersect(Ray r) const

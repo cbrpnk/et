@@ -7,10 +7,12 @@
 namespace Et {
 namespace Graph {
 
+class Obj;
+
 class Camera : public Component {
 public:
-    Camera(float fl)
-        : Component(*this)
+    Camera(Obj& obj, float fl)
+        : Component(obj)
         , focalLength(fl)
     {}
     
