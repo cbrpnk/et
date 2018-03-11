@@ -3,24 +3,21 @@
 namespace Et {
 namespace Graph {
 
-void Scene::add(Obj* obj)
-{
-    objs.push_back(obj);
-}
-
 Obj& Scene::createObj()
 {
-    Obj* o = new Obj(*this);
-    return *o;
+    objs.push_back(std::move(std::make_unique<Obj>(*this)));
+    return *(objs.back());
 }
 
 void Scene::destroyObj(Obj& obj)
 {
-    for(int i=0; i<objs.size(); ++i) {
-        if(objs[i] == &obj) {
+    int i=0;
+    for(auto& o : objs) {
+        if(o.get() == &obj) {
             objs.erase(objs.begin()+i);
-            delete &obj;
+            break;
         }
+        ++i;
     }
 }
 

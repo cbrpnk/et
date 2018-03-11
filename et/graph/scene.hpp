@@ -12,19 +12,13 @@ namespace Graph {
 class Scene {
 public:
     Scene() {}
-    ~Scene() {
-        for(auto& o : objs) {
-            delete o;
-        }
-    }
     
-    void add(Obj* obj);
     Obj& createObj();
     void destroyObj(Obj& obj);
     void update();
     
 private:
-    std::vector<Obj*> objs;
+    std::vector<std::unique_ptr<Obj>> objs;
 };
 
 } // namespace Graph

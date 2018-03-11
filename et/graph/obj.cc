@@ -10,9 +10,7 @@ unsigned int Obj::nextId = 0;
 Obj::Obj(Scene& scene)
     : scene(scene)
     , id(Obj::nextId++)
-{
-    scene.add(this);
-}
+{}
 
 void Obj::update()
 {
