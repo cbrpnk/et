@@ -10,16 +10,21 @@ namespace Graph {
 
 void PathTracer::render(Scene& scene, Obj* camera)
 {
+    Camera* camComp = camera->getComponent<Camera>();
+    
     // Z coordinate of the pixel in the world
-    float pixelZ = -1.0f * camera->getComponent<Camera>()->getFocalLength();
+    float pixelZ = -1.0f * camComp->getFocalLength();
     
     for(unsigned int s=0; s<samplePerPixel; ++s) {
         for(unsigned int y=0; y<height; ++y) {
             for(unsigned int x=0; x<width; ++x) {
                 // X and y coordinates of the pixel in the world
-                float pixelX = ((float)x)/200-2; // TODO Remove this hardcoded value
-                // TODO This is backwards
-                float pixelY = ((float)y)/200-1; // TODO Remove this hardcoded value
+                // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
+                float pixelX = (((float)x/width)-0.5) * camComp->getSensorWidth();
+                // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
+                float pixelY = (1.0f - ((float)y/height) - 0.5)
+                               * camComp->getSensorHeight();
+                
                 Ray ray(Math::Vec3<float>(0,0,0),
                         Math::Vec3<float>(pixelX, pixelY, pixelZ));
                 
@@ -48,7 +53,7 @@ void PathTracer::exportPpm(std::string path)
 {
     std::ofstream file;
     file.open(path.c_str());
-    file << "P6 800 400 255\n";
+    file << "P6 " << width << " " << height << " 255\n";
     for(unsigned int y=0; y<height; ++y) {
         for(unsigned int x=0; x<width; ++x) {
             Math::Vec3<float>* pixel = &pixelBuffer[y*width+x];

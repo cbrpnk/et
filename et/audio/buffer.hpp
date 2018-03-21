@@ -50,7 +50,7 @@ public:
     {
         // TODO Assert
         if(size_ == other.size_) {
-            for(int i=0; i<size_; ++i) {
+            for(unsigned int i=0; i<size_; ++i) {
                 buffer_[i] += other.buffer_[i];
                 if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
                 else if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
@@ -61,7 +61,7 @@ public:
     
     Buffer& operator*=(float scalar)
     {
-        for(int i=0; i<size_; ++i) {
+        for(unsigned int i=0; i<size_; ++i) {
             buffer_[i] *= scalar;
         }
         return *this;
@@ -93,7 +93,7 @@ public:
     void set(float v) {
         // TODO assert
         if(v >= -1.0f && v <= 1.0f) {
-            for(int i=0; i<size_; ++i) buffer_[i] = v;
+            for(unsigned int i=0; i<size_; ++i) buffer_[i] = v;
         }
     }
     void silence() { set(0.0f); }

@@ -55,6 +55,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/math/constants.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/math/functions.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.cc
@@ -92,6 +94,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o:
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/renderer.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/constants.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/functions.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp

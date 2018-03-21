@@ -18,12 +18,12 @@ public:
     
     virtual void render(Scene& scene, Obj* camera) = 0;
     
-    int getHeight() { return height; }
-    int getWidth()  { return width; }
+    unsigned int getHeight() { return height; }
+    unsigned int getWidth()  { return width; }
     
 protected:
-    int width; // in px
-    int height; // in px
+    unsigned int width; // in px
+    unsigned int height; // in px
 };
     
 } // namesapce Graph

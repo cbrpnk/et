@@ -69,7 +69,7 @@ private:
     Device device_;
     Engine& engine_;
     PaStream* stream_;
-    unsigned int deviceCount_;
+    int deviceCount_;
     unsigned int nInputs_;
     unsigned int nOutputs_;
     unsigned int sampleRate_;

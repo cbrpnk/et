@@ -119,6 +119,8 @@ iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../../math/functions.hpp
+/home/cbrpnk/et/et/math/functions.hpp
 
 /home/cbrpnk/et/et/graph/components/component.hpp
 string

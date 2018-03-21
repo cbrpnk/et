@@ -28,7 +28,7 @@ Oscillator::Oscillator(unsigned int sampleRate, unsigned int bufferSize,
 
 void Oscillator::init()
 {
-    for(int i=0; i<kWaveTableSize; ++i) {
+    for(unsigned int i=0; i<kWaveTableSize; ++i) {
         Oscillator::sinWaveTable[i] = sin(((float) i / kWaveTableSize) * Math::k2Pi);
     }
 }
@@ -37,7 +37,7 @@ void Oscillator::doDsp()
 {
     float volume = dbToVolume(params_[kLevel].get());
     
-    for(int i=0; i<bufferSize_; ++i) {
+    for(unsigned int i=0; i<bufferSize_; ++i) {
         float val = volume * sinWaveTable[(int) ((phase_/Math::k2Pi)*kWaveTableSize)];
         
         phase_ += (params_[kFrequency].get() * Math::k2Pi) / sampleRate_;

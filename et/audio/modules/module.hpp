@@ -81,7 +81,6 @@ public:
         void update(uint64_t sampleId)
         {
             buffer.silence();
-            int i=0;
             for(auto& connection : connections) {
                 Module::Output& output{
                     static_cast<Module::Output&>(*connection)
@@ -157,17 +156,17 @@ public:
         , lastSampleId_{0}
     {
         inputs_.reserve(nInputs);
-        for(int i=0; i<nInputs; ++i) {
+        for(unsigned int i=0; i<nInputs; ++i) {
             inputs_.push_back(std::move(Input(*this)));
         }
         
         outputs_.reserve(nOutputs);
-        for(int i=0; i<nOutputs; ++i) {
+        for(unsigned int i=0; i<nOutputs; ++i) {
             outputs_.push_back(std::move(Output(*this)));
         }
         
         params_.reserve(nParameters);
-        for(int i=0; i<nParameters; ++i) {
+        for(unsigned int i=0; i<nParameters; ++i) {
             params_.push_back(std::move(Parameter(*this, { 0.0f, 1.0f }, 0.0f)));
         }
     }

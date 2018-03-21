@@ -1,5 +1,4 @@
-#ifndef ET_TEST_TEST_HPP
-#define ET_TEST_TEST_HPP
+#pragma once
 
 #include <string>
 #include <vector>
@@ -124,117 +123,115 @@ static bool check(CmpFunc f, std::initializer_list<std::initializer_list<T>> dat
 template<typename T1, typename T2>
 static bool eq(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Eq, a, b, msg);
+    return check(CmpFunc::Eq, a, b, msg);
 }
 
 template<typename T>
 static bool eq(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Eq, data, msg);
+    return check(CmpFunc::Eq, data, msg);
 }
 
 template<typename T>
 static bool eq(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Eq, data, msg);
+    return check(CmpFunc::Eq, data, msg);
 }
 
 /*                    ne                      */
 template<typename T1, typename T2>
 static bool ne(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Ne, a, b, msg);
+    return check(CmpFunc::Ne, a, b, msg);
 }
 
 template<typename T>
 static bool ne(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Ne, data, msg);
+    return check(CmpFunc::Ne, data, msg);
 }
 
 template<typename T>
 static bool ne(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Ne, data, msg);
+    return check(CmpFunc::Ne, data, msg);
 }
 
 /*                    lt                      */
 template<typename T1, typename T2>
 static bool lt(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Lt, a, b, msg);
+    return check(CmpFunc::Lt, a, b, msg);
 }
 
 template<typename T>
 static bool lt(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Lt, data, msg);
+    return check(CmpFunc::Lt, data, msg);
 }
 
 template<typename T>
 static bool lt(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Lt, data, msg);
+    return check(CmpFunc::Lt, data, msg);
 }
 
 /*                    le                      */
 template<typename T1, typename T2>
 static bool le(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Le, a, b, msg);
+    return check(CmpFunc::Le, a, b, msg);
 }
 
 template<typename T>
 static bool le(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Le, data, msg);
+    return check(CmpFunc::Le, data, msg);
 }
 
 template<typename T>
 static bool le(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Le, data, msg);
+    return check(CmpFunc::Le, data, msg);
 }
 
 /*                    gt                      */
 template<typename T1, typename T2>
 static bool gt(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Gt, a, b, msg);
+    return check(CmpFunc::Gt, a, b, msg);
 }
 
 template<typename T>
 static bool gt(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Gt, data, msg);
+    return check(CmpFunc::Gt, data, msg);
 }
 
 template<typename T>
 static bool gt(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Gt, data, msg);
+    return check(CmpFunc::Gt, data, msg);
 }
 
 /*                    ge                      */
 template<typename T1, typename T2>
 static bool ge(T1 a, T2 b, std::string msg = "")
 {
-    check(CmpFunc::Ge, a, b, msg);
+    return check(CmpFunc::Ge, a, b, msg);
 }
 
 template<typename T>
 static bool ge(std::initializer_list<T> data, std::string msg = "")
 {
-    check(CmpFunc::Ge, data, msg);
+    return check(CmpFunc::Ge, data, msg);
 }
 
 template<typename T>
 static bool ge(std::initializer_list<std::initializer_list<T>> data, std::string msg = "")
 {
-    check(CmpFunc::Ge, data, msg);
+    return check(CmpFunc::Ge, data, msg);
 }
 
 } // namespace Test
 } // namespace Et
-
-#endif // ET_TEST_TEST_HPP

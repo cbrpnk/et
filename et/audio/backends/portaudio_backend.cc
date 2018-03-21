@@ -44,8 +44,8 @@ bool PortaudioBackend::openDevice(Device device)
         
         const PaDeviceInfo* deviceInfo;
         deviceInfo = Pa_GetDeviceInfo(device);
-        const PaHostApiInfo* hostInfo;
-        hostInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
+        //const PaHostApiInfo* hostInfo;
+        //hostInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
         
         // Create the Output Paramters
         PaStreamParameters outputParams;
@@ -111,7 +111,7 @@ int PortaudioBackend::callback(const void* input, void* output, unsigned long fr
     
     thisObj->engine_.callback(left, right);
     
-    for(int i=0; i<frameCount; ++i) {
+    for(unsigned int i=0; i<frameCount; ++i) {
         *out++ = left[i];
         *out++ = right[i];
     }

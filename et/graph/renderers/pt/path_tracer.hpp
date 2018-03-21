@@ -12,7 +12,7 @@ namespace Graph {
     
 class PathTracer : public Renderer {
 public:
-    PathTracer(int width, int height, unsigned int samplePerPixel)
+    PathTracer(unsigned int width, unsigned int height, unsigned int samplePerPixel)
         : Renderer(width, height)
         , samplePerPixel(samplePerPixel)
     {

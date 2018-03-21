@@ -9,8 +9,8 @@ namespace Audio {
 Engine::Engine(unsigned int bufferSize)
     : initialized_{false}
     , bufferSize_{bufferSize}
-    , buffer_(Buffer::Type::Stereo, bufferSize)
     , sampleRate_{0}
+    , buffer_(Buffer::Type::Stereo, bufferSize)
     , transport_{false, 0}
 {}
 
