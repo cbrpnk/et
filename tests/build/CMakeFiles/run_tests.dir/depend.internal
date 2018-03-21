@@ -56,6 +56,7 @@ CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.cc
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/scene.hpp
  /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
@@ -93,8 +94,11 @@ CMakeFiles/run_tests.dir/main.cc.o
  /home/cbrpnk/et/et/graph.hpp
  /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/mesh.hpp
+ /home/cbrpnk/et/et/graph/components/sdf.hpp
  /home/cbrpnk/et/et/graph/components/transform.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
  /home/cbrpnk/et/et/graph/renderers/renderer.hpp
  /home/cbrpnk/et/et/graph/scene.hpp
@@ -112,7 +116,9 @@ CMakeFiles/run_tests.dir/main.cc.o
  /home/cbrpnk/et/et/mem/buffer.hpp
  /home/cbrpnk/et/et/test.hpp
  /home/cbrpnk/et/et/test/test.hpp
+ /home/cbrpnk/et/et/types.hpp
  /home/cbrpnk/et/tests/main.cc
+ /home/cbrpnk/et/tests/math/functions.hpp
  /home/cbrpnk/et/tests/math/mat2.hpp
  /home/cbrpnk/et/tests/math/mat3.hpp
  /home/cbrpnk/et/tests/math/mat4.hpp

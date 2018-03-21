@@ -22,6 +22,8 @@ public:
     {
         std::cout << "update Camera\n";
     }
+    
+    float getFocalLength() const { return focalLength; }
 
 private:
     float focalLength;

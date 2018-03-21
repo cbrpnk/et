@@ -21,7 +21,7 @@ public:
     int getHeight() { return height; }
     int getWidth()  { return width; }
     
-private:
+protected:
     int width; // in px
     int height; // in px
 };

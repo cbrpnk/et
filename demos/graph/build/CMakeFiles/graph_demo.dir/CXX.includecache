@@ -135,6 +135,8 @@ sdf.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
 transform.hpp
 /home/cbrpnk/et/et/graph/components/transform.hpp
+../../math/functions.hpp
+/home/cbrpnk/et/et/math/functions.hpp
 
 /home/cbrpnk/et/et/graph/components/sdf.hpp
 iostream
@@ -183,7 +185,13 @@ components/component.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 path_tracer.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
+../../ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
+../../components/camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
 iostream
+-
+fstream
 -
 
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
@@ -193,12 +201,16 @@ iostream
 /home/cbrpnk/et/et/graph/scene.hpp
 ../renderer.hpp
 /home/cbrpnk/et/et/graph/renderers/renderer.hpp
+../../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/renderers/renderer.hpp
 
 /home/cbrpnk/et/et/graph/scene.cc
 scene.hpp
 /home/cbrpnk/et/et/graph/scene.hpp
+components/sdf.hpp
+/home/cbrpnk/et/et/graph/components/sdf.hpp
 
 /home/cbrpnk/et/et/graph/scene.hpp
 vector
@@ -209,6 +221,8 @@ obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
 components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
 
 /home/cbrpnk/et/et/math.hpp
 math/vec2.hpp
@@ -235,6 +249,8 @@ cmath
 -
 
 /home/cbrpnk/et/et/math/functions.hpp
+tuple
+-
 constants.hpp
 /home/cbrpnk/et/et/math/constants.hpp
 

@@ -5,14 +5,31 @@
 #include "../../obj.hpp"
 #include "../../scene.hpp"
 #include "../renderer.hpp"
+#include "../../../math/vec3.hpp"
 
 namespace Et {
 namespace Graph {
     
 class PathTracer : public Renderer {
 public:
-    PathTracer(int width, int height) : Renderer(width, height) {}
+    PathTracer(int width, int height, unsigned int samplePerPixel)
+        : Renderer(width, height)
+        , samplePerPixel(samplePerPixel)
+    {
+        pixelBuffer = new Math::Vec3<float>[width*height];
+    }
+    
+    ~PathTracer()
+    {
+        delete[] pixelBuffer;
+    }
+    
     void render(Scene& scene, Obj* camera) override;
+    void exportPpm(std::string path);
+
+private:
+    unsigned int samplePerPixel;
+    Math::Vec3<float>* pixelBuffer;
 };
     
 } // namesapce Graph

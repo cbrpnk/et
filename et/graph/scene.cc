@@ -1,4 +1,5 @@
 #include "scene.hpp"
+#include "components/sdf.hpp"
 
 namespace Et {
 namespace Graph {
@@ -26,6 +27,27 @@ void Scene::update()
     for(auto& obj : objs) {
         obj->update();
     }
+}
+
+HitRecord Scene::intersect(Ray ray)
+{
+    HitRecord hit;
+    float hitDistance = 1000000000;
+    
+    for(auto& obj : objs) {
+        SdfSphere* sphere = obj->getComponent<SdfSphere>();
+        if(sphere) {
+            HitRecord potentialHit = sphere->intersect(ray);
+            if(potentialHit.hit) {
+                float potentialHitDistance = potentialHit.position.getLength();
+                if(potentialHitDistance < hitDistance) {
+                    hit = potentialHit;
+                    hitDistance = potentialHitDistance;
+                }
+            }
+        }
+    }
+    return hit;
 }
 
 } // namespace Graph

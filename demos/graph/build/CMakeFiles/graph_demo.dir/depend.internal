@@ -63,6 +63,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o
  /home/cbrpnk/et/et/graph/components/transform.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
  /home/cbrpnk/et/et/graph/ray.hpp
+ /home/cbrpnk/et/et/math/constants.hpp
+ /home/cbrpnk/et/et/math/functions.hpp
  /home/cbrpnk/et/et/math/mat4.hpp
  /home/cbrpnk/et/et/math/vec3.hpp
  /home/cbrpnk/et/et/math/vec4.hpp
@@ -79,11 +81,14 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.cc
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
  /home/cbrpnk/et/et/graph/scene.hpp
  /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
+ /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
  /home/cbrpnk/et/et/graph/renderers/renderer.hpp
@@ -91,7 +96,9 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/sdf.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
  /home/cbrpnk/et/et/graph/scene.cc
  /home/cbrpnk/et/et/graph/scene.hpp
  /home/cbrpnk/et/et/math/vec3.hpp

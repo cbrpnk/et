@@ -55,6 +55,7 @@ CMakeFiles/run_tests.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
+CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/run_tests.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
@@ -92,8 +93,11 @@ CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/et.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/components/mesh.hpp
+CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/components/sdf.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
+CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/ray.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/renderers/renderer.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
@@ -111,7 +115,9 @@ CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/mem.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/test.hpp
 CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/test/test.hpp
+CMakeFiles/run_tests.dir/main.cc.o: /home/cbrpnk/et/et/types.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../main.cc
+CMakeFiles/run_tests.dir/main.cc.o: ../math/functions.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../math/mat2.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../math/mat3.hpp
 CMakeFiles/run_tests.dir/main.cc.o: ../math/mat4.hpp

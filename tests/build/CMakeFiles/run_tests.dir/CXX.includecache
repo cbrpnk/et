@@ -129,6 +129,8 @@ mem.hpp
 /home/cbrpnk/et/et/mem.hpp
 test.hpp
 /home/cbrpnk/et/et/test.hpp
+types.hpp
+/home/cbrpnk/et/et/types.hpp
 
 /home/cbrpnk/et/et/graph.hpp
 graph/obj.hpp
@@ -139,6 +141,10 @@ graph/components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
 graph/components/camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
+graph/components/mesh.hpp
+/home/cbrpnk/et/et/graph/components/mesh.hpp
+graph/components/sdf.hpp
+/home/cbrpnk/et/et/graph/components/sdf.hpp
 graph/components/transform.hpp
 /home/cbrpnk/et/et/graph/components/transform.hpp
 graph/renderers/renderer.hpp
@@ -147,6 +153,8 @@ graph/renderers/pt/path_tracer.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 
 /home/cbrpnk/et/et/graph/components/camera.hpp
+iostream
+-
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
 
@@ -155,26 +163,52 @@ string
 -
 vector
 -
+iostream
+-
 
-/home/cbrpnk/et/et/graph/components/transform.hpp
+/home/cbrpnk/et/et/graph/components/mesh.hpp
+iostream
+-
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+
+/home/cbrpnk/et/et/graph/components/sdf.hpp
+iostream
+-
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
+../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+
+/home/cbrpnk/et/et/graph/components/transform.hpp
+iostream
+-
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../../types.hpp
+/home/cbrpnk/et/et/types.hpp
 ../../math/mat4.hpp
 /home/cbrpnk/et/et/math/mat4.hpp
+../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/obj.cc
 obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
+scene.hpp
+/home/cbrpnk/et/et/graph/scene.hpp
 
 /home/cbrpnk/et/et/graph/obj.hpp
 memory
 -
-string
--
-vector
--
 components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
+../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+
+/home/cbrpnk/et/et/graph/ray.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
 
@@ -233,6 +267,8 @@ cmath
 -
 
 /home/cbrpnk/et/et/math/functions.hpp
+tuple
+-
 constants.hpp
 /home/cbrpnk/et/et/math/constants.hpp
 
@@ -275,15 +311,23 @@ iostream
 -
 vector
 -
+cmath
+-
 
 /home/cbrpnk/et/et/math/vec3.hpp
 iostream
 -
 cassert
 -
+cmath
+-
 
 /home/cbrpnk/et/et/math/vec4.hpp
 iostream
+-
+cassert
+-
+cmath
 -
 
 /home/cbrpnk/et/et/mem.hpp
@@ -314,6 +358,8 @@ functional
 iostream
 -
 
+/home/cbrpnk/et/et/types.hpp
+
 /home/cbrpnk/et/tests/main.cc
 iostream
 -
@@ -321,6 +367,8 @@ iostream
 /home/cbrpnk/et/et/et.hpp
 math/math.hpp
 /home/cbrpnk/et/tests/math/math.hpp
+
+/home/cbrpnk/et/tests/math/functions.hpp
 
 /home/cbrpnk/et/tests/math/mat2.hpp
 
@@ -341,6 +389,8 @@ mat3.hpp
 /home/cbrpnk/et/tests/math/mat3.hpp
 mat4.hpp
 /home/cbrpnk/et/tests/math/mat4.hpp
+functions.hpp
+/home/cbrpnk/et/tests/math/functions.hpp
 
 /home/cbrpnk/et/tests/math/vec2.hpp
 
