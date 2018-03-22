@@ -4,6 +4,7 @@
 
 #include "../../obj.hpp"
 #include "../../scene.hpp"
+#include "../../components/camera.hpp"
 #include "../renderer.hpp"
 #include "../../../math/vec3.hpp"
 
@@ -12,9 +13,8 @@ namespace Graph {
     
 class PathTracer : public Renderer {
 public:
-    PathTracer(unsigned int width, unsigned int height, unsigned int samplePerPixel)
+    PathTracer(unsigned int width, unsigned int height)
         : Renderer(width, height)
-        , samplePerPixel(samplePerPixel)
     {
         pixelBuffer = new Math::Vec3<float>[width*height];
     }
@@ -24,11 +24,13 @@ public:
         delete[] pixelBuffer;
     }
     
-    void render(Scene& scene, Obj* camera) override;
+    void render(Scene& scene, Obj* camera) override { render(scene, camera, 1); }
+    void render(Scene& scene, Obj* camera, unsigned int samplePerPixel);
+    Ray  getPixelRay(Camera* camera, unsigned int x, unsigned int y) const;
     void exportPpm(std::string path);
+    
 
 private:
-    unsigned int samplePerPixel;
     Math::Vec3<float>* pixelBuffer;
 };
     

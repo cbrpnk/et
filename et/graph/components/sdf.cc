@@ -6,8 +6,12 @@
 namespace Et {
 namespace Graph {
 
+/******************************************************************************************
+ *                                     Sphere                                             *
+ ******************************************************************************************/
+
 SdfSphere::SdfSphere(Obj& obj, float r)
-    : Component(obj)
+    : Geometry(obj)
     , radius(r)
 {
     if(!obj.getComponent<Transform>()) {
@@ -51,9 +55,44 @@ HitRecord SdfSphere::intersect(Ray r) const
         }
     }
     
+    // Hit position
+    Math::Vec3<float> hitPosition = r.origin + r.direction*t;
+    
+    // Normal
+    Math::Vec3<float> normal = hitPosition - pos;
+    normal.normalize();
+    
     // Calculate position of the intersection. We can plug t in P = O + tD
-    return HitRecord(true, &obj, r.origin + r.direction*t, Math::Vec3<float>(0,0,0));
+    return HitRecord(true, &obj, hitPosition, normal);
 }
+
+
+/******************************************************************************************
+ *                                       Plane                                            *
+ ******************************************************************************************/
+
+SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
+    : Geometry(obj)
+    , normal(normal)
+{
+    if(!obj.getComponent<Transform>()) {
+        obj.addComponent<Transform>();
+    }
+}
+
+HitRecord SdfPlane::intersect(Ray r) const
+{
+    float dn = r.direction * normal;
+    if(dn >= 0) {
+        return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>());
+    }
+    
+    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal) / dn;
+    
+    Math::Vec3<float> hitPosition = r.origin + r.direction*d;
+    return HitRecord(true, &obj, hitPosition, normal);
+}
+
 
 } // namespace Graph
 } // namespace Et

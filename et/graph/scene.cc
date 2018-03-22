@@ -35,9 +35,13 @@ HitRecord Scene::intersect(Ray ray)
     float hitDistance = 1000000000;
     
     for(auto& obj : objs) {
-        SdfSphere* sphere = obj->getComponent<SdfSphere>();
-        if(sphere) {
-            HitRecord potentialHit = sphere->intersect(ray);
+        Geometry* geo = obj->getComponent<SdfSphere>();
+        if(!geo) {
+            geo = obj->getComponent<SdfPlane>();
+        }
+        
+        if(geo) {
+            HitRecord potentialHit = geo->intersect(ray);
             if(potentialHit.hit) {
                 float potentialHitDistance = potentialHit.position.getLength();
                 if(potentialHitDistance < hitDistance) {

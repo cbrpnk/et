@@ -189,8 +189,6 @@ path_tracer.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 ../../ray.hpp
 /home/cbrpnk/et/et/graph/ray.hpp
-../../components/camera.hpp
-/home/cbrpnk/et/et/graph/components/camera.hpp
 iostream
 -
 fstream
@@ -201,6 +199,8 @@ fstream
 /home/cbrpnk/et/et/graph/obj.hpp
 ../../scene.hpp
 /home/cbrpnk/et/et/graph/scene.hpp
+../../components/camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
 ../renderer.hpp
 /home/cbrpnk/et/et/graph/renderers/renderer.hpp
 ../../../math/vec3.hpp
