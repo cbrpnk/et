@@ -83,11 +83,11 @@ SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
 HitRecord SdfPlane::intersect(Ray r) const
 {
     float dn = r.direction * normal;
-    if(dn >= 0) {
+    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal) / dn;
+    
+    if(dn == 0 || d <= 0) {
         return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>());
     }
-    
-    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal) / dn;
     
     Math::Vec3<float> hitPosition = r.origin + r.direction*d;
     return HitRecord(true, &obj, hitPosition, normal);

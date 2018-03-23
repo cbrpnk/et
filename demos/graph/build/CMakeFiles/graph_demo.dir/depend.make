@@ -96,6 +96,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o:
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/scene.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/constants.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/functions.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/random.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp

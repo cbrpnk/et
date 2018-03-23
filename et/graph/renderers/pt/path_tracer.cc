@@ -1,5 +1,6 @@
 #include "path_tracer.hpp"
 #include "../../ray.hpp"
+#include "../../../math/random.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -20,8 +21,9 @@ void PathTracer::render(Scene& scene, Obj* camera, unsigned int samplePerPixel)
                 // B&W shading
                 if(hit.hit) {
                     // xyz are rgb values in this case
-                    pixelBuffer[y*width+x] = (hit.normal/2) +
-                                             Math::Vec3<float>(0.5f, 0.5f, 0.5f);
+                    pixelBuffer[y*width+x] += ((hit.normal/2) +
+                                              Math::Vec3<float>(0.5f, 0.5f, 0.5f))
+                                              / samplePerPixel;
                 }
             }
         }
@@ -30,15 +32,19 @@ void PathTracer::render(Scene& scene, Obj* camera, unsigned int samplePerPixel)
 
 Ray PathTracer::getPixelRay(Camera* camera, unsigned int x, unsigned int y) const
 {
+    // The amount of jiggle is bounded by the size of a pixel
+    Math::Random random;
+    float xJiggle = random.getFloat(-0.5f, 0.5f);
+    float yJiggle = random.getFloat(-0.5f, 0.5f);
+    
     // X and y coordinates of the pixel in the world
     // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    float pixelX = (((float)x/width)-0.5) * camera->getSensorWidth();
+    float pixelX = ((((float)x+xJiggle)/width)-0.5) * camera->getSensorWidth();
     // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    float pixelY = (1.0f - ((float)y/height) - 0.5)
+    float pixelY = (1.0f - (((float)y+yJiggle)/height) - 0.5)
                    * camera->getSensorHeight();
     // Z coordinate of the pixel in the world
     float pixelZ = -1.0f * camera->getFocalLength();
-    
     
     return Ray(Math::Vec3<float>(0,0,0), Math::Vec3<float>(pixelX, pixelY, pixelZ));
 }

@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     sphere3.addComponent<SdfSphere>(1.0f);
     
     scene.update();
-    pt.render(scene, &camera, 1);
+    pt.render(scene, &camera, 10);
     
     pt.exportPpm("test.ppm");
     return 0;

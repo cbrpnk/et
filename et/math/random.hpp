@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_MATH_RANDOM_HPP
-#define ET_MATH_RANDOM_HPP
 
 #include <cmath>
 
@@ -24,5 +22,3 @@ private:
 
 } // namespace math
 } // namespace Et
-
-#endif // ET_MATH_RANDOM_HPP
