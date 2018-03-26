@@ -6,9 +6,9 @@
 namespace Et {
 namespace Graph {
 
-/******************************************************************************************
- *                                     Sphere                                             *
- ******************************************************************************************/
+/****************************************************************************************
+*                                     Sphere                                            *
+*****************************************************************************************/
 
 SdfSphere::SdfSphere(Obj& obj, float r)
     : Geometry(obj)
@@ -39,8 +39,8 @@ HitRecord SdfSphere::intersect(Ray r) const
     // 2 roots = the ray goes through
     Math::QuadraticResult res = Math::solveQuadratic(a, b, c);
     if(!res.hasRoots) {
-        return HitRecord(false, nullptr, Math::Vec3<float>(0,0,0),
-                         Math::Vec3<float>(0,0,0));
+        return HitRecord(false, nullptr, Math::Vec3<float>(),
+                         Math::Vec3<float>(), Math::Vec3<float>());
     }
     
     // Roots smaller then 0 are intersections happening behind the ray.
@@ -50,8 +50,8 @@ HitRecord SdfSphere::intersect(Ray r) const
     if(t < 0) {
         t = Math::max(res.minus, res.plus);
         if(t < 0) {
-            return HitRecord(false, nullptr, Math::Vec3<float>(0,0,0),
-                             Math::Vec3<float>(0,0,0));
+            return HitRecord(false, nullptr, Math::Vec3<float>(),
+                             Math::Vec3<float>(), Math::Vec3<float>());
         }
     }
     
@@ -62,14 +62,13 @@ HitRecord SdfSphere::intersect(Ray r) const
     Math::Vec3<float> normal = hitPosition - pos;
     normal.normalize();
     
-    // Calculate position of the intersection. We can plug t in P = O + tD
-    return HitRecord(true, &obj, hitPosition, normal);
+    return HitRecord(true, &obj, hitPosition, r.direction, normal);
 }
 
 
-/******************************************************************************************
- *                                       Plane                                            *
- ******************************************************************************************/
+/****************************************************************************************
+ *                                       Plane                                          *
+ ****************************************************************************************/
 
 SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
     : Geometry(obj)
@@ -86,11 +85,12 @@ HitRecord SdfPlane::intersect(Ray r) const
     float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal) / dn;
     
     if(dn == 0 || d <= 0) {
-        return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>());
+        return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>(),
+                         Math::Vec3<float>());
     }
     
     Math::Vec3<float> hitPosition = r.origin + r.direction*d;
-    return HitRecord(true, &obj, hitPosition, normal);
+    return HitRecord(true, &obj, hitPosition, r.direction, normal);
 }
 
 

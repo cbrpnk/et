@@ -7,6 +7,7 @@
 
 #include "graph/components/component.hpp"
 #include "graph/components/camera.hpp"
+#include "graph/components/material.hpp"
 #include "graph/components/mesh.hpp"
 #include "graph/components/sdf.hpp"
 #include "graph/components/transform.hpp"

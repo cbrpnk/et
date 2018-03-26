@@ -1,5 +1,6 @@
 #include "path_tracer.hpp"
 #include "../../ray.hpp"
+#include "../../components/material.hpp"
 #include "../../../math/random.hpp"
 
 #include <iostream>
@@ -7,27 +8,56 @@
 
 namespace Et {
 namespace Graph {
+    
+PathTracer::PathTracer(unsigned int width, unsigned int height, unsigned int samplePerPixel,
+                       unsigned int maxDepth)
+    : Renderer(width, height)
+    , samplePerPixel(samplePerPixel)
+    , maxDepth(maxDepth)
+{
+    pixelBuffer = new Math::Vec3<float>[width*height];
+}
 
-void PathTracer::render(Scene& scene, Obj* camera, unsigned int samplePerPixel)
+void PathTracer::render(Scene& scene, Obj* camera)
 {
     Camera* camComp = camera->getComponent<Camera>();
     
     for(unsigned int s=0; s<samplePerPixel; ++s) {
         for(unsigned int y=0; y<height; ++y) {
             for(unsigned int x=0; x<width; ++x) {
-                
-                HitRecord hit = scene.intersect(getPixelRay(camComp, x, y));
-                
-                // B&W shading
-                if(hit.hit) {
-                    // xyz are rgb values in this case
-                    pixelBuffer[y*width+x] += ((hit.normal/2) +
-                                              Math::Vec3<float>(0.5f, 0.5f, 0.5f))
-                                              / samplePerPixel;
-                }
+                pixelBuffer[y*width+x] += sample(scene, getPixelRay(camComp, x, y),
+                                                     maxDepth) / samplePerPixel;
             }
         }
     }
+}
+
+Math::Vec3<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
+{
+    Math::Vec3<float> pixelColor;
+    HitRecord hit = scene.intersect(ray);
+    
+    if(hit.hit && depth > 0) {
+        Material* material = hit.obj->getComponent<DiffuseMaterial>();
+        
+        // Recursively compute indirect lighting
+        //std::cout << depth << "\n";
+        pixelColor += sample(scene, material->brdf(ray, hit), depth-1)
+                      * material->getAlbedo();
+        
+        //pixelColor = ((hit.normal/2) + Math::Vec3<float>(0.5,0.5,0.5));
+        
+        /*
+        pixelColor.x = hit.position.getLength() / 20;
+        pixelColor.y = hit.position.getLength() / 20;
+        pixelColor.z = hit.position.getLength() / 20;
+        */
+    } else {
+        // TODO This is a fake sky, do a proper lighting material
+        pixelColor = Math::Vec3<float>(0.6, 0.8, 1.0);
+    }
+    
+    return pixelColor;
 }
 
 Ray PathTracer::getPixelRay(Camera* camera, unsigned int x, unsigned int y) const

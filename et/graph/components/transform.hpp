@@ -18,9 +18,7 @@ public:
     Transform(Obj& obj)
         : Component(obj)
         , transform(true)
-    {
-        std::cout << "new Transform\n";
-    }
+    {}
     
     Transform(Obj& obj, Math::Vec3<Float> pos)
         : Component(obj)
@@ -33,10 +31,7 @@ public:
     
     virtual ~Transform() override {}
     
-    virtual void update() override
-    {
-        std::cout << "update Transform\n";
-    }
+    virtual void update() override {}
     
     void moveTo(Math::Vec3<Float> target);
     void moveTo(Float x, Float y, Float z);

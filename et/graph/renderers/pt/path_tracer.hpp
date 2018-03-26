@@ -13,25 +13,22 @@ namespace Graph {
     
 class PathTracer : public Renderer {
 public:
-    PathTracer(unsigned int width, unsigned int height)
-        : Renderer(width, height)
-    {
-        pixelBuffer = new Math::Vec3<float>[width*height];
-    }
-    
+    PathTracer(unsigned int width, unsigned int height,
+               unsigned int samplePerPixel, unsigned int maxDepth);
     ~PathTracer()
     {
         delete[] pixelBuffer;
     }
     
-    void render(Scene& scene, Obj* camera) override { render(scene, camera, 1); }
-    void render(Scene& scene, Obj* camera, unsigned int samplePerPixel);
-    Ray  getPixelRay(Camera* camera, unsigned int x, unsigned int y) const;
-    void exportPpm(std::string path);
+    void              render(Scene& scene, Obj* camera) override;
+    Math::Vec3<float> sample(Scene& scene, Ray ray, unsigned int depth);
+    Ray               getPixelRay(Camera* camera, unsigned int x, unsigned int y) const;
+    void              exportPpm(std::string path);
     
-
 private:
     Math::Vec3<float>* pixelBuffer;
+    unsigned int samplePerPixel;
+    unsigned int maxDepth;
 };
     
 } // namesapce Graph

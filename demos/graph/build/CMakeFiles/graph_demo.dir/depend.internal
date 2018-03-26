@@ -58,6 +58,13 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/math/constants.hpp
  /home/cbrpnk/et/et/math/functions.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o
+ /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/material.cc
+ /home/cbrpnk/et/et/graph/components/material.hpp
+ /home/cbrpnk/et/et/graph/ray.hpp
+ /home/cbrpnk/et/et/math/random.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/components/sdf.cc
@@ -89,6 +96,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/material.hpp
  /home/cbrpnk/et/et/graph/obj.hpp
  /home/cbrpnk/et/et/graph/ray.hpp
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc

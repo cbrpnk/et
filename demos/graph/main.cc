@@ -6,7 +6,8 @@ int main(int argc, char** argv)
     using namespace Et::Graph;
     using namespace Et::Math;
     
-    PathTracer pt(400, 300); // 400x300 resolution
+    // 400x300 resolution, 10 sample per pixel, 3 bounces
+    PathTracer pt(400, 300, 10, 50);
     Scene scene;
     
     Obj& camera = scene.createObj();
@@ -17,21 +18,27 @@ int main(int argc, char** argv)
     Obj& ground = scene.createObj();
     ground.addComponent<Transform>(Vec3<float>(0.0f, -1.0f, 0.0f));
     ground.addComponent<SdfPlane>(Vec3<float>(0.0f, 1.0f, 0.0f));
+    ground.addComponent<DiffuseMaterial>();
     
     Obj& sphere = scene.createObj();
     sphere.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, -5.0f));
     sphere.addComponent<SdfSphere>(1.0f);
+    sphere.addComponent<DiffuseMaterial>();
     
     Obj& sphere2 = scene.createObj();
-    sphere2.addComponent<Transform>(Vec3<float>(-3.0f, 0.0f, -15.0f));
+    sphere2.addComponent<Transform>(Vec3<float>(1.0f, 0.0f, -7.0f));
     sphere2.addComponent<SdfSphere>(1.0f);
+    sphere2.addComponent<DiffuseMaterial>();
     
     Obj& sphere3 = scene.createObj();
-    sphere3.addComponent<Transform>(Vec3<float>(2.0f, 0.0f, -10.0f));
+    sphere3.addComponent<Transform>(Vec3<float>(-2.0f, 0.0f, -10.0f));
     sphere3.addComponent<SdfSphere>(1.0f);
+    sphere3.addComponent<DiffuseMaterial>();
+    /*
+    */
     
     scene.update();
-    pt.render(scene, &camera, 10);
+    pt.render(scene, &camera);
     
     pt.exportPpm("test.ppm");
     return 0;

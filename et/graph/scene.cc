@@ -33,6 +33,7 @@ HitRecord Scene::intersect(Ray ray)
 {
     HitRecord hit;
     float hitDistance = 1000000000;
+    float epsilon = 0.0001f;
     
     for(auto& obj : objs) {
         Geometry* geo = obj->getComponent<SdfSphere>();
@@ -43,8 +44,9 @@ HitRecord Scene::intersect(Ray ray)
         if(geo) {
             HitRecord potentialHit = geo->intersect(ray);
             if(potentialHit.hit) {
-                float potentialHitDistance = potentialHit.position.getLength();
-                if(potentialHitDistance < hitDistance) {
+                float potentialHitDistance = (potentialHit.position-ray.origin).getLength();
+                if(potentialHitDistance > epsilon &&
+                   potentialHitDistance < hitDistance) {
                     hit = potentialHit;
                     hitDistance = potentialHitDistance;
                 }

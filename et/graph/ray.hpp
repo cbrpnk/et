@@ -34,9 +34,7 @@ struct Ray {
     
     void normalize()
     {
-        direction -= origin;
         direction.normalize();
-        direction += origin;
     }
     
     Math::Vec3<float> origin;
@@ -48,19 +46,23 @@ struct HitRecord {
         : hit(false)
         , obj(nullptr)
         , position(Math::Vec3<float>(0,0,0))
+        , direction(Math::Vec3<float>(0,0,0))
         , normal(Math::Vec3<float>(0,0,0))
     {}
     
-    HitRecord(bool hit, Obj* obj, Math::Vec3<float> position, Math::Vec3<float> normal)
+    HitRecord(bool hit, Obj* obj, Math::Vec3<float> position, Math::Vec3<float> direction,
+              Math::Vec3<float> normal)
         : hit(hit)
         , obj(obj)
         , position(position)
+        , direction(direction)
         , normal(normal)
     {}
     
     bool              hit;
     Obj*              obj;
     Math::Vec3<float> position;
+    Math::Vec3<float> direction;
     Math::Vec3<float> normal;
 };
 

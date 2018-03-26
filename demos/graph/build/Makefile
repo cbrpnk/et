@@ -312,6 +312,33 @@ home/cbrpnk/et/et/graph/components/camera.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.s
 .PHONY : home/cbrpnk/et/et/graph/components/camera.cc.s
 
+home/cbrpnk/et/et/graph/components/material.o: home/cbrpnk/et/et/graph/components/material.cc.o
+
+.PHONY : home/cbrpnk/et/et/graph/components/material.o
+
+# target to build an object file
+home/cbrpnk/et/et/graph/components/material.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o
+.PHONY : home/cbrpnk/et/et/graph/components/material.cc.o
+
+home/cbrpnk/et/et/graph/components/material.i: home/cbrpnk/et/et/graph/components/material.cc.i
+
+.PHONY : home/cbrpnk/et/et/graph/components/material.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/graph/components/material.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.i
+.PHONY : home/cbrpnk/et/et/graph/components/material.cc.i
+
+home/cbrpnk/et/et/graph/components/material.s: home/cbrpnk/et/et/graph/components/material.cc.s
+
+.PHONY : home/cbrpnk/et/et/graph/components/material.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/graph/components/material.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.s
+.PHONY : home/cbrpnk/et/et/graph/components/material.cc.s
+
 home/cbrpnk/et/et/graph/components/sdf.o: home/cbrpnk/et/et/graph/components/sdf.cc.o
 
 .PHONY : home/cbrpnk/et/et/graph/components/sdf.o
@@ -558,6 +585,9 @@ help:
 	@echo "... home/cbrpnk/et/et/graph/components/camera.o"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.i"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.s"
+	@echo "... home/cbrpnk/et/et/graph/components/material.o"
+	@echo "... home/cbrpnk/et/et/graph/components/material.i"
+	@echo "... home/cbrpnk/et/et/graph/components/material.s"
 	@echo "... home/cbrpnk/et/et/graph/components/sdf.o"
 	@echo "... home/cbrpnk/et/et/graph/components/sdf.i"
 	@echo "... home/cbrpnk/et/et/graph/components/sdf.s"

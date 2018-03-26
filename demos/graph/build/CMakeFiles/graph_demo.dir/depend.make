@@ -58,6 +58,13 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/math/constants.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/math/functions.hpp
 
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/material.cc
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/material.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/ray.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/math/random.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
+
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.hpp
@@ -88,6 +95,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/m
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/components/material.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/ray.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc

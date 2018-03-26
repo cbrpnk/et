@@ -130,6 +130,20 @@ vector
 iostream
 -
 
+/home/cbrpnk/et/et/graph/components/material.cc
+material.hpp
+/home/cbrpnk/et/et/graph/components/material.hpp
+../../math/random.hpp
+/home/cbrpnk/et/et/math/random.hpp
+
+/home/cbrpnk/et/et/graph/components/material.hpp
+component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
+../../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+../ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
+
 /home/cbrpnk/et/et/graph/components/sdf.cc
 sdf.hpp
 /home/cbrpnk/et/et/graph/components/sdf.hpp
@@ -189,6 +203,8 @@ path_tracer.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 ../../ray.hpp
 /home/cbrpnk/et/et/graph/ray.hpp
+../../components/material.hpp
+/home/cbrpnk/et/et/graph/components/material.hpp
 ../../../math/random.hpp
 /home/cbrpnk/et/et/math/random.hpp
 iostream
