@@ -41,20 +41,12 @@ Math::Vec3<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
         Material* material = hit.obj->getComponent<DiffuseMaterial>();
         
         // Recursively compute indirect lighting
-        //std::cout << depth << "\n";
         pixelColor += sample(scene, material->brdf(ray, hit), depth-1)
                       * material->getAlbedo();
-        
-        //pixelColor = ((hit.normal/2) + Math::Vec3<float>(0.5,0.5,0.5));
-        
-        /*
-        pixelColor.x = hit.position.getLength() / 20;
-        pixelColor.y = hit.position.getLength() / 20;
-        pixelColor.z = hit.position.getLength() / 20;
-        */
     } else {
         // TODO This is a fake sky, do a proper lighting material
-        pixelColor = Math::Vec3<float>(0.6, 0.8, 1.0);
+        Math::Vec3<float> sky(0.4, 0.6, 0.8);
+        pixelColor += sky;
     }
     
     return pixelColor;
@@ -87,9 +79,9 @@ void PathTracer::exportPpm(std::string path)
     for(unsigned int y=0; y<height; ++y) {
         for(unsigned int x=0; x<width; ++x) {
             Math::Vec3<float>* pixel = &pixelBuffer[y*width+x];
-            file << (unsigned char) (int) (pixel->x * 255);
-            file << (unsigned char) (int) (pixel->y * 255);
-            file << (unsigned char) (int) (pixel->z * 255);
+            file << (unsigned char) (int) (sqrt(pixel->x) * 255);
+            file << (unsigned char) (int) (sqrt(pixel->y) * 255);
+            file << (unsigned char) (int) (sqrt(pixel->z) * 255);
         }
     }
     file.close();

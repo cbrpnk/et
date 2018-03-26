@@ -6,7 +6,7 @@ int main(int argc, char** argv)
     using namespace Et::Graph;
     using namespace Et::Math;
     
-    // 400x300 resolution, 10 sample per pixel, 3 bounces
+    // width, height, samplePerPixel, maxBounce
     PathTracer pt(400, 300, 10, 50);
     Scene scene;
     
@@ -19,6 +19,16 @@ int main(int argc, char** argv)
     ground.addComponent<Transform>(Vec3<float>(0.0f, -1.0f, 0.0f));
     ground.addComponent<SdfPlane>(Vec3<float>(0.0f, 1.0f, 0.0f));
     ground.addComponent<DiffuseMaterial>();
+    
+    Obj& left = scene.createObj();
+    left.addComponent<Transform>(Vec3<float>(-3.0f, 0.0f, 0.0f));
+    left.addComponent<SdfPlane>(Vec3<float>(1.0f, 0.0f, 0.0f));
+    left.addComponent<DiffuseMaterial>();
+    
+    Obj& back = scene.createObj();
+    back.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, -15.0f));
+    back.addComponent<SdfPlane>(Vec3<float>(0.0f, 0.0f, 1.0f));
+    back.addComponent<DiffuseMaterial>();
     
     Obj& sphere = scene.createObj();
     sphere.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, -5.0f));
@@ -34,8 +44,11 @@ int main(int argc, char** argv)
     sphere3.addComponent<Transform>(Vec3<float>(-2.0f, 0.0f, -10.0f));
     sphere3.addComponent<SdfSphere>(1.0f);
     sphere3.addComponent<DiffuseMaterial>();
-    /*
-    */
+    
+    Obj& sphere4 = scene.createObj();
+    sphere4.addComponent<Transform>(Vec3<float>(-0.5f, -0.7f, -4.0f));
+    sphere4.addComponent<SdfSphere>(0.3f);
+    sphere4.addComponent<DiffuseMaterial>();
     
     scene.update();
     pt.render(scene, &camera);
