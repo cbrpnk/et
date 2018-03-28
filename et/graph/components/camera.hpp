@@ -19,14 +19,15 @@ public:
     };
 
 public:
-    Camera(Obj& obj, AspectRatio apectRatio, float aov);
+    Camera(Obj& obj, AspectRatio apectRatio, float fov, float dof);
     
     virtual void update() override {}
     
-    float getAngleOfView()  const { return angleOfView; }
-    float getFocalLength()  const { return focalLength; }
     float getSensorWidth()  const { return sensorWidth; }
     float getSensorHeight() const { return sensorHeight; }
+    float getFieldOfView()  const { return fieldOfView; }
+    float getFocalLength()  const { return focalLength; }
+    float getDepthOfField() const { return depthOfField; }
     
     void setAspectRatio(AspectRatio r);
 
@@ -34,8 +35,12 @@ private:
     float       sensorWidth;
     float       sensorHeight;
     AspectRatio aspectRatio;
-    float       angleOfView;
+    // Horizontal field of view
+    float       fieldOfView;
+    // Distance of the sensor, deduced from the field of view
     float       focalLength;
+    // Distance to the focal plane
+    float       depthOfField;
 };
 
 } // namespace Graph

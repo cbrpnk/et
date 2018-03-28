@@ -36,10 +36,7 @@ HitRecord Scene::intersect(Ray ray)
     float epsilon = 0.0001f;
     
     for(auto& obj : objs) {
-        Geometry* geo = obj->getComponent<SdfSphere>();
-        if(!geo) {
-            geo = obj->getComponent<SdfPlane>();
-        }
+        Geometry* geo = obj->getComponent<Geometry>();
         
         if(geo) {
             HitRecord potentialHit = geo->intersect(ray);

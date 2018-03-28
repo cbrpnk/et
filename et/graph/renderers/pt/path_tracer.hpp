@@ -22,7 +22,7 @@ public:
     
     void              render(Scene& scene, Obj* camera) override;
     Math::Vec3<float> sample(Scene& scene, Ray ray, unsigned int depth);
-    Ray               getPixelRay(Camera* camera, unsigned int x, unsigned int y) const;
+    Ray               getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
     void              exportPpm(std::string path);
     
 private:

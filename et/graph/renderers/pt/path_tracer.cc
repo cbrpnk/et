@@ -2,6 +2,8 @@
 #include "../../ray.hpp"
 #include "../../components/material.hpp"
 #include "../../../math/random.hpp"
+#include "../../components/camera.hpp"
+#include "../../components/transform.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -20,12 +22,11 @@ PathTracer::PathTracer(unsigned int width, unsigned int height, unsigned int sam
 
 void PathTracer::render(Scene& scene, Obj* camera)
 {
-    Camera* camComp = camera->getComponent<Camera>();
     
     for(unsigned int s=0; s<samplePerPixel; ++s) {
         for(unsigned int y=0; y<height; ++y) {
             for(unsigned int x=0; x<width; ++x) {
-                pixelBuffer[y*width+x] += sample(scene, getPixelRay(camComp, x, y),
+                pixelBuffer[y*width+x] += sample(scene, getPixelRay(camera, x, y),
                                                      maxDepth) / samplePerPixel;
             }
         }
@@ -34,41 +35,58 @@ void PathTracer::render(Scene& scene, Obj* camera)
 
 Math::Vec3<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
 {
-    Math::Vec3<float> pixelColor;
+    Math::Vec3<float> color;
     HitRecord hit = scene.intersect(ray);
     
     if(hit.hit && depth > 0) {
-        Material* material = hit.obj->getComponent<DiffuseMaterial>();
+        Material* material = hit.obj->getComponent<Material>();
         
-        // Recursively compute indirect lighting
-        pixelColor += sample(scene, material->brdf(ray, hit), depth-1)
-                      * material->getAlbedo();
+        if(material->isEmissive()) {
+            color += material->getColor();
+        } else {
+            // Recursively compute indirect lighting
+            color += sample(scene, material->brdf(ray, hit), depth-1)
+                          * material->getAlbedo();
+            color.x *= material->getColor().x;
+            color.y *= material->getColor().y;
+            color.z *= material->getColor().z;
+        }
     } else {
-        // TODO This is a fake sky, do a proper lighting material
-        Math::Vec3<float> sky(0.4, 0.6, 0.8);
-        pixelColor += sky;
+        // Hit envirnment
+        // TODO Create an actual envirnment class
+        color += Math::Vec3<float>(0.5, 0.8, 1.0);
     }
     
-    return pixelColor;
+    return color;
 }
 
-Ray PathTracer::getPixelRay(Camera* camera, unsigned int x, unsigned int y) const
+Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
 {
+    Camera* camComp = camera->getComponent<Camera>();
+    Transform* transComp = camera->getComponent<Transform>();
+    
     // The amount of jiggle is bounded by the size of a pixel
     Math::Random random;
     float xJiggle = random.getFloat(-0.5f, 0.5f);
     float yJiggle = random.getFloat(-0.5f, 0.5f);
+    Math::Vec3<float> pixel;
     
     // X and y coordinates of the pixel in the world
     // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    float pixelX = ((((float)x+xJiggle)/width)-0.5) * camera->getSensorWidth();
+    pixel.x = ((((float)x+xJiggle)/width)-0.5) * camComp->getSensorWidth();
     // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    float pixelY = (1.0f - (((float)y+yJiggle)/height) - 0.5)
-                   * camera->getSensorHeight();
+    pixel.y = (1.0f - (((float)y+yJiggle)/height) - 0.5)
+                   * camComp->getSensorHeight();
     // Z coordinate of the pixel in the world
-    float pixelZ = -1.0f * camera->getFocalLength();
+    pixel.z = -1.0f * camComp->getFocalLength();
     
-    return Ray(Math::Vec3<float>(0,0,0), Math::Vec3<float>(pixelX, pixelY, pixelZ));
+    // The origin of the pixel should be a disc to simulate depth of field
+    Math::Vec3<float> origin = transComp->getPosition();
+    
+    // Move pixel based on camera position
+    pixel += transComp->getPosition();
+    
+    return Ray(origin, pixel);
 }
 
 void PathTracer::exportPpm(std::string path)

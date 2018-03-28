@@ -3,9 +3,10 @@
 namespace Et {
 namespace Graph {
     
-Camera::Camera(Obj& obj, AspectRatio aspectRatio, float aov)
+Camera::Camera(Obj& obj, AspectRatio aspectRatio, float fov, float dof)
     : Component(obj)
-    , angleOfView(aov)
+    , fieldOfView(fov)
+    , depthOfField(dof)
 {
     setAspectRatio(aspectRatio);
 }
@@ -25,8 +26,7 @@ void Camera::setAspectRatio(AspectRatio r)
         sensorHeight = 9.0f/16.0f;
     }
     
-    
-    focalLength = (sensorWidth/(2.0f*tan(Math::degToRad(angleOfView)/2)));
+    focalLength = (sensorWidth/(2.0f*tan(Math::degToRad(fieldOfView)/2)));
 }
 
 } // namespace Graph

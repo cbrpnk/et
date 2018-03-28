@@ -207,6 +207,10 @@ path_tracer.hpp
 /home/cbrpnk/et/et/graph/components/material.hpp
 ../../../math/random.hpp
 /home/cbrpnk/et/et/math/random.hpp
+../../components/camera.hpp
+/home/cbrpnk/et/et/graph/components/camera.hpp
+../../components/transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
 iostream
 -
 fstream

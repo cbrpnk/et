@@ -4,7 +4,7 @@
 namespace Et {
 namespace Graph {
 
-Ray DiffuseMaterial::brdf(Ray ray, HitRecord hit) const
+Math::Vec3<float> Material::getRandomDirection() const
 {
     // TODO Get a random point in the sphere tangent to the hit point
     Math::Random random;
@@ -15,8 +15,27 @@ Ray DiffuseMaterial::brdf(Ray ray, HitRecord hit) const
                                       random.getFloat(-1, 1));
     } while(direction.getLength() >= 1.0f);
     
-    Math::Vec3<float> target = hit.position + hit.normal + direction;
-    return Ray(hit.position, hit.normal + direction);
+    return direction;
+}
+
+Ray DiffuseMaterial::brdf(Ray ray, HitRecord hit) const
+{
+    
+    return Ray(hit.position, hit.normal + getRandomDirection());
+}
+
+Ray MetalicMaterial::brdf(Ray ray, HitRecord hit) const
+{
+    Math::Vec3<float> reflected = ray.direction -
+                                  (hit.normal*(2*(ray.direction*hit.normal)));
+    
+     return Ray(hit.position, reflected + (getRandomDirection() * roughness));
+}
+
+Ray EmissiveMaterial::brdf(Ray ray, HitRecord hit) const
+{
+    
+    return Ray(Math::Vec3<float>(), Math::Vec3<float>());
 }
 
 }
