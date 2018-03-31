@@ -4,7 +4,6 @@
 #include <iostream>
 
 #include "component.hpp"
-#include "types.hpp"
 #include "math/mat4.hpp"
 #include "math/vec3.hpp"
 
@@ -20,7 +19,7 @@ public:
         , transform(true)
     {}
     
-    Transform(Obj& obj, Math::Vec3<Float> pos)
+    Transform(Obj& obj, Math::Vec3<float> pos)
         : Component(obj)
         , transform(true)
     {
@@ -33,16 +32,16 @@ public:
     
     virtual void update() override {}
     
-    void moveTo(Math::Vec3<Float> target);
-    void moveTo(Float x, Float y, Float z);
+    void moveTo(Math::Vec3<float> target);
+    void moveTo(float x, float y, float z);
     void rotate();
-    void scale(Float factor);
+    void scale(float factor);
     
-    Math::Vec3<Float> getPosition() { return Math::Vec3<Float>(transform[3].x,
+    Math::Vec3<float> getPosition() { return Math::Vec3<float>(transform[3].x,
                                              transform[3].y, transform[3].z); }
 
 private:
-    Math::Mat4<Float> transform;
+    Math::Mat4<float> transform;
 };
 
 } // namespace Graph

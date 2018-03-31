@@ -13,6 +13,9 @@ namespace Graph {
     
 void PathTracer::render(Scene& scene, Obj* camera)
 {
+    //
+    // TODO Add multi-threaded rendering here
+    //
     
     for(unsigned int s=0; s<samplePerPixel; ++s) {
         for(unsigned int y=0; y<height; ++y) {

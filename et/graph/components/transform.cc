@@ -3,12 +3,12 @@
 namespace Et {
 namespace Graph {
 
-void Transform::moveTo(Math::Vec3<Float> target)
+void Transform::moveTo(Math::Vec3<float> target)
 {
     moveTo(target.x, target.y, target.z);
 }
 
-void Transform::moveTo(Float x, Float y, Float z)
+void Transform::moveTo(float x, float y, float z)
 {
     transform[3].x = x;
     transform[3].y = y;
@@ -20,7 +20,7 @@ void Transform::rotate()
     std::cout << "rotate\n";
 }
 
-void Transform::scale(Float factor)
+void Transform::scale(float factor)
 {
     std::cout << "scale\n";
 }
