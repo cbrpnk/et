@@ -8,6 +8,5 @@
 #include "math.hpp"
 #include "mem.hpp"
 #include "test.hpp"
-#include "types.hpp"
 
 #endif // ET_HPP

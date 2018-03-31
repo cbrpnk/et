@@ -11,6 +11,21 @@ namespace Et {
 namespace Graph {
     
 class PathTracer : public Renderer {
+private:
+    struct Tile {
+        Tile(unsigned int xMin, unsigned int xMax, unsigned int yMin, unsigned int yMax)
+            : xMin(xMin)
+            , xMax(xMax)
+            , yMin(yMin)
+            , yMax(yMax)
+        {}
+        
+        unsigned int xMin;
+        unsigned int xMax;
+        unsigned int yMin;
+        unsigned int yMax;
+    };
+
 public:
     PathTracer(unsigned int width, unsigned int height,
                unsigned int samplePerPixel, unsigned int maxDepth)
@@ -20,12 +35,15 @@ public:
         , maxDepth(maxDepth)
     {}
     
-    void            render(Scene& scene, Obj* camera) override;
+    void render(Scene& scene, Obj* camera) override;
+    void exportPpm(std::string filePath);
+   
+private: 
+    void            renderThread(Scene& scene, Obj* camera, Tile tile);
     RgbColor<float> sample(Scene& scene, Ray ray, unsigned int depth);
     Ray             getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
-    void            exportPpm(std::string filePath);
-    
-private:
+
+private: 
     RgbBuffer<float> pixelBuffer;
     unsigned int samplePerPixel;
     unsigned int maxDepth;

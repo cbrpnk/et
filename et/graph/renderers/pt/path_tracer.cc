@@ -7,19 +7,39 @@
 
 #include <iostream>
 #include <fstream>
+#include <thread>
 
 namespace Et {
 namespace Graph {
+
+/*
+ * TODO Make pixelBuffer operations std::atomic
+ */
     
 void PathTracer::render(Scene& scene, Obj* camera)
 {
-    //
-    // TODO Add multi-threaded rendering here
-    //
+    unsigned int nThreads = std::thread::hardware_concurrency();
+    if(nThreads == 0) nThreads = 1;
     
+    std::vector<std::thread> threads;
+    unsigned int tileHeight = height/nThreads;
+    for(unsigned int i=0; i<nThreads; ++i) {
+        Tile tile(0, width, i*tileHeight, (i+1)*tileHeight);
+        threads.push_back(
+            std::thread(&PathTracer::renderThread, this, std::ref(scene), camera, tile)
+        );
+    }
+    
+    for(auto& thread : threads) {
+        thread.join();
+    }
+}
+
+void PathTracer::renderThread(Scene& scene, Obj* camera, Tile tile)
+{
     for(unsigned int s=0; s<samplePerPixel; ++s) {
-        for(unsigned int y=0; y<height; ++y) {
-            for(unsigned int x=0; x<width; ++x) {
+        for(unsigned int y=tile.yMin; y<tile.yMax; ++y) {
+            for(unsigned int x=tile.xMin; x<tile.xMax; ++x) {
                 pixelBuffer(x, y) += sample(scene, getPixelRay(camera, x, y),
                                                      maxDepth) / samplePerPixel;
             }
