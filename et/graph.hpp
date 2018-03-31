@@ -2,6 +2,7 @@
 #ifndef ET_GRAPH_HPP
 #define ET_GRAPH_HPP
 
+#include "graph/atmosphere.hpp"
 #include "graph/obj.hpp"
 #include "graph/pixel.hpp"
 #include "graph/scene.hpp"

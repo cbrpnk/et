@@ -1,5 +1,5 @@
 #include "material.hpp"
-#include "../../math/random.hpp"
+#include "math/random.hpp"
 
 namespace Et {
 namespace Graph {

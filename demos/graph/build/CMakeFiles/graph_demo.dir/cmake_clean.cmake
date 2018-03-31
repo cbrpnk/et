@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
+  "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o"
   "CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o"

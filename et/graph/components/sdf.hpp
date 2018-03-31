@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include "component.hpp"
-#include "../ray.hpp"
-#include "../../math/vec3.hpp"
+#include "graph/ray.hpp"
+#include "math/vec3.hpp"
 
 namespace Et {
 namespace Graph {

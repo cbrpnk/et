@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "component.hpp"
-#include "../../math/functions.hpp"
+#include "math/functions.hpp"
 
 namespace Et {
 namespace Graph {

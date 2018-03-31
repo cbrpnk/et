@@ -285,6 +285,33 @@ home/cbrpnk/et/et/dsp/oscillator.cc.s:
 	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.s
 .PHONY : home/cbrpnk/et/et/dsp/oscillator.cc.s
 
+home/cbrpnk/et/et/graph/atmosphere.o: home/cbrpnk/et/et/graph/atmosphere.cc.o
+
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.o
+
+# target to build an object file
+home/cbrpnk/et/et/graph/atmosphere.cc.o:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.cc.o
+
+home/cbrpnk/et/et/graph/atmosphere.i: home/cbrpnk/et/et/graph/atmosphere.cc.i
+
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/graph/atmosphere.cc.i:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.i
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.cc.i
+
+home/cbrpnk/et/et/graph/atmosphere.s: home/cbrpnk/et/et/graph/atmosphere.cc.s
+
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/graph/atmosphere.cc.s:
+	$(MAKE) -f CMakeFiles/graph_demo.dir/build.make CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.s
+.PHONY : home/cbrpnk/et/et/graph/atmosphere.cc.s
+
 home/cbrpnk/et/et/graph/components/camera.o: home/cbrpnk/et/et/graph/components/camera.cc.o
 
 .PHONY : home/cbrpnk/et/et/graph/components/camera.o
@@ -582,6 +609,9 @@ help:
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"
+	@echo "... home/cbrpnk/et/et/graph/atmosphere.o"
+	@echo "... home/cbrpnk/et/et/graph/atmosphere.i"
+	@echo "... home/cbrpnk/et/et/graph/atmosphere.s"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.o"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.i"
 	@echo "... home/cbrpnk/et/et/graph/components/camera.s"

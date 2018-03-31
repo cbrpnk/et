@@ -1,7 +1,7 @@
 #include "sdf.hpp"
-#include "../obj.hpp"
+#include "graph/obj.hpp"
 #include "transform.hpp"
-#include "../../math/functions.hpp"
+#include "math/functions.hpp"
 
 namespace Et {
 namespace Graph {

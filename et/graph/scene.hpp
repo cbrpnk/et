@@ -3,8 +3,9 @@
 #include <vector>
 #include <memory>
 #include "obj.hpp"
-#include "components/component.hpp"
 #include "ray.hpp"
+#include "atmosphere.hpp"
+#include "components/component.hpp"
 
 namespace Et {
 namespace Graph {
@@ -18,7 +19,10 @@ public:
     void      update();
     HitRecord intersect(Ray ray);
     
+    Atmosphere& getAtmosphere() { return atmosphere; }
+    
 private:
+    Atmosphere atmosphere;
     std::vector<std::unique_ptr<Obj>> objs;
 };
 

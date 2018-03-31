@@ -1,9 +1,9 @@
 #pragma once
 
 #include "component.hpp"
-#include "../../math/vec3.hpp"
-#include "../pixel.hpp"
-#include "../ray.hpp"
+#include "math/vec3.hpp"
+#include "graph/pixel.hpp"
+#include "graph/ray.hpp"
 
 namespace Et {
 namespace Graph {

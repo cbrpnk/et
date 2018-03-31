@@ -2,7 +2,7 @@
 
 #include <memory>
 #include "components/component.hpp"
-#include "../math/vec3.hpp"
+#include "math/vec3.hpp"
 
 namespace Et {
 namespace Graph {

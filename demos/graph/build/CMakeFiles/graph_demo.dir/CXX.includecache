@@ -9,8 +9,8 @@
 /home/cbrpnk/et/demos/graph/main.cc
 iostream
 -
-et/et.hpp
-/home/cbrpnk/et/demos/graph/et/et.hpp
+et.hpp
+/home/cbrpnk/et/demos/graph/et.hpp
 
 /home/cbrpnk/et/et/audio/backends/jack_backend.cc
 iostream
@@ -110,6 +110,18 @@ oscillator.hpp
 
 /home/cbrpnk/et/et/dsp/oscillator.hpp
 
+/home/cbrpnk/et/et/graph/atmosphere.cc
+atmosphere.hpp
+/home/cbrpnk/et/et/graph/atmosphere.hpp
+pixel.hpp
+/home/cbrpnk/et/et/graph/pixel.hpp
+
+/home/cbrpnk/et/et/graph/atmosphere.hpp
+ray.hpp
+/home/cbrpnk/et/et/graph/ray.hpp
+pixel.hpp
+/home/cbrpnk/et/et/graph/pixel.hpp
+
 /home/cbrpnk/et/et/graph/components/camera.cc
 camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
@@ -119,8 +131,8 @@ iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
-../../math/functions.hpp
-/home/cbrpnk/et/et/math/functions.hpp
+math/functions.hpp
+/home/cbrpnk/et/et/graph/components/math/functions.hpp
 
 /home/cbrpnk/et/et/graph/components/component.hpp
 string
@@ -133,38 +145,38 @@ iostream
 /home/cbrpnk/et/et/graph/components/material.cc
 material.hpp
 /home/cbrpnk/et/et/graph/components/material.hpp
-../../math/random.hpp
-/home/cbrpnk/et/et/math/random.hpp
+math/random.hpp
+/home/cbrpnk/et/et/graph/components/math/random.hpp
 
 /home/cbrpnk/et/et/graph/components/material.hpp
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
-../../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
-../pixel.hpp
-/home/cbrpnk/et/et/graph/pixel.hpp
-../ray.hpp
-/home/cbrpnk/et/et/graph/ray.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/components/math/vec3.hpp
+graph/pixel.hpp
+/home/cbrpnk/et/et/graph/components/graph/pixel.hpp
+graph/ray.hpp
+/home/cbrpnk/et/et/graph/components/graph/ray.hpp
 
 /home/cbrpnk/et/et/graph/components/sdf.cc
 sdf.hpp
 /home/cbrpnk/et/et/graph/components/sdf.hpp
-../obj.hpp
-/home/cbrpnk/et/et/graph/obj.hpp
+graph/obj.hpp
+/home/cbrpnk/et/et/graph/components/graph/obj.hpp
 transform.hpp
 /home/cbrpnk/et/et/graph/components/transform.hpp
-../../math/functions.hpp
-/home/cbrpnk/et/et/math/functions.hpp
+math/functions.hpp
+/home/cbrpnk/et/et/graph/components/math/functions.hpp
 
 /home/cbrpnk/et/et/graph/components/sdf.hpp
 iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
-../ray.hpp
-/home/cbrpnk/et/et/graph/ray.hpp
-../../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
+graph/ray.hpp
+/home/cbrpnk/et/et/graph/components/graph/ray.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/components/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/components/transform.cc
 transform.hpp
@@ -175,12 +187,12 @@ iostream
 -
 component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
-../../types.hpp
-/home/cbrpnk/et/et/types.hpp
-../../math/mat4.hpp
-/home/cbrpnk/et/et/math/mat4.hpp
-../../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
+types.hpp
+/home/cbrpnk/et/et/graph/components/types.hpp
+math/mat4.hpp
+/home/cbrpnk/et/et/graph/components/math/mat4.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/components/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/obj.cc
 obj.hpp
@@ -193,8 +205,8 @@ memory
 -
 components/component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
-../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/pixel.hpp
 string
@@ -203,48 +215,46 @@ vector
 -
 fstream
 -
-../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
-../math/vec4.hpp
-/home/cbrpnk/et/et/math/vec4.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/math/vec3.hpp
+math/vec4.hpp
+/home/cbrpnk/et/et/graph/math/vec4.hpp
 
 /home/cbrpnk/et/et/graph/ray.hpp
-../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 path_tracer.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
-../../ray.hpp
-/home/cbrpnk/et/et/graph/ray.hpp
-../../components/material.hpp
-/home/cbrpnk/et/et/graph/components/material.hpp
-../../../math/random.hpp
-/home/cbrpnk/et/et/math/random.hpp
-../../components/camera.hpp
-/home/cbrpnk/et/et/graph/components/camera.hpp
-../../components/transform.hpp
-/home/cbrpnk/et/et/graph/components/transform.hpp
+graph/ray.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/ray.hpp
+graph/components/material.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/components/material.hpp
+math/random.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/math/random.hpp
+graph/components/camera.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/components/camera.hpp
+graph/components/transform.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/components/transform.hpp
 iostream
 -
 fstream
 -
 
 /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
-../../obj.hpp
-/home/cbrpnk/et/et/graph/obj.hpp
-../../scene.hpp
-/home/cbrpnk/et/et/graph/scene.hpp
-../../pixel.hpp
-/home/cbrpnk/et/et/graph/pixel.hpp
-../../components/camera.hpp
-/home/cbrpnk/et/et/graph/components/camera.hpp
-../renderer.hpp
-/home/cbrpnk/et/et/graph/renderers/renderer.hpp
-../../../math/vec3.hpp
-/home/cbrpnk/et/et/math/vec3.hpp
-
-/home/cbrpnk/et/et/graph/renderers/renderer.hpp
+graph/obj.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/obj.hpp
+graph/scene.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/scene.hpp
+graph/pixel.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/pixel.hpp
+graph/components/camera.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/components/camera.hpp
+graph/renderers/renderer.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/graph/renderers/renderer.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/math/vec3.hpp
 
 /home/cbrpnk/et/et/graph/scene.cc
 scene.hpp
@@ -259,10 +269,12 @@ memory
 -
 obj.hpp
 /home/cbrpnk/et/et/graph/obj.hpp
-components/component.hpp
-/home/cbrpnk/et/et/graph/components/component.hpp
 ray.hpp
 /home/cbrpnk/et/et/graph/ray.hpp
+atmosphere.hpp
+/home/cbrpnk/et/et/graph/atmosphere.hpp
+components/component.hpp
+/home/cbrpnk/et/et/graph/components/component.hpp
 
 /home/cbrpnk/et/et/math.hpp
 math/vec2.hpp
@@ -371,6 +383,4 @@ functional
 -
 iostream
 -
-
-/home/cbrpnk/et/et/types.hpp
 

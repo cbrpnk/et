@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../obj.hpp"
-#include "../../scene.hpp"
-#include "../../pixel.hpp"
-#include "../../components/camera.hpp"
-#include "../renderer.hpp"
-#include "../../../math/vec3.hpp"
+#include "graph/obj.hpp"
+#include "graph/scene.hpp"
+#include "graph/pixel.hpp"
+#include "graph/components/camera.hpp"
+#include "graph/renderers/renderer.hpp"
+#include "math/vec3.hpp"
 
 namespace Et {
 namespace Graph {

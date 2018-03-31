@@ -1,9 +1,9 @@
 #include "path_tracer.hpp"
-#include "../../ray.hpp"
-#include "../../components/material.hpp"
-#include "../../../math/random.hpp"
-#include "../../components/camera.hpp"
-#include "../../components/transform.hpp"
+#include "graph/ray.hpp"
+#include "graph/components/material.hpp"
+#include "math/random.hpp"
+#include "graph/components/camera.hpp"
+#include "graph/components/transform.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -44,8 +44,7 @@ RgbColor<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
         }
     } else {
         // Hit envirnment
-        // TODO Create an actual envirnment class
-        color += Math::Vec3<float>(0.5, 0.8, 1.0);
+        color += scene.getAtmosphere().sample(ray);
     }
     
     return color;

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cbrpnk/et/et/audio/modules/module.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
   "/home/cbrpnk/et/et/audio/modules/oscillator.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
   "/home/cbrpnk/et/et/dsp/oscillator.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
+  "/home/cbrpnk/et/et/graph/atmosphere.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
   "/home/cbrpnk/et/et/graph/components/camera.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"
   "/home/cbrpnk/et/et/graph/components/material.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o"
   "/home/cbrpnk/et/et/graph/components/sdf.cc" "/home/cbrpnk/et/demos/graph/build/CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o"

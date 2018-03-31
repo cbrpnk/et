@@ -4,9 +4,9 @@
 #include <iostream>
 
 #include "component.hpp"
-#include "../../types.hpp"
-#include "../../math/mat4.hpp"
-#include "../../math/vec3.hpp"
+#include "types.hpp"
+#include "math/mat4.hpp"
+#include "math/vec3.hpp"
 
 namespace Et {
 namespace Graph {

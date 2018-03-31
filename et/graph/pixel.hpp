@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "../math/vec3.hpp"
-#include "../math/vec4.hpp"
+#include "math/vec3.hpp"
+#include "math/vec4.hpp"
 
 namespace Et {
 namespace Graph {
