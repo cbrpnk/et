@@ -2,6 +2,7 @@
 
 #include "component.hpp"
 #include "../../math/vec3.hpp"
+#include "../pixel.hpp"
 #include "../ray.hpp"
 
 namespace Et {
@@ -10,7 +11,7 @@ namespace Graph {
 class Material : public Component {
 
 public:
-    Material(Obj& obj, Math::Vec3<float> color, float albedo, bool emissive)
+    Material(Obj& obj, RgbColor<float> color, float albedo, bool emissive)
         : Component(obj)
         , color(color)
         , albedo(albedo)
@@ -19,20 +20,20 @@ public:
     
     virtual Ray brdf(Ray ray, HitRecord hit) const = 0;
     
-    Math::Vec3<float> getColor()     const { return color; }
+    RgbColor<float>   getColor()     const { return color; }
     float             getAlbedo()    const { return albedo; }
     Math::Vec3<float> getRandomDirection() const;
     bool              isEmissive() const   { return emissive; }
 
 protected:
-    Math::Vec3<float> color;
+    RgbColor<float> color;
     float albedo;
     bool emissive;
 };
 
 class DiffuseMaterial : public Material {
 public:
-    DiffuseMaterial(Obj& obj, Math::Vec3<float> color, float albedo)
+    DiffuseMaterial(Obj& obj, RgbColor<float> color, float albedo)
         : Material(obj, color, albedo, false)
     {}
     
@@ -41,7 +42,7 @@ public:
 
 class MetalicMaterial : public Material {
 public:
-    MetalicMaterial(Obj& obj, Math::Vec3<float> color, float albedo, float roughness)
+    MetalicMaterial(Obj& obj, RgbColor<float> color, float albedo, float roughness)
         : Material(obj, color, albedo, false)
         , roughness(roughness)
     {}
@@ -54,7 +55,7 @@ private:
 
 class EmissiveMaterial : public Material {
 public:
-    EmissiveMaterial(Obj& obj, Math::Vec3<float> color, float albedo)
+    EmissiveMaterial(Obj& obj, RgbColor<float> color, float albedo)
         : Material(obj, color, albedo, true)
     {}
     

@@ -3,6 +3,7 @@
 #define ET_GRAPH_HPP
 
 #include "graph/obj.hpp"
+#include "graph/pixel.hpp"
 #include "graph/scene.hpp"
 
 #include "graph/components/component.hpp"

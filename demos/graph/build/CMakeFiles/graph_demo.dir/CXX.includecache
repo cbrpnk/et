@@ -141,6 +141,8 @@ component.hpp
 /home/cbrpnk/et/et/graph/components/component.hpp
 ../../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
+../pixel.hpp
+/home/cbrpnk/et/et/graph/pixel.hpp
 ../ray.hpp
 /home/cbrpnk/et/et/graph/ray.hpp
 
@@ -194,6 +196,18 @@ components/component.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
 
+/home/cbrpnk/et/et/graph/pixel.hpp
+string
+-
+vector
+-
+fstream
+-
+../math/vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
+../math/vec4.hpp
+/home/cbrpnk/et/et/math/vec4.hpp
+
 /home/cbrpnk/et/et/graph/ray.hpp
 ../math/vec3.hpp
 /home/cbrpnk/et/et/math/vec3.hpp
@@ -221,6 +235,8 @@ fstream
 /home/cbrpnk/et/et/graph/obj.hpp
 ../../scene.hpp
 /home/cbrpnk/et/et/graph/scene.hpp
+../../pixel.hpp
+/home/cbrpnk/et/et/graph/pixel.hpp
 ../../components/camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
 ../renderer.hpp

@@ -11,31 +11,22 @@
 namespace Et {
 namespace Graph {
     
-PathTracer::PathTracer(unsigned int width, unsigned int height, unsigned int samplePerPixel,
-                       unsigned int maxDepth)
-    : Renderer(width, height)
-    , samplePerPixel(samplePerPixel)
-    , maxDepth(maxDepth)
-{
-    pixelBuffer = new Math::Vec3<float>[width*height];
-}
-
 void PathTracer::render(Scene& scene, Obj* camera)
 {
     
     for(unsigned int s=0; s<samplePerPixel; ++s) {
         for(unsigned int y=0; y<height; ++y) {
             for(unsigned int x=0; x<width; ++x) {
-                pixelBuffer[y*width+x] += sample(scene, getPixelRay(camera, x, y),
+                pixelBuffer(x, y) += sample(scene, getPixelRay(camera, x, y),
                                                      maxDepth) / samplePerPixel;
             }
         }
     }
 }
 
-Math::Vec3<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
+RgbColor<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
 {
-    Math::Vec3<float> color;
+    RgbColor<float> color;
     HitRecord hit = scene.intersect(ray);
     
     if(hit.hit && depth > 0) {
@@ -89,20 +80,9 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     return Ray(origin, pixel);
 }
 
-void PathTracer::exportPpm(std::string path)
+void PathTracer::exportPpm(std::string filePath)
 {
-    std::ofstream file;
-    file.open(path.c_str());
-    file << "P6 " << width << " " << height << " 255\n";
-    for(unsigned int y=0; y<height; ++y) {
-        for(unsigned int x=0; x<width; ++x) {
-            Math::Vec3<float>* pixel = &pixelBuffer[y*width+x];
-            file << (unsigned char) (int) (sqrt(pixel->x) * 255);
-            file << (unsigned char) (int) (sqrt(pixel->y) * 255);
-            file << (unsigned char) (int) (sqrt(pixel->z) * 255);
-        }
-    }
-    file.close();
+    pixelBuffer.exportPpm(filePath);
 }
 
 } // namesapce Graph
