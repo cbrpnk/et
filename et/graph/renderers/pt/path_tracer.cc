@@ -12,19 +12,19 @@
 namespace Et {
 namespace Graph {
 
-/*
- * TODO Make pixelBuffer operations std::atomic
- */
-    
 void PathTracer::render(Scene& scene, Obj* camera)
 {
     unsigned int nThreads = std::thread::hardware_concurrency();
     if(nThreads == 0) nThreads = 1;
-    
     std::vector<std::thread> threads;
-    unsigned int tileHeight = height/nThreads;
+    
+    // Try to divide the height in equal parts
+    unsigned int tileHeight = height / nThreads;
+    // One tile should get the extra pixels if height is not divisible by nThreads
+    unsigned int extra = height % nThreads;
+    
     for(unsigned int i=0; i<nThreads; ++i) {
-        Tile tile(0, width, i*tileHeight, (i+1)*tileHeight);
+        Tile tile(0, width, i*tileHeight+(!i ? 0 : extra), (i+1)*tileHeight+extra);
         threads.push_back(
             std::thread(&PathTracer::renderThread, this, std::ref(scene), camera, tile)
         );
@@ -44,6 +44,7 @@ void PathTracer::renderThread(Scene& scene, Obj* camera, Tile tile)
                                                      maxDepth) / samplePerPixel;
             }
         }
+        std::cout << (float)s*100/samplePerPixel << "%\n";
     }
 }
 
