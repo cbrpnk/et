@@ -6,10 +6,11 @@ namespace Graph {
 
 Math::Vec3<float> Material::getRandomDirection() const
 {
-    // TODO Get a random point in the sphere tangent to the hit point
     Math::Random random;
     Math::Vec3<float> direction;
     
+    // TODO Get a random point in the hemi-sphere tangent to the hit point
+    // instead of trial and error
     do {
         direction = Math::Vec3<float>(random.getFloat(-1, 1), random.getFloat(-1, 1),
                                       random.getFloat(-1, 1));

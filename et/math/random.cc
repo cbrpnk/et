@@ -10,32 +10,22 @@
 namespace Et {
 namespace Math {
 
-// Static declaration
 bool Random::prngSeeded = false;
+std::mt19937 Random::randomEngine;
 
-Random::Random() {
+Random::Random()
+{
     if(!prngSeeded) {
-        std::srand(std::time(0));
+        std::random_device rd;
+        randomEngine.seed(rd());
         prngSeeded = true;
     }
 }
 
-double Random::getDouble(const double min, const double max)
-{
-    assert(max <= std::numeric_limits<double>::max());
-    return std::rand() / (double) RAND_MAX * (max-min) + min;
-}
-
 float Random::getFloat(const float min, const float max)
 {
-    assert(max <= std::numeric_limits<float>::max());
-    return (float) getDouble(min, max);
-}
-
-int Random::getInt(const int min, const int max)
-{
-    assert(max <= std::numeric_limits<int>::max());
-    return std::round(getDouble(min, max));
+    std::uniform_real_distribution<float> gen(min, max);
+    return gen(randomEngine);
 }
 
 } // namespace Math
