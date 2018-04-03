@@ -1,5 +1,7 @@
 #pragma once
 
+#include <mutex>
+
 #include "graph/obj.hpp"
 #include "graph/scene.hpp"
 #include "graph/pixel.hpp"
@@ -39,7 +41,7 @@ public:
     void exportPpm(std::string filePath);
    
 private: 
-    void            renderThread(Scene& scene, Obj* camera, Tile tile);
+    void            renderThread(Scene& scene, Obj* camera);
     RgbColor<float> sample(Scene& scene, Ray ray, unsigned int depth);
     Ray             getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
 
@@ -47,6 +49,10 @@ private:
     RgbBuffer<float> pixelBuffer_;
     unsigned int samplePerPixel_;
     unsigned int maxDepth_;
+    
+    // Each render thread will use the queue to know which tile to render next
+    std::mutex        tileQueueMtx_;
+    std::vector<Tile> tileQueue_;
 };
     
 } // namesapce Graph

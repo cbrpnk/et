@@ -13,48 +13,62 @@ namespace Graph {
 
 void PathTracer::render(Scene& scene, Obj* camera)
 {
-    //
-    //
-    // TODO This should be a thread pool rendering small pieces of the frame to maximize
-    // processor utilization
-    //
-    //
-
+    // TODO Turn tile in jobs, which contains the same data as Tile + camera + scene
+    
+    
+    // Fill the tile queue
+    unsigned int tw = 50;
+    unsigned int th = 50;
+    for(unsigned int y=0; y<height_; y+=th) {
+        for(unsigned int x=0; x<width_; x+=tw) {
+            tileQueue_.push_back(Tile(
+                x,
+                x+(x+tw < width_ ? tw : width_-x),
+                y,
+                y+(y+th < height_ ? th : height_-y)
+            ));
+        }
+    }
+    
+    // Start threads
     unsigned int nThreads = std::thread::hardware_concurrency();
     if(nThreads == 0) nThreads = 1;
     std::vector<std::thread> threads;
     
-    // Try to divide the height in equal parts
-    unsigned int tileHeight = height / nThreads;
-    // One tile should get the extra pixels if height is not divisible by nThreads
-    unsigned int extra = height % nThreads;
-    
     for(unsigned int i=0; i<nThreads; ++i) {
-        Tile tile(0, width, i*tileHeight+(!i ? 0 : extra), (i+1)*tileHeight+extra);
         threads.push_back(
-            std::thread(&PathTracer::renderThread, this, std::ref(scene), camera, tile)
+            std::thread(&PathTracer::renderThread, this, std::ref(scene), camera)
         );
     }
     
     for(auto& thread : threads) {
         thread.join();
     }
-    std::cout << std::endl;
 }
 
-void PathTracer::renderThread(Scene& scene, Obj* camera, Tile tile)
+void PathTracer::renderThread(Scene& scene, Obj* camera)
 {
-    for(unsigned int s=0; s<samplePerPixel_; ++s) {
-        for(unsigned int y=tile.yMin; y<tile.yMax; ++y) {
-            for(unsigned int x=tile.xMin; x<tile.xMax; ++x) {
-                pixelBuffer_(x, y) += sample(scene, getPixelRay(camera, x, y),
-                                                     maxDepth_) / samplePerPixel_;
-                // TODO The smaplePerPixel division should be done once
-                // everything has been accumulated
+    while(true) {
+        Tile tile(0,0,0,0);
+        
+        // Thread loack
+        {
+            std::lock_guard<std::mutex> lock(tileQueueMtx_);
+            if(tileQueue_.size() == 0) {
+                return; 
+            }
+            tile = tileQueue_.back();
+            tileQueue_.pop_back();
+        }
+        
+        for(unsigned int s=0; s<samplePerPixel_; ++s) {
+            for(unsigned int y=tile.yMin; y<tile.yMax; ++y) {
+                for(unsigned int x=tile.xMin; x<tile.xMax; ++x) {
+                    pixelBuffer_(x, y) += sample(scene, getPixelRay(camera, x, y),
+                                                         maxDepth_) / samplePerPixel_;
+                }
             }
         }
-        std::cout << (float)s*100/samplePerPixel_ << "% ";
-        std::flush(std::cout);
     }
 }
 
@@ -99,9 +113,9 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     
     // X and y coordinates of the pixel in the world
     // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    pixel.x = (((x+xJiggle)/width)-0.5) * camComp->getSensorWidth();
+    pixel.x = (((x+xJiggle)/width_)-0.5) * camComp->getSensorWidth();
     // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    pixel.y = (1.0f - ((y+yJiggle)/height) - 0.5) * camComp->getSensorHeight();
+    pixel.y = (1.0f - ((y+yJiggle)/height_) - 0.5) * camComp->getSensorHeight();
     // Z coordinate of the pixel in the world
     pixel.z = -1.0f * camComp->getFocalLength();
     
