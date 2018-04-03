@@ -13,20 +13,19 @@ namespace Graph {
 
 void PathTracer::render(Scene& scene, Obj* camera)
 {
-    // TODO Turn tile in jobs, which contains the same data as Tile + camera + scene
-    
-    
-    // Fill the tile queue
-    unsigned int tw = 50;
-    unsigned int th = 50;
-    for(unsigned int y=0; y<height_; y+=th) {
-        for(unsigned int x=0; x<width_; x+=tw) {
-            tileQueue_.push_back(Tile(
-                x,
-                x+(x+tw < width_ ? tw : width_-x),
-                y,
-                y+(y+th < height_ ? th : height_-y)
-            ));
+    // Fill the job queue
+    for(unsigned int y=0; y<height_; y+=tileHeight_) {
+        for(unsigned int x=0; x<width_; x+=tileWidth_) {
+            jobQueue_.push_back({
+                &scene,
+                camera,
+                Tile(
+                    x,
+                    x+(x+tileWidth_ < width_ ? tileWidth_ : width_-x),
+                    y,
+                    y+(y+tileHeight_ < height_ ? tileHeight_ : height_-y)
+                )
+            });
         }
     }
     
@@ -36,9 +35,7 @@ void PathTracer::render(Scene& scene, Obj* camera)
     std::vector<std::thread> threads;
     
     for(unsigned int i=0; i<nThreads; ++i) {
-        threads.push_back(
-            std::thread(&PathTracer::renderThread, this, std::ref(scene), camera)
-        );
+        threads.push_back(std::thread(&PathTracer::renderThread, this));
     }
     
     for(auto& thread : threads) {
@@ -46,25 +43,23 @@ void PathTracer::render(Scene& scene, Obj* camera)
     }
 }
 
-void PathTracer::renderThread(Scene& scene, Obj* camera)
+void PathTracer::renderThread()
 {
     while(true) {
-        Tile tile(0,0,0,0);
+        RenderJob job;
         
-        // Thread loack
+        // Thread lock
         {
-            std::lock_guard<std::mutex> lock(tileQueueMtx_);
-            if(tileQueue_.size() == 0) {
-                return; 
-            }
-            tile = tileQueue_.back();
-            tileQueue_.pop_back();
+            std::lock_guard<std::mutex> lock(jobQueueMtx_);
+            if(jobQueue_.size() == 0) return; 
+            job = jobQueue_.back();
+            jobQueue_.pop_back();
         }
         
         for(unsigned int s=0; s<samplePerPixel_; ++s) {
-            for(unsigned int y=tile.yMin; y<tile.yMax; ++y) {
-                for(unsigned int x=tile.xMin; x<tile.xMax; ++x) {
-                    pixelBuffer_(x, y) += sample(scene, getPixelRay(camera, x, y),
+            for(unsigned int y=job.tile.yMin; y<job.tile.yMax; ++y) {
+                for(unsigned int x=job.tile.xMin; x<job.tile.xMax; ++x) {
+                    pixelBuffer_(x, y) += sample(*job.scene, getPixelRay(job.camera, x, y),
                                                          maxDepth_) / samplePerPixel_;
                 }
             }

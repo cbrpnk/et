@@ -15,17 +15,33 @@ namespace Graph {
 class PathTracer : public Renderer {
 private:
     struct Tile {
-        Tile(unsigned int xMin, unsigned int xMax, unsigned int yMin, unsigned int yMax)
+        Tile() : xMin(0), xMax(0), yMin(0), yMax(0) {}
+        
+        Tile(unsigned int xMin, unsigned int xMax, unsigned int yMin,
+             unsigned int yMax)
             : xMin(xMin)
             , xMax(xMax)
             , yMin(yMin)
             , yMax(yMax)
         {}
-        
         unsigned int xMin;
         unsigned int xMax;
         unsigned int yMin;
         unsigned int yMax;
+    };
+    
+    struct RenderJob {
+        RenderJob() : scene(nullptr), camera(nullptr), tile() {}
+        
+        RenderJob(Scene* scene, Obj* camera, Tile tile)
+            : scene(scene)
+            , camera(camera)
+            , tile(tile)
+        {}
+        
+        Scene* scene;
+        Obj* camera;
+        Tile tile;
     };
 
 public:
@@ -35,13 +51,15 @@ public:
         , pixelBuffer_(width, height)
         , samplePerPixel_(samplePerPixel)
         , maxDepth_(maxDepth)
+        , tileWidth_(50)
+        , tileHeight_(50)
     {}
     
     void render(Scene& scene, Obj* camera) override;
     void exportPpm(std::string filePath);
    
 private: 
-    void            renderThread(Scene& scene, Obj* camera);
+    void            renderThread();
     RgbColor<float> sample(Scene& scene, Ray ray, unsigned int depth);
     Ray             getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
 
@@ -49,10 +67,12 @@ private:
     RgbBuffer<float> pixelBuffer_;
     unsigned int samplePerPixel_;
     unsigned int maxDepth_;
+    unsigned int tileWidth_;
+    unsigned int tileHeight_;
     
     // Each render thread will use the queue to know which tile to render next
-    std::mutex        tileQueueMtx_;
-    std::vector<Tile> tileQueue_;
+    std::mutex             jobQueueMtx_;
+    std::vector<RenderJob> jobQueue_;
 };
     
 } // namesapce Graph
