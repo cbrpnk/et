@@ -6,16 +6,16 @@ namespace Graph {
 
 Obj& Scene::createObj()
 {
-    objs.push_back(std::move(std::make_unique<Obj>(*this)));
-    return *(objs.back());
+    objs_.push_back(std::move(std::make_unique<Obj>(*this)));
+    return *(objs_.back());
 }
 
 void Scene::destroyObj(Obj& obj)
 {
     int i=0;
-    for(auto& o : objs) {
+    for(auto& o : objs_) {
         if(o.get() == &obj) {
-            objs.erase(objs.begin()+i);
+            objs_.erase(objs_.begin()+i);
             break;
         }
         ++i;
@@ -24,7 +24,7 @@ void Scene::destroyObj(Obj& obj)
 
 void Scene::update()
 {
-    for(auto& obj : objs) {
+    for(auto& obj : objs_) {
         obj->update();
     }
 }
@@ -35,7 +35,7 @@ HitRecord Scene::intersect(Ray ray)
     float hitDistance = 1000000000;
     float epsilon = 0.0001f;
     
-    for(auto& obj : objs) {
+    for(auto& obj : objs_) {
         Geometry* geo = obj->getComponent<Geometry>();
         
         if(geo) {

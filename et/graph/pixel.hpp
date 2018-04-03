@@ -3,34 +3,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "math/vec3.hpp"
-#include "math/vec4.hpp"
+#include "color.hpp"
 
 namespace Et {
 namespace Graph {
-
-template <typename T>
-class RgbColor : public Math::Vec3<T> {
-public:
-    RgbColor() : Math::Vec3<T>() {}
-    RgbColor(T r, T g, T b) : Math::Vec3<T>(r, g, b) {}
-    
-    T& r() { return this->x; }
-    T& g() { return this->y; }
-    T& b() { return this->z; }
-};
-
-template <typename T>
-class RgbaColor : public Math::Vec4<T> {
-public:
-    RgbaColor() : Math::Vec4<T>() {}
-    RgbaColor(T r, T g, T b, T a) : Math::Vec4<T>(r, g, b, a) {}
-    
-    T& r() { return this->x; }
-    T& g() { return this->y; }
-    T& b() { return this->z; }
-    T& a() { return this->w; }
-};
 
 // A Collection of pixels, more commonly known as an image
 template <typename T>
@@ -73,9 +49,9 @@ void RgbBuffer<T>::exportPpm(std::string filePath) {
     for(unsigned int y=0; y<this->height; ++y) {
         for(unsigned int x=0; x<this->width; ++x) {
             RgbColor<T>& pixel = (*this)(x, y);
-            file << (unsigned char) (int) (sqrt(pixel.r()) * 255);
-            file << (unsigned char) (int) (sqrt(pixel.g()) * 255);
-            file << (unsigned char) (int) (sqrt(pixel.b()) * 255);
+            file << (unsigned char) (sqrt(pixel.r()) * 255);
+            file << (unsigned char) (sqrt(pixel.g()) * 255);
+            file << (unsigned char) (sqrt(pixel.b()) * 255);
         }
     }
     file.close();

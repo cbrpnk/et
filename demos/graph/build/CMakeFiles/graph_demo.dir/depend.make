@@ -54,6 +54,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/atmosphere.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/atmosphere.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/color.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/pixel.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/ray.hpp
 
@@ -75,6 +76,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /ho
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/atmosphere.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/color.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.hpp
@@ -86,6 +88,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o:
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/atmosphere.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/color.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/components/sdf.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/obj.hpp

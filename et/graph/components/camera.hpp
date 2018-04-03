@@ -23,24 +23,24 @@ public:
     
     virtual void update() override {}
     
-    float getSensorWidth()  const { return sensorWidth; }
-    float getSensorHeight() const { return sensorHeight; }
-    float getFieldOfView()  const { return fieldOfView; }
-    float getFocalLength()  const { return focalLength; }
-    float getDepthOfField() const { return depthOfField; }
+    float getSensorWidth()  const { return sensorWidth_; }
+    float getSensorHeight() const { return sensorHeight_; }
+    float getFieldOfView()  const { return fieldOfView_; }
+    float getFocalLength()  const { return focalLength_; }
+    float getDepthOfField() const { return depthOfField_; }
     
     void setAspectRatio(AspectRatio r);
 
 private:
-    float       sensorWidth;
-    float       sensorHeight;
-    AspectRatio aspectRatio;
+    float       sensorWidth_;
+    float       sensorHeight_;
+    AspectRatio aspectRatio_;
     // Horizontal field of view
-    float       fieldOfView;
+    float       fieldOfView_;
     // Distance of the sensor, deduced from the field of view
-    float       focalLength;
+    float       focalLength_;
     // Distance to the focal plane
-    float       depthOfField;
+    float       depthOfField_;
 };
 
 } // namespace Graph

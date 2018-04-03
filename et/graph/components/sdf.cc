@@ -12,7 +12,7 @@ namespace Graph {
 
 SdfSphere::SdfSphere(Obj& obj, float r)
     : Geometry(obj)
-    , radius(r)
+    , radius_(r)
 {
     if(!obj.getComponent<Transform>()) {
         obj.addComponent<Transform>();
@@ -21,7 +21,7 @@ SdfSphere::SdfSphere(Obj& obj, float r)
 
 float SdfSphere::distance(Math::Vec3<float> point) const
 {
-    return (obj.getComponent<Transform>()->getPosition() - point).getLength() - radius;
+    return (obj.getComponent<Transform>()->getPosition() - point).getLength() - radius_;
 }
 
 HitRecord SdfSphere::intersect(Ray r) const
@@ -32,7 +32,7 @@ HitRecord SdfSphere::intersect(Ray r) const
     float a = 1;
     float b = r.direction * 2 * (r.origin - pos);
     Math::Vec3<float> omp = r.origin-pos;
-    float c = omp*omp - radius*radius;
+    float c = omp*omp - radius_*radius_;
     
     // 0 roots = no intersectoin
     // 1 root  = tangent
@@ -72,7 +72,7 @@ HitRecord SdfSphere::intersect(Ray r) const
 
 SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
     : Geometry(obj)
-    , normal(normal)
+    , normal_(normal)
 {
     if(!obj.getComponent<Transform>()) {
         obj.addComponent<Transform>();
@@ -81,8 +81,8 @@ SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
 
 HitRecord SdfPlane::intersect(Ray r) const
 {
-    float dn = r.direction * normal;
-    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal) / dn;
+    float dn = r.direction * normal_;
+    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal_) / dn;
     
     if(dn == 0 || d <= 0) {
         return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>(),
@@ -90,7 +90,7 @@ HitRecord SdfPlane::intersect(Ray r) const
     }
     
     Math::Vec3<float> hitPosition = r.origin + r.direction*d;
-    return HitRecord(true, &obj, hitPosition, r.direction, normal);
+    return HitRecord(true, &obj, hitPosition, r.direction, normal_);
 }
 
 

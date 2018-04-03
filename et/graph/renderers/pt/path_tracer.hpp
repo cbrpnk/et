@@ -30,9 +30,9 @@ public:
     PathTracer(unsigned int width, unsigned int height,
                unsigned int samplePerPixel, unsigned int maxDepth)
         : Renderer(width, height)
-        , pixelBuffer(width, height)
-        , samplePerPixel(samplePerPixel)
-        , maxDepth(maxDepth)
+        , pixelBuffer_(width, height)
+        , samplePerPixel_(samplePerPixel)
+        , maxDepth_(maxDepth)
     {}
     
     void render(Scene& scene, Obj* camera) override;
@@ -44,9 +44,9 @@ private:
     Ray             getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
 
 private: 
-    RgbBuffer<float> pixelBuffer;
-    unsigned int samplePerPixel;
-    unsigned int maxDepth;
+    RgbBuffer<float> pixelBuffer_;
+    unsigned int samplePerPixel_;
+    unsigned int maxDepth_;
 };
     
 } // namesapce Graph

@@ -8,14 +8,14 @@ namespace Graph {
 unsigned int Obj::nextId = 0;
 
 Obj::Obj(Scene& scene)
-    : scene(scene)
-    , id(Obj::nextId++)
+    : scene_(scene)
+    , id_(Obj::nextId++)
 {}
 
 void Obj::update()
 {
-    if(active) {
-        for(auto& c : components) {
+    if(active_) {
+        for(auto& c : components_) {
             c->update();
         }
     }

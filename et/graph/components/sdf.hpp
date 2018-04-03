@@ -29,11 +29,11 @@ public:
     virtual HitRecord intersect(Ray r) const override;
     
     float     distance(Math::Vec3<float> point)  const;
-    float     getRadius() const  { return radius; }
-    void      setRadius(float r) { radius = r; }
+    float     getRadius() const  { return radius_; }
+    void      setRadius(float r) { radius_ = r; }
 
 private:
-    float radius;
+    float radius_;
 };
 
 
@@ -50,7 +50,7 @@ public:
     
 private:
     // The plane is and infinite one represented by a point and a surface normal
-    Math::Vec3<float> normal;
+    Math::Vec3<float> normal_;
 };
 
 } // namespace Graph

@@ -122,6 +122,12 @@ ray.hpp
 pixel.hpp
 /home/cbrpnk/et/et/graph/pixel.hpp
 
+/home/cbrpnk/et/et/graph/color.hpp
+math/vec3.hpp
+/home/cbrpnk/et/et/graph/math/vec3.hpp
+math/vec4.hpp
+/home/cbrpnk/et/et/graph/math/vec4.hpp
+
 /home/cbrpnk/et/et/graph/components/camera.cc
 camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
@@ -213,10 +219,8 @@ vector
 -
 fstream
 -
-math/vec3.hpp
-/home/cbrpnk/et/et/graph/math/vec3.hpp
-math/vec4.hpp
-/home/cbrpnk/et/et/graph/math/vec4.hpp
+color.hpp
+/home/cbrpnk/et/et/graph/color.hpp
 
 /home/cbrpnk/et/et/graph/ray.hpp
 math/vec3.hpp
@@ -236,8 +240,6 @@ graph/components/camera.hpp
 graph/components/transform.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/graph/components/transform.hpp
 iostream
--
-fstream
 -
 thread
 -

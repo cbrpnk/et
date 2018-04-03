@@ -10,9 +10,9 @@ void Transform::moveTo(Math::Vec3<float> target)
 
 void Transform::moveTo(float x, float y, float z)
 {
-    transform[3].x = x;
-    transform[3].y = y;
-    transform[3].z = z;
+    transform_[3].x = x;
+    transform_[3].y = y;
+    transform_[3].z = z;
 }
 
 void Transform::rotate()

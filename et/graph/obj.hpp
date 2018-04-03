@@ -22,34 +22,34 @@ public:
     
     void update();
     
-    unsigned int getId()          { return id; }
-    bool isActive()               { return active; }
-    void setActive(bool newValue) { active = newValue; }
+    unsigned int getId()          { return id_; }
+    bool isActive()               { return active_; }
+    void setActive(bool newValue) { active_ = newValue; }
     
     // Components
     template <typename T, typename... Ts>
     void addComponent(Ts&&... args)
     {
         if(!getComponent<T>()) {
-            components.push_back(std::move(std::make_unique<T>(*this, args...)));
+            components_.push_back(std::move(std::make_unique<T>(*this, args...)));
         }
     }
     
     template <typename T>
     T* getComponent() const
     {
-        for(auto& c : components) {
+        for(auto& c : components_) {
             auto p = c.get();
             if(dynamic_cast<T*>(p)) return static_cast<T*>(p);
         }
         return nullptr;
     }
     
-public: // TODO DEBUG ONLY: Put me back to private
-    Scene& scene;
-    unsigned int id;
-    bool active = true;
-    std::vector<std::unique_ptr<Component>> components;
+private:
+    Scene& scene_;
+    unsigned int id_;
+    bool active_ = true;
+    std::vector<std::unique_ptr<Component>> components_;
 };
 
 } // namespace graph

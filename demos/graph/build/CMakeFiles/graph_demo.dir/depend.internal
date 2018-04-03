@@ -55,6 +55,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o
  /home/cbrpnk/et/et/graph/atmosphere.cc
  /home/cbrpnk/et/et/graph/atmosphere.hpp
+ /home/cbrpnk/et/et/graph/color.hpp
  /home/cbrpnk/et/et/graph/pixel.hpp
  /home/cbrpnk/et/et/graph/ray.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
@@ -76,6 +77,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o
  /home/cbrpnk/et/et/graph/components/transform.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o
  /home/cbrpnk/et/et/graph/atmosphere.hpp
+ /home/cbrpnk/et/et/graph/color.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/obj.cc
  /home/cbrpnk/et/et/graph/obj.hpp
@@ -87,6 +89,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o
  /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o
  /home/cbrpnk/et/et/graph/atmosphere.hpp
+ /home/cbrpnk/et/et/graph/color.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/components/sdf.hpp
  /home/cbrpnk/et/et/graph/obj.hpp

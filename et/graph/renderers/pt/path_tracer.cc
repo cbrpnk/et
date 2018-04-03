@@ -6,7 +6,6 @@
 #include "graph/components/transform.hpp"
 
 #include <iostream>
-#include <fstream>
 #include <thread>
 
 namespace Et {
@@ -14,6 +13,13 @@ namespace Graph {
 
 void PathTracer::render(Scene& scene, Obj* camera)
 {
+    //
+    //
+    // TODO This should be a thread pool rendering small pieces of the frame to maximize
+    // processor utilization
+    //
+    //
+
     unsigned int nThreads = std::thread::hardware_concurrency();
     if(nThreads == 0) nThreads = 1;
     std::vector<std::thread> threads;
@@ -33,18 +39,22 @@ void PathTracer::render(Scene& scene, Obj* camera)
     for(auto& thread : threads) {
         thread.join();
     }
+    std::cout << std::endl;
 }
 
 void PathTracer::renderThread(Scene& scene, Obj* camera, Tile tile)
 {
-    for(unsigned int s=0; s<samplePerPixel; ++s) {
+    for(unsigned int s=0; s<samplePerPixel_; ++s) {
         for(unsigned int y=tile.yMin; y<tile.yMax; ++y) {
             for(unsigned int x=tile.xMin; x<tile.xMax; ++x) {
-                pixelBuffer(x, y) += sample(scene, getPixelRay(camera, x, y),
-                                                     maxDepth) / samplePerPixel;
+                pixelBuffer_(x, y) += sample(scene, getPixelRay(camera, x, y),
+                                                     maxDepth_) / samplePerPixel_;
+                // TODO The smaplePerPixel division should be done once
+                // everything has been accumulated
             }
         }
-        std::cout << (float)s*100/samplePerPixel << "%\n";
+        std::cout << (float)s*100/samplePerPixel_ << "% ";
+        std::flush(std::cout);
     }
 }
 
@@ -81,31 +91,30 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     
     // The amount of jiggle is bounded by the size of a pixel
     Math::Random random;
+    Math::Vec3<float> pixel;
+    
+    // The ray should go randomly through the whole area covered by the pixel
     float xJiggle = random.getFloat(-0.5f, 0.5f);
     float yJiggle = random.getFloat(-0.5f, 0.5f);
-    Math::Vec3<float> pixel;
     
     // X and y coordinates of the pixel in the world
     // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    pixel.x = ((((float)x+xJiggle)/width)-0.5) * camComp->getSensorWidth();
+    pixel.x = (((x+xJiggle)/width)-0.5) * camComp->getSensorWidth();
     // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    pixel.y = (1.0f - (((float)y+yJiggle)/height) - 0.5)
-                   * camComp->getSensorHeight();
+    pixel.y = (1.0f - ((y+yJiggle)/height) - 0.5) * camComp->getSensorHeight();
     // Z coordinate of the pixel in the world
     pixel.z = -1.0f * camComp->getFocalLength();
     
-    // The origin of the pixel should be a disc to simulate depth of field
-    Math::Vec3<float> origin = transComp->getPosition();
-    
     // Move pixel based on camera position
-    pixel += transComp->getPosition();
+    Math::Vec3<float> origin = transComp->getPosition();
+    pixel += origin;
     
     return Ray(origin, pixel);
 }
 
 void PathTracer::exportPpm(std::string filePath)
 {
-    pixelBuffer.exportPpm(filePath);
+    pixelBuffer_.exportPpm(filePath);
 }
 
 } // namesapce Graph

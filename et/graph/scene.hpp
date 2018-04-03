@@ -19,11 +19,11 @@ public:
     void      update();
     HitRecord intersect(Ray ray);
     
-    Atmosphere& getAtmosphere() { return atmosphere; }
+    Atmosphere& getAtmosphere() { return atmosphere_; }
     
 private:
-    Atmosphere atmosphere;
-    std::vector<std::unique_ptr<Obj>> objs;
+    Atmosphere atmosphere_;
+    std::vector<std::unique_ptr<Obj>> objs_;
 };
 
 } // namespace Graph

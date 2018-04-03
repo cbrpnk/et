@@ -16,16 +16,16 @@ class Transform : public Component {
 public:
     Transform(Obj& obj)
         : Component(obj)
-        , transform(true)
+        , transform_(true)
     {}
     
     Transform(Obj& obj, Math::Vec3<float> pos)
         : Component(obj)
-        , transform(true)
+        , transform_(true)
     {
-        transform[3].x = pos.x;
-        transform[3].y = pos.y;
-        transform[3].z = pos.z;
+        transform_[3].x = pos.x;
+        transform_[3].y = pos.y;
+        transform_[3].z = pos.z;
     }
     
     virtual ~Transform() override {}
@@ -37,11 +37,11 @@ public:
     void rotate();
     void scale(float factor);
     
-    Math::Vec3<float> getPosition() { return Math::Vec3<float>(transform[3].x,
-                                             transform[3].y, transform[3].z); }
+    Math::Vec3<float> getPosition() { return Math::Vec3<float>(transform_[3].x,
+                                             transform_[3].y, transform_[3].z); }
 
 private:
-    Math::Mat4<float> transform;
+    Math::Mat4<float> transform_;
 };
 
 } // namespace Graph
