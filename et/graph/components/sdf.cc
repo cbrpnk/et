@@ -1,4 +1,7 @@
 #include "sdf.hpp"
+
+#include <limits>
+
 #include "graph/obj.hpp"
 #include "transform.hpp"
 #include "math/functions.hpp"
@@ -24,14 +27,14 @@ float SdfSphere::distance(Math::Vec3<float> point) const
     return (obj.getComponent<Transform>()->getPosition() - point).getLength() - radius_;
 }
 
-HitRecord SdfSphere::intersect(Ray r) const
+HitRecord SdfSphere::intersect(Ray ray) const
 {
     Math::Vec3<float> pos = obj.getComponent<Transform>()->getPosition();
     
     // (O + tD - C)^2 - R^2 = 0 put into quadratic from
     float a = 1;
-    float b = r.direction * 2 * (r.origin - pos);
-    Math::Vec3<float> omp = r.origin-pos;
+    float b = ray.direction * 2 * (ray.origin - pos);
+    Math::Vec3<float> omp = ray.origin-pos;
     float c = omp*omp - radius_*radius_;
     
     // 0 roots = no intersectoin
@@ -56,13 +59,13 @@ HitRecord SdfSphere::intersect(Ray r) const
     }
     
     // Hit position
-    Math::Vec3<float> hitPosition = r.origin + r.direction*t;
+    Math::Vec3<float> hitPosition = ray.origin + ray.direction*t;
     
     // Normal
     Math::Vec3<float> normal = hitPosition - pos;
     normal.normalize();
     
-    return HitRecord(true, &obj, hitPosition, r.direction, normal);
+    return HitRecord(true, &obj, hitPosition, ray.direction, normal);
 }
 
 
@@ -79,20 +82,112 @@ SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
     }
 }
 
-HitRecord SdfPlane::intersect(Ray r) const
+HitRecord SdfPlane::intersect(Ray ray) const
 {
-    float dn = r.direction * normal_;
-    float d = ((obj.getComponent<Transform>()->getPosition() - r.origin) * normal_) / dn;
+    float dn = ray.direction * normal_;
+    float d = ((obj.getComponent<Transform>()->getPosition() - ray.origin) * normal_) / dn;
     
     if(dn == 0 || d <= 0) {
         return HitRecord(false, &obj, Math::Vec3<float>(), Math::Vec3<float>(),
                          Math::Vec3<float>());
     }
     
-    Math::Vec3<float> hitPosition = r.origin + r.direction*d;
-    return HitRecord(true, &obj, hitPosition, r.direction, normal_);
+    Math::Vec3<float> hitPosition = ray.origin + ray.direction*d;
+    return HitRecord(true, &obj, hitPosition, ray.direction, normal_);
 }
 
+
+/******************************************************************************************
+ *                                       AaBox                                            *
+ ******************************************************************************************/
+
+SdfAaBox::SdfAaBox(Obj& obj, float width, float height, float depth)
+    : Geometry(obj)
+    , width(width)
+    , height(height)
+    , depth(depth)
+{
+    if(!obj.getComponent<Transform>()) {
+        obj.addComponent<Transform>();
+    }
+}
+
+HitRecord SdfAaBox::intersect(Ray ray) const
+{
+    Math::Vec3<float> position = obj.getComponent<Transform>()->getPosition();
+    // P1 and P2 are two opposite corners of the box
+    //          _________
+    //         /|       /|
+    //        /_|______/ <--- max
+    //        | |      | |
+    //        | |      | |
+    //  min --->|______|_|
+    //        | /      | /
+    //        |/_______|/
+    //
+    Math::Vec3<float> minPoint(position.x-width/2, position.y-height/2, position.z-depth/2);
+    Math::Vec3<float> maxPoint(position.x+width/2, position.y+height/2, position.z+depth/2);
+    
+    float tnear = -std::numeric_limits<float>::infinity();
+    float tfar = std::numeric_limits<float>::infinity();
+    
+    // Ts ( as in O + tD) where the ray intersect the line described min and max
+    if(ray.direction.x != 0) {
+        float tx0 = (minPoint.x - ray.origin.x) / ray.direction.x;
+        float tx1 = (maxPoint.x - ray.origin.x) / ray.direction.x;
+        tnear = Math::max(tnear, Math::min(tx0, tx1));
+        tfar = Math::min(tfar, Math::max(tx0, tx1));
+    }
+    
+    if(ray.direction.y != 0) {
+        float ty0 = (minPoint.y - ray.origin.y) / ray.direction.y;
+        float ty1 = (maxPoint.y - ray.origin.y) / ray.direction.y;
+        tnear = Math::max(tnear, Math::min(ty0, ty1));
+        tfar = Math::min(tfar, Math::max(ty0, ty1));
+    }
+    
+    if(ray.direction.z != 0) {
+        float tz0 = (minPoint.z - ray.origin.z) / ray.direction.z;
+        float tz1 = (maxPoint.z - ray.origin.z) / ray.direction.z;
+        tnear = Math::max(tnear, Math::min(tz0, tz1));
+        tfar = Math::min(tfar, Math::max(tz0, tz1));
+    }
+    
+    if(tnear > tfar) {
+        // No hit
+        return HitRecord(false, &obj, Math::Vec3<float>(), ray.direction,
+                         Math::Vec3<float>());
+    }
+    
+    /////////////////////// Check if hit ////////////////////////////////
+    
+    // Values smaller than zero represent a hit behind the origin
+    if(tnear < 0) std::swap(tnear, tfar);
+    if(tnear < 0) {
+        // No hit in front of the camera
+        return HitRecord(false, &obj, Math::Vec3<float>(), ray.direction,
+                         Math::Vec3<float>());
+    }
+    
+    ///////////////////// Calculate hit point ///////////////////////////
+
+    Math::Vec3<float> hitPoint = ray.origin + ray.direction * tnear;
+    
+    
+    ///////////////////// Calculate normal //////////////////////////////
+    
+    // Vector that goes from the center of the box to the hitPoint
+    Math::Vec3<float> p = hitPoint - position;
+    
+    float dx = abs(maxPoint.x - minPoint.x) / 2.0f;
+    float dy = abs(maxPoint.y - minPoint.y) / 2.0f;
+    float dz = abs(maxPoint.z - minPoint.z) / 2.0f;
+    
+    // We take only the integer part of the ratio between the length of p
+    Math::Vec3<float> normal((int)(p.x/dx), (int)(p.y/dy), (int)(p.z/dz));
+    
+    return HitRecord(true, &obj, hitPoint, ray.direction, normal);
+}
 
 } // namespace Graph
 } // namespace Et

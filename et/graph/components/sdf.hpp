@@ -14,7 +14,7 @@ class Obj;
 class Geometry : public Component {
 public:
     Geometry(Obj& obj) : Component(obj) {}
-    virtual HitRecord intersect(Ray r) const = 0;
+    virtual HitRecord intersect(Ray ray) const = 0;
 };
 
 
@@ -26,7 +26,7 @@ public:
     SdfSphere(Obj& obj, float r);
     
     virtual void      update() override {}
-    virtual HitRecord intersect(Ray r) const override;
+    virtual HitRecord intersect(Ray ray) const override;
     
     float     distance(Math::Vec3<float> point)  const;
     float     getRadius() const  { return radius_; }
@@ -44,13 +44,32 @@ class SdfPlane : public Geometry {
 public:
     SdfPlane(Obj& obj, Math::Vec3<float> normal);
     
-    virtual HitRecord intersect(Ray r) const override;
+    virtual HitRecord intersect(Ray ray) const override;
     
     virtual void update() override {}
     
 private:
     // The plane is and infinite one represented by a point and a surface normal
     Math::Vec3<float> normal_;
+};
+
+
+/******************************************************************************************
+ *                                       AaBox                                            *
+ ******************************************************************************************/
+
+class SdfAaBox : public Geometry {
+public:
+    SdfAaBox(Obj& obj, float width, float height, float depth);
+    
+    virtual HitRecord intersect(Ray ray) const override;
+    
+    virtual void update() override {}
+    
+private:
+    float width;
+    float height;
+    float depth;
 };
 
 } // namespace Graph
