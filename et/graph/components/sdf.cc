@@ -162,7 +162,7 @@ HitRecord SdfAaBox::intersect(Ray ray) const
     /////////////////////// Check if hit ////////////////////////////////
     
     // Values smaller than zero represent a hit behind the origin
-    if(tnear < 0) std::swap(tnear, tfar);
+    if(tnear < 0) tnear = tfar;
     if(tnear < 0) {
         // No hit in front of the camera
         return HitRecord(false, &obj, Math::Vec3<float>(), ray.direction,
@@ -179,12 +179,18 @@ HitRecord SdfAaBox::intersect(Ray ray) const
     // Vector that goes from the center of the box to the hitPoint
     Math::Vec3<float> p = hitPoint - position;
     
-    float dx = abs(maxPoint.x - minPoint.x) / 2.0f;
-    float dy = abs(maxPoint.y - minPoint.y) / 2.0f;
-    float dz = abs(maxPoint.z - minPoint.z) / 2.0f;
+    Math::Vec3<float> d = (maxPoint - minPoint) * 0.5f;
+    
+    // Use to correct for floating point error. We want to make sure we
+    // get 1.0000001 instead of 0.99999997 so that when we cast to int
+    // we get 1.
+    float bias = 0.000001f;
     
     // We take only the integer part of the ratio between the length of p
-    Math::Vec3<float> normal((int)(p.x/dx), (int)(p.y/dy), (int)(p.z/dz));
+    // in one dimention to the maximum extent it can travel. The result
+    // is either -1, 0 or 1 for each dimention.
+    
+    Math::Vec3<float> normal((int)((p.x/d.x)*bias), (int)((p.y/d.y)*bias), (int)((p.z/d.z)*bias));
     
     return HitRecord(true, &obj, hitPoint, ray.direction, normal);
 }
