@@ -131,6 +131,10 @@ math/vec4.hpp
 /home/cbrpnk/et/et/graph/components/camera.cc
 camera.hpp
 /home/cbrpnk/et/et/graph/components/camera.hpp
+graph/obj.hpp
+/home/cbrpnk/et/et/graph/components/graph/obj.hpp
+transform.hpp
+/home/cbrpnk/et/et/graph/components/transform.hpp
 
 /home/cbrpnk/et/et/graph/components/camera.hpp
 iostream

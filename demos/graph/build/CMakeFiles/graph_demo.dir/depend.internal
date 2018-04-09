@@ -62,6 +62,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
  /home/cbrpnk/et/et/graph/components/camera.cc
  /home/cbrpnk/et/et/graph/components/camera.hpp
  /home/cbrpnk/et/et/graph/components/component.hpp
+ /home/cbrpnk/et/et/graph/components/transform.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o
  /home/cbrpnk/et/et/graph/components/component.hpp
  /home/cbrpnk/et/et/graph/components/material.cc

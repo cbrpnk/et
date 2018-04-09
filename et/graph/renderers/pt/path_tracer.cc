@@ -82,9 +82,9 @@ RgbColor<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
 
             color += sample(scene, material->brdf(ray, hit), depth-1)
                           * material->getAlbedo();
-            color.r() *= material->getColor().x;
-            color.g() *= material->getColor().y;
-            color.b() *= material->getColor().z;
+            color.r() *= material->getColor().r();
+            color.g() *= material->getColor().g();
+            color.b() *= material->getColor().b();
         }
     } else {
         // Hit envirnment

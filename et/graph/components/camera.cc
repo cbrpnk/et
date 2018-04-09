@@ -1,5 +1,8 @@
 #include "camera.hpp"
 
+#include "graph/obj.hpp"
+#include "transform.hpp"
+
 namespace Et {
 namespace Graph {
     
@@ -12,7 +15,10 @@ Camera::Camera(Obj& obj, AspectRatio aspectRatio, float fov, float focalLength,
     , fStop_(fStop)
     , aperture_(focalLength/fStop)
 {
-    // TODO Add a transform component if we don't have one already
+    if(!obj.getComponent<Transform>()) {
+        obj.addComponent<Transform>();
+    }
+    
     focalPlane_.width = 2.0f * tan(Math::degToRad(fieldOfView_)/2.0f) * focalLength_;
     focalPlane_.height = focalPlane_.width * (aspectRatio_.height/aspectRatio_.width);
 }

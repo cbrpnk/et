@@ -61,6 +61,7 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/transform.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/component.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/material.cc
