@@ -79,11 +79,12 @@ RgbColor<float> PathTracer::sample(Scene& scene, Ray ray, unsigned int depth)
             color += material->getColor();
         } else {
             // Recursively compute indirect lighting
+
             color += sample(scene, material->brdf(ray, hit), depth-1)
                           * material->getAlbedo();
-            color.x *= material->getColor().x;
-            color.y *= material->getColor().y;
-            color.z *= material->getColor().z;
+            color.r() *= material->getColor().x;
+            color.g() *= material->getColor().y;
+            color.b() *= material->getColor().z;
         }
     } else {
         // Hit envirnment
@@ -108,9 +109,9 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     
     // X and y coordinates of the pixel in the world
     // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    pixel.x = (((x+xJiggle)/width_)-0.5) * camComp->getSensorWidth();
+    pixel.x = (((x+xJiggle)/width_)-0.5) * camComp->getFocalPlaneWidth();
     // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    pixel.y = (1.0f - ((y+yJiggle)/height_) - 0.5) * camComp->getSensorHeight();
+    pixel.y = (1.0f - ((y+yJiggle)/height_) - 0.5) * camComp->getFocalPlaneHeight();
     // Z coordinate of the pixel in the world
     pixel.z = -1.0f * camComp->getFocalLength();
     

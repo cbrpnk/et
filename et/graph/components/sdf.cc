@@ -184,7 +184,7 @@ HitRecord SdfAaBox::intersect(Ray ray) const
     // Use to correct for floating point error. We want to make sure we
     // get 1.0000001 instead of 0.99999997 so that when we cast to int
     // we get 1.
-    float bias = 0.000001f;
+    float bias = 1.000001f;
     
     // We take only the integer part of the ratio between the length of p
     // in one dimention to the maximum extent it can travel. The result

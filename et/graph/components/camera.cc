@@ -3,30 +3,18 @@
 namespace Et {
 namespace Graph {
     
-Camera::Camera(Obj& obj, AspectRatio aspectRatio, float fov, float dof)
+Camera::Camera(Obj& obj, AspectRatio aspectRatio, float fov, float focalLength,
+               float fStop)
     : Component(obj)
+    , aspectRatio_(aspectRatio)
     , fieldOfView_(fov)
-    , depthOfField_(dof)
+    , focalLength_(focalLength)
+    , fStop_(fStop)
+    , aperture_(focalLength/fStop)
 {
-    setAspectRatio(aspectRatio);
-}
-
-void Camera::setAspectRatio(AspectRatio r)
-{
-    aspectRatio_ = r;
-    sensorWidth_ = 1.0f;
-    
-    if(r == AspectRatio::R11) {
-        sensorHeight_ = 1.0f;
-    } else if(r == AspectRatio::R21) {
-        sensorHeight_ = 1.0f/2.0f;
-    } else if(r == AspectRatio::R43) {
-        sensorHeight_ = 3.0f/4.0f;
-    } else if(r == AspectRatio::R169) {
-        sensorHeight_ = 9.0f/16.0f;
-    }
-    
-    focalLength_ = (sensorWidth_/(2.0f*tan(Math::degToRad(fieldOfView_)/2)));
+    // TODO Add a transform component if we don't have one already
+    focalPlane_.width = 2.0f * tan(Math::degToRad(fieldOfView_)/2.0f) * focalLength_;
+    focalPlane_.height = focalPlane_.width * (aspectRatio_.height/aspectRatio_.width);
 }
 
 } // namespace Graph

@@ -11,36 +11,40 @@ class Obj;
 
 class Camera : public Component {
 public:
-    enum class AspectRatio {
-        R11,
-        R21,
-        R43,
-        R169
+    
+    struct AspectRatio {
+        AspectRatio(float width, float height) : width(width), height(height) {}
+        float width;
+        float height;
     };
 
 public:
-    Camera(Obj& obj, AspectRatio apectRatio, float fov, float dof);
+    Camera(Obj& obj, AspectRatio apectRatio, float fov, float focalLength, float fStop);
     
     virtual void update() override {}
     
-    float getSensorWidth()  const { return sensorWidth_; }
-    float getSensorHeight() const { return sensorHeight_; }
-    float getFieldOfView()  const { return fieldOfView_; }
-    float getFocalLength()  const { return focalLength_; }
-    float getDepthOfField() const { return depthOfField_; }
+    float getFocalPlaneWidth()  const { return focalPlane_.width; }
+    float getFocalPlaneHeight() const { return focalPlane_.height; }
+    float getFieldOfView()      const { return fieldOfView_; }
+    float getFocalLength()      const { return focalLength_; }
     
-    void setAspectRatio(AspectRatio r);
-
 private:
-    float       sensorWidth_;
-    float       sensorHeight_;
     AspectRatio aspectRatio_;
     // Horizontal field of view
     float       fieldOfView_;
-    // Distance of the sensor, deduced from the field of view
+    // Distance of the camera position to the focal plane
     float       focalLength_;
-    // Distance to the focal plane
-    float       depthOfField_;
+    // Ratio of focalLength over the aperture size
+    float       fStop_;
+    // Diameter of the aperture
+    float       aperture_;
+    
+    struct FocalPlane {
+        FocalPlane() : width(1), height(1) {}
+        FocalPlane(float width, float height) : width(width), height(height) {}
+        float width;
+        float height;
+    } focalPlane_;
 };
 
 } // namespace Graph

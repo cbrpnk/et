@@ -7,13 +7,13 @@ int main(int argc, char** argv)
     using namespace Et::Math;
     
     // width, height, samplePerPixel, maxBounce
-    PathTracer pt(480, 270, 30, 100);
+    PathTracer pt(480, 270, 10, 100);
     Scene scene;
     
     Obj& camera = scene.createObj();
     camera.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, 0.0f));
-    // aspectRatio, fieldOfView, depthOfField
-    camera.addComponent<Camera>(Camera::AspectRatio::R169, 60.0f, 0.03f);
+    // aspectRatio, fieldOfView, focalLength, fStop
+    camera.addComponent<Camera>(Camera::AspectRatio(16.0f, 9.0f), 60.0f, 5.0f, 1.0f);
     
     Obj& ground = scene.createObj();
     ground.addComponent<Transform>(Vec3<float>(0.0f, -1.0f, 0.0f));
