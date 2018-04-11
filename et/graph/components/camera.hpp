@@ -27,6 +27,7 @@ public:
     float getFocalPlaneHeight() const { return focalPlane_.height; }
     float getFieldOfView()      const { return fieldOfView_; }
     float getFocalLength()      const { return focalLength_; }
+    float getAperture()         const { return aperture_; }
     
 private:
     AspectRatio aspectRatio_;

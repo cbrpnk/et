@@ -7,18 +7,18 @@ int main(int argc, char** argv)
     using namespace Et::Math;
     
     // width, height, samplePerPixel, maxBounce
-    PathTracer pt(480, 270, 10, 100);
+    PathTracer pt(480, 270, 30, 100);
     Scene scene;
     
     Obj& camera = scene.createObj();
     camera.addComponent<Transform>(Vec3<float>(0.0f, 0.0f, 0.0f));
     // aspectRatio, fieldOfView, focalLength, fStop
-    camera.addComponent<Camera>(Camera::AspectRatio(16.0f, 9.0f), 60.0f, 5.0f, 1.0f);
+    camera.addComponent<Camera>(Camera::AspectRatio(16.0f, 9.0f), 60.0f, 0.1f, 100.0f);
     
     Obj& ground = scene.createObj();
     ground.addComponent<Transform>(Vec3<float>(0.0f, -1.0f, 0.0f));
     ground.addComponent<SdfPlane>(Vec3<float>(0.0f, 1.0f, 0.0f));
-    ground.addComponent<DiffuseMaterial>(RgbColor<float>(0.9f, 0.9f, 0.9f), 0.77f);
+    ground.addComponent<MetalicMaterial>(RgbColor<float>(0.3f, 0.3f, 0.3f), 0.77f, 0.2f);
     
     /*
     Obj& left = scene.createObj();
@@ -38,8 +38,8 @@ int main(int argc, char** argv)
     sphere.addComponent<DiffuseMaterial>(RgbColor<float>(1.0f, 0.1f, 0.1f), 0.99f);
     
     Obj& sphere2 = scene.createObj();
-    sphere2.addComponent<Transform>(Vec3<float>(5.0f, 9.0f, -15.0f));
-    sphere2.addComponent<SdfSphere>(10.0f);
+    sphere2.addComponent<Transform>(Vec3<float>(5.0f, 2.0f, -15.0f));
+    sphere2.addComponent<SdfSphere>(3.0f);
     sphere2.addComponent<MetalicMaterial>(RgbColor<float>(0.5f, 0.5f, 0.5f), 1.0f, 0.0f);
     
     Obj& sphere3 = scene.createObj();

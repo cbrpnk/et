@@ -119,6 +119,14 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     Math::Vec3<float> origin = transComp->getPosition();
     pixel += origin;
     
+    // Move pixel origin randomly on the surface of the aperture/lens
+    Math::Vec3<float> aperture;
+    do {
+        aperture.x = random.getFloat(-1.0f, 1.0f);
+        aperture.y = random.getFloat(-1.0f, 1.0f);
+    } while(aperture.getLength() >= 1.0f);
+    origin += aperture * (camComp->getAperture() / 2.0f);
+    
     return Ray(origin, pixel);
 }
 
