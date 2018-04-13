@@ -1,3 +1,8 @@
+demos/graph/build/graph_demo
+
+# Images
+*.ppm
+
 # Prerequisites
 *.d
 
