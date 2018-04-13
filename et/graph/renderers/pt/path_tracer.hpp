@@ -59,9 +59,9 @@ public:
     void exportPpm(std::string filePath);
    
 private: 
-    void            renderThread();
-    RgbColor<float> sample(Scene& scene, Ray ray, unsigned int depth);
-    Ray             getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
+    void              renderThread();
+    RgbColor<float>   sample(Scene& scene, Ray ray, unsigned int depth);
+    Ray               getPixelRay(Obj* camera, unsigned int x, unsigned int y) const;
 
 private: 
     RgbBuffer<float> pixelBuffer_;

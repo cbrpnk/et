@@ -102,6 +102,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o
  /home/cbrpnk/et/et/math/constants.hpp
  /home/cbrpnk/et/et/math/random.cc
  /home/cbrpnk/et/et/math/random.hpp
+ /home/cbrpnk/et/et/math/vec2.hpp
+ /home/cbrpnk/et/et/math/vec3.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o
  /home/cbrpnk/et/et/test/test.cc
  /home/cbrpnk/et/et/test/test.hpp

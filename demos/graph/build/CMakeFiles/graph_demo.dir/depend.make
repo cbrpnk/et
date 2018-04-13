@@ -101,6 +101,8 @@ CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/constants.hpp
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/vec2.hpp
+CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
 
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: /home/cbrpnk/et/et/test/test.cc
 CMakeFiles/graph_demo.dir/home/cbrpnk/et/et/test/test.cc.o: /home/cbrpnk/et/et/test/test.hpp

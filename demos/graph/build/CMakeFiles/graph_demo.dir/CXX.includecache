@@ -241,6 +241,10 @@ graph/components/material.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/graph/components/material.hpp
 math/random.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/math/random.hpp
+math/constants.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/math/constants.hpp
+math/vec2.hpp
+/home/cbrpnk/et/et/graph/renderers/pt/math/vec2.hpp
 graph/components/camera.hpp
 /home/cbrpnk/et/et/graph/renderers/pt/graph/components/camera.hpp
 graph/components/transform.hpp
@@ -351,6 +355,10 @@ random
 -
 chrono
 -
+vec2.hpp
+/home/cbrpnk/et/et/math/vec2.hpp
+vec3.hpp
+/home/cbrpnk/et/et/math/vec3.hpp
 
 /home/cbrpnk/et/et/math/vec2.hpp
 cassert

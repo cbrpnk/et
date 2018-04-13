@@ -19,7 +19,7 @@ public:
     };
 
 public:
-    Camera(Obj& obj, AspectRatio apectRatio, float fov, float focalLength, float fStop);
+    Camera(Obj& obj, AspectRatio apectRatio, float fov, float focalLength, float aperture);
     
     virtual void update() override {}
     
@@ -35,8 +35,6 @@ private:
     float       fieldOfView_;
     // Distance of the camera position to the focal plane
     float       focalLength_;
-    // Ratio of focalLength over the aperture size
-    float       fStop_;
     // Diameter of the aperture
     float       aperture_;
     

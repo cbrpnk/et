@@ -2,6 +2,8 @@
 #include "graph/ray.hpp"
 #include "graph/components/material.hpp"
 #include "math/random.hpp"
+#include "math/constants.hpp"
+#include "math/vec2.hpp"
 #include "graph/components/camera.hpp"
 #include "graph/components/transform.hpp"
 
@@ -99,35 +101,31 @@ Ray PathTracer::getPixelRay(Obj* camera, unsigned int x, unsigned int y) const
     Camera* camComp = camera->getComponent<Camera>();
     Transform* transComp = camera->getComponent<Transform>();
     
-    // The amount of jiggle is bounded by the size of a pixel
     Math::Random random;
-    Math::Vec3<float> pixel;
-    
-    // The ray should go randomly through the whole area covered by the pixel
-    float xJiggle = random.getFloat(-0.5f, 0.5f);
-    float yJiggle = random.getFloat(-0.5f, 0.5f);
-    
-    // X and y coordinates of the pixel in the world
-    // Maps the [0, width] to [-sensorWidth/2, sensorWidth/2]
-    pixel.x = (((x+xJiggle)/width_)-0.5) * camComp->getFocalPlaneWidth();
-    // Maps the [0, height] to [sensorHeight/2, -sensorHeight/2]
-    pixel.y = (1.0f - ((y+yJiggle)/height_) - 0.5) * camComp->getFocalPlaneHeight();
-    // Z coordinate of the pixel in the world
-    pixel.z = -1.0f * camComp->getFocalLength();
-    
-    // Move pixel based on camera position
-    Math::Vec3<float> origin = transComp->getPosition();
-    pixel += origin;
     
     // Move pixel origin randomly on the surface of the aperture/lens
-    Math::Vec3<float> aperture;
-    do {
-        aperture.x = random.getFloat(-1.0f, 1.0f);
-        aperture.y = random.getFloat(-1.0f, 1.0f);
-    } while(aperture.getLength() >= 1.0f);
-    origin += aperture * (camComp->getAperture() / 2.0f);
+    Math::Vec3<float> origin = transComp->getPosition();
+    Math::Vec2<float> delta = random.getPointInCircle(camComp->getAperture() / 2.0f);
+    origin.x += delta.x;
+    origin.y += delta.y;
     
-    return Ray(origin, pixel);
+    // The ray should go randomly through the whole area covered by the pixel
+    Math::Vec3<float> direction;
+    // Used for anti-aliasing
+    Math::Vec2<float> jiggle = random.getPointInSquare(1.0f);
+    
+    // X and y coordinates of the pixel in the world
+    // Maps the [0, width] to [-focalPlaneWidth/2, focalPlaneWidth/2]
+    direction.x = (((x+jiggle.x)/width_)-0.5) * camComp->getFocalPlaneWidth();
+    // Maps the [0, height] to [focalPlaneHeight/2, -focalPlaneHeight/2]
+    direction.y = (1.0f - ((y+jiggle.y)/height_) - 0.5) * camComp->getFocalPlaneHeight();
+    // Z coordinate of the pixel in the world
+    direction.z = -1.0f * camComp->getFocalLength();
+    
+    // Realign direction to the pixel position
+    direction -= origin;
+    
+    return Ray(origin, direction);
 }
 
 void PathTracer::exportPpm(std::string filePath)

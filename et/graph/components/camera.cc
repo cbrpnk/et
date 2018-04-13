@@ -7,13 +7,12 @@ namespace Et {
 namespace Graph {
     
 Camera::Camera(Obj& obj, AspectRatio aspectRatio, float fov, float focalLength,
-               float fStop)
+               float aperture)
     : Component(obj)
     , aspectRatio_(aspectRatio)
     , fieldOfView_(fov)
     , focalLength_(focalLength)
-    , fStop_(fStop)
-    , aperture_(focalLength/fStop)
+    , aperture_(aperture)
 {
     if(!obj.getComponent<Transform>()) {
         obj.addComponent<Transform>();

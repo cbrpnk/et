@@ -22,7 +22,6 @@ public:
     
     RgbColor<float>   getColor()     const { return color; }
     float             getAlbedo()    const { return albedo; }
-    Math::Vec3<float> getRandomDirection() const;
     bool              isEmissive() const   { return emissive; }
 
 protected:
