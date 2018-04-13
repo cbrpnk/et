@@ -1,4 +1,5 @@
 demos/graph/build/graph_demo
+ext/portaudio
 
 # Images
 *.ppm
