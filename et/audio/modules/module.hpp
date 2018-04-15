@@ -77,6 +77,12 @@ public:
         Input(Module& owner) : Port(owner) {}
         Input(Input&& other) : Port(std::move(other)) {}
         
+        Input& operator<<(Output& target)
+        {
+            Port::connect(target);
+            return *this;
+        }
+        
         // Sum connection buffers into our own buffer
         void update(uint64_t sampleId)
         {
@@ -101,6 +107,12 @@ public:
     public:
         Output(Module& owner) : Port(owner) {}
         Output(Output&& other) : Port(std::move(other)) {}
+        
+        Output& operator>>(Input& target)
+        {
+            Port::connect(target);
+            return *this;
+        }
         
         void connect(Input& target) { Port::connect(target); }
         void disonnect(Input& target) { Port::disconnect(target); }
@@ -130,6 +142,8 @@ public:
             , range{other.range}
             , value{other.value}
         {}
+        
+        Parameter& operator=(float val) { set(val); return *this; }
         
         float get() { return value; }
         void  set(float val) { if(val >= range.min && val <= range.max) value = val; }
@@ -171,6 +185,8 @@ public:
         }
     }
     
+    Parameter& operator[](int param) { return params_[param]; }
+    
     Module(Module&& other)
         : on_{other.on_}
         , bypass_{other.bypass_}
@@ -184,7 +200,7 @@ public:
     
     void process(uint64_t upToSampleId);
     
-    void outputTo(Input& input);
+    //void outputTo(Input& input);
     void toggleOnOff();
     // Sum inputs into output without going through doDsp()
     void ToggleBypass();
