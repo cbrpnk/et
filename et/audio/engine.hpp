@@ -28,7 +28,7 @@ public:
     
     bool init();
     
-    // Returns the id of the new module, ths id is just its index in 
+    // Returns the id of the new module, the id is just its index in 
     // the modules_ vector
     Module* add(ModuleType type);
     void output(Module::Output& output);

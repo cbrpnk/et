@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unistd.h>
-#include "et/audio.hpp"
+#include "et.hpp"
 
 using namespace Et::Audio;
 
@@ -25,9 +25,6 @@ int main(int argc, char** argv)
     /* Override */
     // osc0[frequency] = 0.2;
     // osc0[fm] << osc1[out];
-    // TODO Maybe Hide Engine in Audio such that the user 
-    // call Et::Audio::init()
-    // and Et::Audio::play()
     // TODO: Investigate removing k prefix
     
     engine.play();
