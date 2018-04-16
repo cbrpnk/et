@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
-  "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
+  "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"

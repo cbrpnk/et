@@ -134,8 +134,9 @@ public:
         Parameter(Module& owner, Range range, float value)
             : owner{owner}
             , range{range}
-            , value{value}
-        {}
+        {
+            setVal(value);
+        }
         
         Parameter(Parameter&& other)
             : owner{other.owner}
@@ -143,10 +144,14 @@ public:
             , value{other.value}
         {}
         
-        Parameter& operator=(float val) { set(val); return *this; }
+        Parameter& operator=(float val) { setVal(val); return *this; }
         
-        float get() { return value; }
-        void  set(float val) { if(val >= range.min && val <= range.max) value = val; }
+        float getVal() { return value; }
+        void  setVal(float val)
+        {
+            //if(val >= range.min && val <= range.max) value = val;
+            value = (val >= range.min && val <= range.max) ? val : 0.0f;
+        }
         
     public:
         Module& owner;

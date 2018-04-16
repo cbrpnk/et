@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o"
   "/home/cbrpnk/et/et/audio/engine.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o"
   "/home/cbrpnk/et/et/audio/modules/module.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
-  "/home/cbrpnk/et/et/audio/modules/oscillator.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
+  "/home/cbrpnk/et/et/audio/modules/osc.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
   "/home/cbrpnk/et/et/dsp/oscillator.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
   "/home/cbrpnk/et/et/graph/atmosphere.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
   "/home/cbrpnk/et/et/graph/components/camera.cc" "/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"

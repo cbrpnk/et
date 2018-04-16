@@ -24,7 +24,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/e
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/engine.cc
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/engine.hpp
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/audio/modules/osc.hpp
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
@@ -32,22 +32,22 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbr
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/db.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.cc
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/constants.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/functions.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/mat2.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/mat3.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/random.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/vec2.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/buffer.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/db.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/modules/module.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/modules/osc.cc
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/modules/osc.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/constants.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/functions.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/mat2.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/mat3.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/mat4.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/random.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/vec2.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/vec3.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/math/vec4.hpp
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/mem/buffer.hpp
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.cc
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.hpp

@@ -55,8 +55,8 @@ cmath
 /home/cbrpnk/et/et/audio/engine.cc
 engine.hpp
 /home/cbrpnk/et/et/audio/engine.hpp
-modules/oscillator.hpp
-/home/cbrpnk/et/et/audio/modules/oscillator.hpp
+modules/osc.hpp
+/home/cbrpnk/et/et/audio/modules/osc.hpp
 iostream
 -
 
@@ -90,17 +90,17 @@ iostream
 ../buffer.hpp
 /home/cbrpnk/et/et/audio/buffer.hpp
 
-/home/cbrpnk/et/et/audio/modules/oscillator.cc
+/home/cbrpnk/et/et/audio/modules/osc.cc
 cmath
 -
 ../../math.hpp
 /home/cbrpnk/et/et/math.hpp
-oscillator.hpp
-/home/cbrpnk/et/et/audio/modules/oscillator.hpp
+osc.hpp
+/home/cbrpnk/et/et/audio/modules/osc.hpp
 iostream
 -
 
-/home/cbrpnk/et/et/audio/modules/oscillator.hpp
+/home/cbrpnk/et/et/audio/modules/osc.hpp
 module.hpp
 /home/cbrpnk/et/et/audio/modules/module.hpp
 ../db.hpp

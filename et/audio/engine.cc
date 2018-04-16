@@ -1,5 +1,5 @@
 #include "engine.hpp"
-#include "modules/oscillator.hpp"
+#include "modules/osc.hpp"
 
 #include <iostream>
 
@@ -35,7 +35,7 @@ bool Engine::init()
     initialized_ = true;
     
     // Initialize modules that requieres it
-    Oscillator::init();
+    Osc::init();
     
     return initialized_;
 }

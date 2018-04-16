@@ -153,28 +153,28 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides: 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides.build: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
 
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: CMakeFiles/audio_demo.dir/flags.make
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o: /home/cbrpnk/et/et/audio/modules/oscillator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o -c /home/cbrpnk/et/et/audio/modules/oscillator.cc
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: CMakeFiles/audio_demo.dir/flags.make
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/modules/osc.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o -c /home/cbrpnk/et/et/audio/modules/osc.cc
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/modules/oscillator.cc > CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/modules/osc.cc > CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.i
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/modules/oscillator.cc -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/modules/osc.cc -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.s
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires:
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.requires:
 
-.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
+.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.requires
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides.build
-.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.provides: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.requires
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.provides.build
+.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.provides
 
-CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.provides.build: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.provides.build: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o
 
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: CMakeFiles/audio_demo.dir/flags.make
@@ -471,7 +471,7 @@ audio_demo_OBJECTS = \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o" \
-"CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o" \
+"CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o" \
@@ -492,7 +492,7 @@ audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/jack_back
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
-audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o
@@ -519,7 +519,7 @@ CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
-CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o.requires
+CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.requires

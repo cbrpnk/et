@@ -231,32 +231,32 @@ home/cbrpnk/et/et/audio/modules/module.cc.s:
 	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.s
 .PHONY : home/cbrpnk/et/et/audio/modules/module.cc.s
 
-home/cbrpnk/et/et/audio/modules/oscillator.o: home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+home/cbrpnk/et/et/audio/modules/osc.o: home/cbrpnk/et/et/audio/modules/osc.cc.o
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.o
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.o
 
 # target to build an object file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.o:
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.o
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.o
+home/cbrpnk/et/et/audio/modules/osc.cc.o:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.cc.o
 
-home/cbrpnk/et/et/audio/modules/oscillator.i: home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+home/cbrpnk/et/et/audio/modules/osc.i: home/cbrpnk/et/et/audio/modules/osc.cc.i
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.i
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.i
 
 # target to preprocess a source file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.i:
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.i
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.i
+home/cbrpnk/et/et/audio/modules/osc.cc.i:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.i
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.cc.i
 
-home/cbrpnk/et/et/audio/modules/oscillator.s: home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+home/cbrpnk/et/et/audio/modules/osc.s: home/cbrpnk/et/et/audio/modules/osc.cc.s
 
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.s
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.s
 
 # target to generate assembly for a file
-home/cbrpnk/et/et/audio/modules/oscillator.cc.s:
-	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/oscillator.cc.s
-.PHONY : home/cbrpnk/et/et/audio/modules/oscillator.cc.s
+home/cbrpnk/et/et/audio/modules/osc.cc.s:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.s
+.PHONY : home/cbrpnk/et/et/audio/modules/osc.cc.s
 
 home/cbrpnk/et/et/dsp/oscillator.o: home/cbrpnk/et/et/dsp/oscillator.cc.o
 
@@ -603,9 +603,9 @@ help:
 	@echo "... home/cbrpnk/et/et/audio/modules/module.o"
 	@echo "... home/cbrpnk/et/et/audio/modules/module.i"
 	@echo "... home/cbrpnk/et/et/audio/modules/module.s"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.o"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.i"
-	@echo "... home/cbrpnk/et/et/audio/modules/oscillator.s"
+	@echo "... home/cbrpnk/et/et/audio/modules/osc.o"
+	@echo "... home/cbrpnk/et/et/audio/modules/osc.i"
+	@echo "... home/cbrpnk/et/et/audio/modules/osc.s"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.o"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.i"
 	@echo "... home/cbrpnk/et/et/dsp/oscillator.s"

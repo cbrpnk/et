@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_OSCILLATOR_HPP
-#define ET_AUDIO_OSCILLATOR_HPP
 
 #include "module.hpp"
 #include "../db.hpp"
@@ -8,47 +6,47 @@
 namespace Et {
 namespace Audio {
 
-class Oscillator : public Module {
+class Osc : public Module {
 public:
     enum class In : unsigned int {
-        Fm,             // Actually implemented as phase modulation
-        AmpMod,         // Amplitude modulation
-        ResetPhase,
+        Fm,            // Actually implemented as phase modulation
+        Am,            // Amplitude modulation
+        Reset          // Reset phase   TODO Implement
     };
     static const unsigned int inputCount = 3;
     
     enum class Out : unsigned int {
-        Main,
+        Main
     };
     static const unsigned int outputCount = 1;
     
     enum class Param : unsigned int {
-        Freq,
-        Level,
-        FmAmt,
+        Freq,          // Frequency
+        Level,         // Volume in Db
+        FmAmt          // Amount by which the signal is afected by In::Fm
     };
     static const unsigned int parameterCount = 3;
     
 public:
-    Oscillator(unsigned int sampleRate, unsigned int bufferSize,
-               float frequency = 440.0f, dB level = 0.0f);
+    Osc(unsigned int sampleRate, unsigned int bufferSize,
+        float frequency = 440.0f, dB level = -3.0f);
     
-    Oscillator(Oscillator&& other)
+    Osc(Osc&& other)
         : Module(std::move(other))
         , phase_{other.phase_}
     {}
     
-    Input& get(Oscillator::In in)
+    Input& get(Osc::In in)
     {
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    Output& get(Oscillator::Out out)
+    Output& get(Osc::Out out)
     {
         return outputs_[static_cast<unsigned int>(out)];
     }
     
-    Parameter& get(Oscillator::Param param)
+    Parameter& get(Osc::Param param)
     {
         return params_[static_cast<unsigned int>(param)];
     }
@@ -72,5 +70,3 @@ private:
 
 } // namespace Audio
 } // namespace Et
-
-#endif
