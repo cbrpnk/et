@@ -10,24 +10,24 @@ namespace Audio {
 
 class Oscillator : public Module {
 public:
-    enum Input {
-        kFm,             // Actually implemented as phase modulation
-        kAmpMod,         // Amplitude modulation
-        kResetPhase,
-        kInputCount
+    enum class In : unsigned int {
+        Fm,             // Actually implemented as phase modulation
+        AmpMod,         // Amplitude modulation
+        ResetPhase,
     };
+    static const unsigned int inputCount = 3;
     
-    enum Output {
-        kOut,
-        kOutputCount
+    enum class Out : unsigned int {
+        Main,
     };
+    static const unsigned int outputCount = 1;
     
-    enum Parameter {
-        kFrequency,
-        kLevel,
-        kFmAmount,
-        kParameterCount
+    enum class Param : unsigned int {
+        Freq,
+        Level,
+        FmAmt,
     };
+    static const unsigned int parameterCount = 3;
     
 public:
     Oscillator(unsigned int sampleRate, unsigned int bufferSize,
@@ -37,6 +37,22 @@ public:
         : Module(std::move(other))
         , phase_{other.phase_}
     {}
+    
+    Input& get(Oscillator::In in)
+    {
+        return inputs_[static_cast<unsigned int>(in)];
+    }
+    
+    Output& get(Oscillator::Out out)
+    {
+        return outputs_[static_cast<unsigned int>(out)];
+    }
+    
+    Parameter& get(Oscillator::Param param)
+    {
+        return params_[static_cast<unsigned int>(param)];
+    }
+    
     
     // Called by the Engine's init method, precalculate the wave tables
     static void init();

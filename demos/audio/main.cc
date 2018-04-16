@@ -9,20 +9,17 @@ int main(int argc, char** argv)
     Engine engine;
     if(!engine.init()) return -1;
    
-    Oscillator& osc0 = *static_cast<Oscillator*>(engine.add(Engine::ModuleType::Oscillator));
-    engine.output(osc0.getOutput(Oscillator::kOut));
-    osc0[Oscillator::kFrequency] = 440.0f;
-    osc0[Oscillator::kFmAmount] = 1.0f;
+    Oscillator& osc0 = engine.addModule<Oscillator>(40.0f);
+    engine.output(osc0.get(Oscillator::Out::Main));
+    osc0.get(Oscillator::Param::FmAmt) = 0.01f;
     
-    Oscillator& osc1 = *static_cast<Oscillator*>(engine.add(Engine::ModuleType::Oscillator));
-    osc1[Oscillator::kFrequency] = 1.0f;
-    osc0.getInput(Oscillator::kFm) << osc1.getOutput(Oscillator::kOut);
+    Oscillator& osc1 = engine.addModule<Oscillator>(60.0f);
+    osc1.get(Oscillator::Param::FmAmt) = 0.01f;
+    osc0.get(Oscillator::In::Fm) << osc1.get(Oscillator::Out::Main);
     
-    // TODO desired syntax
-    // Engine engine;
-    // Oscillator& osc1 = engine.addModule<Oscillator>();
-    // osc0[Oscillator::Parameter::Frequency] = 440.0f;
-    // osc0[fm] << osc1.out;
+    Oscillator& osc2 = engine.addModule<Oscillator>(0.25f);
+    osc2.get(Oscillator::Param::FmAmt) = 0.1f;
+    osc1.get(Oscillator::In::AmpMod) << osc2.get(Oscillator::Out::Main);
     
     engine.play();
     

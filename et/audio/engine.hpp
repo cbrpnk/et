@@ -19,18 +19,21 @@ class Engine {
 public:
     static constexpr unsigned int kDefaultBufferSize = 256;
     
-    enum class ModuleType {
-        Oscillator
-    };
-    
 public:
     Engine(unsigned int bufferSize = kDefaultBufferSize);
     
     bool init();
     
-    // Returns the id of the new module, the id is just its index in 
-    // the modules_ vector
-    Module* add(ModuleType type);
+    template <typename T, typename... Ts>
+    T& addModule(Ts&&... args)
+    {
+        modules_.push_back(
+            std::move(std::make_unique<T>(sampleRate_, bufferSize_, args...))
+        );
+        return *(static_cast<T*>(modules_.back().get()));
+    }
+    
+    // Let the user define which output we should copy into the soundcard's buffer
     void output(Module::Output& output);
     
     void play();

@@ -40,19 +40,6 @@ bool Engine::init()
     return initialized_;
 }
 
-Module* Engine::add(Engine::ModuleType type)
-{
-    switch(type) {
-    case ModuleType::Oscillator:
-        modules_.push_back(
-            std::move(std::make_unique<Oscillator>(sampleRate_, bufferSize_))
-        );
-        return modules_[modules_.size()-1].get();
-        break;
-    }
-    return 0;
-}
-
 void Engine::output(Module::Output& output)
 {
     outputs_.push_back(&output);
