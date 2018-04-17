@@ -8,8 +8,7 @@ namespace Et {
 namespace Audio {
 
 class Mixer : public Module {
-public:
-    
+private:
     enum class In : unsigned int {
         Ch0,  Ch1,  Ch2,  Ch3,  Ch4,  Ch5,  Ch6,  Ch7,  Ch8,  Ch9,
         Ch10, Ch11, Ch12, Ch13, Ch14, Ch15, Ch16, Ch17, Ch18, Ch19,
@@ -64,26 +63,6 @@ public:
         : Module(std::move(other))
     {}
     ~Mixer() {}
-    
-    Input& operator[](Mixer::In in)
-    {
-        return inputs_[static_cast<unsigned int>(in)];
-    }
-    
-    Parameter& operator[](Mixer::Param param)
-    {
-        return params_[static_cast<unsigned int>(param)];
-    }
-    
-    Input& get(Mixer::In in)
-    {
-        return operator[](in);
-    }
-    
-    Parameter& get(Mixer::Param param)
-    {
-        return operator[](param);
-    }
     
     virtual void doDsp() override;
 };

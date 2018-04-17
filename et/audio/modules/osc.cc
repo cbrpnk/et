@@ -13,17 +13,17 @@ Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , phase_{0.0f}
 {
-    get(Param::Freq).range.min = 0.0f;
-    get(Param::Freq).range.max = 22000.0f;
-    get(Param::Freq).setVal(frequency);
+    getParam(Param::Freq).range.min = 0.0f;
+    getParam(Param::Freq).range.max = 22000.0f;
+    getParam(Param::Freq).setVal(frequency);
     
-    get(Param::Level).range.min = -80.0f;
-    get(Param::Level).range.max = 0.0f;
-    get(Param::Level).setVal(level);
+    getParam(Param::Level).range.min = -80.0f;
+    getParam(Param::Level).range.max = 0.0f;
+    getParam(Param::Level).setVal(level);
     
-    get(Param::FmAmt).range.min = 0.0f;
-    get(Param::FmAmt).range.max = 1.0f;
-    get(Param::FmAmt).setVal(0.0f);
+    getParam(Param::FmAmt).range.min = 0.0f;
+    getParam(Param::FmAmt).range.max = 1.0f;
+    getParam(Param::FmAmt).setVal(0.0f);
 }
 
 void Osc::init()
@@ -35,15 +35,15 @@ void Osc::init()
 
 void Osc::doDsp()
 {
-    float volume = dbToVolume(get(Param::Level).getVal());
+    float volume = dbToVolume(getParam(Param::Level).getVal());
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
         float val = volume * sinWaveTable[(int) ((phase_/Math::k2Pi)*kWaveTableSize)];
         
-        phase_ += (get(Param::Freq).getVal() * Math::k2Pi) / sampleRate_;
-        if(get(In::Fm).isConnected()) {
-            phase_ += (get(Param::FmAmt).getVal() *
-                            get(In::Fm).getSample(Buffer::Channel::Left, i));
+        phase_ += (getParam(Param::Freq).getVal() * Math::k2Pi) / sampleRate_;
+        if(getInput(In::Fm).isConnected()) {
+            phase_ += (getParam(Param::FmAmt).getVal() *
+                            getInput(In::Fm).getSample(Buffer::Channel::Left, i));
         }
         while(phase_ >= Math::k2Pi) {
             phase_ -= Math::k2Pi;
@@ -52,8 +52,8 @@ void Osc::doDsp()
             phase_ += Math::k2Pi;
         }
         
-        if(get(In::Am).isConnected()) {
-            val *= (get(In::Am).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
+        if(getInput(In::Am).isConnected()) {
+            val *= (getInput(In::Am).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
         }
         
         output_.setSample(Buffer::Channel::Left, i, val);

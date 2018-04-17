@@ -7,7 +7,7 @@ namespace Et {
 namespace Audio {
 
 class Osc : public Module {
-public:
+private:
     enum class In : unsigned int {
         Fm,            // Actually implemented as phase modulation
         Am,            // Amplitude modulation
@@ -22,6 +22,13 @@ public:
     };
     static const unsigned int parameterCount = 3;
     
+    // The lower the table size, the higher the noise floor. It introduces high requency
+    // harmonics but at the same time is probably more cache friendly. We should 
+    // find a good compromise when trying to optimize the system.
+    // We might get away by doing linear interpolation between frames
+    static constexpr unsigned int kWaveTableSize = 44100;
+    static float sinWaveTable[kWaveTableSize];
+    
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,
         float frequency = 440.0f, dB level = -3.0f);
@@ -31,39 +38,21 @@ public:
         , phase_{other.phase_}
     {}
     
-    Input& get(Osc::In in)
-    {
-        return inputs_[static_cast<unsigned int>(in)];
-    }
-    
-    Parameter& get(Osc::Param param)
-    {
-        return params_[static_cast<unsigned int>(param)];
-    }
-    
     // Called by the Engine's init method, precalculate the wave tables
     static void init();
-    
     virtual void doDsp() override;
     
     //
-    void setFreq(float f)    { get(Param::Freq) = f; }
-    void setLevel(float f)   { get(Param::Level) = f; }
-    void setFmAmt(float f)   { get(Param::FmAmt) = f; }
+    Osc& setFreq(float f)    { getParam(Param::Freq) = f; return *this; }
+    Osc& setLevel(float f)   { getParam(Param::Level) = f; return *this; }
+    Osc& setFmAmt(float f)   { getParam(Param::FmAmt) = f; return *this; }
     
-    void fm(Module& m)    { get(In::Fm) << m.getOutput(); }
-    void am(Module& m)    { get(In::Am) << m.getOutput(); }
-    void reset(Module& m) { get(In::Reset) << m.getOutput(); }
+    Osc& fm(Module& m)    { getInput(In::Fm) << m.getOutput(); return *this; }
+    Osc& am(Module& m)    { getInput(In::Am) << m.getOutput(); return *this; }
+    Osc& reset(Module& m) { getInput(In::Reset) << m.getOutput(); return *this; }
 
 private:
     float phase_;        // As a radian angle
-    
-    // The lower the table size, the higher the noise floor. It introduces high requency
-    // harmonics but at the same time is probably more cache friendly. We should 
-    // find a good compromise when trying to optimize the system.
-    // We might get away by doing linear interpolation between frames
-    static constexpr unsigned int kWaveTableSize = 44100;
-    static float sinWaveTable[kWaveTableSize];
 };
 
 } // namespace Audio

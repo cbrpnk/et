@@ -15,10 +15,7 @@ int main(int argc, char** argv)
     Osc& osc1 = engine.addModule<Osc>();
     
     // Setting and Routing
-    osc0.setFreq(220.0f);
-    osc0.setFmAmt(0.01f);
-    osc0.fm(osc1);
-    
+    osc0.setFreq(220.0f).setFmAmt(0.01f).fm(osc1);
     osc1.setFreq(1.0f);
     
     // Play 

@@ -195,8 +195,19 @@ public:
         , inputs_{std::move(other.inputs_)}
         , params_{std::move(other.params_)}
     {}
+    virtual ~Module() {}
     
     void process(uint64_t upToSampleId);
+    
+    template <typename T>
+    Input& getInput(T in) {
+        return inputs_[static_cast<unsigned int>(in)];
+    }
+    
+    template <typename T>
+    Parameter& getParam(T param) {
+        return params_[static_cast<unsigned int>(param)];
+    }
     
     //void outputTo(Input& input);
     void toggleOnOff();
