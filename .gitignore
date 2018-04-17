@@ -1,5 +1,6 @@
-demos/audio/build/audio_demo
-demos/graph/build/graph_demo
+demos/audio/build
+demos/graph/build
+tests/build
 ext/portaudio
 
 # Images

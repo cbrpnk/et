@@ -1,3 +1,5 @@
+#pragma once
+
 using namespace Et::Math;
 using namespace Et::Test;
 

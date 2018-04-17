@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_GRAPH_RENDERER_HPP
-#define ET_GRAPH_RENDERER_HPP
 
 namespace Et {
 namespace Graph {
@@ -28,5 +26,3 @@ protected:
     
 } // namesapce Graph
 } // namespace Et
-
-#endif // ET_GRAPH_RENDERER_HPP

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_MATH_HPP
-#define ET_MATH_HPP
 
 #include "math/vec2.hpp"
 #include "math/vec3.hpp"
@@ -11,5 +9,3 @@
 #include "math/functions.hpp"
 #include "math/constants.hpp"
 #include "math/random.hpp"
-
-#endif // ET_MATH_HPP

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_MATH_CONSTANTS_HPP
-#define ET_MATH_CONSTANTS_HPP
 
 #include <cmath>
 
@@ -13,5 +11,3 @@ namespace Math {
 
 } // namespace math
 } // namespace Et
-
-#endif // ET_MATH_CONSTANTS_HPP
