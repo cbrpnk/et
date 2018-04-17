@@ -1,5 +1,4 @@
-#ifndef ET_MATH_MAT2_HPP
-#define ET_MATH_MAT2_HPP
+#pragma once
 
 #include "vec2.hpp"
 
@@ -141,5 +140,3 @@ public:
 
 } // namespace Math
 } // namespace Et
-
-#endif // ET_MATH_MAT2_HPP

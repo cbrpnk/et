@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_PORTAUDIO_BACKEND
-#define ET_AUDIO_PORTAUDIO_BACKEND
 
 #include <portaudio.h>
 
@@ -78,5 +76,3 @@ private:
 
 } // namesapce Audio
 } // namespace Et
-
-#endif // ET_AUDIO_PORTAUDIO_BACKEND

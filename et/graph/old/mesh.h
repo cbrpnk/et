@@ -1,5 +1,4 @@
-#ifndef _GEPPETTO_MESH_H_
-#define _GEPPETTO_MESH_H_
+#pragma once
 
 #include <vector>
 #include <string>
@@ -122,5 +121,3 @@ private:
 
 } // namespace Component
 } // namespace Geppetto
-
-#endif

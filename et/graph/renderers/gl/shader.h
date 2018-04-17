@@ -1,5 +1,5 @@
-#ifndef _G_SHADER_
-#define _G_SHADER_
+#pragma once
+
 #include <string>
 #include <unordered_map>
 
@@ -82,5 +82,3 @@ private:
 
 } // namespace Component
 } // namespace Geppetto
-
-#endif

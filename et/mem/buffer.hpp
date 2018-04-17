@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_MEM_BUFFER_HPP
-#define ET_MEM_BUFFER_HPP
 
 #include <memory>
 #include <cstring>
@@ -85,5 +83,3 @@ protected:
 
 } // namespace Mem
 } // namespace Et
-
-#endif // ET_MEM_BUFFER

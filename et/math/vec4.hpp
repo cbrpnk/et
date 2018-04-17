@@ -1,5 +1,4 @@
-#ifndef ET_MATH_VEC4_HPP
-#define ET_MATH_VEC4_HPP
+#pragma once
 
 #include <iostream>
 #include <cassert>
@@ -162,5 +161,3 @@ public:
 
 } // namespace Math
 } // namespace Et
-
-#endif // ET_MATH_VCEC4_HPP

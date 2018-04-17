@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_JACK_BACKEND_HPP
-#define ET_AUDIO_JACK_BACKEND_HPP
 
 #include <jack/jack.h>
 
@@ -27,5 +25,3 @@ private:
 
 } // namespace Audio
 } // namespace Et
-
-#endif // ET_AUDIO_JACK_BACKEND_HPP

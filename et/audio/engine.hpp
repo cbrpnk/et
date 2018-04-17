@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_ENGINE_HPP
-#define ET_AUDIO_ENGINE_HPP
 
 #include <vector>
 #include <cstdint>
@@ -78,5 +76,3 @@ private:
 
 } // namespace Audio
 } // namesapce Et
-
-#endif // ET_AUDIO_ENGINE_HPP

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_MODULE
-#define ET_AUDIO_MODULE
 
 #include <cstdint>
 #include <vector>
@@ -245,5 +243,3 @@ protected:
 
 } // namepsace Audio
 } // namespace Et
-
-#endif // ET_AUDIO_MODULE

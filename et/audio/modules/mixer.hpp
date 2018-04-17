@@ -62,12 +62,24 @@ public:
     Mixer(unsigned int sampleRate, unsigned int bufferSize);
     Mixer(Mixer&& other)
         : Module(std::move(other))
-    {}
+    {
+        // TODO Set Parameter range
+    }
     ~Mixer() {}
     
     virtual void doDsp() override;
     
-    Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); }
+    Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); return *this; }
+    
+    Mixer& vol(unsigned int ch, float v)
+    {
+        return *this;
+    }
+    
+    Mixer& pan(unsigned int ch, float p)
+    {
+        return *this;
+    }
 };
 
 } // namespace Audio

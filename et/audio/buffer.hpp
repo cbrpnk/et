@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_BUFFER_HPP
-#define ET_AUDIO_BUFFER_HPP
 
 #include <memory>
 #include <cstring>
@@ -111,5 +109,3 @@ protected:
 
 } // namespace Audio
 } // namespace Et
-
-#endif // ET_AUDIO_BUFFER

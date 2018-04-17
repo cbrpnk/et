@@ -1,5 +1,4 @@
-#ifndef ET_GRAPH_COMPONENT_HPP
-#define ET_GRAPH_COMPONENT_HPP
+#pragma once
 
 #include <string>
 #include <vector>
@@ -30,5 +29,3 @@ protected:
 
 } // namespace Graph
 } // namespace Et
-
-#endif // ET_GRAPH_COMPONENT_HPP

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_AUDIO_DB_HPP
-#define ET_AUDIO_DB_HPP
 
 #include <cmath>
 
@@ -14,5 +12,3 @@ typedef float dB;
 
 } // namespace Audio
 } // namespace Et
-
-#endif // ET_AUDIO_DB_HPP

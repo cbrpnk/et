@@ -1,5 +1,4 @@
-#ifndef ET_GRAPH_COMPONENT_TRANSFORM_HPP
-#define ET_GRAPH_COMPONENT_TRANSFORM_HPP
+#pragma once
 
 #include <iostream>
 
@@ -46,5 +45,3 @@ private:
 
 } // namespace Graph
 } // namespace Et
-
-#endif // ET_GRAPH_COMPONENT_TRANSFORM_HPP

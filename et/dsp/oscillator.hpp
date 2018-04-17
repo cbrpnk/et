@@ -1,6 +1,4 @@
 #pragma once
-#ifndef ET_DSP_OSCILLATOR_HPP
-#define ET_DSP_OSCILLATOR_HPP
 
 namespace Et {
 namespace Dsp {
@@ -32,5 +30,3 @@ protected:
 
 } // namespace Dsp
 } // namespace Et
-
-#endif // ET_DSP_OSCILLATOR_HPP

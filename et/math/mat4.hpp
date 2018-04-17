@@ -1,5 +1,4 @@
-#ifndef ET_MATH_MAT4_HPP
-#define ET_MATH_MAT4_HPP
+#pragma once
 
 #include "vec4.hpp"
 
@@ -211,5 +210,3 @@ private:
 
 } // namespace Math
 } // namespace Et
-
-#endif // ET_MATH_MAT4_HPP

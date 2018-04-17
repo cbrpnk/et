@@ -13,14 +13,10 @@ int main(int argc, char** argv)
     Mixer& mixer = engine.addModule<Mixer>();
     Osc& osc0 = engine.addModule<Osc>();
     Osc& osc1 = engine.addModule<Osc>();
-    Osc& osc2 = engine.addModule<Osc>();
-    Osc& osc3 = engine.addModule<Osc>();
     
     // Setting and Routing
-    osc0.setFreq(880.0f).setFmAmt(1.0f).fm(osc1);
-    osc1.setFreq(440.0f).setFmAmt(0.1f).fm(osc2);
-    osc2.setFreq(0.44f).setFmAmt(0.1f).fm(osc3);
-    osc3.setFreq(0.05f);
+    osc0.setFreq(880.0f).setFmAmt(0.1f).fm(osc1);
+    osc1.setFreq(88.0f).setFmAmt(0.01f);
     
     mixer.ch(0, osc0);
     mixer.ch(1, osc1);
