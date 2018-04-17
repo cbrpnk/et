@@ -1,3 +1,0 @@
-/home/cbrpnk/et/demos/audio/build/CMakeFiles/rebuild_cache.dir
-/home/cbrpnk/et/demos/audio/build/CMakeFiles/audio_demo.dir
-/home/cbrpnk/et/demos/audio/build/CMakeFiles/edit_cache.dir
