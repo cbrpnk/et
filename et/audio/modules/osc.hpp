@@ -31,7 +31,7 @@ private:
     
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,
-        float frequency = 440.0f, dB level = -3.0f);
+        float frequency = 440.0f, dB level = -20.0f);
     
     Osc(Osc&& other)
         : Module(std::move(other))

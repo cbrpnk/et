@@ -16,6 +16,7 @@ private:
         Ch30, Ch31
     };
     static const unsigned int inputCount = 32;
+    static const unsigned int channelCount = 32;
     
     enum class Param : unsigned int {
         // Input Parameters
@@ -65,6 +66,8 @@ public:
     ~Mixer() {}
     
     virtual void doDsp() override;
+    
+    Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); }
 };
 
 } // namespace Audio
