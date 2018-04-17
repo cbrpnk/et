@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o"
+  "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
   "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"

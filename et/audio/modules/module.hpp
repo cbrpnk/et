@@ -190,8 +190,6 @@ public:
         }
     }
     
-    Parameter& operator[](int param) { return params_[param]; }
-    
     Module(Module&& other)
         : on_{other.on_}
         , bypass_{other.bypass_}

@@ -6,7 +6,7 @@
 #include <cstring>
 #include <iostream>
 
-#include "../mem/buffer.hpp"
+#include "mem/buffer.hpp"
 
 namespace Et {
 namespace Audio {

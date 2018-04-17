@@ -1,5 +1,5 @@
 #include <cmath>
-#include "../../math.hpp"
+#include "math.hpp"
 #include "osc.hpp"
 #include <iostream>
 

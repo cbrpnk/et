@@ -204,6 +204,33 @@ home/cbrpnk/et/et/audio/engine.cc.s:
 	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.s
 .PHONY : home/cbrpnk/et/et/audio/engine.cc.s
 
+home/cbrpnk/et/et/audio/modules/mixer.o: home/cbrpnk/et/et/audio/modules/mixer.cc.o
+
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.o
+
+# target to build an object file
+home/cbrpnk/et/et/audio/modules/mixer.cc.o:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.cc.o
+
+home/cbrpnk/et/et/audio/modules/mixer.i: home/cbrpnk/et/et/audio/modules/mixer.cc.i
+
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.i
+
+# target to preprocess a source file
+home/cbrpnk/et/et/audio/modules/mixer.cc.i:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.i
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.cc.i
+
+home/cbrpnk/et/et/audio/modules/mixer.s: home/cbrpnk/et/et/audio/modules/mixer.cc.s
+
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.s
+
+# target to generate assembly for a file
+home/cbrpnk/et/et/audio/modules/mixer.cc.s:
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.s
+.PHONY : home/cbrpnk/et/et/audio/modules/mixer.cc.s
+
 home/cbrpnk/et/et/audio/modules/module.o: home/cbrpnk/et/et/audio/modules/module.cc.o
 
 .PHONY : home/cbrpnk/et/et/audio/modules/module.o
@@ -600,6 +627,9 @@ help:
 	@echo "... home/cbrpnk/et/et/audio/engine.o"
 	@echo "... home/cbrpnk/et/et/audio/engine.i"
 	@echo "... home/cbrpnk/et/et/audio/engine.s"
+	@echo "... home/cbrpnk/et/et/audio/modules/mixer.o"
+	@echo "... home/cbrpnk/et/et/audio/modules/mixer.i"
+	@echo "... home/cbrpnk/et/et/audio/modules/mixer.s"
 	@echo "... home/cbrpnk/et/et/audio/modules/module.o"
 	@echo "... home/cbrpnk/et/et/audio/modules/module.i"
 	@echo "... home/cbrpnk/et/et/audio/modules/module.s"

@@ -129,9 +129,33 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides: CMakeFil
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.provides.build: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
 
 
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o: CMakeFiles/audio_demo.dir/flags.make
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o: /home/cbrpnk/et/et/audio/modules/mixer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o -c /home/cbrpnk/et/et/audio/modules/mixer.cc
+
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cbrpnk/et/et/audio/modules/mixer.cc > CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.i
+
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cbrpnk/et/et/audio/modules/mixer.cc -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.s
+
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.requires:
+
+.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.requires
+
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.provides: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.requires
+	$(MAKE) -f CMakeFiles/audio_demo.dir/build.make CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.provides.build
+.PHONY : CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.provides
+
+CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.provides.build: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o
+
+
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o: /home/cbrpnk/et/et/audio/modules/module.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o -c /home/cbrpnk/et/et/audio/modules/module.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.provides.b
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o: /home/cbrpnk/et/et/audio/modules/osc.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o -c /home/cbrpnk/et/et/audio/modules/osc.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.provides.buil
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o: /home/cbrpnk/et/et/dsp/oscillator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o -c /home/cbrpnk/et/et/dsp/oscillator.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.provides.build: 
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o: /home/cbrpnk/et/et/graph/atmosphere.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o -c /home/cbrpnk/et/et/graph/atmosphere.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/atmosphere.cc.o.provides.build
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o: /home/cbrpnk/et/et/graph/components/camera.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o -c /home/cbrpnk/et/et/graph/components/camera.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/camera.cc.o.provide
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o: /home/cbrpnk/et/et/graph/components/material.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o -c /home/cbrpnk/et/et/graph/components/material.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/material.cc.o.provi
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o: /home/cbrpnk/et/et/graph/components/sdf.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o -c /home/cbrpnk/et/et/graph/components/sdf.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/sdf.cc.o.provides.b
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o: /home/cbrpnk/et/et/graph/components/transform.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o -c /home/cbrpnk/et/et/graph/components/transform.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.i: cmake_force
@@ -323,7 +347,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/components/transform.cc.o.prov
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o: /home/cbrpnk/et/et/graph/obj.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o -c /home/cbrpnk/et/et/graph/obj.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.i: cmake_force
@@ -347,7 +371,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/obj.cc.o.provides.build: CMake
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o: /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o -c /home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.i: cmake_force
@@ -371,7 +395,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/renderers/pt/path_tracer.cc.o.
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o: /home/cbrpnk/et/et/graph/scene.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o -c /home/cbrpnk/et/et/graph/scene.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.i: cmake_force
@@ -395,7 +419,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/graph/scene.cc.o.provides.build: CMa
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o: /home/cbrpnk/et/et/math/random.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o -c /home/cbrpnk/et/et/math/random.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.i: cmake_force
@@ -419,7 +443,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/math/random.cc.o.provides.build: CMa
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o: /home/cbrpnk/et/et/test/test.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o -c /home/cbrpnk/et/et/test/test.cc
 
 CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.i: cmake_force
@@ -443,7 +467,7 @@ CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o.provides.build: CMake
 
 CMakeFiles/audio_demo.dir/main.cc.o: CMakeFiles/audio_demo.dir/flags.make
 CMakeFiles/audio_demo.dir/main.cc.o: ../main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/audio_demo.dir/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/audio_demo.dir/main.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/audio_demo.dir/main.cc.o -c /home/cbrpnk/et/demos/audio/main.cc
 
 CMakeFiles/audio_demo.dir/main.cc.i: cmake_force
@@ -470,6 +494,7 @@ audio_demo_OBJECTS = \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o" \
+"CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o" \
 "CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o" \
@@ -491,6 +516,7 @@ audio_demo_EXTERNAL_OBJECTS =
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o
+audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o
@@ -507,7 +533,7 @@ audio_demo: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/test/test.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/main.cc.o
 audio_demo: CMakeFiles/audio_demo.dir/build.make
 audio_demo: CMakeFiles/audio_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable audio_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cbrpnk/et/demos/audio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable audio_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/audio_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -518,6 +544,7 @@ CMakeFiles/audio_demo.dir/build: audio_demo
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/jack_backend.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/backends/portaudio_backend.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/engine.cc.o.requires
+CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/mixer.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/module.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/audio/modules/osc.cc.o.requires
 CMakeFiles/audio_demo.dir/requires: CMakeFiles/audio_demo.dir/home/cbrpnk/et/et/dsp/oscillator.cc.o.requires

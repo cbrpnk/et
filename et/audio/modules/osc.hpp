@@ -1,7 +1,7 @@
 #pragma once
 
 #include "module.hpp"
-#include "../db.hpp"
+#include "audio/db.hpp"
 
 namespace Et {
 namespace Audio {
@@ -36,19 +36,34 @@ public:
         , phase_{other.phase_}
     {}
     
-    Input& get(Osc::In in)
+    Input& operator[](Osc::In in)
     {
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    Output& get(Osc::Out out)
+    Output& operator[](Osc::Out out)
     {
         return outputs_[static_cast<unsigned int>(out)];
     }
     
-    Parameter& get(Osc::Param param)
+    Parameter& operator[](Osc::Param param)
     {
         return params_[static_cast<unsigned int>(param)];
+    }
+    
+    Input& get(Osc::In in)
+    {
+        return operator[](in);
+    }
+    
+    Output& get(Osc::Out out)
+    {
+        return operator[](out);
+    }
+    
+    Parameter& get(Osc::Param param)
+    {
+        return operator[](param);
     }
     
     
