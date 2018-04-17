@@ -1,3 +1,0 @@
-#!/bin/bash
-# Build and run and make sure the system volume is set to a reasonable level
-make && amixer set Master 70% > /dev/null && ./audio_demo
