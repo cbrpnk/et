@@ -166,22 +166,17 @@ public:
     Module(unsigned int sampleRate,
               unsigned int bufferSize,
               unsigned int nInputs,
-              unsigned int nOutputs,
               unsigned int nParameters)
         : on_{true}
         , bypass_{false}
         , sampleRate_{sampleRate}
         , bufferSize_{bufferSize}
         , lastSampleId_{0}
+        , output_(*this)
     {
         inputs_.reserve(nInputs);
         for(unsigned int i=0; i<nInputs; ++i) {
             inputs_.push_back(std::move(Input(*this)));
-        }
-        
-        outputs_.reserve(nOutputs);
-        for(unsigned int i=0; i<nOutputs; ++i) {
-            outputs_.push_back(std::move(Output(*this)));
         }
         
         params_.reserve(nParameters);
@@ -196,8 +191,8 @@ public:
         , sampleRate_{other.sampleRate_}
         , bufferSize_{other.bufferSize_}
         , lastSampleId_{other.lastSampleId_}
+        , output_{std::move(other.output_)}
         , inputs_{std::move(other.inputs_)}
-        , outputs_{std::move(other.outputs_)}
         , params_{std::move(other.params_)}
     {}
     
@@ -209,7 +204,7 @@ public:
     void ToggleBypass();
     
     bool       isOn() const          { return on_; }
-    Output&    getOutput(int output) { return outputs_[output]; }
+    Output&    getOutput()           { return output_; }
     Input&     getInput(int input)   { return inputs_[input]; }
     Parameter& getParam(int param)   { return params_[param]; }
     
@@ -227,10 +222,13 @@ protected:
     // It's an indication of wether our output buffers are up to date.
     uint64_t lastSampleId_;
     
+    // Modules only have 1 output
+    Output output_;
+    
     // Those vectors must be defined by the derived class and the references
     // pass to our constructor
     std::vector<Input>     inputs_;
-    std::vector<Output>    outputs_;
+    //std::vector<Output>    outputs_;
     std::vector<Parameter> params_;
 };
 

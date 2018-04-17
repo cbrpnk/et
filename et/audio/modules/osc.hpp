@@ -15,11 +15,6 @@ public:
     };
     static const unsigned int inputCount = 3;
     
-    enum class Out : unsigned int {
-        Main
-    };
-    static const unsigned int outputCount = 1;
-    
     enum class Param : unsigned int {
         Freq,          // Frequency
         Level,         // Volume in Db
@@ -41,11 +36,6 @@ public:
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    Output& get(Osc::Out out)
-    {
-        return outputs_[static_cast<unsigned int>(out)];
-    }
-    
     Parameter& get(Osc::Param param)
     {
         return params_[static_cast<unsigned int>(param)];
@@ -61,9 +51,9 @@ public:
     void setLevel(float f)   { get(Param::Level) = f; }
     void setFmAmt(float f)   { get(Param::FmAmt) = f; }
     
-    void fm(Output& out)    { get(In::Fm) << out; }
-    void am(Output& out)    { get(In::Am) << out; }
-    void reset(Output& out) { get(In::Reset) << out; }
+    void fm(Module& m)    { get(In::Fm) << m.getOutput(); }
+    void am(Module& m)    { get(In::Am) << m.getOutput(); }
+    void reset(Module& m) { get(In::Reset) << m.getOutput(); }
 
 private:
     float phase_;        // As a radian angle

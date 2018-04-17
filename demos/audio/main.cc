@@ -17,13 +17,12 @@ int main(int argc, char** argv)
     // Setting and Routing
     osc0.setFreq(220.0f);
     osc0.setFmAmt(0.01f);
-    osc0.fm(osc1.get(Osc::Out::Main));
+    osc0.fm(osc1);
     
     osc1.setFreq(1.0f);
-    osc1.setFmAmt(0.01f);
-   
+    
     // Play 
-    engine.output(osc0.get(Osc::Out::Main));
+    engine.output(osc0);
     engine.play();
     
     while(true) {

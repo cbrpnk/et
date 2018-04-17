@@ -27,9 +27,7 @@ void Module::toggleOnOff()
 {
     if(on_) {
         on_ = false;
-        for(auto& output : outputs_) {
-            output.buffer.silence();
-        }
+        output_.buffer.silence();
     } else {
         on_ = true;
     }

@@ -34,7 +34,7 @@ public:
     }
     
     // Let the user define which output we should copy into the soundcard's buffer
-    void output(Module::Output& output);
+    void output(Module& output);
     
     void play();
     void pause();

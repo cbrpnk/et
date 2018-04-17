@@ -40,9 +40,9 @@ bool Engine::init()
     return initialized_;
 }
 
-void Engine::output(Module::Output& output)
+void Engine::output(Module& output)
 {
-    outputs_.push_back(&output);
+    outputs_.push_back(&(output.getOutput()));
 }
 
 

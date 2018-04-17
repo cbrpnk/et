@@ -10,7 +10,7 @@ float Osc::sinWaveTable[kWaveTableSize];
 
 Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
                        float frequency, dB level)
-    : Module(sampleRate, bufferSize, inputCount, outputCount, parameterCount)
+    : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , phase_{0.0f}
 {
     get(Param::Freq).range.min = 0.0f;
@@ -56,8 +56,8 @@ void Osc::doDsp()
             val *= (get(In::Am).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
         }
         
-        get(Out::Main).setSample(Buffer::Channel::Left, i, val);
-        get(Out::Main).setSample(Buffer::Channel::Right, i, val);
+        output_.setSample(Buffer::Channel::Left, i, val);
+        output_.setSample(Buffer::Channel::Right, i, val);
     }
 }
 

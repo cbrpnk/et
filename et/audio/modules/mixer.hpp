@@ -18,11 +18,6 @@ public:
     };
     static const unsigned int inputCount = 32;
     
-    enum class Out : unsigned int {
-        Main
-    };
-    static const unsigned int outputCount = 1;
-    
     enum class Param : unsigned int {
         // Input Parameters
         Vol0,  Pan0, 
@@ -75,11 +70,6 @@ public:
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    Output& operator[](Mixer::Out out)
-    {
-        return outputs_[static_cast<unsigned int>(out)];
-    }
-    
     Parameter& operator[](Mixer::Param param)
     {
         return params_[static_cast<unsigned int>(param)];
@@ -88,11 +78,6 @@ public:
     Input& get(Mixer::In in)
     {
         return operator[](in);
-    }
-    
-    Output& get(Mixer::Out out)
-    {
-        return operator[](out);
     }
     
     Parameter& get(Mixer::Param param)
