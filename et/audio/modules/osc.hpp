@@ -36,41 +36,34 @@ public:
         , phase_{other.phase_}
     {}
     
-    Input& operator[](Osc::In in)
+    Input& get(Osc::In in)
     {
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    Output& operator[](Osc::Out out)
+    Output& get(Osc::Out out)
     {
         return outputs_[static_cast<unsigned int>(out)];
     }
     
-    Parameter& operator[](Osc::Param param)
+    Parameter& get(Osc::Param param)
     {
         return params_[static_cast<unsigned int>(param)];
     }
-    
-    Input& get(Osc::In in)
-    {
-        return operator[](in);
-    }
-    
-    Output& get(Osc::Out out)
-    {
-        return operator[](out);
-    }
-    
-    Parameter& get(Osc::Param param)
-    {
-        return operator[](param);
-    }
-    
     
     // Called by the Engine's init method, precalculate the wave tables
     static void init();
     
     virtual void doDsp() override;
+    
+    //
+    void setFreq(float f)    { get(Param::Freq) = f; }
+    void setLevel(float f)   { get(Param::Level) = f; }
+    void setFmAmt(float f)   { get(Param::FmAmt) = f; }
+    
+    void fm(Output& out)    { get(In::Fm) << out; }
+    void am(Output& out)    { get(In::Am) << out; }
+    void reset(Output& out) { get(In::Reset) << out; }
 
 private:
     float phase_;        // As a radian angle
