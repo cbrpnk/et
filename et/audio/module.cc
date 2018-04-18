@@ -22,12 +22,12 @@ Module::Module(unsigned int sampleRate, unsigned int bufferSize, unsigned int nI
     }
 }
 
-void Module::process(uint64_t upToSampleId)
+void Module::tick(uint64_t upToSampleId)
 {
     if(on_ && upToSampleId != lastSampleId_) {
         // We update this as soon as possible because we might be call
         // again before the method is over. Eg: we update an input module
-        // that depends on us and therefore will try to call process on us.
+        // that depends on us and therefore will try to call tick on us.
         // To prevent infinite loops we update this now so we won't get into
         // this if statement if called later.
         lastSampleId_ = upToSampleId;
@@ -43,8 +43,7 @@ void Module::process(uint64_t upToSampleId)
         //  }
         //}
         
-        // TODO Better name perhaps generateBuffer or something
-        doDsp();
+        process();
     }
 }
 

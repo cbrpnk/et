@@ -33,7 +33,7 @@ void Osc::init()
     }
 }
 
-void Osc::doDsp()
+void Osc::process()
 {
     float volume = dbToVolume(getParam(Param::Level).getVal());
     

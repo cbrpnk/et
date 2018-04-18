@@ -55,7 +55,7 @@ void Engine::callback(float* leftOut, float* rightOut)
         transport_.playHead += bufferSize_;
         
         for(auto& output : outputs_) {
-            output->owner.process(transport_.playHead);
+            output->owner.tick(transport_.playHead);
             buffer_ += output->buffer;
         }
     }

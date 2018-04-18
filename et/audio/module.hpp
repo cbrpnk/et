@@ -29,8 +29,8 @@ public:
     virtual ~Module() {}
     
     // This is called either by the engine or by the input of another module. It sets up
-    // stuffs and calls doDsp() which is defined by the derived class.
-    void process(uint64_t upToSampleId);
+    // stuffs and calls process() which is defined by the derived class.
+    void tick(uint64_t upToSampleId);
     
     // The derived modules should use these to access its own inputs/params
     template <typename T>
@@ -58,7 +58,7 @@ public:
     
 protected:
     // This is where the derived class should compute audio and write to output_
-    virtual void doDsp() = 0;
+    virtual void process() = 0;
     
 protected:
     bool on_;

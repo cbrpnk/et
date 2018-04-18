@@ -67,7 +67,7 @@ public:
     }
     ~Mixer() {}
     
-    virtual void doDsp() override;
+    virtual void process() override;
     
     Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); return *this; }
     

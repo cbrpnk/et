@@ -7,7 +7,7 @@ Mixer::Mixer(unsigned int sampleRate, unsigned int bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
 {}
 
-void Mixer::doDsp()
+void Mixer::process()
 {
     for(unsigned int i=0; i<bufferSize_; ++i) {
         float left = 0.0f;

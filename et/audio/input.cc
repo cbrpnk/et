@@ -17,7 +17,7 @@ void Input::update(uint64_t sampleId)
     buffer.silence();
     for(auto& connection : connections) {
         Output& output{ static_cast<Output&>(*connection) };
-        output.owner.process(sampleId);
+        output.owner.tick(sampleId);
         buffer += output.buffer;
     }
 }

@@ -40,7 +40,7 @@ public:
     
     // Called by the Engine's init method, precalculate the wave tables
     static void init();
-    virtual void doDsp() override;
+    virtual void process() override;
     
     //
     Osc& setFreq(float f)    { getParam(Param::Freq) = f; return *this; }
