@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 
-#include "../buffer.hpp"
+#include "audio/buffer.hpp"
 
 namespace Et {
 namespace Audio {

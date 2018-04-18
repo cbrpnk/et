@@ -1,6 +1,6 @@
 #include <iostream>
 #include "jack_backend.hpp"
-#include "../engine.hpp"
+#include "audio/engine.hpp"
 
 namespace Et {
 namespace Audio {
