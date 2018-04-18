@@ -6,7 +6,7 @@
 
 #include "backends/jack_backend.hpp"
 #include "backends/portaudio_backend.hpp"
-#include "modules/module.hpp"
+#include "module.hpp"
 #include "buffer.hpp"
 
 
@@ -61,7 +61,7 @@ private:
     std::vector<std::unique_ptr<Module>> modules_;
     
     // list of outputs we should sum and send to the soundcard
-    std::vector<Module::Output*> outputs_;
+    std::vector<Output*> outputs_;
     
     struct Transport {
         bool playing;
