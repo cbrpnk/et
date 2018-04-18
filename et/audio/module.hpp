@@ -11,7 +11,6 @@
 namespace Et {
 namespace Audio {
 
-
 class Module {
 public:
     Module() = delete;
@@ -20,7 +19,6 @@ public:
     
     Module(Module&& other)
         : on_{other.on_}
-        , bypass_{other.bypass_}
         , sampleRate_{other.sampleRate_}
         , bufferSize_{other.bufferSize_}
         , lastSampleId_{other.lastSampleId_}
@@ -30,8 +28,11 @@ public:
     {}
     virtual ~Module() {}
     
+    // This is called either by the engine or by the input of another module. It sets up
+    // stuffs and calls doDsp() which is defined by the derived class.
     void process(uint64_t upToSampleId);
     
+    // The derived modules should use these to access its own inputs/params
     template <typename T>
     Input& getInput(T in) {
         return inputs_[static_cast<unsigned int>(in)];
@@ -42,29 +43,32 @@ public:
         return params_[static_cast<unsigned int>(param)];
     }
     
-    //void outputTo(Input& input);
-    void toggleOnOff();
-    // Sum inputs into output without going through doDsp()
-    void ToggleBypass();
+    // On / Off
+    bool         isOn()              const { return on_; }
+    void         turnOn()                  { on_ = true; }
+    void         turnOff()                 { on_ = false; output_.buffer.silence(); }
     
-    bool         isOn() const        { return on_; }
-    unsigned int getSampleRate()     { return sampleRate_; }
-    unsigned int getBufferSize()     { return bufferSize_; }
-    Output&      getOutput()         { return output_; }
-    Input&       getInput(int input) { return inputs_[input]; }
-    Parameter&   getParam(int param) { return params_[param]; }
+    unsigned int getSampleRate()     const { return sampleRate_; }
+    unsigned int getBufferSize()     const { return bufferSize_; }
+    
+    // TODO Check what we can do about constness here
+    Output&      getOutput()               { return output_; }
+    Input&       getInput(int input)       { return inputs_[input]; }
+    Parameter&   getParam(int param)       { return params_[param]; }
     
 protected:
+    // This is where the derived class should compute audio and write to output_
     virtual void doDsp() = 0;
     
 protected:
     bool on_;
-    bool bypass_;
+    // Number of samples/second
     unsigned int sampleRate_;
+    // Number of samples in our input/output buffers
     unsigned int bufferSize_;
     
-    // Id of the last sample processed
-    // It's an indication of wether our output buffers are up to date.
+    // Sequence number of the last sample in our output_ buffer
+    // It's an indication of wether our output buffer is up to date.
     uint64_t lastSampleId_;
     
     // Modules only have 1 output

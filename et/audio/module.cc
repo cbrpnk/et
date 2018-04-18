@@ -6,7 +6,6 @@ namespace Audio {
 Module::Module(unsigned int sampleRate, unsigned int bufferSize, unsigned int nInputs,
                unsigned int nParameters)
     : on_{true}
-    , bypass_{false}
     , sampleRate_{sampleRate}
     , bufferSize_{bufferSize}
     , lastSampleId_{0}
@@ -47,23 +46,6 @@ void Module::process(uint64_t upToSampleId)
         // TODO Better name perhaps generateBuffer or something
         doDsp();
     }
-}
-
-void Module::toggleOnOff()
-{
-    if(on_) {
-        on_ = false;
-        output_.buffer.silence();
-    } else {
-        on_ = true;
-    }
-}
-
-void Module::ToggleBypass()
-{
-    if(bypass_) {
-        bypass_ = false;
-    } else bypass_ = true;
 }
 
 } // namepsace Audio
