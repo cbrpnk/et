@@ -147,7 +147,6 @@ public:
         float getVal() { return value; }
         void  setVal(float val)
         {
-            //if(val >= range.min && val <= range.max) value = val;
             value = (val >= range.min && val <= range.max) ? val : 0.0f;
         }
         
@@ -237,7 +236,6 @@ protected:
     // Those vectors must be defined by the derived class and the references
     // pass to our constructor
     std::vector<Input>     inputs_;
-    //std::vector<Output>    outputs_;
     std::vector<Parameter> params_;
 };
 
