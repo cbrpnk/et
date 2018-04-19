@@ -48,7 +48,6 @@ private:
     void callback(float* leftOut, float* rightOut);
 
 private:
-    
     bool initialized_;
     
     unsigned int bufferSize_;
@@ -61,8 +60,8 @@ private:
     // List of every modules
     std::vector<std::unique_ptr<Module>> modules_;
     
-    // list of outputs we should sum and send to the soundcard
-    std::vector<Output*> outputs_;
+    // Pointer to module
+    Output* output_;
     
     struct Transport {
         bool playing;

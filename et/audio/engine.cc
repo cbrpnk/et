@@ -10,6 +10,8 @@ Engine::Engine(unsigned int bufferSize)
     , bufferSize_{bufferSize}
     , sampleRate_{0}
     , buffer_(Buffer::Type::Stereo, bufferSize)
+    , modules_()
+    , output_(nullptr)
     , transport_{false, 0}
 {}
 
@@ -38,22 +40,18 @@ bool Engine::init()
 
 void Engine::output(Module& output)
 {
-    outputs_.push_back(&(output.getOutput()));
+    output_ = &(output.getOutput());
 }
-
 
 void Engine::callback(float* leftOut, float* rightOut)
 {
     buffer_.silence();
     
-    // If playing is true we know there is at least one outputModule
+    // If playing is true we know there is at least one output module
     if(transport_.playing) {
         transport_.playHead += bufferSize_;
-        
-        for(auto& output : outputs_) {
-            output->owner.tick(transport_.playHead);
-            buffer_ += output->buffer;
-        }
+        output_->owner.tick(transport_.playHead);
+        buffer_ += output_->buffer;
     }
     
     std::memcpy(leftOut, buffer_.getChannel(Buffer::Channel::Left),
@@ -64,7 +62,7 @@ void Engine::callback(float* leftOut, float* rightOut)
 
 void Engine::play()
 {
-    if(initialized_ && outputs_.size()) {
+    if(initialized_ && output_ != nullptr) {
         transport_.playing = true;
     }
 }
