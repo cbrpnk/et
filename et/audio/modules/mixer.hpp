@@ -67,7 +67,6 @@ public:
     }
     ~Mixer() {}
     
-    virtual void init()    override {}
     virtual void process() override;
     
     Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); return *this; }

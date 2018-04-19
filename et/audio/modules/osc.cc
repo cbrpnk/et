@@ -15,21 +15,15 @@ Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , phase_{0.0f}
 {
-    getParam(Param::Freq).range.min = 0.0f;
-    getParam(Param::Freq).range.max = 22000.0f;
+    getParam(Param::Freq).setRange(0.0f, 22000.0f);
     getParam(Param::Freq).setVal(frequency);
     
-    getParam(Param::Level).range.min = -80.0f;
-    getParam(Param::Level).range.max = 0.0f;
+    getParam(Param::Level).setRange(-80.0f, 0.0f);
     getParam(Param::Level).setVal(level);
     
-    getParam(Param::FmAmt).range.min = 0.0f;
-    getParam(Param::FmAmt).range.max = 1.0f;
+    getParam(Param::FmAmt).setRange(0.0f, 1.0f);
     getParam(Param::FmAmt).setVal(0.0f);
-}
-
-void Osc::init()
-{
+    
     // Setup the wavetable
     if(!initialized) {
         for(unsigned int i=0; i<kWaveTableSize; ++i) {

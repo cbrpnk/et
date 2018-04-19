@@ -18,7 +18,7 @@ Module::Module(unsigned int sampleRate, unsigned int bufferSize, unsigned int nI
     
     params_.reserve(nParameters);
     for(unsigned int i=0; i<nParameters; ++i) {
-        params_.push_back(std::move(Parameter(*this, { 0.0f, 1.0f }, 0.0f)));
+        params_.push_back(std::move(Parameter(*this, -1.0f, 1.0f, 0.0f)));
     }
 }
 

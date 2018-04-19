@@ -39,8 +39,6 @@ public:
         , phase_{other.phase_}
     {}
     
-    // Called by the Engine's init method, precalculate the wave tables
-    virtual void init() override;
     virtual void process() override;
     
     // Return *this to allow chaining

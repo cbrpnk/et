@@ -32,8 +32,6 @@ public:
     // stuffs and calls process() which is defined by the derived class.
     void tick(uint64_t upToSampleId);
     
-    // This is called when the module is loaded
-    virtual void init() = 0;
     // This is where the derived class should compute audio and write to output_
     virtual void process() = 0;
     

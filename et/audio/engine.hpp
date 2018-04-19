@@ -27,9 +27,7 @@ public:
         modules_.push_back(
             std::move(std::make_unique<T>(sampleRate_, bufferSize_, args...))
         );
-        T& mod = *(static_cast<T*>(modules_.back().get()));
-        mod.init();
-        return mod;
+        return *(static_cast<T*>(modules_.back().get()));
     }
     
     // Let the user define which output we should copy into the soundcard's buffer
