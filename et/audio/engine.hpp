@@ -9,7 +9,6 @@
 #include "module.hpp"
 #include "buffer.hpp"
 
-
 namespace Et {
 namespace Audio {
 
@@ -28,7 +27,9 @@ public:
         modules_.push_back(
             std::move(std::make_unique<T>(sampleRate_, bufferSize_, args...))
         );
-        return *(static_cast<T*>(modules_.back().get()));
+        T& mod = *(static_cast<T*>(modules_.back().get()));
+        mod.init();
+        return mod;
     }
     
     // Let the user define which output we should copy into the soundcard's buffer

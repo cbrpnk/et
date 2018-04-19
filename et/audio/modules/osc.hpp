@@ -28,6 +28,7 @@ private:
     // We might get away by doing linear interpolation between frames
     static constexpr unsigned int kWaveTableSize = 44100;
     static float sinWaveTable[kWaveTableSize];
+    static bool initialized;
     
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,
@@ -39,10 +40,10 @@ public:
     {}
     
     // Called by the Engine's init method, precalculate the wave tables
-    static void init();
+    virtual void init() override;
     virtual void process() override;
     
-    //
+    // Return *this to allow chaining
     Osc& setFreq(float f)    { getParam(Param::Freq) = f; return *this; }
     Osc& setLevel(float f)   { getParam(Param::Level) = f; return *this; }
     Osc& setFmAmt(float f)   { getParam(Param::FmAmt) = f; return *this; }

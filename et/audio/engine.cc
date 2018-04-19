@@ -1,5 +1,4 @@
 #include "engine.hpp"
-#include "modules/osc.hpp"
 
 #include <iostream>
 
@@ -33,9 +32,6 @@ bool Engine::init()
     std::cout << backend_->getDeviceName(backend_->getDevice()) << '\n';
     sampleRate_ = backend_->getSampleRate();
     initialized_ = true;
-    
-    // Initialize modules that requieres it
-    Osc::init();
     
     return initialized_;
 }

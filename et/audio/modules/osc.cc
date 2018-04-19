@@ -6,6 +6,8 @@
 namespace Et {
 namespace Audio {
 
+// Static members
+bool  Osc::initialized = false;
 float Osc::sinWaveTable[kWaveTableSize];
 
 Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
@@ -28,8 +30,12 @@ Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
 
 void Osc::init()
 {
-    for(unsigned int i=0; i<kWaveTableSize; ++i) {
-        Osc::sinWaveTable[i] = sin(((float) i / kWaveTableSize) * Math::k2Pi);
+    // Setup the wavetable
+    if(!initialized) {
+        for(unsigned int i=0; i<kWaveTableSize; ++i) {
+            Osc::sinWaveTable[i] = sin(((float) i / kWaveTableSize) * Math::k2Pi);
+        }
+        initialized = true;
     }
 }
 

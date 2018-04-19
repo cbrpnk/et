@@ -32,6 +32,11 @@ public:
     // stuffs and calls process() which is defined by the derived class.
     void tick(uint64_t upToSampleId);
     
+    // This is called when the module is loaded
+    virtual void init() = 0;
+    // This is where the derived class should compute audio and write to output_
+    virtual void process() = 0;
+    
     // The derived modules should use these to access its own inputs/params
     template <typename T>
     Input& getInput(T in) {
@@ -55,10 +60,6 @@ public:
     Output&      getOutput()               { return output_; }
     Input&       getInput(int input)       { return inputs_[input]; }
     Parameter&   getParam(int param)       { return params_[param]; }
-    
-protected:
-    // This is where the derived class should compute audio and write to output_
-    virtual void process() = 0;
     
 protected:
     bool on_;
