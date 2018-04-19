@@ -12,6 +12,9 @@ inline T min(T a, T b) { return (a < b) ? a : b; }
 template <typename T>
 inline T max(T a, T b) { return (a > b) ? a : b; }
 
+template <typename T>
+inline T clamp(T v, T minVal, T maxVal) { return min(max(minVal, v), maxVal); }
+
 inline float degToRad(const float deg)
 {
     return deg * kPi/180.0f;

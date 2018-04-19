@@ -14,6 +14,10 @@ unsigned int TEST_FUNCTIONS() {
         eq({{max(-1, -2), -1}, {max(-1, 2), 2}, {max(1, 2), 2}});
     });
     
+    unit.add("clamp", []() {
+        eq({{clamp(-10, 0, 10), 0}, {clamp(4, 0, 10), 4}, {clamp(20, 0, 10), 10}});
+    });
+    
     unit.add("solveQuadratic", []() {
         QuadraticResult x = solveQuadratic(3, 4, -4);
         float eps = 0.001;
