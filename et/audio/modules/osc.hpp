@@ -9,10 +9,12 @@ namespace Audio {
 class Osc : public Module {
 public:
     enum class Wave : unsigned int {
+        Rsaw,
         Saw,
         Sin,
         Square,
-        Tri
+        Tri,
+        Noise
     };
     
 private:
@@ -34,12 +36,14 @@ private:
     // harmonics but at the same time is probably more cache friendly. We should 
     // find a good compromise when trying to optimize the system.
     // We might get away by doing linear interpolation between frames
-    static constexpr unsigned int kWaveTableSize = 2048;
+    static constexpr unsigned int kWaveTableSize = 44100;
     static constexpr unsigned int nPartials = 64;
     static float sinWaveTable[kWaveTableSize];
     static float squareWaveTable[kWaveTableSize];
+    static float rsawWaveTable[kWaveTableSize];
     static float sawWaveTable[kWaveTableSize];
     static float triWaveTable[kWaveTableSize];
+    static float noiseWaveTable[kWaveTableSize];
     static bool initialized;
     
     static void generateWaveTables();
