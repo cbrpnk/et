@@ -9,12 +9,59 @@ namespace Audio {
 // Static members
 bool  Osc::initialized = false;
 float Osc::sinWaveTable[kWaveTableSize];
+float Osc::squareWaveTable[kWaveTableSize];
+float Osc::sawWaveTable[kWaveTableSize];
+float Osc::triWaveTable[kWaveTableSize];
+
+void Osc::generateWaveTables() {
+    // Sin
+    for(unsigned int s=0; s<kWaveTableSize; ++s) {
+        Osc::sinWaveTable[s] = sin(((float) s / kWaveTableSize) * Math::k2Pi);
+    }
+    
+    // Square
+    // Sum odd numbered partials (1, 3, 5, 7...). Each emplitude is it's reciprocal
+    // (1/1, 1/3, 1/5, 1/7).
+    for(unsigned int s=0; s<kWaveTableSize; ++s) {
+        for(unsigned int p=1; p<=nPartials; ++p) {
+            Osc::squareWaveTable[s] += 1.0f/(2.0f*p-1.0f) *
+                                       sin(((float) s / kWaveTableSize) *
+                                            Math::k2Pi *
+                                            (2.0f * p - 1.0f));
+        }
+    }
+    
+    // Saw
+    // Sum every partials. The amplitude is the reciprocal.
+    for(unsigned int s=0; s<kWaveTableSize; ++s) {
+        for(unsigned int p=1; p<=nPartials; ++p) {
+            // Book
+            Osc::sawWaveTable[s] += 1.0f/p * sin(((float) s / kWaveTableSize) *
+                                    Math::kPi * p);
+        }
+    }
+    
+    // Triangle
+    // Sum odd partials but the amplitude is the square reciprocal and its sign 
+    // alternates with each partial
+    for(unsigned int s=0; s<kWaveTableSize; ++s) {
+        for(unsigned int p=1; p<=nPartials; ++p) {
+            Osc::triWaveTable[s] += pow(-1.0f, p)/pow((2.0f*p-1.0f), 2.0f) *
+                                       sin(((float) s / kWaveTableSize) *
+                                            Math::k2Pi *
+                                            (2.0f * p - 1.0f));
+        }
+    }
+
+}
 
 Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
-                       float frequency, dB level)
+         Wave wave, float frequency, dB level)
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , phase_{0.0f}
 {
+    setWave(wave);
+    
     getParam(Param::Freq).setRange(0.0f, 22000.0f);
     getParam(Param::Freq).setVal(frequency);
     
@@ -26,11 +73,29 @@ Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
     
     // Setup the wavetable
     if(!initialized) {
-        for(unsigned int i=0; i<kWaveTableSize; ++i) {
-            Osc::sinWaveTable[i] = sin(((float) i / kWaveTableSize) * Math::k2Pi);
-        }
+        generateWaveTables();
         initialized = true;
     }
+}
+
+Osc& Osc::setWave(Wave w)
+{
+    switch(w) {
+    case Wave::Saw:
+        waveTable_ = sawWaveTable;
+        break;
+    case Wave::Sin:
+        waveTable_ = sinWaveTable;
+        break;
+    case Wave::Square:
+        waveTable_ = squareWaveTable;
+        break;
+    case Wave::Tri:
+        waveTable_ = triWaveTable;
+        break;
+    }
+    
+    return *this;
 }
 
 void Osc::process()
@@ -38,7 +103,10 @@ void Osc::process()
     float volume = dbToVolume(getParam(Param::Level).getVal());
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
-        float val = volume * sinWaveTable[(int) ((phase_/Math::k2Pi)*kWaveTableSize)];
+        
+        // TODO Have a waveTable pointer so that we don't have to branch here
+        
+        float val = volume * waveTable_[(int) ((phase_/Math::k2Pi)*kWaveTableSize)];
         
         phase_ += (getParam(Param::Freq).getVal() * Math::k2Pi) / sampleRate_;
         if(getInput(In::Fm).isConnected()) {
