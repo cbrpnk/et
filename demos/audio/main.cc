@@ -27,7 +27,8 @@ int main(int argc, char** argv)
     bc.setBitDepth(32).setSamplingRate(32).crush(osc0);
     
     // Mixer
-    mixer.ch(0, bc).setChannelLevel(0, -40.0f);
+    // TODO Mixer channel leaks audio even at -INFINITY level
+    mixer.ch(0, bc).setMasterPan(0.0f);
     //mixer.ch(1, osc1);
     
     // Play 
