@@ -1,7 +1,5 @@
-#include <cmath>
 #include "math.hpp"
 #include "osc.hpp"
-#include <iostream>
 
 namespace Et {
 namespace Audio {
@@ -18,7 +16,7 @@ float Osc::noiseWaveTable[kWaveTableSize];
 void Osc::generateWaveTables() {
     // Sin
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
-        Osc::sinWaveTable[s] = sin(((float) s / kWaveTableSize) * Math::k2Pi);
+        Osc::sinWaveTable[s] = Math::sin(((float) s / kWaveTableSize) * Math::k2Pi);
     }
     
     // Square
@@ -27,7 +25,7 @@ void Osc::generateWaveTables() {
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; p+=2) {
             Osc::squareWaveTable[s] += 1.0f/p *
-                                       sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
         }
         Osc::squareWaveTable[s] *= 4.0f/Math::kPi;
     }
@@ -37,7 +35,7 @@ void Osc::generateWaveTables() {
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; ++p) {
             Osc::sawWaveTable[s] += (1.0f/p) *
-                                    sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
         }
         Osc::sawWaveTable[s] *= -2.0f/Math::kPi;
     }
@@ -46,7 +44,7 @@ void Osc::generateWaveTables() {
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; ++p) {
             Osc::rsawWaveTable[s] += (1.0f/p) *
-                                    sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
         }
         Osc::rsawWaveTable[s] *= 1.7f/Math::kPi;
     }
@@ -56,11 +54,11 @@ void Osc::generateWaveTables() {
     // alternates with each partial
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; p+=2) {
-            Osc::triWaveTable[s] += pow(-1.0f, (p-1)/2.0f) / pow(p, 2) *
-                                       sin(((float) s / kWaveTableSize) *
-                                       Math::k2Pi * p);
+            Osc::triWaveTable[s] += Math::pow(-1.0f, (p-1)/2.0f) / Math::pow(p, 2) *
+                Math::sin(((float) s / kWaveTableSize) *
+                Math::k2Pi * p);
         }
-        Osc::sawWaveTable[s] *= 8.0f/pow(Math::kPi, 2);
+        Osc::sawWaveTable[s] *= 8.0f/Math::pow(Math::kPi, 2);
     }
     
     // Noise

@@ -45,17 +45,17 @@ void Mixer::process()
             if(getInput(ch).isConnected()) {
                 float chVol = dbToVolume(getParam(lvl0+ch).getVal());
                 float chPan = getParam(pan0+ch).getVal()/2.0f+0.5f;
-                float leftVol = chVol * sqrt(1.0f-chPan);
-                float rightVol = chVol * sqrt(chPan);
+                float leftVol = chVol * Math::sqrt(1.0f-chPan);
+                float rightVol = chVol * Math::sqrt(chPan);
                 left += leftVol * getInput(ch).getSample(Buffer::Channel::Left, i);
                 right += rightVol * getInput(ch).getSample(Buffer::Channel::Right, i);
             }
         }
         
-        output_.setSample(Buffer::Channel::Left, i, masterVolume * sqrt(1.0f-masterPan)
-        * left);
-        output_.setSample(Buffer::Channel::Right, i, masterVolume * sqrt(masterPan)
-        * right);
+        output_.setSample(Buffer::Channel::Left, i, masterVolume *
+            Math::sqrt(1.0f-masterPan) * left);
+        output_.setSample(Buffer::Channel::Right, i, masterVolume *
+            Math::sqrt(masterPan) * right);
     }
 }
 

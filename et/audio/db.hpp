@@ -1,12 +1,12 @@
 #pragma once
 
-#include <cmath>
+#include "math/functions.hpp"
 
 namespace Et {
 namespace Audio {
 
-inline float dbToVolume(float db)  { return powf(10.0f, 0.05f * db); }
-inline float volumeToDb(float vol) { return 20.0f * log10f(vol); }
+inline float dbToVolume(float db)  { return Math::pow(10.0f, 0.05f * db); }
+inline float volumeToDb(float vol) { return 20.0f * Math::log10(vol); }
 
 typedef float dB;
 
