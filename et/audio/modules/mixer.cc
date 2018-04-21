@@ -5,7 +5,9 @@ namespace Audio {
 
 Mixer::Mixer(unsigned int sampleRate, unsigned int bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
-{}
+{
+    // TODO Set parameters
+}
 
 void Mixer::process()
 {

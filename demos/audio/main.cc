@@ -15,21 +15,26 @@ int main(int argc, char** argv)
     Osc& osc0 = engine.addModule<Osc>();
     Osc& osc1 = engine.addModule<Osc>();
     Osc& osc2 = engine.addModule<Osc>();
-    //Osc& osc3 = engine.addModule<Osc>();
+    Osc& osc3 = engine.addModule<Osc>();
     
     Osc& lfo0 = engine.addModule<Osc>();
     
+    BitCrusher& bc = engine.addModule<BitCrusher>();
+    
     // Setting and Routing
-    osc0.setWave(Osc::Wave::Square).setFreq(120.3f).setFmAmt(0.01f).fm(osc1);
-    osc1.setWave(Osc::Wave::Saw).setFreq(60.1f).setFmAmt(0.01).fm(osc2);
-    osc2.setWave(Osc::Wave::Noise).setFreq(240.2f).setFmAmt(0.01).fm(osc0);
+    osc0.setWave(Osc::Wave::Sin).setFreq(440.3f).setFmAmt(0.08f).fm(osc1).am(osc2);
+    osc1.setWave(Osc::Wave::Rsaw).setFreq(2.1f).setFmAmt(0.04).fm(osc2);
+    osc2.setWave(Osc::Wave::Rsaw).setFreq(0.2f).setFmAmt(0.01).fm(osc3).am(osc3);
+    osc3.setWave(Osc::Wave::Saw).setFreq(100.0f).setFmAmt(0.02);
     
-    lfo0.setWave(Osc::Wave::Tri).setFreq(0.1f);
+    //lfo0.setWave(Osc::Wave::Tri).setFreq(0.1f);
+
+    // Effects
+    bc.setBitDepth(24).setSamplingRate(16).crush(osc0);
     
-    mixer.ch(0, osc0);
-    mixer.ch(1, osc1);
-    //mixer.ch(2, osc2);
-    //mixer.ch(3, osc3);
+    // Mixer
+    mixer.ch(0, bc);
+    //mixer.ch(1, osc1);
     
     // Play 
     engine.output(mixer);

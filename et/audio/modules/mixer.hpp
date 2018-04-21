@@ -62,9 +62,7 @@ public:
     Mixer(unsigned int sampleRate, unsigned int bufferSize);
     Mixer(Mixer&& other)
         : Module(std::move(other))
-    {
-        // TODO Set Parameter range
-    }
+    {}
     ~Mixer() {}
     
     virtual void process() override;
