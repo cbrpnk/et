@@ -17,7 +17,7 @@ private:
         BitDepth,
         SamplingRate
     };
-    static const unsigned int paramCount = 1;
+    static const unsigned int paramCount = 2;
 
 public:
     

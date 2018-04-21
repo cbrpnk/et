@@ -29,8 +29,8 @@ void BitCrusher::process()
             unsigned int depth = 0xFFFFFFFF >>
                                 (32 - (int) getParam(Param::BitDepth).getVal());
             
-            unsigned int leftInt = ((lastLeft_ / 2.0f * gain) + 0.5f) * depth;
-            unsigned int rightInt = ((lastRight_ / 2.0f * gain) + 0.5f) * depth;
+            unsigned int leftInt = ((lastLeft_ / 2.0f) + 0.5f) * depth;
+            unsigned int rightInt = ((lastRight_ / 2.0f) + 0.5f) * depth;
             
             lastLeft_ = (((float) leftInt / depth) - 0.5f) * 2.0f;
             lastRight_ = (((float) rightInt / depth) - 0.5f) * 2.0f;

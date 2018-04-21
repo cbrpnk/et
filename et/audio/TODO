@@ -1,5 +1,11 @@
 =========== TODO ============
 
+Mixer vol/pan exponantial
+
+Push audio processing in DSP::
+make parameters of Audio::Module point to DSP private members or
+other way around, try to keep encapsulation
+
 Decibel / Volume convertion
     youtube (Lessons learn from a decade of aduio programming) @ 9:40
 
