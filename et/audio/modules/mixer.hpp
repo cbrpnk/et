@@ -19,42 +19,20 @@ private:
     static const unsigned int channelCount = 32;
     
     enum class Param : unsigned int {
-        // Input Parameters
-        Vol0,  Pan0, 
-        Vol1,  Pan1, 
-        Vol2,  Pan2, 
-        Vol3,  Pan3, 
-        Vol4,  Pan4, 
-        Vol5,  Pan5, 
-        Vol6,  Pan6, 
-        Vol7,  Pan7,
-        Vol8,  Pan8, 
-        Vol9,  Pan9, 
-        Vol10, Pan10, 
-        Vol11, Pan11, 
-        Vol12, Pan12, 
-        Vol13, Pan13, 
-        Vol14, Pan14, 
-        Vol15, Pan15, 
-        Vol16, Pan16, 
-        Vol17, Pan17, 
-        Vol18, Pan18, 
-        Vol19, Pan19, 
-        Vol20, Pan20, 
-        Vol21, Pan21, 
-        Vol22, Pan22, 
-        Vol23, Pan23, 
-        Vol24, Pan24, 
-        Vol25, Pan25, 
-        Vol26, Pan26, 
-        Vol27, Pan27, 
-        Vol28, Pan28, 
-        Vol29, Pan29, 
-        Vol30, Pan30, 
-        Vol31, Pan31, 
+        // Level
+        Lvl0,  Lvl1,  Lvl2,  Lvl3,  Lvl4,  Lvl5,  Lvl6,  Lvl7,  Lvl8,  Lvl9,  
+        Lvl10, Lvl11, Lvl12, Lvl13, Lvl14, Lvl15, Lvl16, Lvl17, Lvl18, Lvl19,  
+        Lvl20, Lvl21, Lvl22, Lvl23, Lvl24, Lvl25, Lvl26, Lvl27, Lvl28, Lvl29,  
+        Lvl30, Lvl31,
+        LvlMaster,
         
-        // Master Parameters
-        VolMaster, PanMaster
+        // Panning
+        Pan0,  Pan1,  Pan2,  Pan3,  Pan4,  Pan5,  Pan6,  Pan7,  Pan8,  Pan9, 
+        Pan10, Pan11, Pan12, Pan13, Pan14, Pan15, Pan16, Pan17, Pan18, Pan19,
+        Pan20, Pan21, Pan22, Pan23, Pan24, Pan25, Pan26, Pan27, Pan28, Pan29,
+        Pan30, Pan31,
+        PanMaster,
+        
     };
     static const unsigned int paramCount = 66;
 
@@ -67,17 +45,12 @@ public:
     
     virtual void process() override;
     
-    Mixer& ch(unsigned int ch, Module& m) { getInput(ch) << m.getOutput(); return *this; }
+    Mixer& ch(unsigned int ch, Module& m);
     
-    Mixer& vol(unsigned int ch, float v)
-    {
-        return *this;
-    }
-    
-    Mixer& pan(unsigned int ch, float p)
-    {
-        return *this;
-    }
+    Mixer& setChannelLevel(unsigned int ch, float lvl);
+    Mixer& setChannelPan(unsigned int ch, float pan);
+    Mixer& setMasterLevel(float lvl);
+    Mixer& setMasterPan(float pan);
 };
 
 } // namespace Audio
