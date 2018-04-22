@@ -4,8 +4,8 @@
 
 namespace Et {
 namespace Math {
-    static constexpr float kPi = M_PI;
-    static constexpr float k2Pi = 2.0*kPi;
-    static constexpr float kInvPi = 1.0/kPi;
+    static constexpr float Pi = M_PI;
+    static constexpr float Tau = 2.0*Pi;
+    static constexpr float InvPi = 1.0/Pi;
 } // namespace math
 } // namespace Et

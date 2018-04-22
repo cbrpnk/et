@@ -16,7 +16,7 @@ float Osc::noiseWaveTable[kWaveTableSize];
 void Osc::generateWaveTables() {
     // Sin
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
-        Osc::sinWaveTable[s] = Math::sin(((float) s / kWaveTableSize) * Math::k2Pi);
+        Osc::sinWaveTable[s] = Math::sin(((float) s / kWaveTableSize) * Math::Tau);
     }
     
     // Square
@@ -25,9 +25,9 @@ void Osc::generateWaveTables() {
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; p+=2) {
             Osc::squareWaveTable[s] += 1.0f/p *
-                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::Tau * p);
         }
-        Osc::squareWaveTable[s] *= 4.0f/Math::kPi;
+        Osc::squareWaveTable[s] *= 4.0f/Math::Pi;
     }
     
     // Saw
@@ -35,18 +35,18 @@ void Osc::generateWaveTables() {
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; ++p) {
             Osc::sawWaveTable[s] += (1.0f/p) *
-                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::Tau * p);
         }
-        Osc::sawWaveTable[s] *= -2.0f/Math::kPi;
+        Osc::sawWaveTable[s] *= -2.0f/Math::Pi;
     }
     
     // Reverse Saw
     for(unsigned int s=0; s<kWaveTableSize; ++s) {
         for(unsigned int p=1; p<=nPartials; ++p) {
             Osc::rsawWaveTable[s] += (1.0f/p) *
-                Math::sin(((float) s / kWaveTableSize) * Math::k2Pi * p);
+                Math::sin(((float) s / kWaveTableSize) * Math::Tau * p);
         }
-        Osc::rsawWaveTable[s] *= 1.7f/Math::kPi;
+        Osc::rsawWaveTable[s] *= 1.7f/Math::Pi;
     }
     
     // Triangle
@@ -56,9 +56,9 @@ void Osc::generateWaveTables() {
         for(unsigned int p=1; p<=nPartials; p+=2) {
             Osc::triWaveTable[s] += Math::pow(-1.0f, (p-1)/2.0f) / Math::pow(p, 2) *
                 Math::sin(((float) s / kWaveTableSize) *
-                Math::k2Pi * p);
+                Math::Tau * p);
         }
-        Osc::sawWaveTable[s] *= 8.0f/Math::pow(Math::kPi, 2);
+        Osc::sawWaveTable[s] *= 8.0f/Math::pow(Math::Pi, 2);
     }
     
     // Noise
@@ -125,18 +125,18 @@ void Osc::process()
         
         // TODO Have a waveTable pointer so that we don't have to branch here
         
-        float val = volume * waveTable_[(int) ((phase_/Math::k2Pi)*kWaveTableSize)];
+        float val = volume * waveTable_[(int) ((phase_/Math::Tau)*kWaveTableSize)];
         
-        phase_ += (getParam(Param::Freq).getVal() * Math::k2Pi) / sampleRate_;
+        phase_ += (getParam(Param::Freq).getVal() * Math::Tau) / sampleRate_;
         if(getInput(In::Fm).isConnected()) {
             phase_ += (getParam(Param::FmAmt).getVal() *
                             getInput(In::Fm).getSample(Buffer::Channel::Left, i));
         }
-        while(phase_ >= Math::k2Pi) {
-            phase_ -= Math::k2Pi;
+        while(phase_ >= Math::Tau) {
+            phase_ -= Math::Tau;
         }
         while(phase_ < 0) {
-            phase_ += Math::k2Pi;
+            phase_ += Math::Tau;
         }
         
         if(getInput(In::Am).isConnected()) {

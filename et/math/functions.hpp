@@ -92,12 +92,12 @@ inline T clamp(T v, T minVal, T maxVal) { return min(max(minVal, v), maxVal); }
 
 inline float degToRad(const float deg)
 {
-    return deg * kPi/180.0f;
+    return deg * Pi/180.0f;
 }
 
 inline float radToDeg(const float rad)
 {
-    return rad * 180.0f/kPi;
+    return rad * 180.0f/Pi;
 }
 
 struct QuadraticResult {
