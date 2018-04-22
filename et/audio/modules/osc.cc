@@ -123,7 +123,8 @@ void Osc::process()
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
         
-        // TODO Have a waveTable pointer so that we don't have to branch here
+        // TODO Maybe instead of using the left channel for modulation use an
+        // average of both
         
         float val = volume * waveTable_[(int) ((phase_/Math::Tau)*kWaveTableSize)];
         

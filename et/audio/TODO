@@ -2,6 +2,8 @@
 
 Mixer vol/pan exponantial
 
+noexcept on constructors and destructors
+
 Push audio processing in DSP::
 make parameters of Audio::Module point to DSP private members or
 other way around, try to keep encapsulation

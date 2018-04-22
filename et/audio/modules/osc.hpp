@@ -50,7 +50,7 @@ private:
     
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,
-        Wave wave = Wave::Sin, float frequency = 440.0f, dB level = -20.0f);
+        Wave wave = Wave::Sin, float frequency = 440.0f, dB level = -3.0f);
     
     Osc(Osc&& other)
         : Module(std::move(other))
