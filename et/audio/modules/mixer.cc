@@ -65,15 +65,28 @@ Mixer& Mixer::ch(unsigned int ch, Module& m)
     return *this;
 }
 
-Mixer& Mixer::setChannelLevel(unsigned int ch, float lvl)
+Mixer& Mixer::setLevel(float lvl)
+{
+    getParam(Param::LvlMaster).setVal(lvl);
+    return *this;
+}
+
+Mixer& Mixer::setLevel(unsigned int ch, float lvl)
 {
     if(ch >= 0 && ch < channelCount) {
         unsigned int i = static_cast<unsigned int>(Param::Lvl0) + ch;
         params_[i].setVal(lvl);
     }
+    return *this;
 }
 
-Mixer& Mixer::setChannelPan(unsigned int ch, float pan)
+Mixer& Mixer::setPan(float pan)
+{
+    getParam(Param::PanMaster).setVal(pan);
+    return *this;
+}
+
+Mixer& Mixer::setPan(unsigned int ch, float pan)
 {
     if(ch >= 0 && ch < channelCount) {
         unsigned int i = static_cast<unsigned int>(Param::Pan0) + ch;
@@ -82,16 +95,14 @@ Mixer& Mixer::setChannelPan(unsigned int ch, float pan)
     return *this;
 }
 
-Mixer& Mixer::setMasterLevel(float lvl)
+Mixer& Mixer::mute()
 {
-    getParam(Param::LvlMaster).setVal(lvl);
-    return *this;
+    return setLevel(-INFINITY);
 }
 
-Mixer& Mixer::setMasterPan(float pan)
+Mixer& Mixer::mute(unsigned int ch)
 {
-    getParam(Param::PanMaster).setVal(pan);
-    return *this;
+    return setLevel(ch, -INFINITY);
 }
 
 } // namespace Audio
