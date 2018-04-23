@@ -47,10 +47,14 @@ public:
     
     Mixer& ch(unsigned int ch, Module& m);
     
-    Mixer& setChannelLevel(unsigned int ch, float lvl);
-    Mixer& setChannelPan(unsigned int ch, float pan);
-    Mixer& setMasterLevel(float lvl);
-    Mixer& setMasterPan(float pan);
+    Mixer& setLevel(float lvl);
+    Mixer& setLevel(unsigned int ch, float lvl);
+    
+    Mixer& setPan(float pan);
+    Mixer& setPan(unsigned int ch, float pan);
+   
+    Mixer& mute();
+    Mixer& mute(unsigned int ch);
 };
 
 } // namespace Audio

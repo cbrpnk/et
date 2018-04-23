@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "color.hpp"
+#include "math/functions.hpp"
 
 namespace Et {
 namespace Graph {
@@ -49,9 +50,9 @@ void RgbBuffer<T>::exportPpm(std::string filePath) {
     for(unsigned int y=0; y<this->height; ++y) {
         for(unsigned int x=0; x<this->width; ++x) {
             RgbColor<T>& pixel = (*this)(x, y);
-            file << (unsigned char) (sqrt(pixel.r()) * 255);
-            file << (unsigned char) (sqrt(pixel.g()) * 255);
-            file << (unsigned char) (sqrt(pixel.b()) * 255);
+            file << (unsigned char) (Math::sqrt(pixel.r()) * 255);
+            file << (unsigned char) (Math::sqrt(pixel.g()) * 255);
+            file << (unsigned char) (Math::sqrt(pixel.b()) * 255);
         }
     }
     file.close();

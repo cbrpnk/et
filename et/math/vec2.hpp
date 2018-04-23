@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include "functions.hpp"
 
 namespace Et {
 namespace Math {

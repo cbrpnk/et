@@ -25,10 +25,10 @@ int main(int argc, char** argv)
     bc.setBitDepth(7).setSamplingRate(16).crush(osc0);
     
     // Mixer
-    // TODO Mixer channel mute
-    mixer.ch(0, bc).setChannelLevel(0, -3.0f);
-    //mixer.ch(1, osc1).setChannelLevel(1, -3.0f);
-    //mixer.ch(2, osc2).setChannelLevel(2, -3.0f);
+    mixer.ch(0, osc0).setPan(0.0f);
+    mixer.ch(1, osc1).mute(1);
+    mixer.ch(2, osc2).mute(2);
+    mixer.ch(3, osc3).mute(3);
     
     // Play 
     engine.output(mixer);
