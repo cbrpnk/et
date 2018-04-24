@@ -1,3 +1,3 @@
 #pragma once
 
-#include "dsp/oscillator.hpp"
+#include "dsp/bitcrusher.hpp"
