@@ -139,12 +139,22 @@ void Osc::process()
         if(getParam(Param::Wave).getVal() != static_cast<unsigned int>(Wave::Pulse)) {
             val = waveTable_[(int) ((phase_/Math::Tau)*waveTableSize)];
         } else {
+            float pw = 0.0f;
+            
+            // Pwm
+            if(getInput(In::Pwm).isConnected()) {
+                pw = (getInput(In::Pwm).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
+                pw *= 0.6;
+                pw += 0.2;
+            } else {
+                pw = getParam(Param::PulseWidth).getVal();
+            }
+            
             // Phased position in the wavetable
             float pos1 = phase_/Math::Tau;
-            float pos2 = pos1 + getParam(Param::PulseWidth).getVal();
+            float pos2 = pos1 + pw;
             if(pos2 > 1) pos2 -= 1; // Bound
             
-            // TODO PWM here
             
             val = waveTable_[(int) (pos1*waveTableSize)];
             val -= waveTable_[(int) (pos2*waveTableSize)];

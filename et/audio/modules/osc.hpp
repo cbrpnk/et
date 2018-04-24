@@ -74,6 +74,7 @@ public:
     
     Osc& fm(Module& m)    { getInput(In::Fm) << m.getOutput(); return *this; }
     Osc& am(Module& m)    { getInput(In::Am) << m.getOutput(); return *this; }
+    Osc& pwm(Module& m)    { getInput(In::Pwm) << m.getOutput(); return *this; }
     Osc& reset(Module& m) { getInput(In::Reset) << m.getOutput(); return *this; }
 
 private:
