@@ -71,6 +71,7 @@ void Osc::generateWaveTables() {
 Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
          Wave wave, float frequency, dB level)
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
+    , waveTable_{nullptr}
     , phase_{0.0f}
 {
     setWave(wave);

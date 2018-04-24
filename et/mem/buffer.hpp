@@ -19,7 +19,7 @@ public:
     Buffer(const Buffer& other)
         : allocated_{true}
         , size_{other.size_}
-        , buffer_{new T[other.size_]}
+        , buffer_{new T[other.size_]()}
     {
         std::copy(other.buffer_, other.buffer_ + other.size_, buffer_);
     }
@@ -38,7 +38,7 @@ public:
     void alloc(unsigned int size) {
         if(!allocated_) {
             size_ = size;
-            buffer_ = new T[size];
+            buffer_ = new T[size]();
             allocated_ = true;
         }
     }
@@ -53,7 +53,7 @@ public:
                 buffer_ = nullptr;
                 size_   = 0;
                 // Setup buffer
-                buffer_ = new T[other.size_];
+                buffer_ = new T[other.size_]();
                 size_   = other.size_;
             }
             std::copy(other.buffer_, other.buffer_ + other.size_, buffer_);

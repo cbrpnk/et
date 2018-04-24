@@ -8,6 +8,7 @@ namespace Audio {
 Port::Port(Module& owner)
     : owner{owner}
     , buffer(Buffer::Type::Stereo, owner.getBufferSize())
+    , connections()
 {}
 
 Port::Port(Port&& other)
