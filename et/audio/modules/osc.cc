@@ -136,14 +136,15 @@ void Osc::process()
     for(unsigned int i=0; i<bufferSize_; ++i) {
         float val = 0;
         
-        // TODO Branch on Wave::Pulse
         if(getParam(Param::Wave).getVal() != static_cast<unsigned int>(Wave::Pulse)) {
             val = waveTable_[(int) ((phase_/Math::Tau)*waveTableSize)];
         } else {
             // Phased position in the wavetable
             float pos1 = phase_/Math::Tau;
             float pos2 = pos1 + getParam(Param::PulseWidth).getVal();
-            if(pos2 > 1) pos2 -= 1;
+            if(pos2 > 1) pos2 -= 1; // Bound
+            
+            // TODO PWM here
             
             val = waveTable_[(int) (pos1*waveTableSize)];
             val -= waveTable_[(int) (pos2*waveTableSize)];

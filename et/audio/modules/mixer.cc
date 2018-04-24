@@ -51,28 +51,28 @@ void Mixer::process()
     unsigned int mute0 = static_cast<unsigned int>(Param::Mute0);
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
-        // TODO Panning is wrong, volume is attenuated from the center knob position
-        float masterVolume = dbToVolume(getParam(Param::LvlMaster).getVal());
-        float masterPan = getParam(Param::PanMaster).getVal()/2.0f+0.5f;
         float left = 0.0f;
         float right = 0.0f;
+        
+        float masterVolume = dbToVolume(getParam(Param::LvlMaster).getVal());
+        float masterPan = getParam(Param::PanMaster).getVal();
+        float masterVolLeft = masterVolume * Math::min(1.0f, Math::sqrt(1.0f-masterPan));
+        float masterVolRight = masterVolume * Math::min(1.0f, Math::sqrt(masterPan+1.0f));
         
         // Sum connected inputs into left and right
         for(unsigned int ch=0; ch<channelCount; ++ch) {
             if(getInput(ch).isConnected() && getParam(mute0+ch).getVal() == 0) {
                 float chVol = dbToVolume(getParam(lvl0+ch).getVal());
-                float chPan = getParam(pan0+ch).getVal()/2.0f+0.5f;
-                float leftVol = chVol * Math::sqrt(1.0f-chPan);
-                float rightVol = chVol * Math::sqrt(chPan);
-                left += leftVol * getInput(ch).getSample(Buffer::Channel::Left, i);
-                right += rightVol * getInput(ch).getSample(Buffer::Channel::Right, i);
+                float chPan = getParam(pan0+ch).getVal();
+                float chVolLeft = chVol * Math::min(1.0f, Math::sqrt(1.0f-chPan));
+                float chVolRight = chVol * Math::min(1.0f, Math::sqrt(chPan+1.0f));
+                left += chVolLeft * getInput(ch).getSample(Buffer::Channel::Left, i);
+                right += chVolRight * getInput(ch).getSample(Buffer::Channel::Right, i);
             }
         }
         
-        output_.setSample(Buffer::Channel::Left, i, masterVolume *
-            Math::sqrt(1.0f-masterPan) * left);
-        output_.setSample(Buffer::Channel::Right, i, masterVolume *
-            Math::sqrt(masterPan) * right);
+        output_.setSample(Buffer::Channel::Left, i, masterVolLeft * left);
+        output_.setSample(Buffer::Channel::Right, i, masterVolRight * right);
     }
 }
 
