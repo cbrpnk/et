@@ -33,8 +33,15 @@ private:
         Pan30, Pan31,
         PanMaster,
         
+        // Mute
+        Mute0,  Mute1,  Mute2,  Mute3,  Mute4,  Mute5,  Mute6,  Mute7,  Mute8,  Mute9, 
+        Mute10, Mute11, Mute12, Mute13, Mute14, Mute15, Mute16, Mute17, Mute18, Mute19, 
+        Mute20, Mute21, Mute22, Mute23, Mute24, Mute25, Mute26, Mute27, Mute28, Mute29, 
+        Mute30, Mute31,
+        MuteMaster,
+        
     };
-    static const unsigned int paramCount = 66;
+    static const unsigned int paramCount = 99;
 
 public:
     Mixer(unsigned int sampleRate, unsigned int bufferSize);
@@ -55,6 +62,11 @@ public:
    
     Mixer& mute();
     Mixer& mute(unsigned int ch);
+    
+    Mixer& unmute();
+    Mixer& unmute(unsigned int ch);
+    
+    Mixer& solo(unsigned int ch);
 };
 
 } // namespace Audio

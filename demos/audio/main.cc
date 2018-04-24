@@ -7,7 +7,6 @@ using namespace Et::Audio;
 int main(int argc, char** argv)
 {
     // TODO Oscilator (Wave::Square) pulseWidth
-    // TODO Add solo() to mixer
     // TODO Check if we can get a mixer channel class out of mixer
     
     Engine engine;

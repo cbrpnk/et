@@ -27,12 +27,28 @@ Mixer::Mixer(unsigned int sampleRate, unsigned int bufferSize)
     }
     getParam(Param::PanMaster).setRange(-1.0f, 1.0f);
     getParam(Param::PanMaster).setVal(0.0f);
+    
+    // Mute
+    unsigned int mute0 = static_cast<unsigned int>(Param::Mute0);
+    for(unsigned int i=mute0; i<mute0+channelCount; ++i) {
+        params_[i].setRange(0.0f, 1.0f);
+        params_[i].setVal(0.0f);
+    }
+    getParam(Param::MuteMaster).setRange(0.0f, 1.0f);
+    getParam(Param::MuteMaster).setVal(0.0f);
 }
 
 void Mixer::process()
 {
+    // Early out if master is mutted
+    if(getParam(Param::MuteMaster).getVal() != 0) {
+        output_.buffer.silence();
+        return;
+    }
+    
     unsigned int lvl0 = static_cast<unsigned int>(Param::Lvl0);
     unsigned int pan0 = static_cast<unsigned int>(Param::Pan0);
+    unsigned int mute0 = static_cast<unsigned int>(Param::Mute0);
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
         float masterVolume = dbToVolume(getParam(Param::LvlMaster).getVal());
@@ -42,7 +58,7 @@ void Mixer::process()
         
         // Sum connected inputs into left and right
         for(unsigned int ch=0; ch<channelCount; ++ch) {
-            if(getInput(ch).isConnected()) {
+            if(getInput(ch).isConnected() && getParam(mute0+ch).getVal() == 0) {
                 float chVol = dbToVolume(getParam(lvl0+ch).getVal());
                 float chPan = getParam(pan0+ch).getVal()/2.0f+0.5f;
                 float leftVol = chVol * Math::sqrt(1.0f-chPan);
@@ -97,12 +113,40 @@ Mixer& Mixer::setPan(unsigned int ch, float pan)
 
 Mixer& Mixer::mute()
 {
-    return setLevel(-INFINITY);
+    getParam(Param::MuteMaster).setVal(1);
+    return *this;
 }
 
 Mixer& Mixer::mute(unsigned int ch)
 {
-    return setLevel(ch, -INFINITY);
+    if(ch >= 0 && ch < channelCount) {
+        unsigned int i = static_cast<unsigned int>(Param::Mute0) + ch;
+        params_[i].setVal(1);
+    }
+    return *this;
+}
+
+Mixer& Mixer::unmute()
+{
+    getParam(Param::MuteMaster).setVal(0);
+    return *this;
+}
+
+Mixer& Mixer::unmute(unsigned int ch)
+{
+    if(ch >= 0 && ch < channelCount) {
+        unsigned int i = static_cast<unsigned int>(Param::Mute0) + ch;
+        params_[i].setVal(0);
+    }
+    return *this;
+}
+
+Mixer& Mixer::solo(unsigned int ch)
+{
+    for(unsigned int i=0; i<channelCount; ++i) {
+        if(i == ch) unmute(i);
+        else mute(i);
+    }
 }
 
 } // namespace Audio
