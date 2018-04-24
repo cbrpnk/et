@@ -7,7 +7,6 @@ using namespace Et::Audio;
 int main(int argc, char** argv)
 {
     // TODO Oscilator (Wave::Square) pulseWidth
-    // TODO Check if we can get a mixer channel class out of mixer
     
     Engine engine;
     if(!engine.init()) return -1;
@@ -21,7 +20,8 @@ int main(int argc, char** argv)
     BitCrusher& bc = engine.addModule<BitCrusher>();
     
     // Setting and Routing
-    osc0.setWave(Osc::Wave::Sin).setFreq(440.3f).setFmAmt(0.08f).fm(osc2);
+    osc0.setWave(Osc::Wave::Pulse).setFreq(440.3f).setFmAmt(0.08f).setLevel(-3.0f)
+        .setPulseWidth(0.1);
     osc1.setWave(Osc::Wave::Rsaw).setFreq(2.1f).setFmAmt(0.04).fm(osc3);
     osc2.setWave(Osc::Wave::Square).setFreq(2.1f).setFmAmt(0.04).fm(osc0);
     osc3.setWave(Osc::Wave::Saw).setFreq(12.0f).setFmAmt(0.02);
@@ -30,7 +30,7 @@ int main(int argc, char** argv)
     bc.setBitDepth(32).setSamplingRate(32).crush(osc0);
     
     // Mixer
-    mixer.ch(0, bc).setLevel(0, 0.0f);
+    mixer.ch(0, osc0).setLevel(0, 0.0f);
     mixer.ch(1, osc1).setLevel(1, 0.0f).mute(1);
     mixer.ch(2, osc2).setLevel(2, 0.0f).mute(2);
     mixer.ch(3, osc3).setLevel(3, 0.0f).mute(3);

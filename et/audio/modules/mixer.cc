@@ -51,6 +51,7 @@ void Mixer::process()
     unsigned int mute0 = static_cast<unsigned int>(Param::Mute0);
     
     for(unsigned int i=0; i<bufferSize_; ++i) {
+        // TODO Panning is wrong, volume is attenuated from the center knob position
         float masterVolume = dbToVolume(getParam(Param::LvlMaster).getVal());
         float masterPan = getParam(Param::PanMaster).getVal()/2.0f+0.5f;
         float left = 0.0f;
