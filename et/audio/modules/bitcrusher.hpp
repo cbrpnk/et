@@ -1,7 +1,6 @@
 #pragma once
 
 #include "audio/module.hpp"
-#include "dsp/bitcrusher.hpp"
 
 namespace Et {
 namespace Audio {
@@ -24,8 +23,8 @@ public:
     BitCrusher(unsigned int sampleRate, unsigned int bufferSize);
     BitCrusher(BitCrusher&& other)
         : Module(std::move(other))
-        , bcLeft_(std::move(other.bcLeft_))
-        , bcRight_(std::move(other.bcRight_))
+        ,lastLeft_{other.lastLeft_}
+        ,lastRight_{other.lastRight_}
     {}
     ~BitCrusher() {}
     
@@ -46,8 +45,8 @@ public:
     BitCrusher& crush(Module& m) { getInput(In::Main) << m.getOutput(); return *this; }
 
 private:
-    Dsp::BitCrusher bcLeft_;
-    Dsp::BitCrusher bcRight_;
+    float lastLeft_;
+    float lastRight_;
 };
 
 } // namespace Audio

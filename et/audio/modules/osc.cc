@@ -157,7 +157,6 @@ void Osc::process()
             float pos2 = pos1 + pw;
             if(pos2 > 1) pos2 -= 1; // Bound
             
-            
             val = waveTable_[(int) (pos1*waveTableSize)];
             val -= waveTable_[(int) (pos2*waveTableSize)];
         }
