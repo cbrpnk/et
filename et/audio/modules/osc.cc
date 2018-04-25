@@ -144,8 +144,10 @@ void Osc::process()
             // Pwm
             if(getInput(In::Pwm).isConnected()) {
                 pw = (getInput(In::Pwm).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
-                pw *= 0.6;
-                pw += 0.2;
+                // Remap to correct PulseWidth bounds
+                pw *= getParam(Param::PulseWidth).getMax()
+                      - getParam(Param::PulseWidth).getMin();
+                pw += getParam(Param::PulseWidth).getMin();
             } else {
                 pw = getParam(Param::PulseWidth).getVal();
             }
