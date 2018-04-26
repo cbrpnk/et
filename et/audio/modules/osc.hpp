@@ -52,6 +52,12 @@ private:
     static bool initialized;
     
     static void generateWaveTables();
+    static void generateSinWaveTables();
+    static void generateSquareWaveTables();
+    static void generateRsawWaveTables();
+    static void generateSawWaveTables();
+    static void generateTriWaveTables();
+    static void generateNoiseWaveTables();
     
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,

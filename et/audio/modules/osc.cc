@@ -13,12 +13,26 @@ float Osc::rsawWaveTable[waveTableSize];
 float Osc::triWaveTable[waveTableSize];
 float Osc::noiseWaveTable[waveTableSize];
 
-void Osc::generateWaveTables() {
+void Osc::generateWaveTables()
+{
+    generateSinWaveTables();
+    generateSquareWaveTables();
+    generateRsawWaveTables();
+    generateSawWaveTables();
+    generateTriWaveTables();
+    generateNoiseWaveTables();
+}
+
+void Osc::generateSinWaveTables()
+{
     // Sin
     for(unsigned int s=0; s<waveTableSize; ++s) {
         Osc::sinWaveTable[s] = Math::sin(((float) s / waveTableSize) * Math::Tau);
     }
-    
+}
+
+void Osc::generateSquareWaveTables()
+{
     // Square
     // Sum odd numbered partials (1, 3, 5, 7...). Each emplitude is it's reciprocal
     // (1/1, 1/3, 1/5, 1/7).
@@ -29,7 +43,22 @@ void Osc::generateWaveTables() {
         }
         Osc::squareWaveTable[s] *= 4.0f/Math::Pi;
     }
-    
+}
+
+void Osc::generateRsawWaveTables()
+{
+    // Reverse Saw
+    for(unsigned int s=0; s<waveTableSize; ++s) {
+        for(unsigned int p=1; p<=nPartials; ++p) {
+            Osc::rsawWaveTable[s] += (1.0f/p) *
+                Math::sin(((float) s / waveTableSize) * Math::Tau * p);
+        }
+        Osc::rsawWaveTable[s] *= 1.7f/Math::Pi;
+    }
+}
+
+void Osc::generateSawWaveTables()
+{
     // Saw
     // Sum every partials. The amplitude is the reciprocal.
     for(unsigned int s=0; s<waveTableSize; ++s) {
@@ -39,16 +68,10 @@ void Osc::generateWaveTables() {
         }
         Osc::sawWaveTable[s] *= -2.0f/Math::Pi;
     }
-    
-    // Reverse Saw
-    for(unsigned int s=0; s<waveTableSize; ++s) {
-        for(unsigned int p=1; p<=nPartials; ++p) {
-            Osc::rsawWaveTable[s] += (1.0f/p) *
-                Math::sin(((float) s / waveTableSize) * Math::Tau * p);
-        }
-        Osc::rsawWaveTable[s] *= 1.7f/Math::Pi;
-    }
-    
+}
+
+void Osc::generateTriWaveTables()
+{
     // Triangle
     // Sum odd partials but the amplitude is the square reciprocal and its sign 
     // alternates with each partial
@@ -60,7 +83,10 @@ void Osc::generateWaveTables() {
         }
         Osc::sawWaveTable[s] *= 8.0f/Math::pow(Math::Pi, 2);
     }
-    
+}
+
+void Osc::generateNoiseWaveTables()
+{
     // Noise
     Math::Random random;
     for(unsigned int s=0; s<waveTableSize; ++s) {
