@@ -21,9 +21,9 @@ int main(int argc, char** argv)
     BitCrusher& bc = engine.addModule<BitCrusher>();
     
     // Setting and Routing
-    osc0.setWave(Osc::Wave::Sin).setFreq(440.0f).setFmAmt(0.01f).pwm(osc1);
-    osc1.setWave(Osc::Wave::Sin).setFreq(1.0f);
-    osc2.setWave(Osc::Wave::Sin).setFreq(1.0f).setLevel(0.0f);
+    osc0.setWave(Osc::Wave::Sin).setFreq(40.0f).setFmAmt(0.01f).fm(osc1);
+    osc1.setWave(Osc::Wave::Saw).setFreq(10.0f).setFmAmt(0.01f).fm(osc2);
+    osc2.setWave(Osc::Wave::Square).setFreq(1.0f).setLevel(0.0f);
     
     // Effects
     bc.setBitDepth(5).setSamplingRate(16).crush(osc0);

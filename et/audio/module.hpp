@@ -41,6 +41,9 @@ public:
         return inputs_[static_cast<unsigned int>(in)];
     }
     
+    // TODO Check what we can do about constness here
+    Output& getOutput() { return output_; }
+    
     template <typename T>
     Parameter& getParam(T param) {
         return params_[static_cast<unsigned int>(param)];
@@ -54,10 +57,6 @@ public:
     unsigned int getSampleRate()     const { return sampleRate_; }
     unsigned int getBufferSize()     const { return bufferSize_; }
     
-    // TODO Check what we can do about constness here
-    Output&      getOutput()               { return output_; }
-    Input&       getInput(int input)       { return inputs_[input]; }
-    Parameter&   getParam(int param)       { return params_[param]; }
     
 protected:
     bool on_;
