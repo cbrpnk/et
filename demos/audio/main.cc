@@ -26,10 +26,10 @@ int main(int argc, char** argv)
     osc2.setWave(Osc::Wave::Sin).setFreq(1.0f).setLevel(0.0f);
     
     // Effects
-    bc.setBitDepth(5).setSamplingRate(16).crush(osc3);
+    bc.setBitDepth(5).setSamplingRate(16).crush(osc0);
     
     // Mixer
-    mixer.ch(0, osc0).setLevel(0, -10.0f);
+    mixer.ch(0, bc).setLevel(0, -10.0f);
     mixer.ch(1, osc1).setLevel(1, -10.0f).mute(1);
     mixer.ch(2, osc2).setLevel(2, -10.0f).mute(2);
     mixer.ch(3, bc).setLevel(3, -1.0f).mute(3);

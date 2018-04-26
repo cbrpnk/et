@@ -29,11 +29,11 @@ void BitCrusher::process()
             unsigned int depth = 0xFFFFFFFF >>
                                 (32 - (int) getParam(Param::BitDepth).getVal());
             
-            unsigned int leftInt = ((lastLeft_ / 2.0f) + 0.5f) * depth;
-            unsigned int rightInt = ((lastRight_ / 2.0f) + 0.5f) * depth;
+            unsigned int leftInt = Math::map(lastLeft_, -1.0f, 1.0f, 0.0f, 1.0f) * depth;
+            unsigned int rightInt = Math::map(lastRight_, -1.0f, 1.0f, 0.0f, 1.0f) * depth;
             
-            lastLeft_ = (((float) leftInt / depth) - 0.5f) * 2.0f;
-            lastRight_ = (((float) rightInt / depth) - 0.5f) * 2.0f;
+            lastLeft_ = Math::map((float) leftInt / depth, 0.0f, 1.0f, -1.0f, 1.0f);
+            lastRight_ = Math::map((float) rightInt / depth, 0.0f, 1.0f, -1.0f, 1.0f);
         }
         
         output_.setSample(Buffer::Channel::Left, i, lastLeft_);
