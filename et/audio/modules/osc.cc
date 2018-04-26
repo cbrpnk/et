@@ -131,57 +131,67 @@ Osc& Osc::setWave(Wave w)
 
 void Osc::process()
 {
-    float volume = dbToVolume(getParam(Param::Level).getVal());
-    
     for(unsigned int i=0; i<bufferSize_; ++i) {
+        float volume = dbToVolume(getParam(Param::Level).getVal());
         float val = 0;
         
-        if(getParam(Param::Wave).getVal() != static_cast<unsigned int>(Wave::Pulse)) {
-            val = waveTable_[(int) ((phase_/Math::Tau)*waveTableSize)];
-        } else {
-            float pw = 0.0f;
-            
-            // Pwm
-            if(getInput(In::Pwm).isConnected()) {
-                pw = (getInput(In::Pwm).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
-                // Remap to correct PulseWidth bounds
-                pw *= getParam(Param::PulseWidth).getMax()
-                      - getParam(Param::PulseWidth).getMin();
-                pw += getParam(Param::PulseWidth).getMin();
-            } else {
-                pw = getParam(Param::PulseWidth).getVal();
-            }
-            
-            // Phased position in the wavetable
-            float pos1 = phase_/Math::Tau;
-            float pos2 = pos1 + pw;
-            if(pos2 > 1) pos2 -= 1; // Bound
-            
-            val = waveTable_[(int) (pos1*waveTableSize)];
-            val -= waveTable_[(int) (pos2*waveTableSize)];
-        }
-        val *= volume;
-        
-        phase_ += (getParam(Param::Freq).getVal() * Math::Tau) / sampleRate_;
+        // Fm
         if(getInput(In::Fm).isConnected()) {
             phase_ += (getParam(Param::FmAmt).getVal() *
                             getInput(In::Fm).getSample(Buffer::Channel::Left, i));
-        }
-        // TODO Checkout if we can do the same trick used for PWM phase
-        while(phase_ >= Math::Tau) {
-            phase_ -= Math::Tau;
-        }
-        while(phase_ < 0) {
-            phase_ += Math::Tau;
+            // Bound [0, 1]
+            phase_ = Math::fmod(Math::fmod(phase_, 1.0f) + 1.0f, 1.0f);
         }
         
+        // Am
         if(getInput(In::Am).isConnected()) {
-            val *= (getInput(In::Am).getSample(Buffer::Channel::Left, i) + 1.0f) / 2.0f;
+            volume *= Math::map(getInput(In::Am).getSample(Buffer::Channel::Left, i),
+                      -1.0f, 1.0f, 0.0f, 1.0f);
         }
         
+        // Get interpolated value from wavetable
+        // TODO interpolation
+        unsigned int quantizedPos = samplePos(phase_);
+        
+        // Set sample value
+        if(getParam(Param::Wave).getVal() != static_cast<unsigned int>(Wave::Pulse)) {
+            // Normal
+            val = waveTable_[quantizedPos];
+        } else {
+            // Pulse wave
+            val = pulseWave(i, quantizedPos);
+        }
+        
+        // Update phase and bound [0, 1]
+        phase_ += getParam(Param::Freq).getVal() / sampleRate_;
+        phase_ = phase_ - (long) phase_;
+        
+        // Output
+        val *= volume;
         output_.setSample(Buffer::Channel::Left, i, val);
         output_.setSample(Buffer::Channel::Right, i, val);
     }
+}
+
+float Osc::pulseWave(unsigned int i, unsigned int samplePos) {
+    float val = 0.0f;
+    float pw = 0.0f;
+    
+    // Pwm
+    if(getInput(In::Pwm).isConnected()) {
+        pw = Math::map(getInput(In::Pwm).getSample(Buffer::Channel::Left, i), -1.0f, 1.0f,
+        getParam(Param::PulseWidth).getMin(), getParam(Param::PulseWidth).getMax());
+    } else {
+        pw = getParam(Param::PulseWidth).getVal();
+    }
+    
+    unsigned int pos1 = samplePos;
+    unsigned int pos2 = (unsigned int)(pos1 + pw*(waveTableSize-1)) % waveTableSize;
+    
+    val = waveTable_[pos1];
+    val -= waveTable_[pos2];
+    
+    return val;
 }
 
 } // namespace Audio

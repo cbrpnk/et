@@ -18,6 +18,14 @@ unsigned int TEST_FUNCTIONS() {
         eq({{clamp(-10, 0, 10), 0}, {clamp(4, 0, 10), 4}, {clamp(20, 0, 10), 10}});
     });
     
+    unit.add("map", []() {
+        eq({
+            {map(2, 0, 4, 0, 100), 50},
+            {map(-1, -20, 0, 0, 100), 95},
+            {map(0, -100, 100, 0, 4), 2}
+        });
+    });
+    
     unit.add("solveQuadratic", []() {
         QuadraticResult x = solveQuadratic(3, 4, -4);
         float eps = 0.001;

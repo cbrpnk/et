@@ -41,7 +41,7 @@ private:
     // harmonics but at the same time is probably more cache friendly. We should 
     // find a good compromise when trying to optimize the system.
     // We might get away by doing linear interpolation between frames
-    static constexpr unsigned int waveTableSize = 44100;
+    static constexpr unsigned int waveTableSize = 2048;
     static constexpr unsigned int nPartials = 64;
     static float sinWaveTable[waveTableSize];
     static float squareWaveTable[waveTableSize];
@@ -78,8 +78,17 @@ public:
     Osc& reset(Module& m) { getInput(In::Reset) << m.getOutput(); return *this; }
 
 private:
+    // Pulse waves are computed with the substraction of 2 saw waves
+    // so we moved that logic out of process
+    float pulseWave(unsigned int i, unsigned int samplePos);
+    unsigned int samplePos(float phase)
+    {
+        return static_cast<unsigned int>(phase * (waveTableSize-1));
+    }
+
+private:
     float* waveTable_;
-    float phase_;        // As a radian angle
+    float phase_;    // Betwee 0 and 1
 };
 
 } // namespace Audio
