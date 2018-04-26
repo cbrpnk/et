@@ -23,10 +23,9 @@ private:
     enum class In : unsigned int {
         Fm,            // Actually implemented as phase modulation
         Am,            // Amplitude modulation
-        Reset,         // Reset phase   TODO Implement
         Pwm            // Pulse Width Modulation
     };
-    static const unsigned int inputCount = 4;
+    static const unsigned int inputCount = 3;
     
     enum class Param : unsigned int {
         Wave,          // Waveform
@@ -73,25 +72,21 @@ public:
     
     // Return *this to allow chaining
     Osc& setWave(Wave w);
-    Osc& setFreq(float f)  { getParam(Param::Freq) = f; return *this; }
-    Osc& setLevel(float l) { getParam(Param::Level) = l; return *this; }
-    Osc& setFmAmt(float fa) { getParam(Param::FmAmt) = fa; return *this; }
+    Osc& setFreq(float f)        { getParam(Param::Freq) = f; return *this; }
+    Osc& setLevel(float l)       { getParam(Param::Level) = l; return *this; }
+    Osc& setFmAmt(float fa)      { getParam(Param::FmAmt) = fa; return *this; }
     Osc& setPulseWidth(float pw) { getParam(Param::PulseWidth) = pw; return *this; }
     
-    Osc& fm(Module& m)    { getInput(In::Fm) << m.getOutput(); return *this; }
-    Osc& am(Module& m)    { getInput(In::Am) << m.getOutput(); return *this; }
-    Osc& pwm(Module& m)    { getInput(In::Pwm) << m.getOutput(); return *this; }
-    Osc& reset(Module& m) { getInput(In::Reset) << m.getOutput(); return *this; }
+    Osc& fm(Module& m)           { getInput(In::Fm) << m.getOutput(); return *this; }
+    Osc& am(Module& m)           { getInput(In::Am) << m.getOutput(); return *this; }
+    Osc& pwm(Module& m)          { getInput(In::Pwm) << m.getOutput(); return *this; }
+    
+    Osc& resetPhase()            { phase_ = 0.0f; return *this; }
 
 private:
     // Pulse waves are computed with the substraction of 2 saw waves
     // so we moved that logic out of process
     float pulseWave(unsigned int i, float phase);
-    
-    unsigned int samplePos(float phase)
-    {
-        return static_cast<unsigned int>(phase * (waveTableSize-1));
-    }
     
     float getInterpolatedSample(float phase) {
         float samplePos = Math::fmod((phase * waveTableSize), waveTableSize);
