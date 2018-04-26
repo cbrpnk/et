@@ -175,17 +175,13 @@ void Osc::process()
                       -1.0f, 1.0f, 0.0f, 1.0f);
         }
         
-        // Get interpolated value from wavetable
-        // TODO interpolation
-        unsigned int quantizedPos = samplePos(phase_);
-        
         // Set sample value
         if(getParam(Param::Wave).getVal() != static_cast<unsigned int>(Wave::Pulse)) {
             // Normal
-            val = waveTable_[quantizedPos];
+            val = getInterpolatedSample(phase_);
         } else {
             // Pulse wave
-            val = pulseWave(i, quantizedPos);
+            val = pulseWave(i, phase_);
         }
         
         // Update phase and bound [0, 1]
@@ -199,7 +195,7 @@ void Osc::process()
     }
 }
 
-float Osc::pulseWave(unsigned int i, unsigned int samplePos) {
+float Osc::pulseWave(unsigned int i, float phase) {
     float val = 0.0f;
     float pw = 0.0f;
     
@@ -211,11 +207,8 @@ float Osc::pulseWave(unsigned int i, unsigned int samplePos) {
         pw = getParam(Param::PulseWidth).getVal();
     }
     
-    unsigned int pos1 = samplePos;
-    unsigned int pos2 = (unsigned int)(pos1 + pw*(waveTableSize-1)) % waveTableSize;
-    
-    val = waveTable_[pos1];
-    val -= waveTable_[pos2];
+    val = getInterpolatedSample(phase);
+    val -= getInterpolatedSample(Math::fmod(phase + pw, 1.0f));
     
     return val;
 }

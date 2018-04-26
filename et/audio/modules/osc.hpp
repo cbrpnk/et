@@ -86,10 +86,19 @@ public:
 private:
     // Pulse waves are computed with the substraction of 2 saw waves
     // so we moved that logic out of process
-    float pulseWave(unsigned int i, unsigned int samplePos);
+    float pulseWave(unsigned int i, float phase);
+    
     unsigned int samplePos(float phase)
     {
         return static_cast<unsigned int>(phase * (waveTableSize-1));
+    }
+    
+    float getInterpolatedSample(float phase) {
+        float samplePos = Math::fmod((phase * waveTableSize), waveTableSize);
+        float interpol = samplePos - (long) samplePos;
+        unsigned int sample1 = floor(samplePos);
+        unsigned int sample2 = (sample1 + 1) % waveTableSize;
+        return waveTable_[sample1] * (1.0f-interpol) + waveTable_[sample2] * interpol;
     }
 
 private:
