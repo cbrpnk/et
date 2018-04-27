@@ -17,11 +17,10 @@ private:
         AttackTime,    // ms
         AttackLevel,   // [0, 1]
         DecayTime,     // ms
-        DecayLevel,    // [0, 1]
-        SustainTime,   // ms
+        SustainLevel,  // [0, 1]
         ReleaseTime    // ms
     };
-    static const unsigned int paramCount = 6;
+    static const unsigned int paramCount = 5;
     
     enum class State : unsigned int {
         Off,
@@ -39,13 +38,15 @@ public:
         , state_{other.state_}
         , elapsed_{other.elapsed_}
         , level_{other.level_}
+        , attackStartLevel_{other.attackStartLevel_}
+        , releaseStartLevel_{other.releaseStartLevel_}
     {}
     ~Adsr() {}
     
     virtual void process() override;
     
-    void in(Module& m) { getInput(In::Main) << m.getOutput(); }
-    void gate(Module& m) { getInput(In::Gate) << m.getOutput(); }
+    Adsr& in(Module& m) { getInput(In::Main) << m.getOutput(); return *this; }
+    Adsr& gate(Module& m) { getInput(In::Gate) << m.getOutput(); return *this; }
     
     Adsr& setAttack(float attTime, float attLvl)
     {
@@ -54,16 +55,15 @@ public:
         return *this;
     }
     
-    Adsr& setDecay(float decTime, float decLvl)
+    Adsr& setDecay(float decTime)
     {
         getParam(Param::DecayTime).setVal(decTime);
-        getParam(Param::DecayLevel).setVal(decLvl);
         return *this;
     }
     
-    Adsr& setSustain(float susTime)
+    Adsr& setSustain(float susLvl)
     {
-        getParam(Param::SustainTime).setVal(susTime);
+        getParam(Param::SustainLevel).setVal(susLvl);
         return *this;
     }
     
@@ -79,7 +79,6 @@ private:
     // with the signal
     void attack();
     void decay();
-    void sustain();
     void release();
     
 private:
@@ -91,6 +90,10 @@ private:
     
     // Current output level;
     float level_;
+    
+    // When record the levels at the start of those state to allow ramp calculation
+    float attackStartLevel_;
+    float releaseStartLevel_;
 };
 
 } // namespace Audio

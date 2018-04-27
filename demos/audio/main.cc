@@ -22,18 +22,19 @@ int main(int argc, char** argv)
     Adsr& adsr = engine.addModule<Adsr>();
     
     // Setting and Routing
-    osc0.setWave(Osc::Wave::Square).setFreq(1.0f);
+    osc0.setWave(Osc::Wave::Square).setFreq(0.5f);
     
-    osc1.setWave(Osc::Wave::Sin).setFreq(440.0f);
-    adsr.in(osc1);
-    adsr.gate(osc0);
+    osc1.setWave(Osc::Wave::Sin).setFreq(40.0f).setFmAmt(0.005f);
+    adsr.in(osc1).gate(osc0).setRelease(1000.0f);
+    
+    osc2.setWave(Osc::Wave::Rsaw).setFreq(1.0f);
     
     // Effects
     bc.setBitDepth(5).setSamplingRate(16).crush(osc0);
     
     // Mixer
     mixer.ch(0, osc0).setLevel(0, -10.0f).mute(0);
-    mixer.ch(1, adsr).setLevel(1, -10.0f);
+    mixer.ch(1, adsr).setLevel(1, -1.0f);
     mixer.ch(2, osc2).setLevel(2, -10.0f).mute(2);
     mixer.ch(3, bc).setLevel(3, -1.0f).mute(3);
     
