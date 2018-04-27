@@ -18,25 +18,17 @@ int main(int argc, char** argv)
     Osc& osc2 = engine.addModule<Osc>();
     Osc& osc3 = engine.addModule<Osc>();
     Osc& osc4 = engine.addModule<Osc>();
+    Osc& osc5 = engine.addModule<Osc>();
     BitCrusher& bc = engine.addModule<BitCrusher>();
     Adsr& adsr = engine.addModule<Adsr>();
+    Adsr& adsr1 = engine.addModule<Adsr>();
     
     // Setting and Routing
-    osc0.setWave(Osc::Wave::Square).setFreq(0.5f);
-    
-    osc1.setWave(Osc::Wave::Sin).setFreq(40.0f).setFmAmt(0.005f);
-    adsr.in(osc1).gate(osc0).setRelease(1000.0f);
-    
-    osc2.setWave(Osc::Wave::Rsaw).setFreq(1.0f);
-    
-    // Effects
-    bc.setBitDepth(5).setSamplingRate(16).crush(osc0);
-    
-    // Mixer
-    mixer.ch(0, osc0).setLevel(0, -10.0f).mute(0);
-    mixer.ch(1, adsr).setLevel(1, -1.0f);
-    mixer.ch(2, osc2).setLevel(2, -10.0f).mute(2);
-    mixer.ch(3, bc).setLevel(3, -1.0f).mute(3);
+    osc0.setFreq(1.0f);
+    Op& op = engine.addModule<Op>();
+    op.getOsc().setFreq(120.0f);
+    op.getAdsr().gate(osc0).setRelease(10);
+    mixer.ch(0, op).setLevel(0, -10.0f);
     
     // Play 
     engine.output(mixer);
