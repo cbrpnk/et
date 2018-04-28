@@ -1,7 +1,7 @@
 demos/audio/build
 demos/graph/build
 tests/build
-ext/portaudio
+ext/
 
 # Images
 *.ppm

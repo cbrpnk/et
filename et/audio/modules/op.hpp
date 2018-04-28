@@ -13,15 +13,8 @@ namespace Audio {
 
 class Op : public Module {
 private:
-    enum class In : unsigned int {
-        Dummy // TODO Remove me
-    };
-    static const unsigned int inputCount = 1;
-    
-    enum class Param : unsigned int {
-        Dummy // TODO Remove me
-    };
-    static const unsigned int parameterCount = 1;
+    static const unsigned int inputCount = 0;
+    static const unsigned int parameterCount = 0;
     
 public:
     

@@ -15,13 +15,11 @@ int main(int argc, char** argv)
     Mixer& mixer = engine.addModule<Mixer>();
     Osc& osc0 = engine.addModule<Osc>();
     Op& op = engine.addModule<Op>();
-    BitCrusher& bc = engine.addModule<BitCrusher>();
     
     // Setting and Routing
     osc0.freq(1.0f);
-    op.freq(120.0f).gate(osc0).release(10);
-    bc.crush(op).bitDepth(32).samplingRate(128);
-    mixer.ch(0, bc).level(0, -10.0f);
+    op.freq(1500.0f).gate(osc0).release(10);
+    mixer.ch(0, op).level(0, -10.0f);
     
     // Play 
     engine.output(mixer);
