@@ -95,13 +95,13 @@ void Osc::generateNoiseWaveTables()
 }
 
 Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
-         Wave wave, float frequency, dB level)
+         Wave w, float frequency, dB level)
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , waveTable_{nullptr}
     , phase_{0.0f}
 {
     getParam(Param::Wave).setRange(0.0f, waveCount-1);
-    setWave(wave);
+    wave(w);
     
     getParam(Param::Freq).setRange(0.0f, 22000.0f);
     getParam(Param::Freq) = frequency;
@@ -122,7 +122,7 @@ Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
     }
 }
 
-Osc& Osc::setWave(Wave w)
+Osc& Osc::wave(Wave w)
 {
     getParam(Param::Wave) = static_cast<unsigned int>(w);
     

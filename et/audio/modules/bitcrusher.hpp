@@ -30,13 +30,13 @@ public:
     
     virtual void process() override;
     
-    BitCrusher& setBitDepth(unsigned int bd)
+    BitCrusher& bitDepth(unsigned int bd)
     {
         getParam(Param::BitDepth).setVal(bd);
         return *this;
     }
     
-    BitCrusher& setSamplingRate(unsigned int sr)
+    BitCrusher& samplingRate(unsigned int sr)
     {
         getParam(Param::SamplingRate).setVal(sr);
         return *this;

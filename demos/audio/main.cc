@@ -14,21 +14,14 @@ int main(int argc, char** argv)
     // Create modules
     Mixer& mixer = engine.addModule<Mixer>();
     Osc& osc0 = engine.addModule<Osc>();
-    Osc& osc1 = engine.addModule<Osc>();
-    Osc& osc2 = engine.addModule<Osc>();
-    Osc& osc3 = engine.addModule<Osc>();
-    Osc& osc4 = engine.addModule<Osc>();
-    Osc& osc5 = engine.addModule<Osc>();
+    Op& op = engine.addModule<Op>();
     BitCrusher& bc = engine.addModule<BitCrusher>();
-    Adsr& adsr = engine.addModule<Adsr>();
-    Adsr& adsr1 = engine.addModule<Adsr>();
     
     // Setting and Routing
-    osc0.setFreq(1.0f);
-    Op& op = engine.addModule<Op>();
-    op.getOsc().setFreq(120.0f);
-    op.getAdsr().gate(osc0).setRelease(10);
-    mixer.ch(0, op).setLevel(0, -10.0f);
+    osc0.freq(1.0f);
+    op.freq(120.0f).gate(osc0).release(10);
+    bc.crush(op).bitDepth(32).samplingRate(128);
+    mixer.ch(0, bc).level(0, -10.0f);
     
     // Play 
     engine.output(mixer);

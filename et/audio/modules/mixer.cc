@@ -82,13 +82,13 @@ Mixer& Mixer::ch(unsigned int ch, Module& m)
     return *this;
 }
 
-Mixer& Mixer::setLevel(float lvl)
+Mixer& Mixer::level(float lvl)
 {
     getParam(Param::LvlMaster).setVal(lvl);
     return *this;
 }
 
-Mixer& Mixer::setLevel(unsigned int ch, float lvl)
+Mixer& Mixer::level(unsigned int ch, float lvl)
 {
     if(ch >= 0 && ch < channelCount) {
         unsigned int i = static_cast<unsigned int>(Param::Lvl0) + ch;
@@ -97,13 +97,13 @@ Mixer& Mixer::setLevel(unsigned int ch, float lvl)
     return *this;
 }
 
-Mixer& Mixer::setPan(float pan)
+Mixer& Mixer::pan(float pan)
 {
     getParam(Param::PanMaster).setVal(pan);
     return *this;
 }
 
-Mixer& Mixer::setPan(unsigned int ch, float pan)
+Mixer& Mixer::pan(unsigned int ch, float pan)
 {
     if(ch >= 0 && ch < channelCount) {
         unsigned int i = static_cast<unsigned int>(Param::Pan0) + ch;

@@ -52,15 +52,15 @@ void Adsr::process()
         case State::Off:
             break;
         case State::Attack:
-            attack();
+            doAttack();
             break;
         case State::Decay:
-            decay();
+            doDecay();
             break;
         case State::Sustain:
             break;
         case State::Release:
-            release();
+            doRelease();
             break;
         }
         
@@ -71,7 +71,7 @@ void Adsr::process()
     }
 }
 
-void Adsr::attack()
+void Adsr::doAttack()
 {
     // Attack time in samples
     unsigned int time = getParam(Param::AttackTime).getVal()
@@ -88,7 +88,7 @@ void Adsr::attack()
     }
 }
 
-void Adsr::decay()
+void Adsr::doDecay()
 {
     unsigned time = getParam(Param::DecayTime).getVal()
                             * ((float) sampleRate_ / 1000.0f);
@@ -103,7 +103,7 @@ void Adsr::decay()
     }
 }
 
-void Adsr::release()
+void Adsr::doRelease()
 {
     // TODO Bug Release does not necessarly start at decay level
     unsigned time = getParam(Param::ReleaseTime).getVal()

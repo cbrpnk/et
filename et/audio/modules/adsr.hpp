@@ -48,26 +48,26 @@ public:
     Adsr& in(Module& m) { getInput(In::Main) << m.getOutput(); return *this; }
     Adsr& gate(Module& m) { getInput(In::Gate) << m.getOutput(); return *this; }
     
-    Adsr& setAttack(float attTime, float attLvl)
+    Adsr& attack(float attTime, float attLvl)
     {
         getParam(Param::AttackTime).setVal(attTime);
         getParam(Param::AttackLevel).setVal(attLvl);
         return *this;
     }
     
-    Adsr& setDecay(float decTime)
+    Adsr& decay(float decTime)
     {
         getParam(Param::DecayTime).setVal(decTime);
         return *this;
     }
     
-    Adsr& setSustain(float susLvl)
+    Adsr& sustain(float susLvl)
     {
         getParam(Param::SustainLevel).setVal(susLvl);
         return *this;
     }
     
-    Adsr& setRelease(float relTime)
+    Adsr& release(float relTime)
     {
         getParam(Param::ReleaseTime).setVal(relTime);
         return *this;
@@ -77,9 +77,9 @@ private:
     
     // Used internally to compute the current output factor to be multiplied
     // with the signal
-    void attack();
-    void decay();
-    void release();
+    void doAttack();
+    void doDecay();
+    void doRelease();
     
 private:
     // Current state

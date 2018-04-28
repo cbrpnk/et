@@ -54,11 +54,11 @@ public:
     
     Mixer& ch(unsigned int ch, Module& m);
     
-    Mixer& setLevel(float lvl);
-    Mixer& setLevel(unsigned int ch, float lvl);
+    Mixer& level(float lvl);
+    Mixer& level(unsigned int ch, float lvl);
     
-    Mixer& setPan(float pan);
-    Mixer& setPan(unsigned int ch, float pan);
+    Mixer& pan(float pan);
+    Mixer& pan(unsigned int ch, float pan);
    
     Mixer& mute();
     Mixer& mute(unsigned int ch);

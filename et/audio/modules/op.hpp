@@ -37,11 +37,26 @@ public:
     
     virtual void process() override;
     
-    //Op& gate(Module& m) { adsr.gate(m); return *this; }
-    Osc& getOsc() { return osc; }
-    Adsr& getAdsr() { return adsr; }
+    // Osc control
+    Op& wave(Osc::Wave w)             { osc.wave(w); return *this; }
+    Op& freq(float f)                 { osc.freq(f); return *this; }
+    Op& level(float l)                { osc.level(l); return *this; }
+    Op& fmAmt(float fa)               { osc.fmAmt(fa); return *this; }
+    Op& pulseWidth(float pw)          { osc.pulseWidth(pw); return *this; }
     
-
+    Op& fm(Module& m)                 { osc.fm(m); return *this; }
+    Op& am(Module& m)                 { osc.am(m); return *this; }
+    Op& pwm(Module& m)                { osc.pwm(m); return *this; }
+    
+    Op& resetPhase()                  { osc.resetPhase(); return *this; }
+    
+    // Adsr control
+    Op& gate(Module& m)               { adsr.gate(m); return *this; }
+    Op& attack(float time, float lvl) { adsr.attack(time, lvl); return *this; }
+    Op& decay(float time)             { adsr.decay(time); return *this; }
+    Op& sustain(float lvl)            { adsr.sustain(lvl); return *this; }
+    Op& release(float time)           { adsr.release(time); return *this; }
+    
 private:
     Osc osc;
     Adsr adsr;

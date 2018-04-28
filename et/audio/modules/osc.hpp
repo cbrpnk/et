@@ -60,7 +60,7 @@ private:
     
 public:
     Osc(unsigned int sampleRate, unsigned int bufferSize,
-        Wave wave = Wave::Sin, float frequency = 440.0f, dB level = -3.0f);
+        Wave w = Wave::Sin, float frequency = 440.0f, dB level = -3.0f);
     
     Osc(Osc&& other)
         : Module(std::move(other))
@@ -71,11 +71,11 @@ public:
     virtual void process() override;
     
     // Return *this to allow chaining
-    Osc& setWave(Wave w);
-    Osc& setFreq(float f)        { getParam(Param::Freq) = f; return *this; }
-    Osc& setLevel(float l)       { getParam(Param::Level) = l; return *this; }
-    Osc& setFmAmt(float fa)      { getParam(Param::FmAmt) = fa; return *this; }
-    Osc& setPulseWidth(float pw) { getParam(Param::PulseWidth) = pw; return *this; }
+    Osc& wave(Wave w);
+    Osc& freq(float f)        { getParam(Param::Freq) = f; return *this; }
+    Osc& level(float l)       { getParam(Param::Level) = l; return *this; }
+    Osc& fmAmt(float fa)      { getParam(Param::FmAmt) = fa; return *this; }
+    Osc& pulseWidth(float pw) { getParam(Param::PulseWidth) = pw; return *this; }
     
     Osc& fm(Module& m)           { getInput(In::Fm) << m.getOutput(); return *this; }
     Osc& am(Module& m)           { getInput(In::Am) << m.getOutput(); return *this; }
