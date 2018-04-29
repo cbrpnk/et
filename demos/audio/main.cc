@@ -19,7 +19,7 @@ int main(int argc, char** argv)
     // Setting and Routing
     osc0.freq(1.0f);
     op.freq(1500.0f).gate(osc0).release(10);
-    mixer.ch(0, op).level(0, -10.0f);
+    mixer.ch(0, op).level(0, -80.0f);
     
     // Play 
     engine.output(mixer);

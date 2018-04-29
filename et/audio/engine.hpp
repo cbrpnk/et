@@ -6,6 +6,7 @@
 
 #include "backends/jack_backend.hpp"
 #include "backends/portaudio_backend.hpp"
+#include "midi/midi_io.hpp"
 #include "module.hpp"
 #include "buffer.hpp"
 
@@ -66,6 +67,8 @@ private:
         uint64_t playHead;
     };
     Transport transport_;
+    
+    std::unique_ptr<MidiIo> midiIo_;
     
     // It's important the backend_ is initialized last as it depends on
     // some of the previously declared data

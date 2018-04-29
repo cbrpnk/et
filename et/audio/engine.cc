@@ -17,10 +17,9 @@ Engine::Engine(unsigned int bufferSize)
 
 bool Engine::init()
 {
+    // Audio
     backend_ = std::make_unique<PortaudioBackend>(*this, 0, 2, bufferSize_);
-    if(!backend_->init()) {
-        return false;
-    }
+    if(!backend_->init()) return false;
     // TODO: Choose audio device intelligently
     // for now the engine will try to prioritise low latency apis but the choice 
     // should be left to the user
@@ -33,8 +32,13 @@ bool Engine::init()
     }
     std::cout << backend_->getDeviceName(backend_->getDevice()) << '\n';
     sampleRate_ = backend_->getSampleRate();
-    initialized_ = true;
     
+    // Midi
+    midiIo_ = std::make_unique<MidiIo>();
+    if(!midiIo_->init()) return false;
+    
+    // All done
+    initialized_ = true;
     return initialized_;
 }
 
