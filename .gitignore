@@ -1,5 +1,6 @@
 demos/audio/build
 demos/graph/build
+demos/ring_buffer/build
 tests/build
 ext/
 
