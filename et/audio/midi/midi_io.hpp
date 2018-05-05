@@ -1,4 +1,5 @@
 #include "../../../ext/rtmidi/RtMidi.h"
+#include "mem/ring_buffer.hpp"
 
 namespace Et {
 namespace Audio {
@@ -26,13 +27,15 @@ public:
     ~MidiIo() {}
     
     bool init();
-    std::vector<MidiMessage> getMessageQueue();
-    
-    static void DummyMidiCallback(double deltaTime, std::vector<unsigned char>* message,
+    bool getNextMessage(MidiMessage& message);
+
+    static void callback(double deltaTime, std::vector<unsigned char>* message,
                                   void* userData);
 
 private:
+    bool initialized_;
     RtMidiIn midiIn_;
+    Mem::RingBuffer<MidiMessage> incommingQueue_;
 };
 
 }} // namespace Et::Audio

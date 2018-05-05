@@ -4,7 +4,9 @@ namespace Et {
 namespace Audio {
 
 MidiIo::MidiIo()
-    : midiIn_()
+    : initialized_{false}
+    , midiIn_()
+    , incommingQueue_(100)
 {}
 
 bool MidiIo::init()
@@ -14,23 +16,21 @@ bool MidiIo::init()
     
     // TODO Leave the choice to the user
     std::cout << midiIn_.getPortName(1) << '\n';
-    midiIn_.openPort(1);
-    midiIn_.setCallback(&DummyMidiCallback);
+    midiIn_.openPort(0);
+    midiIn_.setCallback(&callback);
     midiIn_.ignoreTypes(false, false, false);
     
-    return true;
-}
-
-std::vector<MidiMessage> MidiIo::getMessageQueue()
-{
-    std::vector<unsigned char> rawMessage;
-    double detlaTime = midiIn_.getMessage(&rawMessage);
+    initialized_ = true;
     
-    // TODO Dummy
-    return std::vector<MidiMessage>();
+    return initialized_;
 }
 
-void MidiIo::DummyMidiCallback(double deltaTime, std::vector<unsigned char>* message,
+bool MidiIo::getNextMessage(MidiMessage& message)
+{
+    return incommingQueue_.pop(message);
+}
+
+void MidiIo::callback(double deltaTime, std::vector<unsigned char>* message,
                               void* userData)
 {
     MidiMessage midiMessage;
