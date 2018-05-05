@@ -82,9 +82,9 @@ Mixer& Mixer::ch(unsigned int ch, Module& m)
     return *this;
 }
 
-Mixer& Mixer::level(float lvl)
+Mixer& Mixer::level(dB lvl)
 {
-    getParam(Param::LvlMaster).setVal(lvl);
+    getParam(Param::LvlMaster).setVal(dbToVolume(lvl));
     return *this;
 }
 
@@ -148,6 +148,7 @@ Mixer& Mixer::solo(unsigned int ch)
         if(i == ch) unmute(i);
         else mute(i);
     }
+    return *this;
 }
 
 } // namespace Audio

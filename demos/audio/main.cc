@@ -6,8 +6,6 @@ using namespace Et::Audio;
 
 int main(int argc, char** argv)
 {
-    // TODO Oscilator (Wave::Square) pulseWidth
-    
     Engine engine;
     if(!engine.init()) return -1;
     
@@ -19,7 +17,7 @@ int main(int argc, char** argv)
     // Setting and Routing
     osc0.freq(1.0f);
     op.freq(1500.0f).gate(osc0).release(10);
-    mixer.ch(0, op).level(0, -80.0f);
+    mixer.ch(0, op).level(0, -20.0f);
     
     // Play 
     engine.output(mixer);

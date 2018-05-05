@@ -61,7 +61,7 @@ private:
     std::vector<std::unique_ptr<Module>> modules_;
     
     // Pointer to module
-    Output* output_;
+   Output* output_;
     
     struct Transport {
         bool playing;

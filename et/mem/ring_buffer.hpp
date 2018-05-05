@@ -41,7 +41,7 @@ public:
     }
     
 private:
-    // number of element
+    // number of elements
     unsigned int size_;
     // Read and write position in buff_ will always increment and be modulo with size_
     std::atomic<std::uint64_t> read_;

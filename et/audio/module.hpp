@@ -41,7 +41,6 @@ public:
         return inputs_[static_cast<unsigned int>(in)];
     }
     
-    // TODO Check what we can do about constness here
     Output& getOutput() { return output_; }
     
     template <typename T>

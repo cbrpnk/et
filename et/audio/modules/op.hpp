@@ -33,7 +33,7 @@ public:
     // Osc control
     Op& wave(Osc::Wave w)             { osc.wave(w); return *this; }
     Op& freq(float f)                 { osc.freq(f); return *this; }
-    Op& level(float l)                { osc.level(l); return *this; }
+    Op& level(dB l)                   { osc.level(l); return *this; }
     Op& fmAmt(float fa)               { osc.fmAmt(fa); return *this; }
     Op& pulseWidth(float pw)          { osc.pulseWidth(pw); return *this; }
     

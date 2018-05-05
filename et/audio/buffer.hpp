@@ -3,6 +3,7 @@
 #include <memory>
 #include <cstring>
 #include <iostream>
+#include <cassert>
 
 #include "mem/buffer.hpp"
 
@@ -11,7 +12,6 @@ namespace Audio {
 
 // TODO: Put this in config
 typedef float SampleType;
-
 
 ///////////////////////////////////////////////////////////////////////////////
 class Buffer : public Mem::Buffer<SampleType>
@@ -46,13 +46,11 @@ public:
     
     Buffer& operator+=(Buffer& other)
     {
-        // TODO Assert
-        if(size_ == other.size_) {
-            for(unsigned int i=0; i<size_; ++i) {
-                buffer_[i] += other.buffer_[i];
-                if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
-                else if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
-            }
+        assert(size_ == other.size_);
+        for(unsigned int i=0; i<size_; ++i) {
+            buffer_[i] += other.buffer_[i];
+            if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
+            else if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
         }
         return *this;
     }
@@ -67,10 +65,8 @@ public:
     
     SampleType getSample(Channel ch, unsigned int sample)
     {
-        // TODO Assert
-        if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
-            return buffer_[ch * length_ + sample];
-        }
+        assert(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_);
+        return buffer_[ch * length_ + sample];
     }
     
     SampleType* getChannel(Channel ch)
@@ -80,19 +76,15 @@ public:
     
     void setSample(Channel ch, unsigned int sample, SampleType value)
     {
-        // TODO Assert
-        if(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_) {
-            if(value >= -1.0f && value <= 1.0f) {
-                buffer_[ch * length_ + sample] = value;
-            }
+        assert(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_);
+        if(value >= -1.0f && value <= 1.0f) {
+            buffer_[ch * length_ + sample] = value;
         }
     }
     
     void set(float v) {
-        // TODO assert
-        if(v >= -1.0f && v <= 1.0f) {
-            for(unsigned int i=0; i<size_; ++i) buffer_[i] = v;
-        }
+        assert(v >= -1.0f && v <= 1.0f);
+        for(unsigned int i=0; i<size_; ++i) buffer_[i] = v;
     }
     void silence() { set(0.0f); }
     

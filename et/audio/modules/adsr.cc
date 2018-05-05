@@ -1,9 +1,8 @@
 #include "adsr.hpp"
+#include "audio/db.hpp"
 
 namespace Et {
 namespace Audio {
-
-// TODO Levels in dB not in volume
 
 Adsr::Adsr(unsigned int sampleRate, unsigned int bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
@@ -79,7 +78,6 @@ void Adsr::doAttack()
     float targetLevel = getParam(Param::AttackLevel).getVal();
     
     if(elapsed_ <= time) {
-        //level_ = ((float) elapsed_ / time) * targetLevel;
         level_ = Math::map(((float) elapsed_ / time), 0.0f, 1.0f, attackStartLevel_,
                  targetLevel);
     } else {
@@ -105,7 +103,6 @@ void Adsr::doDecay()
 
 void Adsr::doRelease()
 {
-    // TODO Bug Release does not necessarly start at decay level
     unsigned time = getParam(Param::ReleaseTime).getVal()
                             * ((float) sampleRate_ / 1000.0f);
     

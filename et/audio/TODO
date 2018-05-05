@@ -6,5 +6,3 @@ Investigate the possibility of specifying a modulation range on
 parameters
 
 Alocate objected from a memory pool?
-
-Module::Process shoudl be protected, and tick(time) souhd maybe renamed process(time)
