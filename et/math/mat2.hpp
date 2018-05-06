@@ -33,8 +33,7 @@ public:
     
     Vec2<T>& operator[](const int i)
     {
-        assert(i>=0 && i<2);
-        return mat[i];
+        return const_cast<Vec2<T>&>(static_cast<const Mat2<T>&>(*this)[i]);
     }
     
     Mat2<T>& operator=(const Mat2<T>& m)

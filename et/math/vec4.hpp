@@ -44,16 +44,7 @@ public:
     
     T& operator[](const int i)
     {
-        assert(i>=0 && i<4);
-        switch(i) {
-        case 0:
-            return x;
-        case 1:
-            return y;
-        case 2:
-            return z;
-        }
-        return w;
+        return const_cast<T&>(static_cast<const Vec4&>(*this)[i]);
     }
     
     Vec4<T>& operator=(const Vec4<T>& v)

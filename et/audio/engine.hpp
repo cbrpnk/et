@@ -61,13 +61,20 @@ private:
     std::vector<std::unique_ptr<Module>> modules_;
     
     // Pointer to module
-   Output* output_;
+    Output* output_;
     
     struct Transport {
         bool playing;
         uint64_t playHead;
     };
     Transport transport_;
+    
+    struct MidiTimeSignature {
+        unsigned int beat;
+        unsigned int bar;
+    } midiTimeSignature_;
+    
+    double bpm_;
     
     MidiTimingInfo midiTiming;
     std::unique_ptr<MidiIo> midiIo_;

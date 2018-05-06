@@ -38,8 +38,7 @@ public:
     
     Vec4<T>& operator[](const int i)
     {
-        assert(i>=0 && i<4);
-        return mat[i];
+        return const_cast<Vec4<T>&>(static_cast<Mat4<T>&>(*this)[i]);
     }
     
     Mat4<T>& operator=(const Mat4<T>& m)

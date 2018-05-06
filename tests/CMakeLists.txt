@@ -8,7 +8,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COMPILE_FLAGS}")
 #SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_LINK_FLAGS}")
 
 file(GLOB_RECURSE ET_LIB "../et/*.cc")
+file(GLOB_RECURSE RTMIDI_LIB "../ext/rtmidi/RtMidi.cpp")
 file(GLOB_RECURSE TESTS "./*.cc")
 
-add_executable(run_tests ${ET_LIB} ${TESTS})
+add_executable(run_tests ${ET_LIB} ${RTMIDI_LIB} ${TESTS})
 target_link_libraries(run_tests LINK_PUBLIC portaudio jack m rt pthread)

@@ -38,10 +38,7 @@ public:
     
     T& operator[](const int i)
     {
-        assert(i>=0 && i<2);
-        if(i == 0)
-            return x;
-        return y;
+        return const_cast<T&>(static_cast<const Vec2&>(*this)[i]);
     }
     
     Vec2<T>& operator=(const Vec2<T>& v)

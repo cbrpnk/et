@@ -41,14 +41,7 @@ public:
     
     T& operator[](const int i)
     {
-        assert(i>=0 && i<3);
-        switch(i) {
-        case 0:
-            return x;
-        case 1:
-            return y;
-        }
-        return z;
+        return const_cast<T&>(static_cast<const Vec3&>(*this)[i]);
     }
     
     Vec3<T>& operator=(const Vec3<T>& v)

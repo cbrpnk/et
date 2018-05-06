@@ -35,8 +35,7 @@ public:
     
     Vec3<T>& operator[](const int i)
     {
-        assert(i>=0 && i<3);
-        return mat[i];
+        return const_cast<Vec3<T>&>(static_cast<const Mat3<T>&>(*this)[i]);
     }
     
     Mat3<T>& operator=(const Mat3<T>& m)
