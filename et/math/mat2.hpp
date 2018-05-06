@@ -67,22 +67,22 @@ public:
         return *this;
     }
     
-    Mat2<T> operator+(const Mat2<T>& m) const
+    const Mat2<T> operator+(const Mat2<T>& m) const
     {
         return Mat2<T>(mat[0]+m[0], mat[1]+m[1]);
     }
     
-    Mat2<T> operator-(const Mat2<T>& m) const
+    const Mat2<T> operator-(const Mat2<T>& m) const
     {
         return Mat2<T>(mat[0]-m[0], mat[1]-m[1]);
     }
     
-    Mat2<T> operator*(const Mat2<T>& m) const
+    const Mat2<T> operator*(const Mat2<T>& m) const
     {
         return Mat2<T>(*this*m[0], *this*m[1]);
     }
     
-    Vec2<T> operator*(const Vec2<T>& v) const
+    const Vec2<T> operator*(const Vec2<T>& v) const
     {
         return Vec2<T>(
             (mat[0].x*v.x+mat[1].x*v.y),
@@ -90,7 +90,7 @@ public:
         );
     }
     
-    Mat2<T> operator*(const T s) const
+    const Mat2<T> operator*(const T s) const
     {
         return Mat2<T>(mat[0]*s, mat[1]*s);
     }

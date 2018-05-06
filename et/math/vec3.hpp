@@ -76,27 +76,27 @@ public:
         return *this;
     }
     
-    Vec3<T> operator+(const Vec3<T>& v) const
+    const Vec3<T> operator+(const Vec3<T>& v) const
     {
         return Vec3<T>(x + v.x, y + v.y, z + v.z);
     }
     
-    Vec3<T> operator-(const Vec3<T>& v) const
+    const Vec3<T> operator-(const Vec3<T>& v) const
     {
         return Vec3<T>(x - v.x, y - v.y, z - v.z);
     }
     
-    T operator*(const Vec3<T>& v) const
+    const T operator*(const Vec3<T>& v) const
     {
         return x*v.x + y*v.y + z*v.z;
     }
     
-    Vec3<T> operator*(const T s) const
+    const Vec3<T> operator*(const T s) const
     {
         return Vec3<T>(x*s, y*s, z*s);
     }
     
-    Vec3<T> operator/(const T s) const
+    const Vec3<T> operator/(const T s) const
     {
         return Vec3<T>(x/s, y/s, z/s);
     }

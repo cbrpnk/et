@@ -70,22 +70,22 @@ public:
         return *this;
     }
     
-    Mat3<T> operator+(const Mat3<T>& m) const
+    const Mat3<T> operator+(const Mat3<T>& m) const
     {
         return Mat3<T>(mat[0]+m[0], mat[1]+m[1], mat[2]+m[2]);
     }
     
-    Mat3<T> operator-(const Mat3<T>& m) const
+    const Mat3<T> operator-(const Mat3<T>& m) const
     {
         return Mat3<T>(mat[0]-m[0], mat[1]-m[1], mat[2]-m[2]);
     }
     
-    Mat3<T> operator*(const Mat3<T>& m) const
+    const Mat3<T> operator*(const Mat3<T>& m) const
     {
         return Mat3<T>(*this*m[0], *this*m[1], *this*m[2]);
     }
     
-    Vec3<T> operator*(const Vec3<T>& v) const
+    const Vec3<T> operator*(const Vec3<T>& v) const
     {
         return Vec3<T>(
             (mat[0].x*v.x + mat[1].x*v.y + mat[2].x*v.z),
@@ -94,7 +94,7 @@ public:
         );
     }
     
-    Mat3<T> operator*(const T s) const
+    const Mat3<T> operator*(const T s) const
     {
         return Mat3<T>(mat[0]*s, mat[1]*s, mat[2]*s);
     }

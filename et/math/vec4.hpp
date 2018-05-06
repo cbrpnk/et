@@ -80,27 +80,27 @@ public:
         return *this;
     }
     
-    Vec4<T> operator+(const Vec4<T>& v) const
+    const Vec4<T> operator+(const Vec4<T>& v) const
     {
         return Vec4<T>(x + v.x, y + v.y, z + v.z, w + v.w);
     }
     
-    Vec4<T> operator-(const Vec4<T>& v) const
+    const Vec4<T> operator-(const Vec4<T>& v) const
     {
         return Vec4<T>(x - v.x, y - v.y, z - v.z, w - v.w);
     }
     
-    T operator*(const Vec4<T>& v) const
+    const T operator*(const Vec4<T>& v) const
     {
         return x*v.x + y*v.y + z*v.z + w*v.w;
     }
     
-    Vec4<T> operator*(const T s) const
+    const Vec4<T> operator*(const T s) const
     {
         return Vec4<T>(x*s, y*s, z*s, w*s);
     }
     
-    Vec4<T> operator/(const T s) const
+    const Vec4<T> operator/(const T s) const
     {
         return Vec4<T>(x/s, y/s, z/s, w/s);
     }

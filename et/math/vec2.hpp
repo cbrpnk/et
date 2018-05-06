@@ -71,27 +71,27 @@ public:
         return *this;
     }
     
-    Vec2<T> operator+(const Vec2<T>& v) const
+    const Vec2<T> operator+(const Vec2<T>& v) const
     {
         return Vec2<T>(x + v.x, y + v.y);
     }
     
-    Vec2<T> operator-(const Vec2<T>& v) const
+    const Vec2<T> operator-(const Vec2<T>& v) const
     {
         return Vec2<T>(x - v.x, y - v.y);
     }
     
-    T operator*(const Vec2<T>& v) const
+    const T operator*(const Vec2<T>& v) const
     {
         return x*v.x + y*v.y;
     }
     
-    Vec2<T> operator*(const T s) const
+    const Vec2<T> operator*(const T s) const
     {
         return Vec2<T>(x*s, y*s);
     }
     
-    Vec2<T> operator/(const T s) const
+    const Vec2<T> operator/(const T s) const
     {
         return Vec2<T>(x/s, y/s);
     }
