@@ -4,6 +4,8 @@
 namespace Et {
 namespace Audio {
 
+// TODO Treat NoteOn with velocity 0 as a NoteOff
+
 struct MidiMessage {
     double delta;
     enum class Command : unsigned char {

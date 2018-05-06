@@ -33,7 +33,7 @@ public:
         other.buffer_ = nullptr;
     }
     
-    ~Buffer() { delete[] buffer_; }
+    virtual ~Buffer() { delete[] buffer_; }
     
     void alloc(unsigned int size) {
         if(!allocated_) {

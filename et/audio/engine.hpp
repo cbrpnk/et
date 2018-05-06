@@ -8,7 +8,7 @@
 #include "backends/portaudio_backend.hpp"
 #include "midi/midi_io.hpp"
 #include "midi/midi_timing_info.hpp"
-#include "module.hpp"
+#include "modules/module.hpp"
 #include "buffer.hpp"
 
 namespace Et {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "audio/module.hpp"
+#include "module.hpp"
 #include "audio/db.hpp"
 
 namespace Et {
@@ -73,7 +73,7 @@ public:
     // Return *this to allow chaining
     Osc& wave(Wave w);
     Osc& freq(float f)        { getParam(Param::Freq) = f; return *this; }
-    Osc& level(dB l)       { getParam(Param::Level) = l; return *this; }
+    Osc& level(dB l)          { getParam(Param::Level) = l; return *this; }
     Osc& fmAmt(float fa)      { getParam(Param::FmAmt) = fa; return *this; }
     Osc& pulseWidth(float pw) { getParam(Param::PulseWidth) = pw; return *this; }
     

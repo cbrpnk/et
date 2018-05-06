@@ -1,6 +1,5 @@
 #include "port.hpp"
 #include "module.hpp"
-#include "buffer.hpp"
 
 namespace Et {
 namespace Audio {

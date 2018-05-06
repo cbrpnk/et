@@ -1,5 +1,4 @@
 #include "input.hpp"
-#include "buffer.hpp"
 #include "output.hpp"
 #include "module.hpp"
 

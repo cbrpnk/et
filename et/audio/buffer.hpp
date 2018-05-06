@@ -44,7 +44,7 @@ public:
         other.length_    = 0;
     }
     
-    Buffer& operator+=(Buffer& other)
+    Buffer& operator+=(const Buffer& other)
     {
         assert(size_ == other.size_);
         for(unsigned int i=0; i<size_; ++i) {

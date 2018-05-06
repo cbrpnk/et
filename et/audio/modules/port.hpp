@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "buffer.hpp"
+#include "audio/buffer.hpp"
 
 namespace Et {
 namespace Audio {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "audio/module.hpp"
+#include "module.hpp"
 #include "osc.hpp"
 #include "adsr.hpp"
 

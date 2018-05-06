@@ -1,6 +1,6 @@
 #pragma once
 
-#include "audio/module.hpp"
+#include "module.hpp"
 #include "op.hpp"
 
 namespace Et {
