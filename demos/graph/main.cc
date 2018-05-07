@@ -7,7 +7,7 @@ int main(int argc, char** argv)
     using namespace Et::Math;
     
     // width, height, samplePerPixel, maxBounce
-    PathTracer pt(480, 270, 100, 100);
+    PathTracer pt(480, 270, 20, 100);
     Scene scene;
     
     Obj& camera = scene.createObj();

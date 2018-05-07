@@ -38,7 +38,7 @@ public:
     
     Vec4<T>& operator[](const int i)
     {
-        return const_cast<Vec4<T>&>(static_cast<Mat4<T>&>(*this)[i]);
+        return const_cast<Vec4<T>&>(static_cast<const Mat4<T>&>(*this)[i]);
     }
     
     Mat4<T>& operator=(const Mat4<T>& m)
