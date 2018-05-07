@@ -43,6 +43,7 @@ private:
 class SdfPlane : public Geometry {
 public:
     SdfPlane(Obj& obj, Math::Vec3<float> normal);
+    SdfPlane(Obj& obj, float normalX, float normalY, float normalZ);
     
     virtual HitRecord intersect(Ray ray) const override;
     

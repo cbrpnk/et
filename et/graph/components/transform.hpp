@@ -27,6 +27,15 @@ public:
         transform_[3].z = pos.z;
     }
     
+    Transform(Obj& obj, float x, float y, float z)
+        : Component(obj)
+        , transform_(true)
+    {
+        transform_[3].x = x;
+        transform_[3].y = y;
+        transform_[3].z = z;
+    }
+    
     virtual ~Transform() override {}
     
     virtual void update() override {}

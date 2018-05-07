@@ -82,6 +82,15 @@ SdfPlane::SdfPlane(Obj& obj, Math::Vec3<float> normal)
     }
 }
 
+SdfPlane::SdfPlane(Obj& obj, float normalX, float normalY, float normalZ)
+    : Geometry(obj)
+    , normal_(normalX, normalY, normalZ)
+{
+    if(!obj.getComponent<Transform>()) {
+        obj.addComponent<Transform>();
+    }
+}
+
 HitRecord SdfPlane::intersect(Ray ray) const
 {
     float dn = ray.direction * normal_;
