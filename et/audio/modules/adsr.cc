@@ -4,7 +4,7 @@
 namespace Et {
 namespace Audio {
 
-Adsr::Adsr(unsigned int sampleRate, unsigned int bufferSize)
+Adsr::Adsr(unsigned int sampleRate, size_t bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
     , state_{State::Off}
     , elapsed_{0}
@@ -30,7 +30,7 @@ Adsr::Adsr(unsigned int sampleRate, unsigned int bufferSize)
 
 void Adsr::process()
 {
-    for(unsigned int i=0; i<bufferSize_; ++i) {
+    for(size_t i=0; i<bufferSize_; ++i) {
         // Sample Values
         float left = getInput(In::Main).getSample(Buffer::Channel::Left, i);
         float right = getInput(In::Main).getSample(Buffer::Channel::Right, i);

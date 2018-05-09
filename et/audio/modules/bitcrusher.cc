@@ -3,7 +3,7 @@
 namespace Et {
 namespace Audio {
 
-BitCrusher::BitCrusher(unsigned int sampleRate, unsigned int bufferSize)
+BitCrusher::BitCrusher(unsigned int sampleRate, size_t bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
     , lastLeft_{0}
     , lastRight_{0}
@@ -21,7 +21,7 @@ void BitCrusher::process()
     // TODO There is a floating point exception in here
     //
     
-    for(unsigned int i=0; i<bufferSize_; ++i) {
+    for(size_t i=0; i<bufferSize_; ++i) {
         if(i % (unsigned int) getParam(Param::SamplingRate).getVal() == 0) {
             lastLeft_ = getInput(In::Main).getSample(Buffer::Channel::Left, i);
             lastRight_ = getInput(In::Main).getSample(Buffer::Channel::Right, i);

@@ -34,8 +34,8 @@ public:
     };
 
 public:
-    PortaudioBackend(Engine& engine, unsigned int nInputs, unsigned int nOutputs,
-                     unsigned int bufferSize)
+    PortaudioBackend(Engine& engine, size_t nInputs, size_t nOutputs,
+                     size_t bufferSize)
         : initialized_{false}
         , engine_{engine}
         , stream_{nullptr}
@@ -57,7 +57,7 @@ public:
                         PaStreamCallbackFlags statusFalgs, void* userData);
     
     unsigned int getSampleRate() { return sampleRate_; }
-    unsigned int getDeviceCount() { return deviceCount_; }
+    size_t       getDeviceCount() { return deviceCount_; }
     Device       getDeviceByApi(Api api);
     Device       getDevice() { return device_; }
     std::string  getDeviceName(Device device);
@@ -68,10 +68,10 @@ private:
     Engine& engine_;
     PaStream* stream_;
     int deviceCount_;
-    unsigned int nInputs_;
-    unsigned int nOutputs_;
+    size_t nInputs_;
+    size_t nOutputs_;
     unsigned int sampleRate_;
-    unsigned int bufferSize_;
+    size_t bufferSize_;
 };
 
 } // namesapce Audio

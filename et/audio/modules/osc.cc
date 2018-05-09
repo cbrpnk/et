@@ -26,7 +26,7 @@ void Osc::generateWaveTables()
 void Osc::generateSinWaveTables()
 {
     // Sin
-    for(unsigned int s=0; s<waveTableSize; ++s) {
+    for(size_t s=0; s<waveTableSize; ++s) {
         Osc::sinWaveTable[s] = Math::sin(((float) s / waveTableSize) * Math::Tau);
     }
 }
@@ -36,8 +36,8 @@ void Osc::generateSquareWaveTables()
     // Square
     // Sum odd numbered partials (1, 3, 5, 7...). Each emplitude is it's reciprocal
     // (1/1, 1/3, 1/5, 1/7).
-    for(unsigned int s=0; s<waveTableSize; ++s) {
-        for(unsigned int p=1; p<=nPartials; p+=2) {
+    for(size_t s=0; s<waveTableSize; ++s) {
+        for(size_t p=1; p<=nPartials; p+=2) {
             Osc::squareWaveTable[s] += 1.0f/p *
                 Math::sin(((float) s / waveTableSize) * Math::Tau * p);
         }
@@ -48,8 +48,8 @@ void Osc::generateSquareWaveTables()
 void Osc::generateRsawWaveTables()
 {
     // Reverse Saw
-    for(unsigned int s=0; s<waveTableSize; ++s) {
-        for(unsigned int p=1; p<=nPartials; ++p) {
+    for(size_t s=0; s<waveTableSize; ++s) {
+        for(size_t p=1; p<=nPartials; ++p) {
             Osc::rsawWaveTable[s] += (1.0f/p) *
                 Math::sin(((float) s / waveTableSize) * Math::Tau * p);
         }
@@ -61,8 +61,8 @@ void Osc::generateSawWaveTables()
 {
     // Saw
     // Sum every partials. The amplitude is the reciprocal.
-    for(unsigned int s=0; s<waveTableSize; ++s) {
-        for(unsigned int p=1; p<=nPartials; ++p) {
+    for(size_t s=0; s<waveTableSize; ++s) {
+        for(size_t p=1; p<=nPartials; ++p) {
             Osc::sawWaveTable[s] += (1.0f/p) *
                 Math::sin(((float) s / waveTableSize) * Math::Tau * p);
         }
@@ -75,8 +75,8 @@ void Osc::generateTriWaveTables()
     // Triangle
     // Sum odd partials but the amplitude is the square reciprocal and its sign 
     // alternates with each partial
-    for(unsigned int s=0; s<waveTableSize; ++s) {
-        for(unsigned int p=1; p<=nPartials; p+=2) {
+    for(size_t s=0; s<waveTableSize; ++s) {
+        for(size_t p=1; p<=nPartials; p+=2) {
             Osc::triWaveTable[s] += Math::pow(-1.0f, (p-1)/2.0f) / Math::pow(p, 2) *
                 Math::sin(((float) s / waveTableSize) *
                 Math::Tau * p);
@@ -89,12 +89,12 @@ void Osc::generateNoiseWaveTables()
 {
     // Noise
     Math::Random random;
-    for(unsigned int s=0; s<waveTableSize; ++s) {
+    for(size_t s=0; s<waveTableSize; ++s) {
         Osc::noiseWaveTable[s] = random.getFloat(-1.0f, 1.0f);
     }
 }
 
-Osc::Osc(unsigned int sampleRate, unsigned int bufferSize,
+Osc::Osc(unsigned int sampleRate, size_t bufferSize,
          Wave w, float frequency, dB level)
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
     , waveTable_{nullptr}
@@ -157,7 +157,7 @@ Osc& Osc::wave(Wave w)
 
 void Osc::process()
 {
-    for(unsigned int i=0; i<bufferSize_; ++i) {
+    for(size_t i=0; i<bufferSize_; ++i) {
         float volume = dbToVolume(getParam(Param::Level).getVal());
         float val = 0;
         
@@ -195,7 +195,7 @@ void Osc::process()
     }
 }
 
-float Osc::pulseWave(unsigned int i, float phase) {
+float Osc::pulseWave(size_t i, float phase) {
     float val = 0.0f;
     float pw = 0.0f;
     

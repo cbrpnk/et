@@ -5,7 +5,7 @@
 namespace Et {
 namespace Audio {
 
-Engine::Engine(unsigned int bufferSize)
+Engine::Engine(size_t bufferSize)
     : initialized_{false}
     , bufferSize_{bufferSize}
     , sampleRate_{0}

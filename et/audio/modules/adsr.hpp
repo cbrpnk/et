@@ -32,7 +32,7 @@ private:
 
 public:
     
-    Adsr(unsigned int sampleRate, unsigned int bufferSize);
+    Adsr(unsigned int sampleRate, size_t bufferSize);
     Adsr(Adsr&& other)
         : Module(std::move(other))
         , state_{other.state_}

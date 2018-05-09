@@ -18,7 +18,7 @@ private:
     
 public:
     
-    Op(unsigned int sampleRate, unsigned int bufferSize);
+    Op(unsigned int sampleRate, size_t bufferSize);
     
     Op(Op&& other)
         : Module(std::move(other))

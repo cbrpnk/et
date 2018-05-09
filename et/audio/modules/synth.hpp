@@ -13,7 +13,7 @@ public:
 
 public:
     
-    Synth(unsigned int sampleRate, unsigned int bufferSize);
+    Synth(unsigned int sampleRate, size_t bufferSize);
     Synth(Synth&& other)
         : Module(std::move(other))
         , voices(std::move(other.voices))

@@ -44,7 +44,7 @@ private:
     static const unsigned int paramCount = 99;
 
 public:
-    Mixer(unsigned int sampleRate, unsigned int bufferSize);
+    Mixer(unsigned int sampleRate, size_t bufferSize);
     Mixer(Mixer&& other)
         : Module(std::move(other))
     {}

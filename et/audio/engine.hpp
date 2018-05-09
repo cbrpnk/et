@@ -16,10 +16,10 @@ namespace Audio {
 
 class Engine {
 public:
-    static constexpr unsigned int kDefaultBufferSize = 256;
+    static constexpr size_t kDefaultBufferSize = 256;
     
 public:
-    Engine(unsigned int bufferSize = kDefaultBufferSize);
+    Engine(size_t bufferSize = kDefaultBufferSize);
     
     bool init();
     
@@ -50,7 +50,7 @@ private:
 private:
     bool initialized_;
     
-    unsigned int bufferSize_;
+    size_t bufferSize_;
     unsigned int sampleRate_;
     
     // We acculumate every outputProcesors_ into this and copy this

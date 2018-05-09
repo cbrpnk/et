@@ -20,7 +20,7 @@ private:
 
 public:
     
-    BitCrusher(unsigned int sampleRate, unsigned int bufferSize);
+    BitCrusher(unsigned int sampleRate, size_t bufferSize);
     BitCrusher(BitCrusher&& other)
         : Module(std::move(other))
         , lastLeft_{other.lastLeft_}

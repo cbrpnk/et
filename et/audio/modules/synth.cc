@@ -3,7 +3,7 @@
 namespace Et {
 namespace Audio {
 
-Synth::Synth(unsigned int sampleRate, unsigned int bufferSize)
+Synth::Synth(unsigned int sampleRate, size_t bufferSize)
     : Module(sampleRate, bufferSize, inputCount, parameterCount)
 {
     

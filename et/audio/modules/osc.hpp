@@ -40,8 +40,8 @@ private:
     // harmonics but at the same time is probably more cache friendly. We should 
     // find a good compromise when trying to optimize the system.
     // We might get away by doing linear interpolation between frames
-    static constexpr unsigned int waveTableSize = 2048;
-    static constexpr unsigned int nPartials = 64;
+    static constexpr size_t waveTableSize = 2048;
+    static constexpr size_t nPartials = 64;
     static float sinWaveTable[waveTableSize];
     static float squareWaveTable[waveTableSize];
     static float rsawWaveTable[waveTableSize];
@@ -59,7 +59,7 @@ private:
     static void generateNoiseWaveTables();
     
 public:
-    Osc(unsigned int sampleRate, unsigned int bufferSize,
+    Osc(unsigned int sampleRate, size_t bufferSize,
         Wave w = Wave::Sin, float frequency = 440.0f, dB level = -3.0f);
     
     Osc(Osc&& other)
@@ -86,13 +86,13 @@ public:
 private:
     // Pulse waves are computed with the substraction of 2 saw waves
     // so we moved that logic out of process
-    float pulseWave(unsigned int i, float phase);
+    float pulseWave(size_t i, float phase);
     
     float getInterpolatedSample(float phase) {
         float samplePos = Math::fmod((phase * waveTableSize), waveTableSize);
         float interpol = samplePos - (long) samplePos;
-        unsigned int sample1 = floor(samplePos);
-        unsigned int sample2 = (sample1 + 1) % waveTableSize;
+        size_t sample1 = floor(samplePos);
+        size_t sample2 = (sample1 + 1) % waveTableSize;
         return waveTable_[sample1] * (1.0f-interpol) + waveTable_[sample2] * interpol;
     }
 

@@ -14,8 +14,8 @@ namespace Audio {
 class Module {
 public:
     Module() = delete;
-    Module(unsigned int sampleRate, unsigned int bufferSize, unsigned int nInputs,
-           unsigned int nParameters);
+    Module(unsigned int sampleRate, size_t bufferSize, size_t nInputs,
+           size_t nParameters);
     
     Module(Module&& other)
         : on_{other.on_}
@@ -38,14 +38,14 @@ public:
     // The derived modules should use these to access its own inputs/params
     template <typename T>
     Input& getInput(T in) {
-        return inputs_[static_cast<unsigned int>(in)];
+        return inputs_[static_cast<size_t>(in)];
     }
     
     Output& getOutput() { return output_; }
     
     template <typename T>
     Parameter& getParam(T param) {
-        return params_[static_cast<unsigned int>(param)];
+        return params_[static_cast<size_t>(param)];
     }
     
     // On / Off
@@ -54,7 +54,7 @@ public:
     void         turnOff()                 { on_ = false; output_.buffer.silence(); }
     
     unsigned int getSampleRate()     const { return sampleRate_; }
-    unsigned int getBufferSize()     const { return bufferSize_; }
+    size_t getBufferSize()           const { return bufferSize_; }
     
     
 protected:
@@ -62,7 +62,7 @@ protected:
     // Number of samples/second
     unsigned int sampleRate_;
     // Number of samples in our input/output buffers
-    unsigned int bufferSize_;
+    size_t bufferSize_;
     
     // Sequence number of the last sample in our output_ buffer
     // It's an indication of wether our output buffer is up to date.

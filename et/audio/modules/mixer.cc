@@ -7,7 +7,7 @@
 namespace Et {
 namespace Audio {
 
-Mixer::Mixer(unsigned int sampleRate, unsigned int bufferSize)
+Mixer::Mixer(unsigned int sampleRate, size_t bufferSize)
     : Module(sampleRate, bufferSize, inputCount, paramCount)
 {
     // Levels
@@ -50,7 +50,7 @@ void Mixer::process()
     unsigned int pan0 = static_cast<unsigned int>(Param::Pan0);
     unsigned int mute0 = static_cast<unsigned int>(Param::Mute0);
     
-    for(unsigned int i=0; i<bufferSize_; ++i) {
+    for(size_t i=0; i<bufferSize_; ++i) {
         float left = 0.0f;
         float right = 0.0f;
         
