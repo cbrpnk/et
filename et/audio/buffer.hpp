@@ -11,7 +11,7 @@ namespace Et {
 namespace Audio {
 
 // TODO: Put this in config
-typedef float SampleType;
+using SampleType = float;
 
 ///////////////////////////////////////////////////////////////////////////////
 class Buffer : public Mem::Buffer<SampleType>

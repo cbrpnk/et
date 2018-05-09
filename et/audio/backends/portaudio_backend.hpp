@@ -12,8 +12,8 @@ public:
     static constexpr unsigned int kDefaultSampleRate = 44100;
     static constexpr int kInvalidDevice = -1;
     
-    typedef int Device;
-    typedef unsigned int Api;
+    using Device = int;
+    using Api    = unsigned int;
     
     // This must match the PaHostApiId enum from Portaudio
     enum ApiId {

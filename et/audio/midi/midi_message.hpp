@@ -39,6 +39,6 @@ struct MidiMessage {
     unsigned char parameter[2];
 };
 
-typedef std::vector<MidiMessage> MidiQueue;
+using MidiQueue = std::vector<MidiMessage>;
 
 }} // namespace Et::Audio
