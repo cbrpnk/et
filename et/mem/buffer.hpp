@@ -11,7 +11,7 @@ class Buffer {
 public:
     Buffer() {}
     
-    Buffer(unsigned int size)
+    Buffer(size_t size)
     {
         alloc(size);
     }
@@ -35,7 +35,7 @@ public:
     
     virtual ~Buffer() { delete[] buffer_; }
     
-    void alloc(unsigned int size) {
+    void alloc(size_t size) {
         if(!allocated_) {
             size_ = size;
             buffer_ = new T[size]();
@@ -77,7 +77,7 @@ public:
 
 protected:
     bool allocated_ = false;
-    unsigned int size_ = 0;
+    size_t size_ = 0;
     T* buffer_ = nullptr;
 };
 

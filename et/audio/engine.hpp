@@ -6,7 +6,7 @@
 
 #include "backends/jack_backend.hpp"
 #include "backends/portaudio_backend.hpp"
-#include "midi/midi_io.hpp"
+#include "midi/midi_backend.hpp"
 #include "midi/midi_timing_info.hpp"
 #include "modules/module.hpp"
 #include "buffer.hpp"
@@ -69,15 +69,8 @@ private:
     };
     Transport transport_;
     
-    struct MidiTimeSignature {
-        unsigned int beat;
-        unsigned int bar;
-    } midiTimeSignature_;
-    
-    double bpm_;
-    
-    MidiTimingInfo midiTiming;
-    std::unique_ptr<MidiIo> midiIo_;
+    MidiTimingInfo midiTimingInfo_;
+    std::unique_ptr<MidiBackend> midiBackend_;
     
     // It's important the backend_ is initialized last as it depends on
     // some of the previously declared data

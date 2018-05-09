@@ -1,6 +1,7 @@
 #pragma once
 
 struct MidiTimingInfo {
+    // Beat per minute
     double bpm;
     
     // Time signature

@@ -13,11 +13,14 @@ Engine::Engine(unsigned int bufferSize)
     , modules_()
     , output_(nullptr)
     , transport_{false, 0}
+    , midiTimingInfo_{120.0f, 4, 4}
+    , midiBackend_()
+    , backend_()
 {}
 
 bool Engine::init()
 {
-    // Audio
+    // Setup audio backend
     backend_ = std::make_unique<PortaudioBackend>(*this, 0, 2, bufferSize_);
     if(!backend_->init()) return false;
     // TODO: Choose audio device intelligently
@@ -33,9 +36,9 @@ bool Engine::init()
     std::cout << backend_->getDeviceName(backend_->getDevice()) << '\n';
     sampleRate_ = backend_->getSampleRate();
     
-    // Midi
-    midiIo_ = std::make_unique<MidiIo>();
-    if(!midiIo_->init()) return false;
+    // Setup midi backend
+    midiBackend_ = std::make_unique<MidiBackend>();
+    if(!midiBackend_->init()) return false;
     
     // All done
     initialized_ = true;

@@ -28,7 +28,7 @@ public:
     };
 public:
     Buffer();
-    Buffer(unsigned int nChannels, unsigned int length)
+    Buffer(size_t nChannels, size_t length)
         : Mem::Buffer<SampleType>(nChannels * length) // Channels are layed side-by-side
         , nChannels_{nChannels}
         , length_{length}
@@ -47,7 +47,7 @@ public:
     Buffer& operator+=(const Buffer& other)
     {
         assert(size_ == other.size_);
-        for(unsigned int i=0; i<size_; ++i) {
+        for(size_t i=0; i<size_; ++i) {
             buffer_[i] += other.buffer_[i];
             if(buffer_[i] > 1.0f) buffer_[i] = 1.0f;
             else if(buffer_[i] < -1.0f) buffer_[i] = -1.0f;
@@ -57,13 +57,13 @@ public:
     
     Buffer& operator*=(float scalar)
     {
-        for(unsigned int i=0; i<size_; ++i) {
+        for(size_t i=0; i<size_; ++i) {
             buffer_[i] *= scalar;
         }
         return *this;
     }
     
-    SampleType getSample(Channel ch, unsigned int sample)
+    SampleType getSample(Channel ch, size_t sample)
     {
         assert(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_);
         return buffer_[ch * length_ + sample];
@@ -74,7 +74,7 @@ public:
         return buffer_ + ch * length_;
     }
     
-    void setSample(Channel ch, unsigned int sample, SampleType value)
+    void setSample(Channel ch, size_t sample, SampleType value)
     {
         assert(ch >= 0 && ch <= nChannels_ && sample >=0 && sample <= length_);
         if(value >= -1.0f && value <= 1.0f) {
@@ -84,18 +84,18 @@ public:
     
     void set(float v) {
         assert(v >= -1.0f && v <= 1.0f);
-        for(unsigned int i=0; i<size_; ++i) buffer_[i] = v;
+        for(size_t i=0; i<size_; ++i) buffer_[i] = v;
     }
     void silence() { set(0.0f); }
     
-    unsigned int getChannelCount() const { return nChannels_; }
-    unsigned int getLength()       const { return length_; }
+    size_t getChannelCount() const { return nChannels_; }
+    size_t getLength()       const { return length_; }
     
 protected:
-    unsigned int nChannels_;
+    size_t nChannels_;
     // Size of a single channel, to know the size of the actual buffer, refer
     // to Mem::Buffer.size_;
-    unsigned int length_;
+    size_t length_;
 };
 
 
