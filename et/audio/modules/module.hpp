@@ -7,6 +7,7 @@
 #include "input.hpp"
 #include "output.hpp"
 #include "parameter.hpp"
+#include "audio/midi/midi_message.hpp"
 
 namespace Et {
 namespace Audio {

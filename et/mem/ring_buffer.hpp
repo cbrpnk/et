@@ -29,11 +29,11 @@ public:
         return false;
     }
     
-    bool pop(T& element)
+    bool pop(T* element)
     {
         auto pos = read_.load();
         if(pos < write_.load()) {
-            element = buff_[pos%size_];
+            *element = buff_[pos%size_];
             read_.store(pos+1);
             return true;
         }

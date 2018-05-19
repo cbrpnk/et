@@ -6,7 +6,7 @@
 
 #include "backends/jack_backend.hpp"
 #include "backends/portaudio_backend.hpp"
-#include "midi/midi_backend.hpp"
+#include "backends/rtmidi_backend.hpp"
 #include "midi/midi_timing_info.hpp"
 #include "modules/module.hpp"
 #include "buffer.hpp"
@@ -57,10 +57,14 @@ private:
     // into the backend's buffer.
     Buffer buffer_;
     
-    // List of every modules
+    // Contains current unprocessed midi input messages
+    MidiQueue midiInQueue_;
+    
+    // List of every module we own
     std::vector<std::unique_ptr<Module>> modules_;
     
-    // Pointer to module
+    // Pointer to module that's at the end of the audio chain. Its output will be copied
+    // to the soundcard buffer
     Output* output_;
     
     struct Transport {
@@ -70,7 +74,7 @@ private:
     Transport transport_;
     
     MidiTimingInfo midiTimingInfo_;
-    std::unique_ptr<MidiBackend> midiBackend_;
+    std::unique_ptr<RtMidiBackend> midiBackend_;
     
     // It's important the backend_ is initialized last as it depends on
     // some of the previously declared data

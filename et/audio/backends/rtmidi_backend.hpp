@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../ext/rtmidi/RtMidi.h"
-#include "midi_message.hpp"
+#include "audio/midi/midi_message.hpp"
 #include "mem/ring_buffer.hpp"
 
 namespace Et {
@@ -9,14 +9,14 @@ namespace Audio {
 
 // TODO Treat NoteOn with velocity 0 as a NoteOff
 
-class MidiBackend {
+class RtMidiBackend {
 public:
     
-    MidiBackend();
-    ~MidiBackend() {}
+    RtMidiBackend();
+    ~RtMidiBackend() {}
     
     bool init();
-    bool getNextMessage(MidiMessage& message);
+    bool getNextMessage(MidiMessage* message);
 
     static void callback(double deltaTime, std::vector<unsigned char>* message,
         void* userData);

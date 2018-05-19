@@ -11,7 +11,9 @@ Synth::Synth(unsigned int sampleRate, size_t bufferSize)
 
 void Synth::process()
 {
-    
+    for(size_t i=0; i<bufferSize_; ++i) {
+        
+    }
 }
 
 }} // namespace Et::Audio

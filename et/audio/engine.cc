@@ -10,6 +10,7 @@ Engine::Engine(size_t bufferSize)
     , bufferSize_{bufferSize}
     , sampleRate_{0}
     , buffer_(Buffer::Type::Stereo, bufferSize)
+    , midiInQueue_(100)
     , modules_()
     , output_(nullptr)
     , transport_{false, 0}
@@ -20,6 +21,12 @@ Engine::Engine(size_t bufferSize)
 
 bool Engine::init()
 {
+    // Setup midi backend
+    // TODO Make it such that the order of initialization does not matter
+    // Should be initialized before the audioBackend since its callback needs our data
+    midiBackend_ = std::make_unique<RtMidiBackend>();
+    if(!midiBackend_->init()) return false;
+    
     // Setup audio backend
     backend_ = std::make_unique<PortaudioBackend>(*this, 0, 2, bufferSize_);
     if(!backend_->init()) return false;
@@ -36,10 +43,6 @@ bool Engine::init()
     std::cout << backend_->getDeviceName(backend_->getDevice()) << '\n';
     sampleRate_ = backend_->getSampleRate();
     
-    // Setup midi backend
-    midiBackend_ = std::make_unique<MidiBackend>();
-    if(!midiBackend_->init()) return false;
-    
     // All done
     initialized_ = true;
     return initialized_;
@@ -53,6 +56,13 @@ void Engine::output(Module& output)
 void Engine::callback(float* leftOut, float* rightOut)
 {
     buffer_.silence();
+    
+    // Get input midi messages
+    midiInQueue_.erase(midiInQueue_.begin(), midiInQueue_.end());
+    MidiMessage midiInMessage;
+    while(midiBackend_->getNextMessage(&midiInMessage)) {
+        midiInQueue_.push_back(midiInMessage);
+    }
     
     // If playing is true we know there is at least one output module
     if(transport_.playing) {

@@ -1,39 +1,38 @@
-#include "midi_backend.hpp"
+#include "rtmidi_backend.hpp"
 
 namespace Et {
 namespace Audio {
 
-MidiBackend::MidiBackend()
+RtMidiBackend::RtMidiBackend()
     : initialized_{false}
     , midiIn_()
     , incommingQueue_(100)
 {}
 
-bool MidiBackend::init()
+bool RtMidiBackend::init()
 {
     unsigned int portCount = midiIn_.getPortCount();
     if(portCount == 0) return false;
     
     // TODO Leave the choice to the user
-    std::cout << midiIn_.getPortName(0) << '\n';
-    std::cout << portCount << '\n';
-    midiIn_.openPort(0);
-    midiIn_.setCallback(&callback);
+    std::cout << midiIn_.getPortName(1) << '\n';
+    midiIn_.openPort(1);
+    midiIn_.setCallback(&callback, this);
     midiIn_.ignoreTypes(false, false, false);
     
     initialized_ = true;
     return initialized_;
 }
 
-bool MidiBackend::getNextMessage(MidiMessage& message)
+bool RtMidiBackend::getNextMessage(MidiMessage* message)
 {
     return incommingQueue_.pop(message);
 }
 
-void MidiBackend::callback(double deltaTime, std::vector<unsigned char>* message,
+void RtMidiBackend::callback(double deltaTime, std::vector<unsigned char>* message,
     void* userData)
 {
-    MidiBackend* thisObj = static_cast<MidiBackend*>(userData);
+    RtMidiBackend* thisObj = static_cast<RtMidiBackend*>(userData);
     MidiMessage midiMessage;
     
     // DeltaTime
@@ -52,10 +51,6 @@ void MidiBackend::callback(double deltaTime, std::vector<unsigned char>* message
     
     // Push
     thisObj->incommingQueue_.push(midiMessage);
-    
-    // TODO Remove
-    std::cout << static_cast<unsigned int>(midiMessage.parameter[0]) << "\n";
-    std::cout << static_cast<unsigned int>(midiMessage.parameter[1]) << "\n";
 }
 
 }} // namespace Et::Audio
