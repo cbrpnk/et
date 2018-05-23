@@ -1,5 +1,4 @@
 #include "sdf.hpp"
-
 #include <limits>
 
 #include "graph/obj.hpp"
@@ -119,6 +118,109 @@ SdfAaBox::SdfAaBox(Obj& obj, float width, float height, float depth)
     if(!obj.getComponent<Transform>()) {
         obj.addComponent<Transform>();
     }
+    
+    // TODO Scale for size
+    
+    std::vector<unsigned short> indices {
+    //  |  Tri 1  |   Tri 2  |
+        0,  1,  2,  2,  3,  0,  // Front
+        4,  5,  6,  6,  7,  4,  // Back
+        8,  9,  10, 10, 11, 8,  // Right
+        12, 13, 14, 14, 15, 12, // Left
+        16, 17, 18, 18, 19, 16, // Top
+        20, 21, 22, 22, 23, 20  // Bottom
+    };
+
+    std::vector<float> vertices {
+    //    X     Y     Z
+        -0.5,  0.5,  0.5, // Front
+        -0.5, -0.5,  0.5,
+         0.5, -0.5,  0.5,
+         0.5,  0.5,  0.5,
+         0.5,  0.5, -0.5, // Back
+         0.5, -0.5, -0.5,
+        -0.5, -0.5, -0.5,
+        -0.5,  0.5, -0.5,
+         0.5, -0.5,  0.5, // Right
+         0.5, -0.5, -0.5,
+         0.5,  0.5, -0.5,
+         0.5,  0.5,  0.5,
+        -0.5,  0.5,  0.5, // Left
+        -0.5,  0.5, -0.5,
+        -0.5, -0.5, -0.5,
+        -0.5, -0.5,  0.5,
+        -0.5,  0.5,  0.5, // Top
+         0.5,  0.5,  0.5,
+         0.5,  0.5, -0.5,
+        -0.5,  0.5, -0.5,
+        -0.5, -0.5, -0.5, // Bottom
+         0.5, -0.5, -0.5,
+         0.5, -0.5,  0.5,
+        -0.5, -0.5,  0.5,
+    };
+
+    std::vector<float> normals {
+    //    X      Y      Z
+         0.0f,  0.0f,  1.0f, // Front
+         0.0f,  0.0f,  1.0f,
+         0.0f,  0.0f,  1.0f,
+         0.0f,  0.0f,  1.0f,
+         0.0f,  0.0f, -1.0f, // Back
+         0.0f,  0.0f, -1.0f,
+         0.0f,  0.0f, -1.0f,
+         0.0f,  0.0f, -1.0f,
+         1.0f,  0.0f,  0.0f, // Right
+         1.0f,  0.0f,  0.0f,
+         1.0f,  0.0f,  0.0f,
+         1.0f,  0.0f,  0.0f,
+        -1.0f,  0.0f,  0.0f, // Left
+        -1.0f,  0.0f,  0.0f,
+        -1.0f,  0.0f,  0.0f,
+        -1.0f,  0.0f,  0.0f,
+         0.0f,  1.0f,  0.0f, // Top
+         0.0f,  1.0f,  0.0f,
+         0.0f,  1.0f,  0.0f,
+         0.0f,  1.0f,  0.0f,
+         0.0f, -1.0f,  0.0f, // Bottom
+         0.0f, -1.0f,  0.0f,
+         0.0f, -1.0f,  0.0f,
+         0.0f, -1.0f,  0.0f,
+    };
+
+    std::vector<float> colors {
+    //    R      G      B  
+         1.0f,  0.0f,  0.0f, // Front
+         1.0f,  0.0f,  0.0f,
+         1.0f,  0.0f,  0.0f,
+         1.0f,  0.0f,  0.0f,
+         0.0f,  1.0f,  0.0f, // Back
+         0.0f,  1.0f,  0.0f,
+         0.0f,  1.0f,  0.0f,
+         0.0f,  1.0f,  0.0f,
+         0.0f,  0.0f,  1.0f, // Right
+         0.0f,  0.0f,  1.0f,
+         0.0f,  0.0f,  1.0f,
+         0.0f,  0.0f,  1.0f,
+         1.0f,  1.0f,  0.0f, // Left
+         1.0f,  1.0f,  0.0f,
+         1.0f,  1.0f,  0.0f,
+         1.0f,  1.0f,  0.0f,
+         0.0f,  1.0f,  1.0f, // Top
+         0.0f,  1.0f,  1.0f,
+         0.0f,  1.0f,  1.0f,
+         0.0f,  1.0f,  1.0f,
+         1.0f,  0.0f,  1.0f, // Bottom
+         1.0f,  0.0f,  1.0f,
+         1.0f,  0.0f,  1.0f,
+         1.0f,  0.0f,  1.0f,
+    };
+    
+    Mesh mesh;
+    mesh.indices.insert(mesh.indices.begin(), indices.begin(), indices.end());
+    mesh.vertices.insert(mesh.vertices.begin(), vertices.begin(), vertices.end());
+    mesh.normals.insert(mesh.normals.begin(), normals.begin(), normals.end());
+    mesh.colors.insert(mesh.colors.begin(), colors.begin(), colors.end());
+    addMesh(mesh);
 }
 
 HitRecord SdfAaBox::intersect(Ray ray) const

@@ -1,8 +1,9 @@
 #pragma once
 
 #include <iostream>
-#include "component.hpp"
+#include "geometry.hpp"
 #include "graph/ray.hpp"
+#include "component.hpp"
 #include "math/vec3.hpp"
 
 namespace Et {
@@ -10,12 +11,6 @@ namespace Graph {
 
 class Transform;
 class Obj;
-
-class Geometry : public Component {
-public:
-    Geometry(Obj& obj) : Component(obj) {}
-    virtual HitRecord intersect(Ray ray) const = 0;
-};
 
 
 /******************************************************************************************
@@ -25,7 +20,6 @@ class SdfSphere : public Geometry {
 public:
     SdfSphere(Obj& obj, float r);
     
-    virtual void      update() override {}
     virtual HitRecord intersect(Ray ray) const override;
     
     float     distance(Math::Vec3<float> point)  const;
@@ -47,8 +41,6 @@ public:
     
     virtual HitRecord intersect(Ray ray) const override;
     
-    virtual void update() override {}
-    
 private:
     // The plane is and infinite one represented by a point and a surface normal
     Math::Vec3<float> normal_;
@@ -64,8 +56,6 @@ public:
     SdfAaBox(Obj& obj, float width, float height, float depth);
     
     virtual HitRecord intersect(Ray ray) const override;
-    
-    virtual void update() override {}
     
 private:
     float width;
