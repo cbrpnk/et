@@ -15,8 +15,8 @@ bool RtMidiBackend::init()
     if(portCount == 0) return false;
     
     // TODO Leave the choice to the user
-    std::cout << midiIn_.getPortName(1) << '\n';
-    midiIn_.openPort(1);
+    std::cout << midiIn_.getPortName(0) << '\n';
+    midiIn_.openPort(0);
     midiIn_.setCallback(&callback, this);
     midiIn_.ignoreTypes(false, false, false);
     

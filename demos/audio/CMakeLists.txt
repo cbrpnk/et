@@ -12,4 +12,4 @@ file(GLOB_RECURSE RTMIDI_LIB "../../ext/rtmidi/RtMidi.cpp")
 file(GLOB_RECURSE DEMO "./*.cc")
 
 add_executable(audio_demo ${ET_LIB} ${RTMIDI_LIB} ${DEMO})
-target_link_libraries(audio_demo LINK_PUBLIC portaudio jack asound m rt pthread)
+target_link_libraries(audio_demo LINK_PUBLIC portaudio jack asound m rt pthread GLEW glfw GL GLU X11 Xrandr Xi)
